@@ -25,10 +25,13 @@
     </div>
     <div class="cursor-trail" aria-hidden="true"></div>
 
-    <nav class="site-nav" aria-label="Primary navigation">
+    <nav class="site-nav" aria-label="Primary">
         <div class="site-nav__inner">
-            <a href="#top" class="site-nav__brand">
-                <span class="brand-main">movingbytes</span><span class="brand-tld">.dev</span>
+            <a href="#top" class="site-nav__brand" aria-label="movingbytes.dev home">
+                <span class="brand-lockup">
+                    <span class="brand-name">movingbytes</span><span class="brand-tld">.dev</span>
+                </span>
+                <span class="brand-role">Agent Systems Architect</span>
             </a>
 
             <div class="site-nav__links">
@@ -46,34 +49,47 @@
 
             <div class="container hero__grid">
                 <div class="hero__main">
-                    <p class="hero__eyebrow">JAY / AGENT SYSTEMS ARCHITECT</p>
-                    <h1 class="hero__title">
-                        Production-grade<br>
-                        autonomous systems,<br>
-                        designed with restraint.
-                    </h1>
-                    <p class="hero__copy">
-                        I build agent workflows, orchestration tooling, and high-performance interfaces that prioritize clarity, observability, and real-world execution.
-                    </p>
+                    <div class="hero__intro">
+                        <p class="hero__eyebrow">
+                            <span>Jay</span>
+                            <span aria-hidden="true">·</span>
+                            <span>Agent Systems Architect</span>
+                        </p>
+                        <h1 class="hero__title">
+                            Production-grade
+                            autonomous systems
+                            with editorial restraint.
+                        </h1>
+                    </div>
+                    
+                    <div class="hero__body">
+                        <p class="hero__copy">
+                            I design and build agent workflows, orchestration platforms, and high-performance 
+                            interfaces for teams shipping real systems. Focus on clarity, observability, 
+                            and constraints over novelty.
+                        </p>
 
-                    <div class="hero__actions">
-                        <a href="#work" class="button button--primary">Selected Work</a>
-                        <a href="#contact" class="button button--ghost">Get in touch</a>
+                        <div class="hero__actions">
+                            <a href="#work" class="button button--primary">
+                                <span>View selected work</span>
+                            </a>
+                            <a href="#contact" class="button button--ghost">Start a conversation</a>
+                        </div>
                     </div>
                 </div>
 
-                <aside class="hero__rail" aria-label="Profile summary">
-                    <div class="hero__rail-block">
-                        <span class="hero__rail-label">FOCUS</span>
-                        <p>Multi-agent systems, orchestration, tooling, simulation, performance-minded interfaces.</p>
+                <aside class="hero__rail" aria-label="At a glance">
+                    <div class="hero__rail-item">
+                        <dt>Practice</dt>
+                        <dd>Multi-agent systems, orchestration, simulation environments, and performance-critical interfaces.</dd>
                     </div>
-                    <div class="hero__rail-block">
-                        <span class="hero__rail-label">APPROACH</span>
-                        <p>Production-first systems with minimal dependency risk and strong architectural legibility.</p>
+                    <div class="hero__rail-item">
+                        <dt>Approach</dt>
+                        <dd>Production-first. Minimal dependencies. Systems that remain legible under load.</dd>
                     </div>
-                    <div class="hero__rail-block">
-                        <span class="hero__rail-label">BASED IN</span>
-                        <p>Remote-first / async-friendly / available for select engagements.</p>
+                    <div class="hero__rail-item">
+                        <dt>Availability</dt>
+                        <dd>Select engagements. Remote-first. Async-friendly collaboration.</dd>
                     </div>
                 </aside>
             </div>
