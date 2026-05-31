@@ -5,16 +5,13 @@
     const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
 
     const $ = (selector, scope = document) => scope.querySelector(selector);
-    const 
-$$
-= (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+    const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
 
     /*
      * Smooth anchor scrolling
      */
     function initSmoothScroll() {
-$$
-('a[href^="#"]').forEach(link => {
+        $$('a[href^="#"]').forEach(link => {
             link.addEventListener('click', event => {
                 const href = link.getAttribute('href');
                 if (!href || href === '#') return;
@@ -24,7 +21,7 @@ $$
 
                 event.preventDefault();
 
-                const nav = $('.site-nav') || $('.navbar');
+                const nav = $('.site-nav');
                 const navOffset = nav ? nav.offsetHeight : 0;
                 const y = target.getBoundingClientRect().top + window.pageYOffset - navOffset - 16;
 
@@ -40,9 +37,7 @@ $$
      * Scroll reveal
      */
     function initReveal() {
-        const cards = 
-$$
-('.work-card, .project-card, .capability-card, .principle, .contact-link');
+        const cards = $$('.work-card, .capability-card, .principle, .contact-link');
         if (!cards.length) return;
 
         cards.forEach(el => {
@@ -100,8 +95,8 @@ $$
         }
 
         document.addEventListener('mousemove', onMove, { passive: true });
-$$
-('a, button, .work-card, .project-card, .contact-link').forEach(el => {
+        
+        $$('a, button, .work-card, .contact-link').forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
         });
