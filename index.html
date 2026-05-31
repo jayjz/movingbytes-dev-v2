@@ -183,64 +183,96 @@
             <div class="container">
                 <div class="section-intro">
                     <p class="section-intro__eyebrow">CAPABILITIES</p>
-                    <h2 class="section-intro__title">What I actually do.</h2>
+                    <h2 class="section-intro__title">Systems I design and ship.</h2>
                 </div>
 
-                <div class="capabilities-grid">
-                    <article class="capability-card">
-                        <h3>Agent architecture</h3>
-                        <p>Designing systems for task execution, review, orchestration, and recovery under real constraints.</p>
+                <div class="capabilities-list">
+                    <article class="capability">
+                        <div class="capability__marker" aria-hidden="true"></div>
+                        <div class="capability__content">
+                            <h3>Agent architecture</h3>
+                            <p>Multi-agent systems for task decomposition, execution orchestration, state management, and recovery. Built for real constraints and production failure modes.</p>
+                        </div>
                     </article>
-                    <article class="capability-card">
-                        <h3>Internal tooling</h3>
-                        <p>Building operator-facing interfaces and workflows for visibility, control, and throughput.</p>
+                    <article class="capability">
+                        <div class="capability__marker" aria-hidden="true"></div>
+                        <div class="capability__content">
+                            <h3>Internal tooling & platforms</h3>
+                            <p>Operator-facing interfaces, workflow systems, and control planes that prioritize visibility, throughput, and minimal cognitive load.</p>
+                        </div>
                     </article>
-                    <article class="capability-card">
-                        <h3>Simulation systems</h3>
-                        <p>Creating test environments to model coordination, state transitions, and failure modes before deployment.</p>
+                    <article class="capability">
+                        <div class="capability__marker" aria-hidden="true"></div>
+                        <div class="capability__content">
+                            <h3>Simulation & testing infrastructure</h3>
+                            <p>Environments for modeling coordination, state transitions, and edge cases before deployment. Fast feedback loops for complex systems.</p>
+                        </div>
                     </article>
-                    <article class="capability-card">
-                        <h3>High-performance frontend</h3>
-                        <p>Shipping low-bloat web interfaces with strong motion discipline and minimal framework overhead.</p>
+                    <article class="capability">
+                        <div class="capability__marker" aria-hidden="true"></div>
+                        <div class="capability__content">
+                            <h3>Performance-critical interfaces</h3>
+                            <p>Low-bloat frontends with disciplined motion, efficient rendering, and minimal framework overhead. Built for 60fps and instant feedback.</p>
+                        </div>
                     </article>
                 </div>
             </div>
         </section>
 
         <section id="principles" class="principles">
-            <div class="container principles__inner">
-                <p class="section-intro__eyebrow">PRINCIPLES</p>
-                <div class="principles__grid">
-                    <div class="principle">
-                        <h3>Clarity over abstraction.</h3>
-                        <p>Systems should be traceable, understandable, and debuggable without ceremony.</p>
-                    </div>
-                    <div class="principle">
-                        <h3>Performance is not decoration.</h3>
-                        <p>Responsiveness shapes trust. Fast systems feel more truthful.</p>
-                    </div>
-                    <div class="principle">
-                        <h3>Production first.</h3>
-                        <p>I care more about reliability, observability, and constraints than novelty theater.</p>
-                    </div>
+            <div class="container">
+                <div class="principles__header">
+                    <p class="section-intro__eyebrow">PRINCIPLES</p>
+                    <h2 class="section-intro__title">How I build systems that last.</h2>
+                </div>
+                
+                <div class="principles__list">
+                    <article class="principle">
+                        <div class="principle__number">01</div>
+                        <div class="principle__content">
+                            <h3>Clarity over abstraction</h3>
+                            <p>Systems should be traceable and debuggable without ceremony. If you can't follow the data flow in your head, the architecture has failed.</p>
+                        </div>
+                    </article>
+                    <article class="principle">
+                        <div class="principle__number">02</div>
+                        <div class="principle__content">
+                            <h3>Performance is a feature</h3>
+                            <p>Responsiveness shapes trust. A system that feels fast feels more truthful. Optimize the critical path, measure everything.</p>
+                        </div>
+                    </article>
+                    <article class="principle">
+                        <div class="principle__number">03</div>
+                        <div class="principle__content">
+                            <h3>Production constraints shape design</h3>
+                            <p>Build for the system that ships, not the demo. Reliability, observability, and recovery matter more than novelty.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
-            <div class="container contact__grid">
-                <div class="contact__intro">
-                    <p class="section-intro__eyebrow">CONTACT</p>
-                    <h2>Available for select systems and tooling work.</h2>
-                    <p>
-                        Best fit: agent systems, orchestration tooling, internal platforms, simulation environments, and frontend systems where performance actually matters.
-                    </p>
-                </div>
+            <div class="container">
+                <div class="contact__inner">
+                    <div class="contact__header">
+                        <p class="section-intro__eyebrow">CONTACT</p>
+                        <h2 class="contact__title">Available for select systems work.</h2>
+                        <p class="contact__lede">
+                            Agent systems, orchestration tooling, internal platforms, and interfaces where performance actually matters.
+                        </p>
+                    </div>
 
-                <div class="contact__links">
-                    <a href="mailto:jay@movingbytes.dev" class="contact-link">jay@movingbytes.dev</a>
-                    <a href="https://github.com/jayjz" target="_blank" rel="noopener" class="contact-link">GitHub / jayjz</a>
-                    <a href="https://x.com/intheaetherr" target="_blank" rel="noopener" class="contact-link">X / intheaetherr</a>
+                    <div class="contact__actions">
+                        <a href="mailto:jay@movingbytes.dev" class="contact-action">
+                            <span class="contact-action__label">Email</span>
+                            <span class="contact-action__value">jay@movingbytes.dev</span>
+                        </a>
+                        <a href="https://github.com/jayjz" target="_blank" rel="noopener" class="contact-action">
+                            <span class="contact-action__label">GitHub</span>
+                            <span class="contact-action__value">jayjz</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
