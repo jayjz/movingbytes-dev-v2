@@ -4,114 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jay | Agent Systems Architect</title>
-    <meta name="description" content="Agent Systems Architect building autonomous multi-agent systems that ship to production. High-performance interfaces with real-world results.">
-    
+    <meta name="description" content="Jay builds production-grade agent systems, orchestration tooling, and high-performance interfaces.">
+    <meta name="theme-color" content="#050505">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
-    
-    <style>
-        :root {
-            --bg: #0a0a0a;
-            --text: #e8e8e8;
-            --cyan: #00d9ff;
-            --amber: #ff9000;
-            --border: #1a1a1a;
-        }
-    </style>
 </head>
 <body>
-    <!-- Cinematic overlays -->
-    <div class="scanlines" aria-hidden="true"></div>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <div class="grain" aria-hidden="true"></div>
     <div class="vignette" aria-hidden="true"></div>
 
-    <!-- Custom cursor -->
     <div class="cursor" aria-hidden="true">
         <div class="cursor-dot"></div>
         <div class="cursor-ring"></div>
     </div>
     <div class="cursor-trail" aria-hidden="true"></div>
 
-    <nav class="navbar">
-        <div class="nav-wrap">
-            <a href="#" class="nav-brand">
-                movingbytes<span class="tld">.dev</span>
+    <nav class="site-nav" aria-label="Primary navigation">
+        <div class="site-nav__inner">
+            <a href="#top" class="site-nav__brand">
+                <span class="brand-main">movingbytes</span><span class="brand-tld">.dev</span>
             </a>
-            <div class="nav-actions">
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#approach" class="nav-link">Approach</a>
-                <a href="#contact" class="nav-link">Contact</a>
+
+            <div class="site-nav__links">
+                <a href="#work">Work</a>
+                <a href="#capabilities">Capabilities</a>
+                <a href="#principles">Principles</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <main>
-        <!-- HERO -->
-        <section class="hero" aria-labelledby="hero-title">
+    <main id="main">
+        <section id="top" class="hero">
             <canvas id="particles" aria-hidden="true"></canvas>
-            
-            <div class="hero-content">
-                <h1 id="hero-title" class="hero-title">Agent Systems Architect</h1>
-                
-                <p class="hero-description">
-                    I design and ship autonomous multi-agent systems that operate reliably in production.<br>
-                    Combining high-performance interfaces with practical orchestration.
-                </p>
 
-                <div class="hero-actions">
-                    <a href="#work" class="btn-primary">View Selected Work</a>
-                </div>
-            </div>
+            <div class="container hero__grid">
+                <div class="hero__main">
+                    <p class="hero__eyebrow">JAY / AGENT SYSTEMS ARCHITECT</p>
+                    <h1 class="hero__title">
+                        Production-grade<br>
+                        autonomous systems,<br>
+                        designed with restraint.
+                    </h1>
+                    <p class="hero__copy">
+                        I build agent workflows, orchestration tooling, and high-performance interfaces that prioritize clarity, observability, and real-world execution.
+                    </p>
 
-            <div class="hero-footer">
-                <div class="hero-metric">
-                    <span class="metric-value">Production</span>
-                    <span class="metric-label">First</span>
+                    <div class="hero__actions">
+                        <a href="#work" class="button button--primary">Selected Work</a>
+                        <a href="#contact" class="button button--ghost">Get in touch</a>
+                    </div>
                 </div>
+
+                <aside class="hero__rail" aria-label="Profile summary">
+                    <div class="hero__rail-block">
+                        <span class="hero__rail-label">FOCUS</span>
+                        <p>Multi-agent systems, orchestration, tooling, simulation, performance-minded interfaces.</p>
+                    </div>
+                    <div class="hero__rail-block">
+                        <span class="hero__rail-label">APPROACH</span>
+                        <p>Production-first systems with minimal dependency risk and strong architectural legibility.</p>
+                    </div>
+                    <div class="hero__rail-block">
+                        <span class="hero__rail-label">BASED IN</span>
+                        <p>Remote-first / async-friendly / available for select engagements.</p>
+                    </div>
+                </aside>
             </div>
         </section>
 
-        <!-- SELECTED WORK -->
-        <section id="work" class="work-section">
+        <section id="work" class="work">
             <div class="container">
-                <h2 class="section-title">Selected Work</h2>
-                <div class="projects-grid">
-                    
-                    <article class="project-card">
-                        <div class="project-content">
-                            <h3>CodeForgeSLM</h3>
-                            <p>Autonomous multi-agent system for large-scale code modernization and technical debt elimination.</p>
-                            <div class="project-tags">
+                <div class="section-intro">
+                    <p class="section-intro__eyebrow">SELECTED WORK</p>
+                    <h2 class="section-intro__title">A small portfolio of systems work.</h2>
+                    <p class="section-intro__copy">
+                        Focused projects across code transformation, agent simulation, and structured generation.
+                    </p>
+                </div>
+
+                <div class="work-list">
+                    <article class="work-card work-card--featured">
+                        <div class="work-card__meta">
+                            <span class="work-card__index">01</span>
+                            <span class="work-card__type">Autonomous Code Modernization</span>
+                        </div>
+                        <div class="work-card__body">
+                            <h3 class="work-card__title">CodeForgeSLM</h3>
+                            <p class="work-card__copy">
+                                A multi-agent system for code modernization and technical debt reduction across real repositories, designed to turn LLM-assisted refactoring into a usable workflow instead of a demo gimmick.
+                            </p>
+                            <ul class="work-card__points">
+                                <li>Task decomposition and execution flow</li>
+                                <li>Structured code transformation pipeline</li>
+                                <li>Built for practical repository improvement</li>
+                            </ul>
+                            <div class="work-card__tags">
                                 <span>Multi-Agent</span>
-                                <span>LangGraph</span>
                                 <span>Python</span>
+                                <span>Refactoring</span>
                             </div>
                         </div>
                     </article>
 
-                    <article class="project-card">
-                        <div class="project-content">
-                            <h3>agentville</h3>
-                            <p>Local simulation environment for testing multi-agent coordination and emergent behavior.</p>
-                            <div class="project-tags">
+                    <article class="work-card">
+                        <div class="work-card__meta">
+                            <span class="work-card__index">02</span>
+                            <span class="work-card__type">Simulation Environment</span>
+                        </div>
+                        <div class="work-card__body">
+                            <h3 class="work-card__title">agentville</h3>
+                            <p class="work-card__copy">
+                                A local environment for testing multi-agent coordination, emergent behavior, and state visibility under controlled scenarios.
+                            </p>
+                            <div class="work-card__tags">
                                 <span>Simulation</span>
                                 <span>Testing</span>
-                                <span>Multi-Agent</span>
+                                <span>Coordination</span>
                             </div>
                         </div>
                     </article>
 
-                    <article class="project-card">
-                        <div class="project-content">
-                            <h3>storyteller</h3>
-                            <p>Production-grade SLM pipeline for structured, schema-enforced generation.</p>
-                            <div class="project-tags">
+                    <article class="work-card">
+                        <div class="work-card__meta">
+                            <span class="work-card__index">03</span>
+                            <span class="work-card__type">Structured Generation System</span>
+                        </div>
+                        <div class="work-card__body">
+                            <h3 class="work-card__title">storyteller</h3>
+                            <p class="work-card__copy">
+                                A production-oriented SLM pipeline for schema-enforced generation, designed for reliability, repeatability, and integration into larger systems.
+                            </p>
+                            <div class="work-card__tags">
                                 <span>SLM</span>
                                 <span>Structured Output</span>
-                                <span>Python</span>
+                                <span>Production</span>
                             </div>
                         </div>
                     </article>
@@ -119,39 +152,77 @@
             </div>
         </section>
 
-        <!-- APPROACH -->
-        <section id="approach" class="approach-section">
-            <div class="container narrow">
-                <h2 class="section-title">Approach</h2>
-                <p class="approach-text">
-                    I build systems that are observable, traceable, and production-first. 
-                    My background in high-performance interfaces informs how I design agent architectures 
-                    that feel responsive and reliable at scale.
-                </p>
+        <section id="capabilities" class="capabilities">
+            <div class="container">
+                <div class="section-intro">
+                    <p class="section-intro__eyebrow">CAPABILITIES</p>
+                    <h2 class="section-intro__title">What I actually do.</h2>
+                </div>
+
+                <div class="capabilities-grid">
+                    <article class="capability-card">
+                        <h3>Agent architecture</h3>
+                        <p>Designing systems for task execution, review, orchestration, and recovery under real constraints.</p>
+                    </article>
+                    <article class="capability-card">
+                        <h3>Internal tooling</h3>
+                        <p>Building operator-facing interfaces and workflows for visibility, control, and throughput.</p>
+                    </article>
+                    <article class="capability-card">
+                        <h3>Simulation systems</h3>
+                        <p>Creating test environments to model coordination, state transitions, and failure modes before deployment.</p>
+                    </article>
+                    <article class="capability-card">
+                        <h3>High-performance frontend</h3>
+                        <p>Shipping low-bloat web interfaces with strong motion discipline and minimal framework overhead.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-left">
-                        <h2>Let's build something that ships.</h2>
-                        <p>Currently available for select agent systems and autonomous tooling projects in Q3–Q4 2026.</p>
+        <section id="principles" class="principles">
+            <div class="container principles__inner">
+                <p class="section-intro__eyebrow">PRINCIPLES</p>
+                <div class="principles__grid">
+                    <div class="principle">
+                        <h3>Clarity over abstraction.</h3>
+                        <p>Systems should be traceable, understandable, and debuggable without ceremony.</p>
                     </div>
-                    <div class="contact-right">
-                        <a href="mailto:jay@movingbytes.dev" class="contact-link">jay@movingbytes.dev</a>
-                        <a href="https://github.com/jayjz" target="_blank" class="contact-link">GitHub @jayjz</a>
-                        <a href="https://x.com/intheaetherr" target="_blank" class="contact-link">X @intheaetherr</a>
+                    <div class="principle">
+                        <h3>Performance is not decoration.</h3>
+                        <p>Responsiveness shapes trust. Fast systems feel more truthful.</p>
                     </div>
+                    <div class="principle">
+                        <h3>Production first.</h3>
+                        <p>I care more about reliability, observability, and constraints than novelty theater.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container contact__grid">
+                <div class="contact__intro">
+                    <p class="section-intro__eyebrow">CONTACT</p>
+                    <h2>Available for select systems and tooling work.</h2>
+                    <p>
+                        Best fit: agent systems, orchestration tooling, internal platforms, simulation environments, and frontend systems where performance actually matters.
+                    </p>
+                </div>
+
+                <div class="contact__links">
+                    <a href="mailto:jay@movingbytes.dev" class="contact-link">jay@movingbytes.dev</a>
+                    <a href="https://github.com/jayjz" target="_blank" rel="noopener" class="contact-link">GitHub / jayjz</a>
+                    <a href="https://x.com/intheaetherr" target="_blank" rel="noopener" class="contact-link">X / intheaetherr</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>© 2026 Jay • movingbytes.dev</p>
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p>© 2026 Jay / movingbytes.dev</p>
+            <p>Vanilla frontend. No framework overhead.</p>
         </div>
     </footer>
 
