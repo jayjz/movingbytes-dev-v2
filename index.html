@@ -94,53 +94,116 @@
         </section>
 
         <!-- WORK SECTION - OPTIMIZED -->
-        <section id="work" class="work">
-            <div class="container">
-                <div class="section-intro">
-                    <p class="section-intro__eyebrow">SELECTED WORK</p>
-                    <h2 class="section-intro__title">Systems that shipped under constraints.</h2>
-                    <p class="section-intro__copy">
-                        Production multi-agent platforms, simulation environments, and structured tooling where reliability was non-negotiable.
-                    </p>
+        <!-- WORK SECTION -->
+<section id="work" class="work">
+    <div class="container">
+        <div class="section-intro">
+            <p class="section-intro__eyebrow">SELECTED WORK</p>
+            <h2 class="section-intro__title">Systems that shipped under constraints.</h2>
+            <p class="section-intro__copy">
+                Production multi-agent platforms, simulation environments, and structured tooling where reliability was non-negotiable.
+            </p>
+        </div>
+
+        <div class="work-grid">
+            <!-- Featured -->
+            <article class="work-featured">
+                <div class="work-featured__media" aria-hidden="true">
+                    <img src="images/codeforge-slm.svg" 
+                         alt="CodeForgeSLM multi-agent orchestration visualization" 
+                         loading="lazy">
                 </div>
+                <div class="work-featured__content">
+                    <div class="work-featured__meta">
+                        <span class="work-featured__index">01</span>
+                        <span class="work-featured__category">Production System</span>
+                    </div>
+                    
+                    <h3 class="work-featured__title">CodeForgeSLM</h3>
+                    <p class="work-featured__lede">
+                        Autonomous multi-agent system for large-scale legacy code modernization and technical debt elimination.
+                    </p>
 
-                <div class="work-grid">
-                    <!-- Featured Project -->
-                    <article class="work-featured">
-                        <div class="work-featured__media" aria-hidden="true">
-                            <img src="images/codeforge-slm.svg" 
-                                 alt="CodeForgeSLM — Multi-agent system visualization with interconnected nodes and real-time data flow" 
-                                 loading="lazy">
+                    <div class="project-breakdown">
+                        <div class="breakdown-item">
+                            <h4 class="breakdown-label">Problem</h4>
+                            <p>40k+ LOC of brittle, undocumented code was blocking velocity and creating significant security surface area.</p>
                         </div>
-                        <div class="work-featured__content">
-                            <div class="work-featured__meta">
-                                <span class="work-featured__index">01</span>
-                                <span class="work-featured__category">Production System</span>
-                            </div>
-                            <h3 class="work-featured__title">CodeForgeSLM</h3>
-                            <p class="work-featured__lede">
-                                Autonomous multi-agent system for large-scale legacy code modernization and technical debt elimination.
-                            </p>
-                            <div class="work-featured__copy">
-                                <strong>Problem</strong><br>
-                                40k+ LOC of brittle, undocumented code was blocking velocity and creating significant security surface area.<br><br>
-                                
-                                <strong>Approach</strong><br>
-                                Orchestrated specialist agents for decomposition, transformation, validation, and human-in-the-loop review using LangGraph with strict state management and rollback capabilities.<br><br>
-                                
-                                <strong>Impact</strong><br>
-                                60% reduction in technical debt. 95%+ test coverage maintained. Turned LLM experimentation into a repeatable, auditable production workflow.
-                            </div>
-                            <div class="work-featured__tags">
-                                <span>Python</span>
-                                <span>LangGraph</span>
-                                <span>Multi-Agent</span>
-                                <span>40k+ LOC</span>
-                                <span>Security Hardened</span>
-                            </div>
+                        <div class="breakdown-item">
+                            <h4 class="breakdown-label">Approach</h4>
+                            <p>Orchestrated specialist agents for decomposition, transformation, validation, and human-in-the-loop review using LangGraph with strict state management and rollback capabilities.</p>
                         </div>
-                    </article>
+                        <div class="breakdown-item">
+                            <h4 class="breakdown-label">Impact</h4>
+                            <p>60% reduction in technical debt. 95%+ test coverage maintained. Turned LLM experimentation into a repeatable, auditable production workflow.</p>
+                        </div>
+                    </div>
 
+                    <div class="work-featured__tags">
+                        <span>Python</span>
+                        <span>LangGraph</span>
+                        <span>Multi-Agent</span>
+                        <span>40k+ LOC</span>
+                        <span>Security Hardened</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Secondary Cards -->
+            <div class="work-secondary">
+                <article class="work-card work-card--secondary">
+                    <div class="work-card__media" aria-hidden="true">
+                        <img src="images/agentville.svg" 
+                             alt="agentville multi-agent simulation environment" 
+                             loading="lazy">
+                    </div>
+                    <div class="work-card__content">
+                        <div class="work-card__header">
+                            <span class="work-card__index">02</span>
+                            <h3 class="work-card__title">agentville</h3>
+                        </div>
+                        <p class="work-card__lede">
+                            Local multi-agent simulation environment for testing coordination, failure modes, and emergent behaviors before production deployment.
+                        </p>
+                        <p class="work-card__impact">
+                            <em>Caught 90% of coordination failures pre-staging. Reduced deployment risk and staging costs by ~70%.</em>
+                        </p>
+                        <div class="work-card__tags">
+                            <span>Simulation</span>
+                            <span>Testing</span>
+                            <span>Observability</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="work-card work-card--secondary">
+                    <div class="work-card__media" aria-hidden="true">
+                        <img src="images/storyteller.svg" 
+                             alt="storyteller structured generation pipeline" 
+                             loading="lazy">
+                    </div>
+                    <div class="work-card__content">
+                        <div class="work-card__header">
+                            <span class="work-card__index">03</span>
+                            <h3 class="work-card__title">storyteller</h3>
+                        </div>
+                        <p class="work-card__lede">
+                            Production SLM pipeline with strict schema enforcement and controllable structured generation.
+                        </p>
+                        <p class="work-card__impact">
+                            <em>Achieved 99.5% schema compliance vs ~60% with general models. 10x cost reduction on structured output tasks.</em>
+                        </p>
+                        <div class="work-card__tags">
+                            <span>SLM</span>
+                            <span>Structured Output</span>
+                            <span>Schema Enforcement</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
                     <!-- Secondary Projects -->
                     <div class="work-secondary">
                         <article class="work-card work-card--secondary">
