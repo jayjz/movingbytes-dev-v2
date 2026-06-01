@@ -34,37 +34,89 @@
     }
 
     /*
-     * Scroll reveal
+     * Scroll reveal with stagger
      */
     function initReveal() {
-        const cards = $$('.work-card, .capability-card, .principle, .contact-link');
-        if (!cards.length) return;
+        const items = $$('.work-featured, .work-card, .capability, .principle, .contact-action, .hero__rail-item');
+        if (!items.length) return;
 
-        cards.forEach(el => {
+        items.forEach((el, i) => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(24px)';
-            el.style.transition = prefersReducedMotion
-                ? 'none'
-                : 'opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1)';
+            el.style.transform = 'translateY(32px)';
+            el.dataset.revealIndex = i;
         });
 
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                obs.unobserve(entry.target);
+                const el = entry.target;
+                const index = parseInt(el.dataset.revealIndex || '0', 10);
+                const delay = Math.min(index * 60, 300);
+                
+                el.style.transition = prefersReducedMotion
+                    ? 'none'
+                    : `opacity 900ms cubic-bezier(0.19, 1, 0.22, 1) ${delay}ms, transform 900ms cubic-bezier(0.19, 1, 0.22, 1) ${delay}ms`;
+                
+                requestAnimationFrame(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                });
+                
+                obs.unobserve(el);
             });
         }, {
-            threshold: 0.12,
-            rootMargin: '0px 0px -8% 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -10% 0px'
         });
 
-        cards.forEach(card => observer.observe(card));
+        items.forEach(el => observer.observe(el));
     }
 
     /*
-     * Simple custom cursor
+     * Kinetic hero parallax
+     */
+    function initHeroParallax() {
+        if (prefersReducedMotion || isTouchDevice) return;
+        
+        const hero = $('.hero');
+        const title = $('.hero__title');
+        const copy = $('.hero__copy');
+        const rail = $('.hero__rail');
+        const particles = $('#particles');
+        
+        if (!hero || !title) return;
+        
+        let ticking = false;
+        
+        function updateParallax() {
+            const rect = hero.getBoundingClientRect();
+            const progress = Math.max(0, Math.min(1, -rect.top / rect.height));
+            const eased = 1 - Math.pow(1 - progress, 3);
+            
+            if (title) {
+                title.style.transform = `translateY(${eased * -30}px)`;
+                title.style.opacity = String(1 - eased * 0.15);
+            }
+            if (copy) copy.style.transform = `translateY(${eased * -15}px)`;
+            if (rail) rail.style.transform = `translateY(${eased * -20}px)`;
+            if (particles) particles.style.transform = `translateY(${eased * 40}px)`;
+            
+            ticking = false;
+        }
+        
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', onScroll, { passive: true });
+        updateParallax();
+    }
+
+    /*
+     * Enhanced custom cursor with magnetic effect
      */
     function initCursor() {
         if (prefersReducedMotion || isTouchDevice) return;
@@ -72,6 +124,7 @@
         const cursor = $('.cursor');
         const dot = $('.cursor-dot', cursor || document);
         const ring = $('.cursor-ring', cursor || document);
+        const trail = $('.cursor-trail');
 
         if (!cursor || !dot || !ring) return;
 
@@ -79,27 +132,77 @@
         let mouseY = window.innerHeight / 2;
         let ringX = mouseX;
         let ringY = mouseY;
+        let dotX = mouseX;
+        let dotY = mouseY;
         let rafId = null;
+        let magneticTarget = null;
 
         function onMove(e) {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
         }
 
         function tick() {
-            ringX += (mouseX - ringX) * 0.16;
-            ringY += (mouseY - ringY) * 0.16;
+            // Magnetic attraction to interactive elements
+            let targetX = mouseX;
+            let targetY = mouseY;
+            
+            if (magneticTarget) {
+                const rect = magneticTarget.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const dist = Math.hypot(mouseX - centerX, mouseY - centerY);
+                const maxDist = Math.max(rect.width, rect.height) * 0.8;
+                
+                if (dist < maxDist) {
+                    const pull = 1 - (dist / maxDist);
+                    targetX = mouseX + (centerX - mouseX) * pull * 0.15;
+                    targetY = mouseY + (centerY - mouseY) * pull * 0.15;
+                }
+            }
+            
+            dotX += (targetX - dotX) * 0.35;
+            dotY += (targetY - dotY) * 0.35;
+            ringX += (targetX - ringX) * 0.12;
+            ringY += (targetY - ringY) * 0.12;
+            
+            dot.style.transform = `translate(${dotX}px, ${dotY}px)`;
             ring.style.transform = `translate(${ringX}px, ${ringY}px)`;
+            
             rafId = window.requestAnimationFrame(tick);
         }
 
         document.addEventListener('mousemove', onMove, { passive: true });
         
-        $$('a, button, .work-card, .contact-link').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        $$('a, button, .work-card, .work-featured, .contact-action').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+                magneticTarget = el;
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+                magneticTarget = null;
+            });
         });
+
+        // Trail effect
+        if (trail) {
+            let trailPoints = [];
+            const maxTrail = 8;
+            
+            function updateTrail() {
+                trailPoints.unshift({ x: dotX, y: dotY });
+                if (trailPoints.length > maxTrail) trailPoints.pop();
+                
+                trail.innerHTML = trailPoints.map((p, i) => 
+                    `<div style="position:absolute;left:${p.x}px;top:${p.y}px;width:2px;height:2px;
+                     background:rgba(255,255,255,${0.15 - i * 0.015});border-radius:50%;
+                     transform:translate(-50%,-50%);pointer-events:none"></div>`
+                ).join('');
+            }
+            
+            setInterval(updateTrail, 32);
+        }
 
         tick();
 
@@ -258,6 +361,7 @@
 
     initSmoothScroll();
     initReveal();
+    initHeroParallax();
     initCursor();
     initParticles();
     initInputMode();
