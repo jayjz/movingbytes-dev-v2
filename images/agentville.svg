@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#050507"/>
+    </linearGradient>
+    <radialGradient id="g2" cx="50%" cy="30%">
+      <stop offset="0%" stop-color="#ff2e9a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ff2e9a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <ellipse cx="400" cy="120" rx="300" ry="100" fill="url(#g2)"/>
+  
+  <!-- Grid floor -->
+  <g opacity="0.08" stroke="#b0b0bd" stroke-width="0.5">
+    <path d="M0 300h800M0 330h800M0 360h800M0 390h800M0 420h800"/>
+    <g transform="translate(400 300)">
+      <path d="M-400 0L400 120M-320 0L320 120M-240 0L240 120M-160 0L160 120M-80 0L80 120M0 0L0 120M80 0L-80 120M160 0L-160 120M240 0L-240 120M320 0L-320 120M400 0L-400 120"/>
+    </g>
+  </g>
+  
+  <!-- Agent simulation nodes -->
+  <g>
+    <!-- Agent 1 -->
+    <g transform="translate(180 240)">
+      <circle r="22" fill="#111118" stroke="#00f5ff" stroke-width="1" opacity="0.8"/>
+      <circle r="16" fill="none" stroke="#00f5ff" stroke-width="0.5" opacity="0.4"/>
+      <circle r="3" fill="#00f5ff"/>
+      <path d="M-12 -8l8 8-8 8M12 -8l-8 8 8 8" stroke="#00f5ff" stroke-width="1" opacity="0.6" fill="none"/>
+    </g>
+    
+    <!-- Agent 2 -->
+    <g transform="translate(320 210)">
+      <circle r="22" fill="#111118" stroke="#ff2e9a" stroke-width="1" opacity="0.8"/>
+      <circle r="16" fill="none" stroke="#ff2e9a" stroke-width="0.5" opacity="0.4"/>
+      <rect x="-6" y="-6" width="12" height="12" fill="none" stroke="#ff2e9a" stroke-width="1" opacity="0.8" transform="rotate(45)"/>
+    </g>
+    
+    <!-- Agent 3 -->
+    <g transform="translate(480 230)">
+      <circle r="22" fill="#111118" stroke="#00f5ff" stroke-width="1" opacity="0.8"/>
+      <circle r="16" fill="none" stroke="#00f5ff" stroke-width="0.5" opacity="0.4"/>
+      <path d="M-8 0h16M0-8v16" stroke="#00f5ff" stroke-width="1.5" opacity="0.8"/>
+    </g>
+    
+    <!-- Agent 4 -->
+    <g transform="translate(620 250)">
+      <circle r="22" fill="#111118" stroke="#b0b0bd" stroke-width="1" opacity="0.6"/>
+      <circle r="16" fill="none" stroke="#b0b0bd" stroke-width="0.5" opacity="0.3"/>
+      <circle r="2" fill="#b0b0bd" opacity="0.8"/>
+      <circle r="2" cx="-8" fill="#b0b0bd" opacity="0.6"/>
+      <circle r="2" cx="8" fill="#b0b0bd" opacity="0.6"/>
+    </g>
+    
+    <!-- Agent 5 - Center -->
+    <g transform="translate(400 320)">
+      <circle r="28" fill="#1a1a22" stroke="#00f5ff" stroke-width="1.5"/>
+      <circle r="20" fill="none" stroke="#00f5ff" stroke-width="0.5" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+      </circle>
+      <g opacity="0.9">
+        <circle r="4" fill="#00f5ff"/>
+        <circle r="2" cx="0" cy="-12" fill="#00f5ff" opacity="0.7"/>
+        <circle r="2" cx="10" cy="6" fill="#00f5ff" opacity="0.7"/>
+        <circle r="2" cx="-10" cy="6" fill="#00f5ff" opacity="0.7"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Communication lines -->
+  <g stroke="#7a7a88" stroke-width="0.5" opacity="0.25" stroke-dasharray="2 4">
+    <path d="M180 240l140-30M320 210l160 20M480 230l140 20"/>
+    <path d="M180 240l220 80M320 210l80 110M480 230l-80 90M620 250l-220 70"/>
+  </g>
+  
+  <!-- Data flow indicators -->
+  <g fill="#00f5ff" opacity="0.6">
+    <circle cx="250" cy="225" r="1.5">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="220" r="1.5">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="550" cy="240" r="1.5">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Metrics overlay -->
+  <g font-family="JetBrains Mono, monospace" font-size="8" fill="#7a7a88" opacity="0.4">
+    <text x="40" y="40">SIMULATION ACTIVE</text>
+    <text x="40" y="55">AGENTS: 5 | FAILURES: 0</text>
+    <text x="650" y="40">COORDINATION: 94%</text>
+    <text x="650" y="55">LATENCY: 12ms</text>
+  </g>
+</svg>
