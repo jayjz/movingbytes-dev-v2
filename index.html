@@ -43,7 +43,7 @@
     </nav>
 
     <main id="main">
-        <!-- HERO (unchanged from your last version) -->
+        <!-- HERO -->
         <section id="top" class="hero">
             <canvas id="particles" aria-hidden="true"></canvas>
             <div class="hero-bg-layer" aria-hidden="true"></div>
@@ -93,123 +93,66 @@
             </div>
         </section>
 
-        <!-- WORK SECTION - OPTIMIZED -->
-        <!-- WORK SECTION -->
-<section id="work" class="work">
-    <div class="container">
-        <div class="section-intro">
-            <p class="section-intro__eyebrow">SELECTED WORK</p>
-            <h2 class="section-intro__title">Systems that shipped under constraints.</h2>
-            <p class="section-intro__copy">
-                Production multi-agent platforms, simulation environments, and structured tooling where reliability was non-negotiable.
-            </p>
-        </div>
-
-        <div class="work-grid">
-            <!-- Featured -->
-            <article class="work-featured">
-                <div class="work-featured__media" aria-hidden="true">
-                    <img src="images/codeforge-slm.svg" 
-                         alt="CodeForgeSLM multi-agent orchestration visualization" 
-                         loading="lazy">
-                </div>
-                <div class="work-featured__content">
-                    <div class="work-featured__meta">
-                        <span class="work-featured__index">01</span>
-                        <span class="work-featured__category">Production System</span>
-                    </div>
-                    
-                    <h3 class="work-featured__title">CodeForgeSLM</h3>
-                    <p class="work-featured__lede">
-                        Autonomous multi-agent system for large-scale legacy code modernization and technical debt elimination.
+        <!-- WORK SECTION - Optimized Typography -->
+        <section id="work" class="work">
+            <div class="container">
+                <div class="section-intro">
+                    <p class="section-intro__eyebrow">SELECTED WORK</p>
+                    <h2 class="section-intro__title">Systems that shipped under constraints.</h2>
+                    <p class="section-intro__copy">
+                        Production multi-agent platforms, simulation environments, and structured tooling where reliability was non-negotiable.
                     </p>
-
-                    <div class="project-breakdown">
-                        <div class="breakdown-item">
-                            <h4 class="breakdown-label">Problem</h4>
-                            <p>40k+ LOC of brittle, undocumented code was blocking velocity and creating significant security surface area.</p>
-                        </div>
-                        <div class="breakdown-item">
-                            <h4 class="breakdown-label">Approach</h4>
-                            <p>Orchestrated specialist agents for decomposition, transformation, validation, and human-in-the-loop review using LangGraph with strict state management and rollback capabilities.</p>
-                        </div>
-                        <div class="breakdown-item">
-                            <h4 class="breakdown-label">Impact</h4>
-                            <p>60% reduction in technical debt. 95%+ test coverage maintained. Turned LLM experimentation into a repeatable, auditable production workflow.</p>
-                        </div>
-                    </div>
-
-                    <div class="work-featured__tags">
-                        <span>Python</span>
-                        <span>LangGraph</span>
-                        <span>Multi-Agent</span>
-                        <span>40k+ LOC</span>
-                        <span>Security Hardened</span>
-                    </div>
                 </div>
-            </article>
 
-            <!-- Secondary Cards -->
-            <div class="work-secondary">
-                <article class="work-card work-card--secondary">
-                    <div class="work-card__media" aria-hidden="true">
-                        <img src="images/agentville.svg" 
-                             alt="agentville multi-agent simulation environment" 
-                             loading="lazy">
-                    </div>
-                    <div class="work-card__content">
-                        <div class="work-card__header">
-                            <span class="work-card__index">02</span>
-                            <h3 class="work-card__title">agentville</h3>
+                <div class="work-grid">
+                    <!-- Featured -->
+                    <article class="work-featured">
+                        <div class="work-featured__media" aria-hidden="true">
+                            <img src="images/codeforge-slm.svg" 
+                                 alt="CodeForgeSLM — Multi-agent system visualization with interconnected nodes and data flow" 
+                                 loading="lazy">
                         </div>
-                        <p class="work-card__lede">
-                            Local multi-agent simulation environment for testing coordination, failure modes, and emergent behaviors before production deployment.
-                        </p>
-                        <p class="work-card__impact">
-                            <em>Caught 90% of coordination failures pre-staging. Reduced deployment risk and staging costs by ~70%.</em>
-                        </p>
-                        <div class="work-card__tags">
-                            <span>Simulation</span>
-                            <span>Testing</span>
-                            <span>Observability</span>
-                        </div>
-                    </div>
-                </article>
+                        <div class="work-featured__content">
+                            <div class="work-featured__meta">
+                                <span class="work-featured__index">01</span>
+                                <span class="work-featured__category">Production System</span>
+                            </div>
+                            <h3 class="work-featured__title">CodeForgeSLM</h3>
+                            <p class="work-featured__lede">
+                                Autonomous multi-agent system for large-scale legacy code modernization and technical debt elimination.
+                            </p>
 
-                <article class="work-card work-card--secondary">
-                    <div class="work-card__media" aria-hidden="true">
-                        <img src="images/storyteller.svg" 
-                             alt="storyteller structured generation pipeline" 
-                             loading="lazy">
-                    </div>
-                    <div class="work-card__content">
-                        <div class="work-card__header">
-                            <span class="work-card__index">03</span>
-                            <h3 class="work-card__title">storyteller</h3>
+                            <div class="project-breakdown">
+                                <div class="breakdown-item">
+                                    <h4 class="breakdown-label">Problem</h4>
+                                    <p>40k+ LOC of brittle, undocumented code was blocking velocity and creating significant security surface area.</p>
+                                </div>
+                                <div class="breakdown-item">
+                                    <h4 class="breakdown-label">Approach</h4>
+                                    <p>Orchestrated specialist agents for decomposition, transformation, validation, and human-in-the-loop review using LangGraph with strict state management and rollback capabilities.</p>
+                                </div>
+                                <div class="breakdown-item">
+                                    <h4 class="breakdown-label">Impact</h4>
+                                    <p>60% reduction in technical debt. 95%+ test coverage maintained. Turned LLM experimentation into a repeatable, auditable production workflow.</p>
+                                </div>
+                            </div>
+
+                            <div class="work-featured__tags">
+                                <span>Python</span>
+                                <span>LangGraph</span>
+                                <span>Multi-Agent</span>
+                                <span>40k+ LOC</span>
+                                <span>Security Hardened</span>
+                            </div>
                         </div>
-                        <p class="work-card__lede">
-                            Production SLM pipeline with strict schema enforcement and controllable structured generation.
-                        </p>
-                        <p class="work-card__impact">
-                            <em>Achieved 99.5% schema compliance vs ~60% with general models. 10x cost reduction on structured output tasks.</em>
-                        </p>
-                        <div class="work-card__tags">
-                            <span>SLM</span>
-                            <span>Structured Output</span>
-                            <span>Schema Enforcement</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </div>
-</section>
-                    <!-- Secondary Projects -->
+                    </article>
+
+                    <!-- Secondary -->
                     <div class="work-secondary">
                         <article class="work-card work-card--secondary">
                             <div class="work-card__media" aria-hidden="true">
                                 <img src="images/agentville.svg" 
-                                     alt="agentville — Multi-agent simulation environment showing coordination and failure testing" 
+                                     alt="agentville — Multi-agent simulation environment" 
                                      loading="lazy">
                             </div>
                             <div class="work-card__content">
@@ -217,8 +160,10 @@
                                     <span class="work-card__index">02</span>
                                     <h3 class="work-card__title">agentville</h3>
                                 </div>
-                                <p class="work-card__copy">
-                                    Local multi-agent simulation environment for testing coordination, failure modes, and emergent behaviors before production deployment.<br><br>
+                                <p class="work-card__lede">
+                                    Local multi-agent simulation environment for testing coordination, failure modes, and emergent behaviors before production deployment.
+                                </p>
+                                <p class="work-card__impact">
                                     <em>Caught 90% of coordination failures pre-staging. Reduced deployment risk and staging costs by ~70%.</em>
                                 </p>
                                 <div class="work-card__tags">
@@ -232,7 +177,7 @@
                         <article class="work-card work-card--secondary">
                             <div class="work-card__media" aria-hidden="true">
                                 <img src="images/storyteller.svg" 
-                                     alt="storyteller — Structured generation pipeline with strict schema enforcement" 
+                                     alt="storyteller — Structured generation pipeline with schema enforcement" 
                                      loading="lazy">
                             </div>
                             <div class="work-card__content">
@@ -240,8 +185,10 @@
                                     <span class="work-card__index">03</span>
                                     <h3 class="work-card__title">storyteller</h3>
                                 </div>
-                                <p class="work-card__copy">
-                                    Production SLM pipeline with strict schema enforcement and controllable structured generation.<br><br>
+                                <p class="work-card__lede">
+                                    Production SLM pipeline with strict schema enforcement and controllable structured generation.
+                                </p>
+                                <p class="work-card__impact">
                                     <em>Achieved 99.5% schema compliance vs ~60% with general models. 10x cost reduction on structured output tasks.</em>
                                 </p>
                                 <div class="work-card__tags">
@@ -256,10 +203,103 @@
             </div>
         </section>
 
-        <!-- Rest of the site remains unchanged -->
-        <section id="capabilities" class="capabilities"> ... </section>
-        <section id="principles" class="principles"> ... </section>
-        <section id="contact" class="contact"> ... </section>
+        <!-- CAPABILITIES -->
+        <section id="capabilities" class="capabilities">
+            <div class="container">
+                <div class="section-intro">
+                    <p class="section-intro__eyebrow">CAPABILITIES</p>
+                    <h2 class="section-intro__title">What I design and ship.</h2>
+                </div>
+                <div class="capabilities-list">
+                    <article class="capability">
+                        <div class="capability__marker" aria-hidden="true"></div>
+                        <div class="capability__content">
+                            <h3>Agent Architecture &amp; Orchestration</h3>
+                            <p>Multi-agent systems with robust task decomposition, state recovery, human oversight loops, and defense against prompt injection and coordination collapse.</p>
+                        </div>
+                    </article>
+                    <article class="capability">
+                        <div class="capability__marker" aria-hidden="true"></div>
+                        <div class="capability__content">
+                            <h3>Internal Platforms &amp; Tooling</h3>
+                            <p>Operator interfaces and control planes that prioritize observability, low cognitive load, and performance under load.</p>
+                        </div>
+                    </article>
+                    <article class="capability">
+                        <div class="capability__marker" aria-hidden="true"></div>
+                        <div class="capability__content">
+                            <h3>Simulation &amp; Validation Environments</h3>
+                            <p>High-fidelity local testing for emergent behaviors, edge cases, and system resilience before any production exposure.</p>
+                        </div>
+                    </article>
+                    <article class="capability">
+                        <div class="capability__marker" aria-hidden="true"></div>
+                        <div class="capability__content">
+                            <h3>Cinematic High-Performance Interfaces</h3>
+                            <p>Zero-bloat frontends with disciplined motion, efficient rendering, and 60fps targets. Built vanilla, obsessed with details.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRINCIPLES -->
+        <section id="principles" class="principles">
+            <div class="container">
+                <div class="principles__header">
+                    <p class="section-intro__eyebrow">PRINCIPLES</p>
+                    <h2 class="section-intro__title">How I build systems that survive reality.</h2>
+                </div>
+                <div class="principles__list">
+                    <article class="principle">
+                        <div class="principle__number">01</div>
+                        <div class="principle__content">
+                            <h3>Clarity over Cleverness</h3>
+                            <p>If the data flow isn't traceable under pressure, the architecture has already failed. No sacred abstractions.</p>
+                        </div>
+                    </article>
+                    <article class="principle">
+                        <div class="principle__number">02</div>
+                        <div class="principle__content">
+                            <h3>Performance is Security</h3>
+                            <p>Slow systems breed workarounds. Fast, responsive systems build trust and reduce attack surface from human error.</p>
+                        </div>
+                    </article>
+                    <article class="principle">
+                        <div class="principle__number">03</div>
+                        <div class="principle__content">
+                            <h3>Production Constraints First</h3>
+                            <p>Design for observability, rollback, and recovery. Demos are cheap. Shipable, auditable systems are rare.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact__inner">
+                    <div class="contact__header">
+                        <p class="section-intro__eyebrow">GET IN TOUCH</p>
+                        <h2 class="contact__title">Available for select, high-impact work.</h2>
+                        <p class="contact__lede">
+                            Multi-agent platforms, hardened orchestration, simulation infrastructure, or performance-critical interfaces where failure is not an option.
+                        </p>
+                    </div>
+                    <div class="contact__actions">
+                        <a href="mailto:jay@movingbytes.dev" class="contact-action">
+                            <span class="contact-action__label">Email</span>
+                            <span class="contact-action__value">jay@movingbytes.dev</span>
+                        </a>
+                        <a href="https://github.com/jayjz" target="_blank" rel="noopener noreferrer" class="contact-action">
+                            <span class="contact-action__label">GitHub</span>
+                            <span class="contact-action__value">@jayjz</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
