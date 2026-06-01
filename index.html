@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jay | Agent Systems Architect</title>
-    <meta name="description" content="Jay builds production-grade agent systems, orchestration tooling, and high-performance interfaces.">
+    <meta name="description" content="Production-grade autonomous systems with cinematic, zero-bloat interfaces. Multi-agent orchestration, simulation, and high-performance tooling.">
     <meta name="theme-color" content="#050505">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
-
+    
+    <!-- Atmospheric layers -->
     <div class="grain" aria-hidden="true"></div>
     <div class="vignette" aria-hidden="true"></div>
-
+    
+    <!-- Custom cursor -->
     <div class="cursor" aria-hidden="true">
         <div class="cursor-dot"></div>
         <div class="cursor-ring"></div>
     </div>
     <div class="cursor-trail" aria-hidden="true"></div>
 
-    <nav class="site-nav" aria-label="Primary">
+    <nav class="site-nav" aria-label="Primary navigation">
         <div class="site-nav__inner">
             <a href="#top" class="site-nav__brand" aria-label="movingbytes.dev home">
                 <span class="brand-lockup">
@@ -33,7 +33,6 @@
                 </span>
                 <span class="brand-role">Agent Systems Architect</span>
             </a>
-
             <div class="site-nav__links">
                 <a href="#work">Work</a>
                 <a href="#capabilities">Capabilities</a>
@@ -44,9 +43,9 @@
     </nav>
 
     <main id="main">
+        <!-- HERO -->
         <section id="top" class="hero">
             <canvas id="particles" aria-hidden="true"></canvas>
-
             <div class="container hero__grid">
                 <div class="hero__main">
                     <div class="hero__intro">
@@ -56,56 +55,52 @@
                             <span>Agent Systems Architect</span>
                         </p>
                         <h1 class="hero__title">
-                            Production-grade
-                            autonomous systems
-                            with editorial restraint.
+                            Production-grade<br>autonomous systems<br>with cinematic restraint.
                         </h1>
                     </div>
-                    
+                   
                     <div class="hero__body">
                         <p class="hero__copy">
-                            I design and build agent workflows, orchestration platforms, and high-performance 
-                            interfaces for teams shipping real systems. Focus on clarity, observability, 
-                            and constraints over novelty.
+                            I design and ship hardened multi-agent systems, orchestration platforms, and high-performance interfaces for teams that cannot afford slop or downtime. 
+                            Observability-first. Zero-bloat frontends. Built like critical infrastructure.
                         </p>
-
                         <div class="hero__actions">
-                            <a href="#work" class="button button--primary">
-                                <span>View selected work</span>
-                            </a>
+                            <a href="#work" class="button button--primary">View selected work</a>
                             <a href="#contact" class="button button--ghost">Start a conversation</a>
                         </div>
                     </div>
                 </div>
-
-                <aside class="hero__rail" aria-label="At a glance">
+                
+                <aside class="hero__rail" aria-label="Core operating principles">
                     <div class="hero__rail-item">
-                        <dt>Practice</dt>
-                        <dd>Multi-agent systems, orchestration, simulation environments, and performance-critical interfaces.</dd>
+                        <dt>Threat Model</dt>
+                        <dd>Systems designed against real failure modes — coordination collapse, prompt injection, state drift, and production load.</dd>
                     </div>
                     <div class="hero__rail-item">
-                        <dt>Approach</dt>
-                        <dd>Production-first. Minimal dependencies. Systems that remain legible under load.</dd>
+                        <dt>Philosophy</dt>
+                        <dd>Minimal dependencies. Maximum legibility. Performance as a security property.</dd>
                     </div>
                     <div class="hero__rail-item">
                         <dt>Availability</dt>
-                        <dd>Select engagements. Remote-first. Async-friendly collaboration.</dd>
+                        <dd>Select engagements only. Remote-first. Deep collaboration with security &amp; engineering teams.</dd>
                     </div>
                 </aside>
             </div>
         </section>
 
+        <!-- WORK -->
         <section id="work" class="work">
             <div class="container">
                 <div class="section-intro">
                     <p class="section-intro__eyebrow">SELECTED WORK</p>
-                    <h2 class="section-intro__title">A small portfolio of systems work.</h2>
+                    <h2 class="section-intro__title">Systems that shipped under constraints.</h2>
                     <p class="section-intro__copy">
-                        Focused projects across code transformation, agent simulation, and structured generation.
+                        Production multi-agent platforms, simulation environments, and structured tooling where reliability was non-negotiable.
                     </p>
                 </div>
 
                 <div class="work-grid">
+                    <!-- Featured -->
                     <article class="work-featured">
                         <div class="work-featured__media" aria-hidden="true">
                             <div class="work-featured__media-inner"></div>
@@ -117,24 +112,24 @@
                             </div>
                             <h3 class="work-featured__title">CodeForgeSLM</h3>
                             <p class="work-featured__lede">
-                                Autonomous multi-agent system for legacy code modernization. Refactored 40k+ LOC across production codebases.
+                                Autonomous multi-agent system for large-scale legacy code modernization and technical debt elimination.
                             </p>
                             <p class="work-featured__copy">
-                                <strong>Problem:</strong> Technical debt costs teams 30-40% velocity. Manual refactoring doesn't scale.
-                                <br><br>
-                                <strong>System:</strong> Coordinates specialized agents for task decomposition, code transformation, and validation with human-level precision.
-                                <br><br>
-                                <strong>Impact:</strong> 60% debt reduction while maintaining 95%+ test coverage. Turns LLM-assisted refactoring into production workflow, not demo.
+                                <strong>Problem:</strong> 40k+ LOC of brittle, undocumented code was blocking velocity and creating security surface area.<br><br>
+                                <strong>Approach:</strong> Orchestrated specialist agents for decomposition, transformation, validation, and human-in-the-loop review using LangGraph with strict state management and rollback capabilities.<br><br>
+                                <strong>Impact:</strong> 60% reduction in technical debt. 95%+ test coverage maintained. Turned LLM experimentation into a repeatable, auditable production workflow.
                             </p>
                             <div class="work-featured__tags">
                                 <span>Python</span>
-                                <span>Multi-Agent</span>
                                 <span>LangGraph</span>
+                                <span>Multi-Agent</span>
                                 <span>40k+ LOC</span>
+                                <span>Security Hardened</span>
                             </div>
                         </div>
                     </article>
 
+                    <!-- Secondary -->
                     <div class="work-secondary">
                         <article class="work-card work-card--secondary">
                             <div class="work-card__media" aria-hidden="true"></div>
@@ -144,14 +139,13 @@
                                     <h3 class="work-card__title">agentville</h3>
                                 </div>
                                 <p class="work-card__copy">
-                                    <strong>Local simulation for multi-agent coordination.</strong> Validates emergent behaviors and catches coordination failures before production deployment.
-                                    <br><br>
-                                    <em>90% of failures caught pre-deployment. 70% reduction in staging costs.</em>
+                                    Local multi-agent simulation environment for testing coordination, failure modes, and emergent behaviors before production deployment.<br><br>
+                                    <em>Caught 90% of coordination failures pre-staging. Reduced deployment risk and staging costs by ~70%.</em>
                                 </p>
                                 <div class="work-card__tags">
                                     <span>Simulation</span>
                                     <span>Testing</span>
-                                    <span>Infrastructure</span>
+                                    <span>Observability</span>
                                 </div>
                             </div>
                         </article>
@@ -164,14 +158,13 @@
                                     <h3 class="work-card__title">storyteller</h3>
                                 </div>
                                 <p class="work-card__copy">
-                                    <strong>SLM pipeline with strict schema enforcement.</strong> Production-grade structured generation with controllable outputs.
-                                    <br><br>
-                                    <em>99.5% schema compliance (vs 60% with general LLMs). 10x cost reduction.</em>
+                                    Production SLM pipeline with strict schema enforcement and controllable structured generation.<br><br>
+                                    <em>Achieved 99.5% schema compliance vs ~60% with general models. 10x cost reduction on structured output tasks.</em>
                                 </p>
                                 <div class="work-card__tags">
                                     <span>SLM</span>
                                     <span>Structured Output</span>
-                                    <span>Production</span>
+                                    <span>Schema Enforcement</span>
                                 </div>
                             </div>
                         </article>
@@ -180,98 +173,99 @@
             </div>
         </section>
 
+        <!-- CAPABILITIES -->
         <section id="capabilities" class="capabilities">
             <div class="container">
                 <div class="section-intro">
                     <p class="section-intro__eyebrow">CAPABILITIES</p>
-                    <h2 class="section-intro__title">Systems I design and ship.</h2>
+                    <h2 class="section-intro__title">What I design and ship.</h2>
                 </div>
-
                 <div class="capabilities-list">
                     <article class="capability">
                         <div class="capability__marker" aria-hidden="true"></div>
                         <div class="capability__content">
-                            <h3>Agent architecture</h3>
-                            <p>Multi-agent systems for task decomposition, execution orchestration, state management, and recovery. Built for real constraints and production failure modes.</p>
+                            <h3>Agent Architecture &amp; Orchestration</h3>
+                            <p>Multi-agent systems with robust task decomposition, state recovery, human oversight loops, and defense against prompt injection and coordination collapse.</p>
                         </div>
                     </article>
                     <article class="capability">
                         <div class="capability__marker" aria-hidden="true"></div>
                         <div class="capability__content">
-                            <h3>Internal tooling & platforms</h3>
-                            <p>Operator-facing interfaces, workflow systems, and control planes that prioritize visibility, throughput, and minimal cognitive load.</p>
+                            <h3>Internal Platforms &amp; Tooling</h3>
+                            <p>Operator interfaces and control planes that prioritize observability, low cognitive load, and performance under load.</p>
                         </div>
                     </article>
                     <article class="capability">
                         <div class="capability__marker" aria-hidden="true"></div>
                         <div class="capability__content">
-                            <h3>Simulation & testing infrastructure</h3>
-                            <p>Environments for modeling coordination, state transitions, and edge cases before deployment. Fast feedback loops for complex systems.</p>
+                            <h3>Simulation &amp; Validation Environments</h3>
+                            <p>High-fidelity local testing for emergent behaviors, edge cases, and system resilience before any production exposure.</p>
                         </div>
                     </article>
                     <article class="capability">
                         <div class="capability__marker" aria-hidden="true"></div>
                         <div class="capability__content">
-                            <h3>Performance-critical interfaces</h3>
-                            <p>Low-bloat frontends with disciplined motion, efficient rendering, and minimal framework overhead. Built for 60fps and instant feedback.</p>
+                            <h3>Cinematic High-Performance Interfaces</h3>
+                            <p>Zero-bloat frontends with disciplined motion, efficient rendering, and 60fps targets. Built vanilla, obsessed with details.</p>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
+        <!-- PRINCIPLES -->
         <section id="principles" class="principles">
             <div class="container">
                 <div class="principles__header">
                     <p class="section-intro__eyebrow">PRINCIPLES</p>
-                    <h2 class="section-intro__title">How I build systems that last.</h2>
+                    <h2 class="section-intro__title">How I build systems that survive reality.</h2>
                 </div>
-                
+               
                 <div class="principles__list">
                     <article class="principle">
                         <div class="principle__number">01</div>
                         <div class="principle__content">
-                            <h3>Clarity over abstraction</h3>
-                            <p>Systems should be traceable and debuggable without ceremony. If you can't follow the data flow in your head, the architecture has failed.</p>
+                            <h3>Clarity over Cleverness</h3>
+                            <p>If the data flow isn't traceable under pressure, the architecture has already failed. No sacred abstractions.</p>
                         </div>
                     </article>
                     <article class="principle">
                         <div class="principle__number">02</div>
                         <div class="principle__content">
-                            <h3>Performance is a feature</h3>
-                            <p>Responsiveness shapes trust. A system that feels fast feels more truthful. Optimize the critical path, measure everything.</p>
+                            <h3>Performance is Security</h3>
+                            <p>Slow systems breed workarounds. Fast, responsive systems build trust and reduce attack surface from human error.</p>
                         </div>
                     </article>
                     <article class="principle">
                         <div class="principle__number">03</div>
                         <div class="principle__content">
-                            <h3>Production constraints shape design</h3>
-                            <p>Build for the system that ships, not the demo. Reliability, observability, and recovery matter more than novelty.</p>
+                            <h3>Production Constraints First</h3>
+                            <p>Design for observability, rollback, and recovery. Demos are cheap. Shipable, auditable systems are rare.</p>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
+        <!-- CONTACT -->
         <section id="contact" class="contact">
             <div class="container">
                 <div class="contact__inner">
                     <div class="contact__header">
-                        <p class="section-intro__eyebrow">CONTACT</p>
-                        <h2 class="contact__title">Available for select systems work.</h2>
+                        <p class="section-intro__eyebrow">GET IN TOUCH</p>
+                        <h2 class="contact__title">Available for select, high-impact work.</h2>
                         <p class="contact__lede">
-                            Agent systems, orchestration tooling, internal platforms, and interfaces where performance actually matters.
+                            Multi-agent platforms, hardened orchestration, simulation infrastructure, or performance-critical interfaces where failure is not an option.
                         </p>
                     </div>
-
                     <div class="contact__actions">
                         <a href="mailto:jay@movingbytes.dev" class="contact-action">
                             <span class="contact-action__label">Email</span>
                             <span class="contact-action__value">jay@movingbytes.dev</span>
                         </a>
-                        <a href="https://github.com/jayjz" target="_blank" rel="noopener" class="contact-action">
+                        <a href="https://github.com/jayjz" target="_blank" rel="noopener noreferrer" class="contact-action">
                             <span class="contact-action__label">GitHub</span>
-                            <span class="contact-action__value">jayjz</span>
+                            <span class="contact-action__value">@jayjz</span>
                         </a>
                     </div>
                 </div>
@@ -281,8 +275,8 @@
 
     <footer class="site-footer">
         <div class="container site-footer__inner">
-            <p>© 2026 Jay / movingbytes.dev</p>
-            <p>Vanilla frontend. No framework overhead.</p>
+            <p>© 2026 Jay • movingbytes.dev</p>
+            <p>Vanilla. No frameworks. Built like critical systems.</p>
         </div>
     </footer>
 
