@@ -3,19 +3,20 @@
  */
 
 :root {
-    --bg: #050507;
-    --bg-elev: #0a0a0f;
-    --surface: #111118;
-    --surface-elev: #1a1a22;
-    --text: #f0f0f5;
-    --text-muted: #b0b0bd;
-    --text-faint: #7a7a88;
-    --accent: #00f5ff;           /* Brighter cyan - more vibrant */
-    --accent-glow: rgba(0, 245, 255, 0.22);
-    --accent-secondary: #ff2e9a; /* Magenta/pink pop for highlights */
-    --border: rgba(255,255,255,0.09);
-    --border-strong: rgba(0, 245, 255, 0.25);
-    --grain-opacity: 0.055;
+    --bg: #0a050f;
+    --bg-elev: #120b1a;
+    --surface: #140d1f;
+    --surface-elev: #1f162b;
+    --text: #f5f0ff;
+    --text-muted: #c8b8e0;
+    --text-faint: #8a7a9e;
+    --accent: #00f5d4;
+    --accent-secondary: #ff1e9f;
+    --accent-tertiary: #c39fff;
+    --accent-glow: rgba(0, 245, 212, 0.25);
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(0, 245, 212, 0.3);
+    --grain-opacity: 0.085;
     --max-width: 1320px;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
