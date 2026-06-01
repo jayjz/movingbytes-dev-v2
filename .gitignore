@@ -1,0 +1,64 @@
+# Dependencies / Build
+node_modules/
+dist/
+build/
+*.min.js
+*.bundle.js
+
+# Environment / Secrets (critical for cybersec focus)
+.env
+.env.local
+.env.production
+*.key
+*.pem
+*.crt
+secrets/
+credentials/
+config/secrets/
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+*.log
+
+# Performance & Temp files
+*.cache
+*.tmp
+temp/
+cache/
+
+# Sensitive data that might appear in agent/cyber projects
+*.db
+*.sqlite
+*.bak
+dumps/
+backups/
+*.pcap
+*.pcapng
+*.har
+screenshots/  # unless intentionally for portfolio
+
+# Vercel / Deployment
+.vercel/
+.next/        # in case you ever add Next
+*.vercel
+
+# AI / LLM artifacts
+*.prompt
+*.context
+llm_cache/
+
+# Large media (optimize these manually)
+*.mp4
+*.mov
+assets/raw/
+assets/unoptimized/
+
+# Notes & personal
+TODO.md
+notes/
+personal/
