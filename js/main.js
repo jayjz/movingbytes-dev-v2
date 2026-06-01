@@ -189,7 +189,7 @@
 
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 217, 255, ${p.a})`;
+                ctx.fillStyle = `rgba(0, 245, 255, ${p.a})`;
                 ctx.fill();
             }
 
