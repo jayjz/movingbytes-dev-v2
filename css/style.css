@@ -1,5 +1,6 @@
-/* movingbytes.dev — Agent Systems Architect
+/* jaysystems.dev — Agent Systems Architect
  * Premium cinematic flagship portfolio
+ * Content accuracy prioritized over visual reinvention
  */
 :root {
     --bg: #0c080f;           /* Deep, rich cinematic black with subtle warmth */
@@ -708,10 +709,10 @@ body:hover .cursor { opacity: 1; }
 .principles__list,
 .contact__inner,
 .site-footer {
-    /* Your existing styles for these sections can stay as-is or be lightly adjusted later */
+    /* Existing styles for these sections remain intact */
 }
 
-/* Responsive & Reduced Motion (kept from previous) */
+/* Responsive & Reduced Motion */
 @media (max-width: 1024px) {
     .hero__grid { grid-template-columns: 1fr; }
     .work-featured { grid-template-columns: 1fr; }
