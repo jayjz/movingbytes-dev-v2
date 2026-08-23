@@ -53,17 +53,20 @@
                 : 'opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1)';
         });
 
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                obs.unobserve(entry.target);
-            });
-        }, {
-            threshold: 0.12,
-            rootMargin: '0px 0px -8% 0px'
-        });
+        const observer = new IntersectionObserver(
+            (entries, obs) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    obs.unobserve(entry.target);
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: '0px 0px -8% 0px'
+            }
+        );
 
         cards.forEach(card => observer.observe(card));
     }
@@ -100,7 +103,7 @@
         }
 
         document.addEventListener('mousemove', onMove, { passive: true });
-        
+
         $$('a, button, .work-card, .contact-link').forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
@@ -221,10 +224,14 @@
             rafId = requestAnimationFrame(draw);
         }
 
-        window.addEventListener('mousemove', e => {
-            pointerX = e.clientX;
-            pointerY = e.clientY;
-        }, { passive: true });
+        window.addEventListener(
+            'mousemove',
+            e => {
+                pointerX = e.clientX;
+                pointerY = e.clientY;
+            },
+            { passive: true }
+        );
 
         window.addEventListener('mouseleave', () => {
             pointerX = -9999;
@@ -265,8 +272,8 @@
      * Systems / Second Brain panel
      */
     function initSystemsPanel() {
-        const panel = $('#systems-panel');
-        const trigger = $('#systems-trigger');
+        const panel = document.getElementById('systems-panel');
+        const trigger = document.getElementById('systems-trigger');
         if (!panel || !trigger) return;
 
         let lastFocus = null;
@@ -275,7 +282,9 @@
         const focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
         function getFocusable() {
-            return $$(focusableSelector, panel).filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+            return Array.from(panel.querySelectorAll(focusableSelector)).filter(
+                el => !el.hasAttribute('disabled') && el.getClientRects().length > 0
+            );
         }
 
         function openPanel() {
@@ -302,7 +311,10 @@
             panel.classList.remove('is-open');
             document.documentElement.style.overflow = '';
 
-            const onTransitionEnd = () => {
+            const onTransitionEnd = event => {
+                if (event.target !== panel && event.target !== panel.querySelector('.systems-panel__content')) {
+                    return;
+                }
                 panel.setAttribute('hidden', '');
                 panel.removeEventListener('transitionend', onTransitionEnd);
             };
@@ -312,6 +324,7 @@
             setTimeout(() => {
                 if (!isOpen) {
                     panel.setAttribute('hidden', '');
+                    panel.removeEventListener('transitionend', onTransitionEnd);
                 }
             }, 500);
 
@@ -322,13 +335,11 @@
             }
         }
 
-        // Open triggers
         trigger.addEventListener('click', e => {
             e.preventDefault();
             openPanel();
         });
 
-        // Global Cmd/Ctrl+K
         document.addEventListener('keydown', e => {
             const isMod = e.metaKey || e.ctrlKey;
             if (isMod && (e.key === 'k' || e.key === 'K')) {
@@ -350,7 +361,6 @@
             }
         });
 
-        // Close triggers
         panel.addEventListener('click', e => {
             if (e.target.closest('[data-systems-close]')) {
                 e.preventDefault();
@@ -358,7 +368,6 @@
             }
         });
 
-        // Focus trap
         panel.addEventListener('keydown', e => {
             if (!isOpen || e.key !== 'Tab') return;
 
@@ -373,11 +382,9 @@
                     e.preventDefault();
                     last.focus();
                 }
-            } else {
-                if (document.activeElement === last) {
-                    e.preventDefault();
-                    first.focus();
-                }
+            } else if (document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
             }
         });
     }
