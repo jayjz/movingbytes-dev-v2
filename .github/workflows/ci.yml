@@ -1,0 +1,29 @@
+name: Frontend CI
+
+on:
+  push:
+    branches: [main, feat/second-brain-systems-nav]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install validators
+        run: |
+          npm install -g prettier html-validate
+
+      - name: Prettier check
+        run: prettier --check "index.html" "css/**/*.css" "js/**/*.js"
+
+      - name: HTML Validate
+        run: html-validate index.html
