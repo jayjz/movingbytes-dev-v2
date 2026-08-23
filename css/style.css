@@ -21,6 +21,26 @@
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-cinematic: cubic-bezier(0.23, 1, 0.32, 1);
     --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+    /* Extended Surface System for Second Brain Panel */
+    --panel-bg: #0f0a14;
+    --panel-surface: #181220;
+    --panel-surface-elev: #201829;
+    --panel-border: rgba(255, 255, 255, 0.06);
+    --panel-border-active: rgba(0, 230, 200, 0.35);
+
+    /* Refined Accent System for Documentation Hierarchy */
+    --accent-docs: #00d4b8;
+    --accent-status: #00e6c8;
+    --accent-link: #4dd0e1;
+    --accent-warning: #ffb74d;
+    --accent-success: #66bb6a;
+
+    /* Typography & Focus System */
+    --text-panel: #f0e6ff;
+    --text-panel-muted: #c9b8e0;
+    --focus-ring: rgba(0, 230, 200, 0.4);
+    --focus-ring-strong: rgba(0, 230, 200, 0.6);
 }
 
 * { 
@@ -725,4 +745,235 @@ body:hover .cursor { opacity: 1; }
     }
     .cursor, .cursor-trail, #particles { display: none !important; }
     body { cursor: auto !important; }
+}
+
+/* ====================== SYSTEMS / SECOND BRAIN PANEL ====================== */
+.systems-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.systems-panel.is-open {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.systems-panel__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 8, 15, 0.75);
+    backdrop-filter: blur(12px) saturate(1.2);
+    -webkit-backdrop-filter: blur(12px) saturate(1.2);
+    opacity: 0;
+    transition: opacity 0.4s var(--ease-cinematic);
+    z-index: 4999;
+}
+
+.systems-panel.is-open .systems-panel__backdrop {
+    opacity: 1;
+}
+
+.systems-panel__content {
+    position: relative;
+    z-index: 5000;
+    width: min(600px, 45vw);
+    height: 100%;
+    background: var(--panel-bg);
+    border-left: 1px solid var(--panel-border);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.45s var(--ease-cinematic), opacity 0.35s var(--ease-cinematic);
+    overflow: hidden;
+}
+
+.systems-panel.is-open .systems-panel__content {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.systems-panel__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--panel-border);
+    background: var(--panel-surface);
+    flex-shrink: 0;
+}
+
+.systems-panel__title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-panel);
+    margin: 0;
+}
+
+.systems-panel__close {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    color: var(--text-panel-muted);
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.systems-panel__close:hover,
+.systems-panel__close:focus-visible {
+    border-color: var(--panel-border-active);
+    color: var(--accent-status);
+    background: rgba(0, 230, 200, 0.06);
+}
+
+.systems-panel__close:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+.systems-panel__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--panel-border) transparent;
+}
+
+.systems-entry {
+    background: var(--panel-surface);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.systems-entry__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--panel-border);
+    background: var(--panel-surface-elev);
+}
+
+.systems-entry__index {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--text-panel-muted);
+}
+
+.systems-entry__name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-panel);
+    letter-spacing: -0.01em;
+}
+
+.systems-entry__status {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    background: rgba(0, 230, 200, 0.1);
+    border: 1px solid rgba(0, 230, 200, 0.25);
+    color: var(--accent-status);
+}
+
+.systems-entry__sections {
+    display: grid;
+    gap: 0;
+}
+
+.systems-section {
+    padding: 1.15rem 1.25rem;
+    border-bottom: 1px solid var(--panel-border);
+}
+
+.systems-section:last-child {
+    border-bottom: none;
+}
+
+.systems-section__label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-docs);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.systems-section__body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-panel-muted);
+    margin: 0;
+}
+
+/* Mobile: full-viewport bottom sheet */
+@media (max-width: 767px) {
+    .systems-panel {
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .systems-panel__content {
+        width: 100%;
+        height: min(92vh, 100%);
+        max-height: 92vh;
+        border-left: none;
+        border-top: 1px solid var(--panel-border);
+        border-radius: 16px 16px 0 0;
+        transform: translateY(100%);
+    }
+
+    .systems-panel.is-open .systems-panel__content {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Reduced motion: instant open/close */
+@media (prefers-reduced-motion: reduce) {
+    .systems-panel__backdrop,
+    .systems-panel__content {
+        transition: none !important;
+    }
+
+    .systems-panel.is-open .systems-panel__content {
+        transform: none;
+        opacity: 1;
+    }
+
+    .systems-panel:not(.is-open) .systems-panel__content {
+        transform: none;
+        opacity: 0;
+    }
+}
+
+/* Focus styles for panel interactive elements */
+.systems-panel a:focus-visible,
+.systems-panel button:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
 }

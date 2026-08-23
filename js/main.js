@@ -16,6 +16,11 @@
                 const href = link.getAttribute('href');
                 if (!href || href === '#') return;
 
+                // Systems link opens panel instead of scrolling
+                if (link.hasAttribute('data-systems-open') || href === '#systems') {
+                    return;
+                }
+
                 const target = $(href);
                 if (!target) return;
 
@@ -256,9 +261,131 @@
         });
     }
 
+    /*
+     * Systems / Second Brain panel
+     */
+    function initSystemsPanel() {
+        const panel = $('#systems-panel');
+        const trigger = $('#systems-trigger');
+        if (!panel || !trigger) return;
+
+        let lastFocus = null;
+        let isOpen = false;
+
+        const focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+        function getFocusable() {
+            return $$(focusableSelector, panel).filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+        }
+
+        function openPanel() {
+            if (isOpen) return;
+            isOpen = true;
+            lastFocus = document.activeElement;
+
+            panel.removeAttribute('hidden');
+            document.documentElement.style.overflow = 'hidden';
+
+            requestAnimationFrame(() => {
+                panel.classList.add('is-open');
+                const focusables = getFocusable();
+                if (focusables.length) {
+                    focusables[0].focus();
+                }
+            });
+        }
+
+        function closePanel() {
+            if (!isOpen) return;
+            isOpen = false;
+
+            panel.classList.remove('is-open');
+            document.documentElement.style.overflow = '';
+
+            const onTransitionEnd = () => {
+                panel.setAttribute('hidden', '');
+                panel.removeEventListener('transitionend', onTransitionEnd);
+            };
+            panel.addEventListener('transitionend', onTransitionEnd);
+
+            // Fallback if no transition (reduced motion)
+            setTimeout(() => {
+                if (!isOpen) {
+                    panel.setAttribute('hidden', '');
+                }
+            }, 500);
+
+            if (lastFocus && typeof lastFocus.focus === 'function') {
+                lastFocus.focus();
+            } else {
+                trigger.focus();
+            }
+        }
+
+        // Open triggers
+        trigger.addEventListener('click', e => {
+            e.preventDefault();
+            openPanel();
+        });
+
+        // Global Cmd/Ctrl+K
+        document.addEventListener('keydown', e => {
+            const isMod = e.metaKey || e.ctrlKey;
+            if (isMod && (e.key === 'k' || e.key === 'K')) {
+                const tag = (e.target && e.target.tagName) || '';
+                if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) {
+                    return;
+                }
+                e.preventDefault();
+                if (isOpen) {
+                    closePanel();
+                } else {
+                    openPanel();
+                }
+            }
+
+            if (e.key === 'Escape' && isOpen) {
+                e.preventDefault();
+                closePanel();
+            }
+        });
+
+        // Close triggers
+        panel.addEventListener('click', e => {
+            if (e.target.closest('[data-systems-close]')) {
+                e.preventDefault();
+                closePanel();
+            }
+        });
+
+        // Focus trap
+        panel.addEventListener('keydown', e => {
+            if (!isOpen || e.key !== 'Tab') return;
+
+            const focusables = getFocusable();
+            if (!focusables.length) return;
+
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+
+            if (e.shiftKey) {
+                if (document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else {
+                if (document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        });
+    }
+
     initSmoothScroll();
     initReveal();
     initCursor();
     initParticles();
     initInputMode();
+    initSystemsPanel();
 })();

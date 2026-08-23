@@ -36,11 +36,50 @@
             <div class="site-nav__links">
                 <a href="#work">Work</a>
                 <a href="#capabilities">Capabilities</a>
+                <a href="#systems" id="systems-trigger" data-systems-open>Systems</a>
                 <a href="#principles">Principles</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
+
+    <!-- Systems / Second Brain Panel -->
+    <div id="systems-panel" class="systems-panel" role="dialog" aria-modal="true" aria-labelledby="systems-panel-title" hidden>
+        <div class="systems-panel__backdrop" data-systems-close></div>
+        <div class="systems-panel__content" role="document">
+            <header class="systems-panel__header">
+                <h2 id="systems-panel-title" class="systems-panel__title">Systems · Second Brain</h2>
+                <button type="button" class="systems-panel__close" data-systems-close aria-label="Close systems panel">×</button>
+            </header>
+            <div class="systems-panel__body">
+                <article class="systems-entry">
+                    <div class="systems-entry__meta">
+                        <span class="systems-entry__index">01</span>
+                        <span class="systems-entry__name">AetherForge</span>
+                        <span class="systems-entry__status">Wedge A (Mock-verified)</span>
+                    </div>
+                    <div class="systems-entry__sections">
+                        <div class="systems-section">
+                            <h3 class="systems-section__label">Problem</h3>
+                            <p class="systems-section__body">Local agents on 8–16 GB cards fail predictably: runaway generation, context blow-ups, thermal stress, and strategy thrash that OOM the only GPU available.</p>
+                        </div>
+                        <div class="systems-section">
+                            <h3 class="systems-section__label">Constraints</h3>
+                            <p class="systems-section__body">8 GB VRAM budgets, thermal limits, offline field use, and irreversible actions that require human sign-off.</p>
+                        </div>
+                        <div class="systems-section">
+                            <h3 class="systems-section__label">Architecture Decisions</h3>
+                            <p class="systems-section__body">FastAPI control plane with Economic Gatekeeper, thermal/VRAM circuit breakers (503), context ceilings (413), tool discovery, and durable audit logs. Agents negotiate strategy; the plane can refuse unsafe work.</p>
+                        </div>
+                        <div class="systems-section">
+                            <h3 class="systems-section__label">Current Verified State</h3>
+                            <p class="systems-section__body">Wedge A verified under Mock engine (CI + no-GPU path). Real Fast-Swap / KV survival on 8 GB remains gated research (Wedge B). No production claim for unproven swap behavior.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
 
     <main id="main">
         <!-- HERO -->
