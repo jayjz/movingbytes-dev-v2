@@ -59,7 +59,7 @@
 
                 <div class="glossary-grid" id="glossary-list">
                     <!-- Pattern 1: The Economic Gatekeeper -->
-                    <article class="glossary-item" data-tags="control-plane risk-management strategy">
+                    <article class="glossary-item" id="term-economic-gatekeeper" data-tags="control-plane risk-management strategy">
                         <header class="glossary-item__header">
                             <h3 class="glossary-item__term">The Economic Gatekeeper</h3>
                             <span class="glossary-item__category">Control Plane</span>
@@ -78,7 +78,7 @@
                     </article>
 
                     <!-- Pattern 2: VRAM Circuit Breaker -->
-                    <article class="glossary-item" data-tags="hardware safety resource-limits">
+                    <article class="glossary-item" id="term-vram-breaker" data-tags="hardware safety resource-limits">
                         <header class="glossary-item__header">
                             <h3 class="glossary-item__term">VRAM Circuit Breaker</h3>
                             <span class="glossary-item__category">Resource Guardrail</span>
@@ -97,7 +97,7 @@
                     </article>
 
                     <!-- Pattern 3: Barge-in FSM -->
-                    <article class="glossary-item" data-tags="edge-audio state-machine ux">
+                    <article class="glossary-item" id="term-barge-in" data-tags="edge-audio state-machine ux">
                         <header class="glossary-item__header">
                             <h3 class="glossary-item__term">Barge-in FSM</h3>
                             <span class="glossary-item__category">Edge Audio</span>
@@ -116,7 +116,7 @@
                     </article>
 
                     <!-- Pattern 4: Offline-First Fallback -->
-                    <article class="glossary-item" data-tags="network resilience field-ops">
+                    <article class="glossary-item" id="term-offline-first" data-tags="network resilience field-ops">
                         <header class="glossary-item__header">
                             <h3 class="glossary-item__term">Offline-First Fallback</h3>
                             <span class="glossary-item__category">Resilience</span>
@@ -222,7 +222,7 @@
                                 </div>
                                 <div class="breakdown-item">
                                     <h4 class="breakdown-label">Approach</h4>
-                                    <p>FastAPI control plane with Economic Gatekeeper, thermal/VRAM circuit breakers (503), context ceilings (413), tool discovery, and durable audit logs. Agents negotiate strategy; the plane can refuse unsafe work.</p>
+                                    <p>FastAPI control plane with <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button">Economic Gatekeeper</span>, thermal/<span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button">VRAM circuit breakers</span> (503), context ceilings (413), tool discovery, and durable audit logs. Agents negotiate strategy; the plane can refuse unsafe work.</p>
                                 </div>
                                 <div class="breakdown-item">
                                     <h4 class="breakdown-label">Status</h4>
@@ -255,7 +255,7 @@
                                     <h3 class="work-card__title">Unhinged Agent</h3>
                                 </div>
                                 <p class="work-card__lede">
-                                    Thin-client private voice note assistant. ESP32-S3-BOX-3B edge device + RTX 4060 host for local STT/LLM/TTS with barge-in FSM.
+                                    Thin-client private voice note assistant. ESP32-S3-BOX-3B edge device + RTX 4060 host for local STT/LLM/TTS with <span class="glossary-link" data-target="term-barge-in" tabindex="0" role="button">barge-in FSM</span>.
                                 </p>
                                 <p class="work-card__impact">
                                     <em>Phase 1 Software PoC + browser digital twin complete. Physical hardware pending. Data stays local.</em>
@@ -313,7 +313,7 @@
                         <div class="capability__marker" aria-hidden="true"></div>
                         <div class="capability__content">
                             <h3>Hardware-Aware Agent Control Planes</h3>
-                            <p>Safety layers, strategy negotiation, thermal/VRAM circuit breakers, and audit trails that sit between agents and local inference on consumer GPUs.</p>
+                            <p>Safety layers, strategy negotiation, thermal/<span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button">VRAM circuit breakers</span>, and audit trails that sit between agents and local inference on consumer GPUs.</p>
                         </div>
                     </article>
                     <article class="capability">

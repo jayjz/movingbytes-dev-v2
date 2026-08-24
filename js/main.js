@@ -7,19 +7,13 @@
     const $ = (selector, scope = document) => scope.querySelector(selector);
     const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
 
-    /*
-     * Smooth anchor scrolling
-     */
     function initSmoothScroll() {
         $$('a[href^="#"]').forEach(link => {
             link.addEventListener('click', event => {
                 const href = link.getAttribute('href');
                 if (!href || href === '#') return;
 
-                // Systems link opens panel instead of scrolling
-                if (link.hasAttribute('data-systems-open') || href === '#systems') {
-                    return;
-                }
+                if (link.hasAttribute('data-systems-open') || href === '#systems') return;
 
                 const target = $(href);
                 if (!target) return;
@@ -38,9 +32,6 @@
         });
     }
 
-    /*
-     * Scroll reveal
-     */
     function initReveal() {
         const cards = $$('.work-card, .capability-card, .principle, .contact-link');
         if (!cards.length) return;
@@ -62,18 +53,12 @@
                     obs.unobserve(entry.target);
                 });
             },
-            {
-                threshold: 0.12,
-                rootMargin: '0px 0px -8% 0px'
-            }
+            { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
         );
 
         cards.forEach(card => observer.observe(card));
     }
 
-    /*
-     * Simple custom cursor
-     */
     function initCursor() {
         if (prefersReducedMotion || isTouchDevice) return;
 
@@ -104,7 +89,7 @@
 
         document.addEventListener('mousemove', onMove, { passive: true });
 
-        $$('a, button, .work-card, .contact-link, .deep-dive-trigger').forEach(el => {
+        $$('a, button, .work-card, .contact-link, .deep-dive-trigger, .glossary-link').forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
         });
@@ -121,9 +106,6 @@
         });
     }
 
-    /*
-     * Subtle particles
-     */
     function initParticles() {
         if (prefersReducedMotion) return;
 
@@ -174,7 +156,6 @@
 
             for (let i = 0; i < particles.length; i++) {
                 const p = particles[i];
-
                 const dx = pointerX - p.x;
                 const dy = pointerY - p.y;
                 const distSq = dx * dx + dy * dy;
@@ -253,23 +234,17 @@
         draw();
     }
 
-    /*
-     * Keyboard nav helper
-     */
     function initInputMode() {
         document.addEventListener('keydown', e => {
-            if (e.key === 'Tab') {
-                document.body.classList.add('keyboard-nav');
-            }
+            if (e.key === 'Tab') document.body.classList.add('keyboard-nav');
         });
-
         document.addEventListener('mousedown', () => {
             document.body.classList.remove('keyboard-nav');
         });
     }
 
     /*
-     * Systems Glossary Panel
+     * Systems Glossary Panel & Semantic Bridge
      */
     function initSystemsPanel() {
         const panel = document.getElementById('systems-panel');
@@ -298,9 +273,7 @@
             requestAnimationFrame(() => {
                 panel.classList.add('is-open');
                 const focusables = getFocusable();
-                if (focusables.length) {
-                    focusables[0].focus();
-                }
+                if (focusables.length) focusables[0].focus();
             });
         }
 
@@ -312,15 +285,12 @@
             document.documentElement.style.overflow = '';
 
             const onTransitionEnd = event => {
-                if (event.target !== panel && event.target !== panel.querySelector('.systems-panel__content')) {
-                    return;
-                }
+                if (event.target !== panel && event.target !== panel.querySelector('.systems-panel__content')) return;
                 panel.setAttribute('hidden', '');
                 panel.removeEventListener('transitionend', onTransitionEnd);
             };
             panel.addEventListener('transitionend', onTransitionEnd);
 
-            // Fallback if no transition (reduced motion)
             setTimeout(() => {
                 if (!isOpen) {
                     panel.setAttribute('hidden', '');
@@ -340,19 +310,48 @@
             openPanel();
         });
 
+        // Semantic Bridge: Inline Glossary Links
+        document.addEventListener('click', e => {
+            const link = e.target.closest('.glossary-link');
+            if (!link) return;
+
+            e.preventDefault();
+            const targetId = link.getAttribute('data-target');
+
+            openPanel();
+
+            const searchInput = document.getElementById('glossary-search');
+            if (searchInput) {
+                searchInput.value = '';
+                searchInput.dispatchEvent(new Event('input'));
+            }
+
+            requestAnimationFrame(() => {
+                const targetEntry = document.getElementById(targetId);
+                if (targetEntry) {
+                    setTimeout(() => {
+                        targetEntry.scrollIntoView({
+                            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                            block: 'center'
+                        });
+                        targetEntry.classList.add('is-highlighted');
+                        setTimeout(() => targetEntry.classList.remove('is-highlighted'), 2500);
+                    }, 100);
+                }
+            });
+        });
+
         document.addEventListener('keydown', e => {
+            if (e.key === 'Enter' && document.activeElement.classList.contains('glossary-link')) {
+                document.activeElement.click();
+            }
+
             const isMod = e.metaKey || e.ctrlKey;
             if (isMod && (e.key === 'k' || e.key === 'K')) {
                 const tag = (e.target && e.target.tagName) || '';
-                if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) {
-                    return;
-                }
+                if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) return;
                 e.preventDefault();
-                if (isOpen) {
-                    closePanel();
-                } else {
-                    openPanel();
-                }
+                isOpen ? closePanel() : openPanel();
             }
 
             if (e.key === 'Escape' && isOpen) {
@@ -370,7 +369,6 @@
 
         panel.addEventListener('keydown', e => {
             if (!isOpen || e.key !== 'Tab') return;
-
             const focusables = getFocusable();
             if (!focusables.length) return;
 
@@ -389,9 +387,6 @@
         });
     }
 
-    /*
-     * Glossary Search/Filter
-     */
     function initGlossarySearch() {
         const searchInput = document.getElementById('glossary-search');
         const items = document.querySelectorAll('.glossary-item');
@@ -411,25 +406,20 @@
         });
     }
 
-    /*
-     * View Transition Safety State
-     */
     function initViewTransitions() {
         document.addEventListener('click', e => {
             const link = e.target.closest('a');
             if (!link) return;
 
             const href = link.getAttribute('href');
-            // Allow normal routing, just clean up state first if needed
             if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto')) return;
 
             const panel = document.getElementById('systems-panel');
             if (panel && panel.classList.contains('is-open')) {
-                e.preventDefault(); // Pause the link navigation
+                e.preventDefault();
                 panel.classList.remove('is-open');
                 document.documentElement.style.overflow = '';
 
-                // Wait for panel slide-out before firing the morph navigation
                 setTimeout(() => {
                     panel.setAttribute('hidden', '');
                     window.location.href = href;
@@ -438,9 +428,6 @@
         });
     }
 
-    /*
-     * Global Code Copy Logic
-     */
     document.addEventListener('click', e => {
         if (e.target.classList.contains('code-copy-btn')) {
             const container = e.target.closest('.code-reveal__content, .code-block__body');
@@ -457,7 +444,6 @@
         }
     });
 
-    // Boot
     initSmoothScroll();
     initReveal();
     initCursor();

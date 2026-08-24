@@ -1441,3 +1441,25 @@ body:hover .cursor { opacity: 1; }
 .case-study__title {
     view-transition-name: hero-title-morph;
 }
+/* ====================== SEMANTIC GLOSSARY LINKS ====================== */
+.glossary-link {
+    cursor: pointer;
+    color: var(--text);
+    border-bottom: 1px dotted var(--text-faint);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.glossary-link:hover,
+.glossary-link:focus-visible {
+    color: var(--accent);
+    border-bottom-style: solid;
+    border-color: var(--accent);
+    outline: none;
+}
+
+/* Update glossary highlight to work cleanly */
+.glossary-item.is-highlighted {
+    background: var(--panel-surface-elev);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 230, 200, 0.1);
+}

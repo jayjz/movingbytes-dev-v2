@@ -4,6 +4,7 @@
     "no-inline-style": "off",
     "wcag/h37": "off",
     "void-style": "off",
-    "doctype-style": "off"
+    "doctype-style": "off",
+    "prefer-native-element": "off"
   }
 }
