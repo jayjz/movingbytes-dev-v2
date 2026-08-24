@@ -16,6 +16,11 @@
                 const href = link.getAttribute('href');
                 if (!href || href === '#') return;
 
+                // Systems link opens panel instead of scrolling
+                if (link.hasAttribute('data-systems-open') || href === '#systems') {
+                    return;
+                }
+
                 const target = $(href);
                 if (!target) return;
 
@@ -48,17 +53,20 @@
                 : 'opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1)';
         });
 
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                obs.unobserve(entry.target);
-            });
-        }, {
-            threshold: 0.12,
-            rootMargin: '0px 0px -8% 0px'
-        });
+        const observer = new IntersectionObserver(
+            (entries, obs) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    obs.unobserve(entry.target);
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: '0px 0px -8% 0px'
+            }
+        );
 
         cards.forEach(card => observer.observe(card));
     }
@@ -95,7 +103,7 @@
         }
 
         document.addEventListener('mousemove', onMove, { passive: true });
-        
+
         $$('a, button, .work-card, .contact-link').forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
@@ -216,10 +224,14 @@
             rafId = requestAnimationFrame(draw);
         }
 
-        window.addEventListener('mousemove', e => {
-            pointerX = e.clientX;
-            pointerY = e.clientY;
-        }, { passive: true });
+        window.addEventListener(
+            'mousemove',
+            e => {
+                pointerX = e.clientX;
+                pointerY = e.clientY;
+            },
+            { passive: true }
+        );
 
         window.addEventListener('mouseleave', () => {
             pointerX = -9999;
@@ -256,9 +268,131 @@
         });
     }
 
+    /*
+     * Systems / Second Brain panel
+     */
+    function initSystemsPanel() {
+        const panel = document.getElementById('systems-panel');
+        const trigger = document.getElementById('systems-trigger');
+        if (!panel || !trigger) return;
+
+        let lastFocus = null;
+        let isOpen = false;
+
+        const focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+        function getFocusable() {
+            return Array.from(panel.querySelectorAll(focusableSelector)).filter(
+                el => !el.hasAttribute('disabled') && el.getClientRects().length > 0
+            );
+        }
+
+        function openPanel() {
+            if (isOpen) return;
+            isOpen = true;
+            lastFocus = document.activeElement;
+
+            panel.removeAttribute('hidden');
+            document.documentElement.style.overflow = 'hidden';
+
+            requestAnimationFrame(() => {
+                panel.classList.add('is-open');
+                const focusables = getFocusable();
+                if (focusables.length) {
+                    focusables[0].focus();
+                }
+            });
+        }
+
+        function closePanel() {
+            if (!isOpen) return;
+            isOpen = false;
+
+            panel.classList.remove('is-open');
+            document.documentElement.style.overflow = '';
+
+            const onTransitionEnd = event => {
+                if (event.target !== panel && event.target !== panel.querySelector('.systems-panel__content')) {
+                    return;
+                }
+                panel.setAttribute('hidden', '');
+                panel.removeEventListener('transitionend', onTransitionEnd);
+            };
+            panel.addEventListener('transitionend', onTransitionEnd);
+
+            // Fallback if no transition (reduced motion)
+            setTimeout(() => {
+                if (!isOpen) {
+                    panel.setAttribute('hidden', '');
+                    panel.removeEventListener('transitionend', onTransitionEnd);
+                }
+            }, 500);
+
+            if (lastFocus && typeof lastFocus.focus === 'function') {
+                lastFocus.focus();
+            } else {
+                trigger.focus();
+            }
+        }
+
+        trigger.addEventListener('click', e => {
+            e.preventDefault();
+            openPanel();
+        });
+
+        document.addEventListener('keydown', e => {
+            const isMod = e.metaKey || e.ctrlKey;
+            if (isMod && (e.key === 'k' || e.key === 'K')) {
+                const tag = (e.target && e.target.tagName) || '';
+                if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) {
+                    return;
+                }
+                e.preventDefault();
+                if (isOpen) {
+                    closePanel();
+                } else {
+                    openPanel();
+                }
+            }
+
+            if (e.key === 'Escape' && isOpen) {
+                e.preventDefault();
+                closePanel();
+            }
+        });
+
+        panel.addEventListener('click', e => {
+            if (e.target.closest('[data-systems-close]')) {
+                e.preventDefault();
+                closePanel();
+            }
+        });
+
+        panel.addEventListener('keydown', e => {
+            if (!isOpen || e.key !== 'Tab') return;
+
+            const focusables = getFocusable();
+            if (!focusables.length) return;
+
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+
+            if (e.shiftKey) {
+                if (document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else if (document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        });
+    }
+
     initSmoothScroll();
     initReveal();
     initCursor();
     initParticles();
     initInputMode();
+    initSystemsPanel();
 })();
