@@ -1,22 +1,89 @@
-# Dependencies / Build
+# ==============================================================================
+# 🔒 STRICT CYBERSEC & OPERATIONS .GITIGNORE
+# ==============================================================================
+
+# 1. CREDENTIALS & SECRETS (Zero Trust)
+.env*
+!.env.example
+*.key
+*.pem
+*.crt
+*.p12
+*.pkcs12
+*.rsa
+id_rsa*
+secrets/
+credentials/
+config/secrets/
+auth.json
+service-account.json
+certs/
+
+# 2. VERCEL & CLOUD DEPLOYMENT
+.vercel/
+*.vercel
+.next/
+now-debug.log
+
+# 3. AI, AGENTS & LOCAL INFERENCE
+# Prevents leaking local model weights, FSM states, and control plane telemetry
+*.prompt
+*.context
+llm_cache/
+agent_state/
+memory_dumps/
+circuit_breaker_logs/
+thermal_logs/
+models/
+*.gguf
+*.bin
+*.pt
+
+# 4. CYBERSEC, OSINT & SCRAPING ARTIFACTS
+# Traps network captures, Playwright traces, and reconnaissance pipelines
+*.pcap
+*.pcapng
+*.cap
+*.har
+*.nmap
+*.gnmap
+burp_state/
+recon_data/
+payloads/
+exfil/
+phish_campaigns/
+playwright-report/
+test-results/
+
+# 5. DATA, DUMPS & DATABASES
+# Hard block on local storage, building permit scraped data, or honeypot traps
+*.db
+*.sqlite
+*.sqlite3
+*.bak
+*.sql
+dumps/
+backups/
+data/raw/
+data/processed/
+
+# 6. PYTHON & NODE ENVIRONMENTS
 node_modules/
 dist/
 build/
 *.min.js
 *.bundle.js
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
 
-# Environment / Secrets (critical for cybersec focus)
-.env
-.env.local
-.env.production
-*.key
-*.pem
-*.crt
-secrets/
-credentials/
-config/secrets/
-
-# OS & Editor
+# 7. OS, EDITOR & SYSTEM LOGS
 .DS_Store
 Thumbs.db
 *.swp
@@ -24,141 +91,28 @@ Thumbs.db
 .vscode/
 .idea/
 *.log
+npm-debug.log*
+yarn-error.log*
+pip-log.txt
 
-# Performance & Temp files
+# 8. MEDIA & PERFORMANCE CACHES
 *.cache
 *.tmp
 temp/
 cache/
-
-# Sensitive data that might appear in agent/cyber projects
-*.db
-*.sqlite
-*.bak
-dumps/
-backups/
-*.pcap
-*.pcapng
-*.har
-screenshots/  # unless intentionally for portfolio
-
-# Vercel / Deployment
-.vercel/
-.next/        # in case you ever add Next
-*.vercel
-
-# AI / LLM artifacts
-*.prompt
-*.context
-llm_cache/
-
-# Large media (optimize these manually)
 *.mp4
 *.mov
 assets/raw/
 assets/unoptimized/
-
-# Notes & personal
-TODO.md
-notes/
-personal/
-
-# Python / Local Dev
-venv/
-.venv/
-__pycache__/
-*.pyc
-
-# Repomix / AI Context
-repomix-output.xml
-repomix-output.txt
-
-full_codebase.txt
-repomix-output.xml
-# Python / Local Dev
-venv/
-.venv/
-__pycache__/
-*.pyc
-
-# Repomix / AI Context
-repomix-output.xml
-repomix-output.txt
-full_codebase.txt
-
-
-# Dependencies / Build
-node_modules/
-dist/
-build/
-*.min.js
-*.bundle.js
-
-# Environment / Secrets
-.env
-.env.local
-.env.production
-*.key
-*.pem
-*.crt
-secrets/
-credentials/
-config/secrets/
-
-# OS & Editor
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
-.vscode/
-.idea/
-*.log
-
-# Performance & Temp files
-*.cache
-*.tmp
-temp/
-cache/
-
-# Sensitive data
-*.db
-*.sqlite
-*.bak
-dumps/
-backups/
-*.pcap
-*.pcapng
-*.har
 screenshots/
 
-# Vercel / Deployment
-.vercel/
-.next/
-*.vercel
-
-# AI / LLM artifacts
-*.prompt
-*.context
-llm_cache/
-
-# Large media
-*.mp4
-*.mov
-assets/raw/
-assets/unoptimized/
-
-# Notes & personal
-TODO.md
-notes/
-personal/
-
-# Python / Local Dev
-venv/
-.venv/
-__pycache__/
-*.pyc
-
-# Repomix / AI Context
+# 9. REPOMIX & LLM CONTEXT
 repomix-output.xml
 repomix-output.txt
 full_codebase.txt
+
+# 10. PERSONAL & DRAFTING
+TODO.md
+notes/
+personal/
+drafts/

@@ -341,33 +341,36 @@
             </div>
         </section>
 
-        <!-- PRINCIPLES -->
+        <!-- PRINCIPLES / THE ANTI-MANIFESTO -->
         <section id="principles" class="principles">
             <div class="container">
                 <div class="principles__header">
-                    <p class="section-intro__eyebrow">PRINCIPLES</p>
-                    <h2 class="section-intro__title">How systems survive reality.</h2>
+                    <p class="section-intro__eyebrow">THE ANTI-MANIFESTO</p>
+                    <h2 class="section-intro__title">What I refuse to build.</h2>
+                    <p class="section-intro__copy" style="margin-bottom: 3rem;">
+                        A systems architect is defined by their boundaries. I don't ship vaporware. I build systems that survive the messy reality of physical operations and hardware limits.
+                    </p>
                 </div>
                 <div class="principles__list">
                     <article class="principle">
                         <div class="principle__number">01</div>
                         <div class="principle__content">
-                            <h3>Local-First, Constraint-First</h3>
-                            <p>Design for the hardware and connectivity you actually have. 8 GB VRAM and spotty field signal are not edge cases — they are the baseline.</p>
+                            <h3>I refuse to ignore physical constraints.</h3>
+                            <p>I do not build cloud-dependent agent swarms that assume infinite compute and perfect 5G. If a system cannot degrade gracefully under an <span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button">8 GB VRAM budget</span>, thermal throttling, or a cellular dead zone, it is a liability, not an architecture.</p>
                         </div>
                     </article>
                     <article class="principle">
                         <div class="principle__number">02</div>
                         <div class="principle__content">
-                            <h3>Human-Accountable by Default</h3>
-                            <p>Irreversible actions (write-offs, parts orders, schedule changes) require explicit human review. Agents propose; operators decide.</p>
+                            <h3>I refuse to automate irreversible actions.</h3>
+                            <p>In physical trades, an AI hallucinating a $2,000 compressor order or scrambling a dispatch queue is catastrophic. I build systems where agents propose and operators decide. Strict human-in-the-loop execution gates are mandatory.</p>
                         </div>
                     </article>
                     <article class="principle">
                         <div class="principle__number">03</div>
                         <div class="principle__content">
-                            <h3>Honesty Over Hype</h3>
-                            <p>State what is verified and what is research. A Mock-verified control plane with clear non-claims is more useful than an inflated production story.</p>
+                            <h3>I refuse to sell hype as production.</h3>
+                            <p>I state exactly what is verified and what is research. A mock-verified <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button">control plane</span> with documented boundaries is infinitely more valuable to an engineering team than a fragile demo masquerading as a production-ready product.</p>
                         </div>
                     </article>
                 </div>
