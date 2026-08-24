@@ -2,7 +2,7 @@ name: Frontend CI
 
 on:
   push:
-    branches: [main, feat/second-brain-systems-nav]
+    branches: [main, feat/second-brain-systems-nav, feat/second-brain-expansion]
   pull_request:
     branches: [main]
 
