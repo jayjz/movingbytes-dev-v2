@@ -13,7 +13,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="../css/style.css" />
@@ -185,12 +185,12 @@
                                     </p>
                                     <p>Three core subsystems enforce safety:</p>
                                     <p>
-                                        <strong>1. The Economic Gatekeeper</strong> — Evaluates agent strategy proposals against a cost
+                                        <strong>1. The <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button">Economic Gatekeeper</span></strong> — Evaluates agent strategy proposals against a cost
                                         model before execution. If a strategy requires more VRAM than the budget allows, the plane rejects
                                         it and requests a fallback strategy. No tokens are wasted on doomed attempts.
                                     </p>
                                     <p>
-                                        <strong>2. Thermal / VRAM Circuit Breakers</strong> — Real-time hardware telemetry feeds into hard
+                                        <strong>2. Thermal / <span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button">VRAM Circuit Breakers</span></strong> — Real-time hardware telemetry feeds into hard
                                         limits. If VRAM usage exceeds 85%, the plane returns HTTP 503. If context size exceeds the ceiling,
                                         it returns HTTP 413. These are not suggestions. They are kill switches.
                                     </p>
@@ -201,12 +201,12 @@
                                 </div>
                             </div>
 
-                            <!-- Section: Business Impact &amp; JTBD -->
+                            <!-- Section: Business Impact & JTBD -->
                             <div class="case-study__section">
-                                <h2 class="case-study__section-label">Business Impact &amp; JTBD</h2>
+                                <h2 class="case-study__section-label">Business Impact & JTBD</h2>
                                 <div class="case-study__section-body">
                                     <p>
-                                        <strong>De-risking the deployment.</strong> The Economic Gatekeeper isn't just a token-saver; it
+                                        <strong>De-risking the deployment.</strong> The <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button">Economic Gatekeeper</span> isn't just a token-saver; it
                                         operates on <em>Expected Value</em>. By rejecting unsafe or overly complex agent strategies before
                                         execution, the system prevents cascading failures that lead to operational downtime.
                                     </p>
@@ -261,7 +261,7 @@ class VramGuardrail:
 
                             <!-- Section: Trade-offs -->
                             <div class="case-study__section">
-                                <h2 class="case-study__section-label">Trade-offs &amp; Decisions</h2>
+                                <h2 class="case-study__section-label">Trade-offs & Decisions</h2>
                                 <div class="tradeoff-grid">
                                     <div class="tradeoff-card">
                                         <div class="tradeoff-card__verdict tradeoff-card__verdict--accepted">Accepted</div>
@@ -314,7 +314,12 @@ class VramGuardrail:
                             </div>
                             <div class="rail-card">
                                 <div class="rail-card__label">Key Patterns</div>
-                                <div class="rail-card__value">Economic Gatekeeper · VRAM Circuit Breaker · Context Ceiling (413)</div>
+                                <div class="rail-card__value">
+                                    <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button">Economic Gatekeeper</span>
+                                    ·
+                                    <span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button">VRAM Circuit Breaker</span>
+                                    · Context Ceiling (413)
+                                </div>
                             </div>
                             <div class="rail-card">
                                 <div class="rail-card__label">Constraints</div>
