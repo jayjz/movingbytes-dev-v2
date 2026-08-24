@@ -28,7 +28,7 @@
 
                 const nav = $('.site-nav');
                 const navOffset = nav ? nav.offsetHeight : 0;
-                const y = target.getBoundingClientRect().top + window.pageYOffset - navOffset - 16;
+                const y = target.getBoundingClientRect().top + window.scrollY - navOffset - 16;
 
                 window.scrollTo({
                     top: y,
@@ -104,7 +104,7 @@
 
         document.addEventListener('mousemove', onMove, { passive: true });
 
-        $$('a, button, .work-card, .contact-link').forEach(el => {
+        $$('a, button, .work-card, .contact-link, .deep-dive-trigger').forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
         });
@@ -269,7 +269,7 @@
     }
 
     /*
-     * Systems / Second Brain panel
+     * Systems Glossary Panel
      */
     function initSystemsPanel() {
         const panel = document.getElementById('systems-panel');
@@ -340,27 +340,6 @@
             openPanel();
         });
 
-        // Deep-dive triggers from main page cards
-        $$('.deep-dive-trigger').forEach(btn => {
-            btn.addEventListener('click', e => {
-                e.preventDefault();
-                const targetId = btn.getAttribute('data-target');
-                openPanel();
-
-                requestAnimationFrame(() => {
-                    const targetEntry = panel.querySelector(`[data-systems-id="${targetId}"]`);
-                    if (targetEntry) {
-                        targetEntry.scrollIntoView({
-                            behavior: prefersReducedMotion ? 'auto' : 'smooth',
-                            block: 'start'
-                        });
-                        targetEntry.classList.add('is-highlighted');
-                        setTimeout(() => targetEntry.classList.remove('is-highlighted'), 2000);
-                    }
-                });
-            });
-        });
-
         document.addEventListener('keydown', e => {
             const isMod = e.metaKey || e.ctrlKey;
             if (isMod && (e.key === 'k' || e.key === 'K')) {
@@ -410,11 +389,64 @@
         });
     }
 
-    // Code copy buttons
+    /*
+     * Glossary Search/Filter
+     */
+    function initGlossarySearch() {
+        const searchInput = document.getElementById('glossary-search');
+        const items = document.querySelectorAll('.glossary-item');
+        if (!searchInput) return;
+
+        searchInput.addEventListener('input', e => {
+            const query = e.target.value.toLowerCase().trim();
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                const tags = (item.getAttribute('data-tags') || '').toLowerCase();
+                if (text.includes(query) || tags.includes(query)) {
+                    item.classList.remove('is-hidden');
+                } else {
+                    item.classList.add('is-hidden');
+                }
+            });
+        });
+    }
+
+    /*
+     * View Transition Safety State
+     */
+    function initViewTransitions() {
+        document.addEventListener('click', e => {
+            const link = e.target.closest('a');
+            if (!link) return;
+
+            const href = link.getAttribute('href');
+            // Allow normal routing, just clean up state first if needed
+            if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto')) return;
+
+            const panel = document.getElementById('systems-panel');
+            if (panel && panel.classList.contains('is-open')) {
+                e.preventDefault(); // Pause the link navigation
+                panel.classList.remove('is-open');
+                document.documentElement.style.overflow = '';
+
+                // Wait for panel slide-out before firing the morph navigation
+                setTimeout(() => {
+                    panel.setAttribute('hidden', '');
+                    window.location.href = href;
+                }, 300);
+            }
+        });
+    }
+
+    /*
+     * Global Code Copy Logic
+     */
     document.addEventListener('click', e => {
         if (e.target.classList.contains('code-copy-btn')) {
-            const pre = e.target.closest('.code-reveal__content').querySelector('pre');
+            const container = e.target.closest('.code-reveal__content, .code-block__body');
+            const pre = container ? container.querySelector('pre') : null;
             if (!pre) return;
+
             navigator.clipboard.writeText(pre.innerText).then(() => {
                 const original = e.target.innerText;
                 e.target.innerText = 'Copied!';
@@ -425,10 +457,13 @@
         }
     });
 
+    // Boot
     initSmoothScroll();
     initReveal();
     initCursor();
     initParticles();
     initInputMode();
     initSystemsPanel();
+    initGlossarySearch();
+    initViewTransitions();
 })();

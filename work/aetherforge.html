@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AetherForge — Hardware-Aware Agent Control Plane | Jay</title>
+        <meta
+            name="description"
+            content="Deep-dive into AetherForge: a FastAPI control plane with VRAM circuit breakers, context ceilings, and Economic Gatekeeper strategy negotiation for local AI agents on consumer GPUs."
+        />
+        <meta name="theme-color" content="#0c080f" />
+        <meta name="view-transition" content="same-origin" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+    <body>
+        <a href="#main" class="skip-link">Skip to content</a>
+
+        <!-- Atmospheric layers -->
+        <div class="grain" aria-hidden="true"></div>
+        <div class="vignette" aria-hidden="true"></div>
+
+        <!-- Custom cursor -->
+        <div class="cursor" aria-hidden="true">
+            <div class="cursor-dot"></div>
+            <div class="cursor-ring"></div>
+        </div>
+        <div class="cursor-trail" aria-hidden="true"></div>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+            <div class="site-nav__inner">
+                <a href="../index.html" class="site-nav__brand" aria-label="jaysystems.dev home">
+                    <span class="brand-lockup"> <span class="brand-name">jay</span><span class="brand-tld">systems.dev</span> </span>
+                    <span class="brand-role">Interface Architect</span>
+                </a>
+                <div class="site-nav__links">
+                    <a href="../index.html#work">Work</a>
+                    <a href="../index.html#capabilities">Capabilities</a>
+                    <a href="#systems" id="systems-trigger" data-systems-open>Systems</a>
+                    <a href="../index.html#principles">Principles</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Systems Glossary Panel (Duplicated for absolute static resilience) -->
+        <div id="systems-panel" class="systems-panel" role="dialog" aria-modal="true" aria-labelledby="systems-panel-title" hidden>
+            <div class="systems-panel__backdrop" data-systems-close></div>
+            <div class="systems-panel__content" role="document">
+                <header class="systems-panel__header">
+                    <h2 id="systems-panel-title" class="systems-panel__title">Systems · Glossary</h2>
+                    <button type="button" class="systems-panel__close" data-systems-close aria-label="Close systems panel">×</button>
+                </header>
+                <div class="systems-panel__body">
+                    <div class="glossary-controls">
+                        <input
+                            type="search"
+                            id="glossary-search"
+                            placeholder="Filter patterns (e.g., 'FSM', 'VRAM')..."
+                            aria-label="Filter systems glossary"
+                        />
+                    </div>
+                    <div class="glossary-grid" id="glossary-list">
+                        <article class="glossary-item" data-tags="control-plane risk-management strategy">
+                            <header class="glossary-item__header">
+                                <h3 class="glossary-item__term">The Economic Gatekeeper</h3>
+                                <span class="glossary-item__category">Control Plane</span>
+                            </header>
+                            <div class="glossary-item__body">
+                                <p class="glossary-item__definition">
+                                    A pre-execution filter that evaluates agent strategy proposals against a resource cost model. It rejects
+                                    "doomed" strategies before inference begins.
+                                </p>
+                                <div class="glossary-item__impact">
+                                    <strong>Why it matters:</strong> Prevents runaway compute costs and protects the GPU.
+                                </div>
+                                <div class="glossary-item__context"><span>Applied in:</span> AetherForge</div>
+                            </div>
+                        </article>
+                        <article class="glossary-item" data-tags="hardware safety resource-limits">
+                            <header class="glossary-item__header">
+                                <h3 class="glossary-item__term">VRAM Circuit Breaker</h3>
+                                <span class="glossary-item__category">Resource Guardrail</span>
+                            </header>
+                            <div class="glossary-item__body">
+                                <p class="glossary-item__definition">
+                                    A hard kill-switch triggered when GPU VRAM usage exceeds a safety threshold. Immediately aborts
+                                    generation to prevent system OOM.
+                                </p>
+                                <div class="glossary-item__impact">
+                                    <strong>Why it matters:</strong> Ensures the host OS remains responsive and prevents data corruption.
+                                </div>
+                                <div class="glossary-item__context"><span>Applied in:</span> AetherForge</div>
+                            </div>
+                        </article>
+                        <article class="glossary-item" data-tags="edge-audio state-machine ux">
+                            <header class="glossary-item__header">
+                                <h3 class="glossary-item__term">Barge-in FSM</h3>
+                                <span class="glossary-item__category">Edge Audio</span>
+                            </header>
+                            <div class="glossary-item__body">
+                                <p class="glossary-item__definition">
+                                    A Finite State Machine handling user interruptions during audio playback. Instantly truncates the audio
+                                    buffer and returns to listening.
+                                </p>
+                                <div class="glossary-item__impact">
+                                    <strong>Why it matters:</strong> Makes local voice agents feel natural and responsive.
+                                </div>
+                                <div class="glossary-item__context"><span>Applied in:</span> Unhinged Agent</div>
+                            </div>
+                        </article>
+                        <article class="glossary-item" data-tags="network resilience field-ops">
+                            <header class="glossary-item__header">
+                                <h3 class="glossary-item__term">Offline-First Fallback</h3>
+                                <span class="glossary-item__category">Resilience</span>
+                            </header>
+                            <div class="glossary-item__body">
+                                <p class="glossary-item__definition">
+                                    Architecture where local state is the source of truth. If connectivity drops, actions are queued for
+                                    later sync.
+                                </p>
+                                <div class="glossary-item__impact">
+                                    <strong>Why it matters:</strong> Critical for field ops with spotty cellular signal.
+                                </div>
+                                <div class="glossary-item__context"><span>Applied in:</span> HVAC Ops</div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main id="main">
+            <section class="case-study">
+                <div class="container">
+                    <header class="case-study__header">
+                        <div class="case-study__breadcrumb">
+                            <a href="../index.html">Home</a>
+                            <span aria-hidden="true">/</span>
+                            <a href="../index.html#work">Work</a>
+                            <span aria-hidden="true">/</span>
+                            <span>AetherForge</span>
+                        </div>
+                        <h1 class="case-study__title">AetherForge</h1>
+                        <p class="case-study__subtitle">
+                            Hardware-aware safety and control plane for local AI agents on consumer GPUs. Designed for the messy reality of
+                            8 GB VRAM budgets, thermal throttling, and irreversible actions.
+                        </p>
+                        <div class="case-study__status">Wedge A (Mock-verified) · Active Development</div>
+                    </header>
+
+                    <div class="case-study__grid">
+                        <div class="case-study__content">
+                            <!-- Section: The Problem -->
+                            <div class="case-study__section">
+                                <h2 class="case-study__section-label">The Problem</h2>
+                                <div class="case-study__section-body">
+                                    <p>
+                                        Local AI agents on consumer hardware fail in ways cloud demos never predict. A single runaway
+                                        generation loop can exhaust an 8 GB VRAM pool in seconds. Context windows balloon without warning.
+                                        Thermal throttling cascades into strategy thrash, where agents retry failed operations and OOM the
+                                        only GPU available.
+                                    </p>
+                                    <p>
+                                        The industry answer is "just use a bigger GPU." That's not an architecture. That's a budget request.
+                                        I needed a control plane that treats <strong>hardware limits as first-class constraints</strong>,
+                                        not edge cases to be handled after the fact.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Section: Architecture -->
+                            <div class="case-study__section">
+                                <h2 class="case-study__section-label">Architecture Decisions</h2>
+                                <div class="case-study__section-body">
+                                    <p>
+                                        AetherForge sits between the agent and the inference engine. It is a
+                                        <strong>FastAPI control plane</strong> that negotiates strategy, enforces resource budgets, and can
+                                        refuse unsafe work before a single token is generated.
+                                    </p>
+                                    <p>Three core subsystems enforce safety:</p>
+                                    <p>
+                                        <strong>1. The Economic Gatekeeper</strong> — Evaluates agent strategy proposals against a cost
+                                        model before execution. If a strategy requires more VRAM than the budget allows, the plane rejects
+                                        it and requests a fallback strategy. No tokens are wasted on doomed attempts.
+                                    </p>
+                                    <p>
+                                        <strong>2. Thermal / VRAM Circuit Breakers</strong> — Real-time hardware telemetry feeds into hard
+                                        limits. If VRAM usage exceeds 85%, the plane returns HTTP 503. If context size exceeds the ceiling,
+                                        it returns HTTP 413. These are not suggestions. They are kill switches.
+                                    </p>
+                                    <p>
+                                        <strong>3. Durable Audit Logs</strong> — Every strategy negotiation, every rejection, every circuit
+                                        breaker trip is logged. Agents operate under the assumption that a human will review the trace.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Section: Business Impact &amp; JTBD -->
+                            <div class="case-study__section">
+                                <h2 class="case-study__section-label">Business Impact &amp; JTBD</h2>
+                                <div class="case-study__section-body">
+                                    <p>
+                                        <strong>De-risking the deployment.</strong> The Economic Gatekeeper isn't just a token-saver; it
+                                        operates on <em>Expected Value</em>. By rejecting unsafe or overly complex agent strategies before
+                                        execution, the system prevents cascading failures that lead to operational downtime.
+                                    </p>
+                                    <p>
+                                        In a field-ops environment, an agent hallucinating a parts order or freezing a dispatch queue has a
+                                        massive real-world cost. AetherForge treats reliability and cost-predictability as the primary
+                                        Jobs-to-be-Done for any enterprise AI integration.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Section: Code -->
+                            <div class="case-study__section">
+                                <h2 class="case-study__section-label">Proof of Work</h2>
+                                <div class="code-block">
+                                    <div class="code-block__header">
+                                        <span>vram_circuit_breaker.py</span>
+                                        <button type="button" class="code-copy-btn">Copy</button>
+                                    </div>
+                                    <div class="code-block__body">
+                                        <pre>
+from fastapi import HTTPException
+from dataclasses import dataclass
+
+@dataclass
+class HardwareBudget:
+    vram_limit_gb: float = 8.0
+    thermal_threshold_c: float = 83.0
+    context_ceiling: int = 32768
+
+class VramGuardrail:
+    def __init__(self, budget: HardwareBudget):
+        self.budget = budget
+
+    def check(self, current_vram_gb: float) -> None:
+        usage_ratio = current_vram_gb / self.budget.vram_limit_gb
+        if usage_ratio > 0.85:
+            raise HTTPException(
+                status_code=503,
+                detail=f"VRAM guardrail triggered: {usage_ratio:.1%} "
+                       f"of {self.budget.vram_limit_gb}GB budget. "
+                       f"Aborting generation."
+            )
+        if usage_ratio > 0.70:
+            logger.warning(
+                f"VRAM pressure: {usage_ratio:.1%}. "
+                f"Throttling strategy complexity."
+            )</pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section: Trade-offs -->
+                            <div class="case-study__section">
+                                <h2 class="case-study__section-label">Trade-offs &amp; Decisions</h2>
+                                <div class="tradeoff-grid">
+                                    <div class="tradeoff-card">
+                                        <div class="tradeoff-card__verdict tradeoff-card__verdict--accepted">Accepted</div>
+                                        <h4>Mock Engine for CI</h4>
+                                        <p>
+                                            Wedge A is verified under a Mock engine (no GPU required). This enables CI testing but means
+                                            real GPU behavior remains unproven.
+                                        </p>
+                                    </div>
+                                    <div class="tradeoff-card">
+                                        <div class="tradeoff-card__verdict tradeoff-card__verdict--deferred">Deferred</div>
+                                        <h4>Fast-Swap / KV Survival</h4>
+                                        <p>
+                                            True context survival during VRAM pressure (Wedge B) requires live hardware testing. Not yet
+                                            verified. No production claim made.
+                                        </p>
+                                    </div>
+                                    <div class="tradeoff-card">
+                                        <div class="tradeoff-card__verdict tradeoff-card__verdict--rejected">Rejected</div>
+                                        <h4>Cloud Fallback</h4>
+                                        <p>
+                                            Falling back to a cloud API when local VRAM is exhausted violates the local-first principle. The
+                                            plane prefers to refuse work rather than leak data.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section: Current State -->
+                            <div class="case-study__section">
+                                <h2 class="case-study__section-label">Current Verified State</h2>
+                                <div class="case-study__section-body">
+                                    <p>
+                                        <strong>Wedge A is verified</strong> under the Mock engine with full CI coverage and no-GPU path
+                                        testing. The Economic Gatekeeper, circuit breakers, and audit logging are functional and tested.
+                                    </p>
+                                    <p>
+                                        <strong>Wedge B remains gated research.</strong> Real Fast-Swap and KV survival on consumer hardware
+                                        has not been validated. I will not claim production readiness for unproven swap behavior.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar Rail -->
+                        <aside class="case-study__rail">
+                            <div class="rail-card">
+                                <div class="rail-card__label">Stack</div>
+                                <div class="rail-card__value">FastAPI · Python 3.11 · Consumer GPU Target</div>
+                            </div>
+                            <div class="rail-card">
+                                <div class="rail-card__label">Key Patterns</div>
+                                <div class="rail-card__value">Economic Gatekeeper · VRAM Circuit Breaker · Context Ceiling (413)</div>
+                            </div>
+                            <div class="rail-card">
+                                <div class="rail-card__label">Constraints</div>
+                                <div class="rail-card__value">8 GB VRAM budget · Thermal limits · No cloud fallback · Human sign-off</div>
+                            </div>
+                            <div class="rail-card">
+                                <div class="rail-card__label">Repository</div>
+                                <div class="rail-card__value">
+                                    <a
+                                        href="https://github.com/jayjz"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style="color: var(--accent-link)"
+                                        >github.com/jayjz ↗</a
+                                    >
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <!-- CTA -->
+                    <section
+                        class="case-study__cta"
+                        style="margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--border); text-align: center"
+                    >
+                        <h2 style="font-size: 1.5rem; margin-bottom: 1rem">Facing similar constraints?</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 2rem">
+                            If your agent deployments are hitting hardware limits or require strict human-in-the-loop accountability, let's
+                            talk architecture.
+                        </p>
+                        <a href="../index.html#contact" class="button button--primary">Discuss Your Architecture</a>
+                    </section>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container site-footer__inner">
+                <p>© 2026 Jay • jaysystems.dev</p>
+                <p>Vanilla. No frameworks. Built under constraints.</p>
+            </div>
+        </footer>
+
+        <script src="../js/main.js" defer></script>
+    </body>
+</html>

@@ -75,3 +75,90 @@ repomix-output.txt
 
 full_codebase.txt
 repomix-output.xml
+# Python / Local Dev
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Repomix / AI Context
+repomix-output.xml
+repomix-output.txt
+full_codebase.txt
+
+
+# Dependencies / Build
+node_modules/
+dist/
+build/
+*.min.js
+*.bundle.js
+
+# Environment / Secrets
+.env
+.env.local
+.env.production
+*.key
+*.pem
+*.crt
+secrets/
+credentials/
+config/secrets/
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+*.log
+
+# Performance & Temp files
+*.cache
+*.tmp
+temp/
+cache/
+
+# Sensitive data
+*.db
+*.sqlite
+*.bak
+dumps/
+backups/
+*.pcap
+*.pcapng
+*.har
+screenshots/
+
+# Vercel / Deployment
+.vercel/
+.next/
+*.vercel
+
+# AI / LLM artifacts
+*.prompt
+*.context
+llm_cache/
+
+# Large media
+*.mp4
+*.mov
+assets/raw/
+assets/unoptimized/
+
+# Notes & personal
+TODO.md
+notes/
+personal/
+
+# Python / Local Dev
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Repomix / AI Context
+repomix-output.xml
+repomix-output.txt
+full_codebase.txt
