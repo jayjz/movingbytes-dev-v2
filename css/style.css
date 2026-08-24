@@ -771,7 +771,7 @@ body:hover .cursor { opacity: 1; }
     -webkit-backdrop-filter: blur(12px) saturate(1.2);
     opacity: 0;
     transition: opacity 0.4s var(--ease-cinematic);
-    z-index: 4999;
+    z-index: 1; /* Fixed: Local to .systems-panel context */
 }
 
 .systems-panel.is-open .systems-panel__backdrop {
@@ -780,7 +780,7 @@ body:hover .cursor { opacity: 1; }
 
 .systems-panel__content {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Fixed: Now safely above the backdrop (1) */
     width: min(600px, 45vw);
     height: 100%;
     background: var(--panel-bg);
