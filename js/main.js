@@ -340,6 +340,27 @@
             openPanel();
         });
 
+        // Deep-dive triggers from main page cards
+        $$('.deep-dive-trigger').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                const targetId = btn.getAttribute('data-target');
+                openPanel();
+
+                requestAnimationFrame(() => {
+                    const targetEntry = panel.querySelector(`[data-systems-id="${targetId}"]`);
+                    if (targetEntry) {
+                        targetEntry.scrollIntoView({
+                            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                            block: 'start'
+                        });
+                        targetEntry.classList.add('is-highlighted');
+                        setTimeout(() => targetEntry.classList.remove('is-highlighted'), 2000);
+                    }
+                });
+            });
+        });
+
         document.addEventListener('keydown', e => {
             const isMod = e.metaKey || e.ctrlKey;
             if (isMod && (e.key === 'k' || e.key === 'K')) {
@@ -388,6 +409,21 @@
             }
         });
     }
+
+    // Code copy buttons
+    document.addEventListener('click', e => {
+        if (e.target.classList.contains('code-copy-btn')) {
+            const pre = e.target.closest('.code-reveal__content').querySelector('pre');
+            if (!pre) return;
+            navigator.clipboard.writeText(pre.innerText).then(() => {
+                const original = e.target.innerText;
+                e.target.innerText = 'Copied!';
+                setTimeout(() => {
+                    e.target.innerText = original;
+                }, 2000);
+            });
+        }
+    });
 
     initSmoothScroll();
     initReveal();
