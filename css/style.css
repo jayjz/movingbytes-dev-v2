@@ -434,6 +434,7 @@ body:hover .cursor { opacity: 1; }
 
 /* ====================== SECTIONS ====================== */
 .work,
+.enterprise,
 .capabilities,
 .principles,
 .contact {
@@ -443,6 +444,7 @@ body:hover .cursor { opacity: 1; }
 
 /* Dramatic section dividers */
 .work::before,
+.enterprise::before,
 .capabilities::before,
 .principles::before {
     content: '';
@@ -457,6 +459,7 @@ body:hover .cursor { opacity: 1; }
 }
 
 .work::after,
+.enterprise::after,
 .capabilities::after,
 .principles::after {
     content: '';
@@ -1462,4 +1465,10 @@ body:hover .cursor { opacity: 1; }
     background: var(--panel-surface-elev);
     border-color: var(--accent);
     box-shadow: 0 0 20px rgba(0, 230, 200, 0.1);
+}
+
+/* ====================== BEYOND THE EDGE / ENTERPRISE ====================== */
+.enterprise {
+    padding: clamp(6rem, 16vw, 12rem) 0;
+    position: relative;
 }
