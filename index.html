@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#0c080f">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -52,11 +52,38 @@
                 <button type="button" class="systems-panel__close" data-systems-close aria-label="Close systems panel">×</button>
             </header>
             <div class="systems-panel__body">
-                <article class="systems-entry">
+                <section class="patterns-section">
+                    <h3 class="systems-section__label" style="margin-bottom: 1rem;">Constraint Patterns</h3>
+                    <div class="patterns-grid">
+                        <div class="pattern-card">
+                            <span class="pattern-label">[Pattern]</span>
+                            <h4>The Economic Gatekeeper</h4>
+                            <p>Rejecting unsafe agent strategies before token generation begins to save compute.</p>
+                            <span class="pattern-seen">Seen in: AetherForge</span>
+                        </div>
+                        <div class="pattern-card">
+                            <span class="pattern-label">[Pattern]</span>
+                            <h4>Barge-in FSM</h4>
+                            <p>Finite State Machine design for interrupting local audio pipelines without context corruption.</p>
+                            <span class="pattern-seen">Seen in: Unhinged Agent</span>
+                        </div>
+                        <div class="pattern-card">
+                            <span class="pattern-label">[Pattern]</span>
+                            <h4>Offline-First Fallback</h4>
+                            <p>Graceful degradation to local storage and queued sync when field connectivity drops.</p>
+                            <span class="pattern-seen">Seen in: HVAC Ops</span>
+                        </div>
+                    </div>
+                </section>
+
+                <article class="systems-entry" data-systems-id="aetherforge">
                     <div class="systems-entry__meta">
                         <span class="systems-entry__index">01</span>
                         <span class="systems-entry__name">AetherForge</span>
                         <span class="systems-entry__status">Wedge A (Mock-verified)</span>
+                    </div>
+                    <div class="entry-meta">
+                        <span>Updated: Aug 24, 2026</span><span>•</span><span>Control Plane</span>
                     </div>
                     <div class="systems-entry__sections">
                         <div class="systems-section">
@@ -74,6 +101,68 @@
                         <div class="systems-section">
                             <h3 class="systems-section__label">Current Verified State</h3>
                             <p class="systems-section__body">Wedge A verified under Mock engine (CI + no-GPU path). Real Fast-Swap / KV survival on 8 GB remains gated research (Wedge B). No production claim for unproven swap behavior.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="systems-entry" data-systems-id="unhinged">
+                    <div class="systems-entry__meta">
+                        <span class="systems-entry__index">02</span>
+                        <span class="systems-entry__name">Unhinged Agent</span>
+                        <span class="systems-entry__status">Phase 1 PoC</span>
+                    </div>
+                    <div class="entry-meta">
+                        <span>Updated: Aug 24, 2026</span><span>•</span><span>Edge + Host</span>
+                    </div>
+                    <div class="systems-entry__sections">
+                        <div class="systems-section">
+                            <h3 class="systems-section__label">Problem</h3>
+                            <p class="systems-section__body">Cloud voice assistants violate privacy and fail without internet. Local inference requires strict memory and state management.</p>
+                        </div>
+                        <div class="systems-section">
+                            <h3 class="systems-section__label">Architecture Decisions</h3>
+                            <p class="systems-section__body">Thin-client ESP32 edge streams raw audio via WebSocket to local RTX 4060 host running Whisper.cpp + local LLM. FSM handles listening vs processing states to prevent audio bleed.</p>
+                            <details class="code-reveal">
+                                <summary class="code-reveal__summary">View: Barge-in FSM State Enum</summary>
+                                <div class="code-reveal__content">
+                                    <pre>class AudioState(Enum):
+    IDLE = "idle"
+    LISTENING = "listening"
+    PROCESSING = "processing"
+    SPEAKING = "speaking"
+    # Barge-in immediately truncates SPEAKING -> LISTENING</pre>
+                                    <button class="code-copy-btn">Copy</button>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="systems-section">
+                            <h3 class="systems-section__label">Current Verified State</h3>
+                            <p class="systems-section__body">Phase 1 Software PoC + browser digital twin complete. Physical hardware integration pending. Data stays local.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="systems-entry" data-systems-id="hvac-ops">
+                    <div class="systems-entry__meta">
+                        <span class="systems-entry__index">03</span>
+                        <span class="systems-entry__name">HVAC Ops + Truck-Ready</span>
+                        <span class="systems-entry__status">Phase 1 Pilot</span>
+                    </div>
+                    <div class="entry-meta">
+                        <span>Updated: Aug 24, 2026</span><span>•</span><span>Field Ops</span>
+                    </div>
+                    <div class="systems-entry__sections">
+                        <div class="systems-section">
+                            <h3 class="systems-section__label">Problem</h3>
+                            <p class="systems-section__body">Field techs waste 30% of first-visit time on missing parts or incorrect diagnostics due to disconnected systems and high cognitive load.</p>
+                        </div>
+                        <div class="systems-section">
+                            <h3 class="systems-section__label">Architecture Decisions</h3>
+                            <p class="systems-section__body">Offline-first PWA checklist synced to local multi-agent dispatcher. Human-in-the-loop approval gate required before any inventory deduction or schedule change.</p>
+                        </div>
+                        <div class="systems-section">
+                            <h3 class="systems-section__label">Current Verified State</h3>
+                            <p class="systems-section__body">Phase 1 Streamlit demos with synthetic fallback. Not production software — working pilot tooling ready for field shadowing.</p>
                         </div>
                     </div>
                 </article>
@@ -179,6 +268,7 @@
                                 <span>Safety Layer</span>
                                 <span>Mock-verified</span>
                                 <span>VRAM Guardrails</span>
+                                <button class="deep-dive-trigger" data-target="aetherforge">Architecture Deep Dive ↗</button>
                             </div>
                         </div>
                     </article>
@@ -207,6 +297,7 @@
                                     <span>Voice</span>
                                     <span>Local LLM</span>
                                     <span>FSM</span>
+                                    <button class="deep-dive-trigger" data-target="unhinged">Edge/Host Architecture ↗</button>
                                 </div>
                             </div>
                         </article>
@@ -233,6 +324,7 @@
                                     <span>Human Review</span>
                                     <span>Offline</span>
                                     <span>Trades</span>
+                                    <button class="deep-dive-trigger" data-target="hvac-ops">Field Constraints Pattern ↗</button>
                                 </div>
                             </div>
                         </article>
