@@ -62,3 +62,16 @@ assets/unoptimized/
 TODO.md
 notes/
 personal/
+
+# Python / Local Dev
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Repomix / AI Context
+repomix-output.xml
+repomix-output.txt
+
+full_codebase.txt
+repomix-output.xml
