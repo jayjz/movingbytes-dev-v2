@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="af-bg" x1="0" y1="0" x2="800" y2="450">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#050507"/>
+    </linearGradient>
+    <marker id="arrow-af" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#00e6c8"/>
+    </marker>
+  </defs>
+  <rect width="800" height="450" fill="url(#af-bg)"/>
+  <g opacity="0.06" stroke="#00e6c8" stroke-width="0.5">
+    <path d="M0 100h800M0 200h800M0 300h800M0 400h800"/>
+    <path d="M100 0v450M200 0v450M300 0v450M400 0v450M500 0v450M600 0v450M700 0v450"/>
+  </g>
+  <g transform="translate(40 180)">
+    <rect width="140" height="80" rx="8" fill="#111118" stroke="#00e6c8" stroke-width="1" opacity="0.8"/>
+    <text x="70" y="28" font-family="JetBrains Mono, monospace" font-size="10" fill="#00e6c8" text-anchor="middle">AGENT</text>
+    <text x="70" y="48" font-family="JetBrains Mono, monospace" font-size="9" fill="#d1c4e8" text-anchor="middle">Strategy Proposal</text>
+    <text x="70" y="64" font-family="JetBrains Mono, monospace" font-size="8" fill="#9b8ab8" text-anchor="middle">VRAM estimate: 7.2GB</text>
+  </g>
+  <path d="M180 220 L240 220" stroke="#00e6c8" stroke-width="1.5" marker-end="url(#arrow-af)" opacity="0.6"/>
+  <g transform="translate(240 180)">
+    <rect width="150" height="80" rx="8" fill="#111118" stroke="#00e6c8" stroke-width="2" opacity="0.9"/>
+    <text x="75" y="26" font-family="JetBrains Mono, monospace" font-size="10" fill="#00e6c8" text-anchor="middle">ECONOMIC</text>
+    <text x="75" y="42" font-family="JetBrains Mono, monospace" font-size="10" fill="#00e6c8" text-anchor="middle">GATEKEEPER</text>
+    <text x="75" y="60" font-family="JetBrains Mono, monospace" font-size="9" fill="#d1c4e8" text-anchor="middle">Evaluates cost model</text>
+    <text x="75" y="74" font-family="JetBrains Mono, monospace" font-size="8" fill="#9b8ab8" text-anchor="middle">Rejects if VRAM &gt; 8GB</text>
+  </g>
+  <path d="M315 260 L315 320" stroke="#ff6b4a" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+  <text x="325" y="295" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6b4a">REJECT</text>
+  <g transform="translate(240 320)">
+    <rect width="150" height="60" rx="8" fill="#111118" stroke="#ff6b4a" stroke-width="1" opacity="0.6"/>
+    <text x="75" y="25" font-family="JetBrains Mono, monospace" font-size="9" fill="#ff6b4a" text-anchor="middle">Strategy Rejected</text>
+    <text x="75" y="45" font-family="JetBrains Mono, monospace" font-size="8" fill="#9b8ab8" text-anchor="middle">Request fallback plan</text>
+  </g>
+  <path d="M390 220 L450 220" stroke="#00e6c8" stroke-width="1.5" marker-end="url(#arrow-af)" opacity="0.6"/>
+  <g transform="translate(450 180)">
+    <rect width="150" height="80" rx="8" fill="#111118" stroke="#00e6c8" stroke-width="2" opacity="0.9"/>
+    <text x="75" y="26" font-family="JetBrains Mono, monospace" font-size="10" fill="#00e6c8" text-anchor="middle">VRAM CIRCUIT</text>
+    <text x="75" y="42" font-family="JetBrains Mono, monospace" font-size="10" fill="#00e6c8" text-anchor="middle">BREAKER</text>
+    <text x="75" y="60" font-family="JetBrains Mono, monospace" font-size="9" fill="#d1c4e8" text-anchor="middle">Real-time telemetry</text>
+    <text x="75" y="74" font-family="JetBrains Mono, monospace" font-size="8" fill="#9b8ab8" text-anchor="middle">Kill if &gt; 85% usage</text>
+  </g>
+  <path d="M600 220 L660 220" stroke="#00e6c8" stroke-width="1.5" marker-end="url(#arrow-af)" opacity="0.6"/>
+  <g transform="translate(660 180)">
+    <rect width="110" height="80" rx="8" fill="#111118" stroke="#00e6c8" stroke-width="1" opacity="0.8"/>
+    <text x="55" y="28" font-family="JetBrains Mono, monospace" font-size="10" fill="#00e6c8" text-anchor="middle">INFERENCE</text>
+    <text x="55" y="48" font-family="JetBrains Mono, monospace" font-size="9" fill="#d1c4e8" text-anchor="middle">Token generation</text>
+    <text x="55" y="64" font-family="JetBrains Mono, monospace" font-size="8" fill="#9b8ab8" text-anchor="middle">Durable audit log</text>
+  </g>
+  <text x="400" y="40" font-family="JetBrains Mono, monospace" font-size="12" fill="#00e6c8" text-anchor="middle" font-weight="600">AetherForge Control Plane Architecture</text>
+  <text x="400" y="60" font-family="JetBrains Mono, monospace" font-size="9" fill="#9b8ab8" text-anchor="middle">Hardware-aware safety layer for local AI agents on consumer GPUs</text>
+</svg>
