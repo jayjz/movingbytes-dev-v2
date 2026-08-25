@@ -444,6 +444,30 @@
         }
     });
 
+    function initDiagramAnimation() {
+        const diagrams = document.querySelectorAll('.architecture-diagram');
+        if (!diagrams.length) return;
+
+        if (prefersReducedMotion) {
+            diagrams.forEach(diagram => diagram.classList.add('is-visible'));
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.2, rootMargin: '0px 0px -10% 0px' }
+        );
+
+        diagrams.forEach(diagram => observer.observe(diagram));
+    }
+
     initSmoothScroll();
     initReveal();
     initCursor();
@@ -452,4 +476,5 @@
     initSystemsPanel();
     initGlossarySearch();
     initViewTransitions();
+    initDiagramAnimation();
 })();

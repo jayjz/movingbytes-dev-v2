@@ -13,10 +13,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/ui-polish.css" />
     </head>
     <body>
         <a href="#main" class="skip-link">Skip to content</a>
@@ -220,7 +221,7 @@
                             </div>
 
                             <div class="case-study__section">
-                                <h2 class="case-study__section-label">Business Impact & JTBD</h2>
+                                <h2 class="case-study__section-label">Business Impact &amp; JTBD</h2>
                                 <div class="case-study__section-body">
                                     <p>
                                         <strong>De-risking the deployment.</strong> The
@@ -304,17 +305,21 @@ class VramGuardrail:
                                             <span class="terminal-mock__flag">-d</span>
                                             '{"current_vram_gb": 7.2}'
                                         </span>
-                                        <span class="terminal-mock__line" style="margin-top: 0.75rem">&nbsp;</span>
+                                        <span class="terminal-mock__line" style="margin-top: 0.75rem">&amp;nbsp;</span>
                                         <span class="terminal-mock__line terminal-mock__error">HTTP/1.1 503 Service Unavailable</span>
                                         <span class="terminal-mock__line terminal-mock__output">{</span>
                                         <span class="terminal-mock__line terminal-mock__output">
                                             "detail": "VRAM guardrail triggered: 90.0% of 8.0GB budget. Aborting generation."</span
                                         >
                                         <span class="terminal-mock__line terminal-mock__output">}</span>
-                                        <span class="terminal-mock__line" style="margin-top: 0.75rem">&nbsp;</span>
+                                        <span class="terminal-mock__line" style="margin-top: 0.75rem">&amp;nbsp;</span>
                                         <span class="terminal-mock__line terminal-mock__comment"
                                             ># Guardrail prevented system OOM. Agent strategy rejected before inference.</span
                                         >
+                                        <span class="terminal-mock__line">
+                                            <span class="terminal-mock__prompt">$ </span>
+                                            <span class="terminal-mock__cursor" aria-hidden="true"></span>
+                                        </span>
                                     </div>
                                     <div class="terminal-mock__caption">
                                         Illustrative of verified behavior — derived from production
@@ -324,7 +329,7 @@ class VramGuardrail:
                             </div>
 
                             <div class="case-study__section">
-                                <h2 class="case-study__section-label">Trade-offs & Decisions</h2>
+                                <h2 class="case-study__section-label">Trade-offs &amp; Decisions</h2>
                                 <div class="tradeoff-grid">
                                     <div class="tradeoff-card">
                                         <div class="tradeoff-card__verdict tradeoff-card__verdict--accepted">Accepted</div>

@@ -2,7 +2,7 @@ name: Frontend CI
 
 on:
   push:
-    branches: [main, feat/second-brain-systems-nav, feat/second-brain-expansion]
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install validators
         run: |
@@ -25,5 +25,12 @@ jobs:
       - name: Prettier check
         run: prettier --check "index.html" "css/**/*.css" "js/**/*.js"
 
-      - name: HTML Validate
+      - name: HTML Validate — Homepage
         run: html-validate index.html
+
+      - name: HTML Validate — Case Studies
+        run: |
+          for file in work/*.html; do
+            echo "Validating $file..."
+            html-validate "$file"
+          done
