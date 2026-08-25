@@ -21,11 +21,9 @@
     <body>
         <a href="#main" class="skip-link">Skip to content</a>
 
-        <!-- Atmospheric layers -->
         <div class="grain" aria-hidden="true"></div>
         <div class="vignette" aria-hidden="true"></div>
 
-        <!-- Custom cursor -->
         <div class="cursor" aria-hidden="true">
             <div class="cursor-dot"></div>
             <div class="cursor-ring"></div>
@@ -48,7 +46,6 @@
             </div>
         </nav>
 
-        <!-- Systems Glossary Panel (Duplicated for absolute static resilience) -->
         <div id="systems-panel" class="systems-panel" role="dialog" aria-modal="true" aria-labelledby="systems-panel-title" hidden>
             <div class="systems-panel__backdrop" data-systems-close></div>
             <div class="systems-panel__content" role="document">
@@ -156,7 +153,6 @@
 
                     <div class="case-study__grid">
                         <div class="case-study__content">
-                            <!-- Section: The Problem -->
                             <div class="case-study__section">
                                 <h2 class="case-study__section-label">The Problem</h2>
                                 <div class="case-study__section-body">
@@ -174,7 +170,6 @@
                                 </div>
                             </div>
 
-                            <!-- Section: Architecture -->
                             <div class="case-study__section">
                                 <h2 class="case-study__section-label">Architecture Decisions</h2>
                                 <div class="case-study__section-body">
@@ -185,30 +180,56 @@
                                     </p>
                                     <p>Three core subsystems enforce safety:</p>
                                     <p>
-                                        <strong>1. The <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button">Economic Gatekeeper</span></strong> — Evaluates agent strategy proposals against a cost
-                                        model before execution. If a strategy requires more VRAM than the budget allows, the plane rejects
-                                        it and requests a fallback strategy. No tokens are wasted on doomed attempts.
+                                        <strong
+                                            >1. The
+                                            <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button"
+                                                >Economic Gatekeeper</span
+                                            ></strong
+                                        >
+                                        — Evaluates agent strategy proposals against a cost model before execution. If a strategy requires
+                                        more VRAM than the budget allows, the plane rejects it and requests a fallback strategy. No tokens
+                                        are wasted on doomed attempts.
                                     </p>
                                     <p>
-                                        <strong>2. Thermal / <span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button">VRAM Circuit Breakers</span></strong> — Real-time hardware telemetry feeds into hard
-                                        limits. If VRAM usage exceeds 85%, the plane returns HTTP 503. If context size exceeds the ceiling,
-                                        it returns HTTP 413. These are not suggestions. They are kill switches.
+                                        <strong
+                                            >2. Thermal /
+                                            <span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button"
+                                                >VRAM Circuit Breakers</span
+                                            ></strong
+                                        >
+                                        — Real-time hardware telemetry feeds into hard limits. If VRAM usage exceeds 85%, the plane returns
+                                        HTTP 503. If context size exceeds the ceiling, it returns HTTP 413. These are not suggestions. They
+                                        are kill switches.
                                     </p>
                                     <p>
                                         <strong>3. Durable Audit Logs</strong> — Every strategy negotiation, every rejection, every circuit
                                         breaker trip is logged. Agents operate under the assumption that a human will review the trace.
                                     </p>
                                 </div>
+
+                                <div class="architecture-diagram">
+                                    <img
+                                        src="../images/aetherforge-architecture.svg"
+                                        alt="AetherForge architecture flow diagram: Agent Strategy to Economic Gatekeeper to VRAM Circuit Breaker to Inference and Audit"
+                                        loading="lazy"
+                                    />
+                                    <p class="architecture-diagram__caption">
+                                        Control plane flow — derived from production architecture decisions
+                                    </p>
+                                </div>
                             </div>
 
-                            <!-- Section: Business Impact & JTBD -->
                             <div class="case-study__section">
                                 <h2 class="case-study__section-label">Business Impact & JTBD</h2>
                                 <div class="case-study__section-body">
                                     <p>
-                                        <strong>De-risking the deployment.</strong> The <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button">Economic Gatekeeper</span> isn't just a token-saver; it
-                                        operates on <em>Expected Value</em>. By rejecting unsafe or overly complex agent strategies before
-                                        execution, the system prevents cascading failures that lead to operational downtime.
+                                        <strong>De-risking the deployment.</strong> The
+                                        <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button"
+                                            >Economic Gatekeeper</span
+                                        >
+                                        isn't just a token-saver; it operates on <em>Expected Value</em>. By rejecting unsafe or overly
+                                        complex agent strategies before execution, the system prevents cascading failures that lead to
+                                        operational downtime.
                                     </p>
                                     <p>
                                         In a field-ops environment, an agent hallucinating a parts order or freezing a dispatch queue has a
@@ -218,7 +239,6 @@
                                 </div>
                             </div>
 
-                            <!-- Section: Code -->
                             <div class="case-study__section">
                                 <h2 class="case-study__section-label">Proof of Work</h2>
                                 <div class="code-block">
@@ -257,9 +277,52 @@ class VramGuardrail:
             )</pre>
                                     </div>
                                 </div>
+
+                                <div class="terminal-mock">
+                                    <div class="terminal-mock__header">
+                                        <div class="terminal-mock__dots">
+                                            <span class="terminal-mock__dot terminal-mock__dot--red"></span>
+                                            <span class="terminal-mock__dot terminal-mock__dot--yellow"></span>
+                                            <span class="terminal-mock__dot terminal-mock__dot--green"></span>
+                                        </div>
+                                        <span class="terminal-mock__title">bash — aetherforge-vram-guardrail-demo</span>
+                                    </div>
+                                    <div class="terminal-mock__body">
+                                        <span class="terminal-mock__line">
+                                            <span class="terminal-mock__prompt">$ </span>
+                                            <span class="terminal-mock__command">curl</span>
+                                            <span class="terminal-mock__flag"> -X POST</span>
+                                            http://localhost:8000/vram-guardrail/check
+                                            <span class="terminal-mock__flag"> \</span>
+                                        </span>
+                                        <span class="terminal-mock__line" style="padding-left: 2rem">
+                                            <span class="terminal-mock__flag">-H</span>
+                                            "Content-Type: application/json"
+                                            <span class="terminal-mock__flag"> \</span>
+                                        </span>
+                                        <span class="terminal-mock__line" style="padding-left: 2rem">
+                                            <span class="terminal-mock__flag">-d</span>
+                                            '{"current_vram_gb": 7.2}'
+                                        </span>
+                                        <span class="terminal-mock__line" style="margin-top: 0.75rem">&nbsp;</span>
+                                        <span class="terminal-mock__line terminal-mock__error">HTTP/1.1 503 Service Unavailable</span>
+                                        <span class="terminal-mock__line terminal-mock__output">{</span>
+                                        <span class="terminal-mock__line terminal-mock__output">
+                                            "detail": "VRAM guardrail triggered: 90.0% of 8.0GB budget. Aborting generation."</span
+                                        >
+                                        <span class="terminal-mock__line terminal-mock__output">}</span>
+                                        <span class="terminal-mock__line" style="margin-top: 0.75rem">&nbsp;</span>
+                                        <span class="terminal-mock__line terminal-mock__comment"
+                                            ># Guardrail prevented system OOM. Agent strategy rejected before inference.</span
+                                        >
+                                    </div>
+                                    <div class="terminal-mock__caption">
+                                        Illustrative of verified behavior — derived from production
+                                        <code>vram_circuit_breaker.py</code> logic
+                                    </div>
+                                </div>
                             </div>
 
-                            <!-- Section: Trade-offs -->
                             <div class="case-study__section">
                                 <h2 class="case-study__section-label">Trade-offs & Decisions</h2>
                                 <div class="tradeoff-grid">
@@ -290,7 +353,6 @@ class VramGuardrail:
                                 </div>
                             </div>
 
-                            <!-- Section: Current State -->
                             <div class="case-study__section">
                                 <h2 class="case-study__section-label">Current Verified State</h2>
                                 <div class="case-study__section-body">
@@ -306,7 +368,6 @@ class VramGuardrail:
                             </div>
                         </div>
 
-                        <!-- Sidebar Rail -->
                         <aside class="case-study__rail">
                             <div class="rail-card">
                                 <div class="rail-card__label">Stack</div>
@@ -315,9 +376,13 @@ class VramGuardrail:
                             <div class="rail-card">
                                 <div class="rail-card__label">Key Patterns</div>
                                 <div class="rail-card__value">
-                                    <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button">Economic Gatekeeper</span>
+                                    <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button"
+                                        >Economic Gatekeeper</span
+                                    >
                                     ·
-                                    <span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button">VRAM Circuit Breaker</span>
+                                    <span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button"
+                                        >VRAM Circuit Breaker</span
+                                    >
                                     · Context Ceiling (413)
                                 </div>
                             </div>
@@ -340,7 +405,6 @@ class VramGuardrail:
                         </aside>
                     </div>
 
-                    <!-- CTA -->
                     <section
                         class="case-study__cta"
                         style="margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--border); text-align: center"
