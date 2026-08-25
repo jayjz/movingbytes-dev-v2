@@ -17,15 +17,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
 
       - name: Install validators
-        run: npm install -g prettier html-validate
+        run: |
+          npm install -g prettier html-validate
 
       - name: Prettier check
-        run: |
-          prettier --check "index.html" "css/**/*.css" "js/**/*.js"
-          prettier --check "work/**/*.html" || true
+        run: prettier --check "index.html" "css/**/*.css" "js/**/*.js"
 
       - name: HTML Validate — Homepage
         run: html-validate index.html
