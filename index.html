@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay | Interface &amp; Systems Architect</title>
+    <title>Jay | Interface & Systems Architect</title>
     <meta name="description" content="I design resilient interfaces and backend systems that survive the messy reality of operations. From consumer-GPU AI control planes to offline-first field ops tooling.">
     <meta name="theme-color" content="#0c080f">
     <meta name="view-transition" content="same-origin">
@@ -11,15 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ui-polish.css">
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- Atmospheric layers -->
     <div class="grain" aria-hidden="true"></div>
     <div class="vignette" aria-hidden="true"></div>
 
-    <!-- Custom cursor -->
     <div class="cursor" aria-hidden="true">
         <div class="cursor-dot"></div>
         <div class="cursor-ring"></div>
@@ -44,7 +43,6 @@
         </div>
     </nav>
 
-    <!-- Systems Glossary Panel -->
     <div id="systems-panel" class="systems-panel" role="dialog" aria-modal="true" aria-labelledby="systems-panel-title" hidden>
         <div class="systems-panel__backdrop" data-systems-close></div>
         <div class="systems-panel__content" role="document">
@@ -58,7 +56,6 @@
                 </div>
 
                 <div class="glossary-grid" id="glossary-list">
-                    <!-- Pattern 1: The Economic Gatekeeper -->
                     <article class="glossary-item" id="term-economic-gatekeeper" data-tags="control-plane risk-management strategy">
                         <header class="glossary-item__header">
                             <h3 class="glossary-item__term">The Economic Gatekeeper</h3>
@@ -77,7 +74,6 @@
                         </div>
                     </article>
 
-                    <!-- Pattern 2: VRAM Circuit Breaker -->
                     <article class="glossary-item" id="term-vram-breaker" data-tags="hardware safety resource-limits">
                         <header class="glossary-item__header">
                             <h3 class="glossary-item__term">VRAM Circuit Breaker</h3>
@@ -96,7 +92,6 @@
                         </div>
                     </article>
 
-                    <!-- Pattern 3: Barge-in FSM -->
                     <article class="glossary-item" id="term-barge-in" data-tags="edge-audio state-machine ux">
                         <header class="glossary-item__header">
                             <h3 class="glossary-item__term">Barge-in FSM</h3>
@@ -115,7 +110,6 @@
                         </div>
                     </article>
 
-                    <!-- Pattern 4: Offline-First Fallback -->
                     <article class="glossary-item" id="term-offline-first" data-tags="network resilience field-ops">
                         <header class="glossary-item__header">
                             <h3 class="glossary-item__term">Offline-First Fallback</h3>
@@ -139,7 +133,6 @@
     </div>
 
     <main id="main">
-        <!-- HERO -->
         <section id="top" class="hero">
             <canvas id="particles" aria-hidden="true"></canvas>
             <div class="hero-bg-layer" aria-hidden="true"></div>
@@ -150,10 +143,10 @@
                         <p class="hero__eyebrow">
                             <span>Jay</span>
                             <span aria-hidden="true">·</span>
-                            <span>Interface &amp; Systems Architect</span>
+                            <span>Interface & Systems Architect</span>
                         </p>
                         <h1 class="hero__title">
-                            Interface &amp; Systems Architecture.<br>
+                            Interface & Systems Architecture.<br>
                             Built for reality.
                         </h1>
                     </div>
@@ -186,7 +179,6 @@
             </div>
         </section>
 
-        <!-- WORK SECTION -->
         <section id="work" class="work">
             <div class="container">
                 <div class="section-intro">
@@ -198,7 +190,6 @@
                 </div>
 
                 <div class="work-grid">
-                    <!-- Featured: AetherForge -->
                     <article class="work-featured">
                         <div class="work-featured__media" aria-hidden="true">
                             <img src="images/codeforge-slm.svg"
@@ -241,7 +232,6 @@
                         </div>
                     </article>
 
-                    <!-- Secondary -->
                     <div class="work-secondary">
                         <article class="work-card work-card--secondary">
                             <div class="work-card__media" aria-hidden="true">
@@ -301,7 +291,6 @@
             </div>
         </section>
 
-        <!-- BEYOND THE EDGE: ENTERPRISE &amp; SECURITY -->
         <section id="enterprise" class="enterprise">
             <div class="container">
                 <div class="section-intro">
@@ -312,7 +301,6 @@
                     </p>
                 </div>
                 <div class="work-secondary">
-                    <!-- GhostOps -->
                     <article class="work-card work-card--secondary">
                         <div class="work-card__content">
                             <div class="work-card__header">
@@ -320,7 +308,7 @@
                                 <h3 class="work-card__title">GhostOps</h3>
                             </div>
                             <p class="work-card__lede">
-                                Offensive &amp; defensive cybersecurity toolkit. Monorepo simulating real-world adversary operations to inform threat models for local agent deployments.
+                                Offensive & defensive cybersecurity toolkit. Monorepo simulating real-world adversary operations to inform threat models for local agent deployments.
                             </p>
                             <p class="work-card__impact">
                                 <em>Adversarial simulation informs the kill-switches in AetherForge. You can't defend a system you don't know how to break.</em>
@@ -333,7 +321,6 @@
                             </div>
                         </div>
                     </article>
-                    <!-- Compliance Canary -->
                     <article class="work-card work-card--secondary">
                         <div class="work-card__content">
                             <div class="work-card__header">
@@ -358,7 +345,6 @@
             </div>
         </section>
 
-        <!-- CAPABILITIES -->
         <section id="capabilities" class="capabilities">
             <div class="container">
                 <div class="section-intro">
@@ -398,7 +384,6 @@
             </div>
         </section>
 
-        <!-- PRINCIPLES / THE ANTI-MANIFESTO -->
         <section id="principles" class="principles">
             <div class="container">
                 <div class="principles__header">
@@ -448,7 +433,6 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
         <section id="contact" class="contact">
             <div class="container">
                 <div class="contact__inner">
