@@ -1,15 +1,11 @@
 :root {
-    --bg: #0c080f;
-    --bg-elev: #130e19;
-    --surface: #1a1422;
-    --text: #f4f0fa;
-    --text-muted: #c4b7d6;
-    --text-faint: #8f80a8;
-    --accent: #1ec9b0;
-    --accent-ink: #041411;
-    --border: rgba(255, 255, 255, 0.08);
-    --border-strong: rgba(255, 255, 255, 0.16);
-    --focus: #1ec9b0;
+    --bg-primary: #09090b;
+    --bg-card: #18181b;
+    --border-color: #27272a;
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --accent: #10b981;
+    --accent-hover: #059669;
     --max-width: 1080px;
     --header-height: 4.25rem;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -48,9 +44,9 @@ body {
 
 body {
     min-height: 100vh;
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-sans);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
     font-size: 1.0625rem;
     line-height: 1.6;
     font-weight: 400;
@@ -73,7 +69,7 @@ a:hover {
 }
 
 :focus-visible {
-    outline: 2px solid var(--focus);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
 }
 
@@ -84,7 +80,7 @@ a:hover {
     z-index: 100;
     padding: 0.6rem 0.9rem;
     background: var(--accent);
-    color: var(--accent-ink);
+    color: #09090b;
     font-weight: 600;
 }
 
@@ -101,8 +97,8 @@ a:hover {
     position: sticky;
     top: 0;
     z-index: 20;
-    background: rgba(12, 8, 15, 0.92);
-    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--bg-primary) 92%, transparent);
+    border-bottom: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
 }
 
@@ -125,18 +121,19 @@ a:hover {
 }
 
 .brand:hover {
-    color: var(--text);
+    color: var(--text-primary);
 }
 
 .brand__name {
     font-weight: 600;
     letter-spacing: -0.02em;
+    color: var(--text-primary);
 }
 
 .brand__domain {
     font-family: var(--font-mono);
     font-size: 0.8rem;
-    color: var(--text-faint);
+    color: var(--text-secondary);
 }
 
 .site-nav {
@@ -153,31 +150,39 @@ a:hover {
     text-decoration: none;
     font-size: 0.92rem;
     font-weight: 500;
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-    color: var(--text);
+    color: var(--text-primary);
 }
 
 .hero {
     padding: 4.5rem 0 4rem;
 }
 
-.hero__title {
+.hero__title,
+h1 {
     margin: 0 0 1.15rem;
     max-width: 16ch;
     font-size: clamp(2.15rem, 5vw, 3.35rem);
     line-height: 1.12;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.02em;
     font-weight: 700;
+    color: var(--text-primary);
+}
+
+.hero__copy,
+.hero__copy p,
+p {
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 .hero__copy {
     margin: 0 0 1.75rem;
     max-width: 42rem;
-    color: var(--text-muted);
     font-size: 1.125rem;
 }
 
@@ -193,34 +198,39 @@ a:hover {
     justify-content: center;
     min-height: 44px;
     padding: 0.65rem 1.15rem;
-    border-radius: 4px;
+    border-radius: 8px;
     font-weight: 600;
     font-size: 0.95rem;
     text-decoration: none;
     border: 1px solid transparent;
     transition:
-        background 0.15s var(--ease),
-        border-color 0.15s var(--ease),
-        color 0.15s var(--ease);
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
 }
 
-.button--primary {
+.button--primary,
+.btn-primary {
     background: var(--accent);
-    color: var(--accent-ink);
+    color: #09090b;
+    font-weight: 600;
 }
 
-.button--primary:hover {
-    background: #43d7c0;
-    color: var(--accent-ink);
+.button--primary:hover,
+.btn-primary:hover {
+    background: var(--accent-hover);
+    color: #09090b;
 }
 
-.button--ghost {
+.button--ghost,
+.btn-secondary {
     background: transparent;
-    color: var(--text);
-    border-color: var(--border-strong);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
 }
 
-.button--ghost:hover {
+.button--ghost:hover,
+.btn-secondary:hover {
     border-color: var(--accent);
     color: var(--accent);
 }
@@ -228,7 +238,7 @@ a:hover {
 .work,
 .about {
     padding: 3.5rem 0 4.5rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-color);
 }
 
 .section-intro {
@@ -241,20 +251,22 @@ a:hover {
     font-size: 0.75rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--text-faint);
+    color: var(--text-secondary);
 }
 
 .section-intro__title {
     margin: 0 0 0.5rem;
     font-size: clamp(1.5rem, 3vw, 1.9rem);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     line-height: 1.2;
+    color: var(--text-primary);
 }
 
 .section-intro__copy {
     margin: 0;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     max-width: 36rem;
+    line-height: 1.6;
 }
 
 .work-grid {
@@ -263,38 +275,38 @@ a:hover {
     gap: 1.15rem;
 }
 
-.work-card {
+.work-card,
+.project-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.85rem;
     padding: 1.35rem 1.3rem 1.25rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    transition:
-        border-color 0.15s var(--ease),
-        background 0.15s var(--ease);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: border-color 0.2s ease;
 }
 
-.js-reveal .work-card {
+.js-reveal .work-card,
+.js-reveal .project-card {
     opacity: 0;
     transform: translateY(16px);
     transition:
         opacity 0.5s var(--ease),
         transform 0.5s var(--ease),
-        border-color 0.15s var(--ease),
-        background 0.15s var(--ease);
+        border-color 0.2s ease;
 }
 
-.js-reveal .work-card.is-visible {
+.js-reveal .work-card.is-visible,
+.js-reveal .project-card.is-visible {
     opacity: 1;
     transform: none;
 }
 
-.work-card:hover {
-    border-color: var(--border-strong);
-    background: var(--bg-elev);
+.work-card:hover,
+.project-card:hover {
+    border-color: var(--accent);
 }
 
 .work-card__header {
@@ -309,23 +321,25 @@ a:hover {
     font-size: 1.2rem;
     letter-spacing: -0.02em;
     line-height: 1.25;
+    color: var(--text-primary);
 }
 
 .work-card__status {
     margin: 0;
     width: fit-content;
     padding: 0.18rem 0.5rem;
-    border: 1px solid var(--border-strong);
+    border: 1px solid var(--border-color);
     border-radius: 999px;
     font-family: var(--font-mono);
     font-size: 0.72rem;
     line-height: 1.4;
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 .work-card__body {
     margin: 0;
-    color: var(--text-muted);
+    color: var(--text-secondary);
+    line-height: 1.6;
     flex: 1;
 }
 
@@ -341,10 +355,11 @@ a:hover {
 .work-card__stack li {
     padding: 0.18rem 0.5rem;
     border-radius: 3px;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
     font-family: var(--font-mono);
     font-size: 0.72rem;
-    color: var(--text-faint);
+    color: var(--text-secondary);
 }
 
 .work-card__source {
@@ -352,8 +367,9 @@ a:hover {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    font-weight: 600;
-    font-size: 0.92rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 0.875rem;
     color: var(--accent);
     text-decoration: none;
     white-space: nowrap;
@@ -361,13 +377,19 @@ a:hover {
 
 .work-card__source::after {
     content: ' ↗';
-    font-size: 0.85em;
+    display: inline-block;
+    transition: transform 0.2s ease;
 }
 
 .work-card__source:hover,
 .work-card__source:focus-visible {
-    color: #6fe4d1;
-    text-decoration: underline;
+    color: var(--accent-hover);
+    text-decoration: none;
+}
+
+.work-card__source:hover::after,
+.work-card__source:focus-visible::after {
+    transform: translateX(3px);
 }
 
 .about__copy {
@@ -376,7 +398,8 @@ a:hover {
 
 .about__copy p {
     margin: 0 0 1.1rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 .about__copy p:last-child {
@@ -384,7 +407,7 @@ a:hover {
 }
 
 .site-footer {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-color);
     padding: 1.5rem 0 2rem;
 }
 
@@ -400,11 +423,11 @@ a:hover {
     margin: 0;
     font-family: var(--font-mono);
     font-size: 0.8rem;
-    color: var(--text-faint);
+    color: var(--text-secondary);
 }
 
 .site-footer a {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     text-decoration: none;
 }
 
