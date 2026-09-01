@@ -1,4 +1,1 @@
-# Prettier HTML/CSS rewrites this cinematic hand-authored source into a different document.
-# JS is the machine-checked surface. HTML is gated by html-validate.
-index.html
-css/**
+node_modules/

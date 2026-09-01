@@ -26,13 +26,13 @@ certs/
 now-debug.log
 
 # 3. AI, AGENTS & LOCAL INFERENCE
-# Prevents leaking local model weights, FSM states, and control plane telemetry
+# Prevents leaking local model weights and agent runtime state
 *.prompt
 *.context
 llm_cache/
 agent_state/
 memory_dumps/
-circuit_breaker_logs/
+agent_logs/
 thermal_logs/
 models/
 *.gguf

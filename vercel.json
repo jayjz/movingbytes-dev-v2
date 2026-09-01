@@ -1,21 +1,27 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {"key": "X-Content-Type-Options", "value": "nosniff"},
-        {"key": "X-Frame-Options", "value": "DENY"},
-        {"key": "X-XSS-Protection", "value": "1; mode=block"},
-        {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}
-      ]
-    },
-    {
-      "source": "/(.*)\\.(css|js|webp|svg)",
-      "headers": [
-        {"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}
-      ]
-    }
-  ]
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                { "key": "X-Content-Type-Options", "value": "nosniff" },
+                { "key": "X-Frame-Options", "value": "DENY" },
+                { "key": "X-XSS-Protection", "value": "1; mode=block" },
+                { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+            ]
+        },
+        {
+            "source": "/(.*)\\.(css|js|webp|svg)",
+            "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+        }
+    ],
+    "redirects": [
+        { "source": "/work/aetherforge", "destination": "https://github.com/jayjz/aetherforge", "statusCode": 301 },
+        { "source": "/work/aetherforge.html", "destination": "https://github.com/jayjz/aetherforge", "statusCode": 301 },
+        { "source": "/work/unhinged", "destination": "https://github.com/jayjz/unhinged-agent", "statusCode": 301 },
+        { "source": "/work/unhinged.html", "destination": "https://github.com/jayjz/unhinged-agent", "statusCode": 301 },
+        { "source": "/work/hvac-ops", "destination": "https://github.com/jayjz/hvac-ops-agent", "statusCode": 301 },
+        { "source": "/work/hvac-ops.html", "destination": "https://github.com/jayjz/hvac-ops-agent", "statusCode": 301 }
+    ]
 }

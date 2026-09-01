@@ -1,472 +1,254 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay | Interface &amp; Systems Architect</title>
-    <meta name="description" content="I design resilient interfaces and backend systems that survive the messy reality of operations. From consumer-GPU AI control planes to offline-first field ops tooling.">
-    <meta name="theme-color" content="#0c080f">
-    <meta name="view-transition" content="same-origin">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <a href="#main" class="skip-link">Skip to content</a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jay · jaysystems.dev</title>
+        <meta
+            name="description"
+            content="Software engineer. Offline-first tools for bad signal, cheap hardware, and jobs that fail if a part is not on the truck."
+        />
+        <link rel="canonical" href="https://jaysystems.dev/" />
+        <meta name="theme-color" content="#0c080f" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="jaysystems.dev" />
+        <meta property="og:title" content="Jay · jaysystems.dev" />
+        <meta property="og:description" content="Software engineer. Offline-first tools for bad signal, cheap hardware, and field work." />
+        <meta property="og:url" content="https://jaysystems.dev/" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Jay · jaysystems.dev" />
+        <meta name="twitter:description" content="Software engineer. Offline-first tools for bad signal, cheap hardware, and field work." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- Atmospheric layers -->
-    <div class="grain" aria-hidden="true"></div>
-    <div class="vignette" aria-hidden="true"></div>
-
-    <!-- Custom cursor -->
-    <div class="cursor" aria-hidden="true">
-        <div class="cursor-dot"></div>
-        <div class="cursor-ring"></div>
-    </div>
-    <div class="cursor-trail" aria-hidden="true"></div>
-
-    <nav class="site-nav" aria-label="Primary navigation">
-        <div class="site-nav__inner">
-            <a href="#top" class="site-nav__brand" aria-label="jaysystems.dev home">
-                <span class="brand-lockup">
-                    <span class="brand-name">jay</span><span class="brand-tld">systems.dev</span>
-                </span>
-                <span class="brand-role">Interface Architect</span>
-            </a>
-            <div class="site-nav__links">
-                <a href="#work">Work</a>
-                <a href="#capabilities">Capabilities</a>
-                <a href="#systems" id="systems-trigger" data-systems-open>Systems</a>
-                <a href="#principles">Principles</a>
-                <a href="#contact">Contact</a>
+        <header class="site-header">
+            <div class="site-header__inner">
+                <a href="#top" class="brand" aria-label="jaysystems.dev home">
+                    <span class="brand__name">jay</span>
+                    <span class="brand__domain">jaysystems.dev</span>
+                </a>
+                <nav class="site-nav" aria-label="Primary">
+                    <a href="#work">Work</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a href="https://github.com/jayjz" target="_blank" rel="noopener noreferrer" aria-label="Jay on GitHub">GitHub</a>
+                </nav>
             </div>
-        </div>
-    </nav>
+        </header>
 
-    <!-- Systems Glossary Panel -->
-    <div id="systems-panel" class="systems-panel" role="dialog" aria-modal="true" aria-labelledby="systems-panel-title" hidden>
-        <div class="systems-panel__backdrop" data-systems-close></div>
-        <div class="systems-panel__content" role="document">
-            <header class="systems-panel__header">
-                <h2 id="systems-panel-title" class="systems-panel__title">Systems · Glossary</h2>
-                <button type="button" class="systems-panel__close" data-systems-close aria-label="Close systems panel">×</button>
-            </header>
-            <div class="systems-panel__body">
-                <div class="glossary-controls">
-                    <input type="search" id="glossary-search" placeholder="Filter patterns (e.g., 'FSM', 'VRAM')..." aria-label="Filter systems glossary">
-                </div>
-
-                <div class="glossary-grid" id="glossary-list">
-                    <!-- Pattern 1: The Economic Gatekeeper -->
-                    <article class="glossary-item" id="term-economic-gatekeeper" data-tags="control-plane risk-management strategy">
-                        <header class="glossary-item__header">
-                            <h3 class="glossary-item__term">The Economic Gatekeeper</h3>
-                            <span class="glossary-item__category">Control Plane</span>
-                        </header>
-                        <div class="glossary-item__body">
-                            <p class="glossary-item__definition">
-                                A pre-execution filter that evaluates agent strategy proposals against a resource cost model. It rejects "doomed" strategies (high token count, low probability of success) before a single inference token is burned.
-                            </p>
-                            <div class="glossary-item__impact">
-                                <strong>Why it matters:</strong> Prevents runaway compute costs and protects the GPU from "thrashing" on impossible tasks.
-                            </div>
-                            <div class="glossary-item__context">
-                                <span>Applied in:</span> AetherForge
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Pattern 2: VRAM Circuit Breaker -->
-                    <article class="glossary-item" id="term-vram-breaker" data-tags="hardware safety resource-limits">
-                        <header class="glossary-item__header">
-                            <h3 class="glossary-item__term">VRAM Circuit Breaker</h3>
-                            <span class="glossary-item__category">Resource Guardrail</span>
-                        </header>
-                        <div class="glossary-item__body">
-                            <p class="glossary-item__definition">
-                                A hard kill-switch triggered when GPU VRAM usage exceeds a safety threshold (e.g., 85%). Unlike soft throttling, this immediately aborts the current generation pipeline to prevent system OOM (Out of Memory).
-                            </p>
-                            <div class="glossary-item__impact">
-                                <strong>Why it matters:</strong> Ensures the host OS remains responsive and prevents data corruption during high-load inference.
-                            </div>
-                            <div class="glossary-item__context">
-                                <span>Applied in:</span> AetherForge
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Pattern 3: Barge-in FSM -->
-                    <article class="glossary-item" id="term-barge-in" data-tags="edge-audio state-machine ux">
-                        <header class="glossary-item__header">
-                            <h3 class="glossary-item__term">Barge-in FSM</h3>
-                            <span class="glossary-item__category">Edge Audio</span>
-                        </header>
-                        <div class="glossary-item__body">
-                            <p class="glossary-item__definition">
-                                A Finite State Machine designed to handle user interruptions ("barge-ins") during audio playback. It instantly truncates the audio buffer and transitions the system back to "Listening" state without context corruption.
-                            </p>
-                            <div class="glossary-item__impact">
-                                <strong>Why it matters:</strong> Makes local voice agents feel natural and responsive, rather than forcing the user to wait for the machine to finish speaking.
-                            </div>
-                            <div class="glossary-item__context">
-                                <span>Applied in:</span> Unhinged Agent
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Pattern 4: Offline-First Fallback -->
-                    <article class="glossary-item" id="term-offline-first" data-tags="network resilience field-ops">
-                        <header class="glossary-item__header">
-                            <h3 class="glossary-item__term">Offline-First Fallback</h3>
-                            <span class="glossary-item__category">Resilience</span>
-                        </header>
-                        <div class="glossary-item__body">
-                            <p class="glossary-item__definition">
-                                An architecture pattern where the local state is the "source of truth." Network sync is treated as an asynchronous bonus. If connectivity drops, the user workflow is uninterrupted; actions are queued for later sync.
-                            </p>
-                            <div class="glossary-item__impact">
-                                <strong>Why it matters:</strong> Critical for field operations (HVAC, construction) where cellular signal is unreliable. Prevents "spinner of death" UX.
-                            </div>
-                            <div class="glossary-item__context">
-                                <span>Applied in:</span> HVAC Ops
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <main id="main">
-        <!-- HERO -->
-        <section id="top" class="hero">
-            <canvas id="particles" aria-hidden="true"></canvas>
-            <div class="hero-bg-layer" aria-hidden="true"></div>
-
-            <div class="container hero__grid">
-                <div class="hero__main">
-                    <div class="hero__intro">
-                        <p class="hero__eyebrow">
-                            <span>Jay</span>
-                            <span aria-hidden="true">·</span>
-                            <span>Interface &amp; Systems Architect</span>
-                        </p>
-                        <h1 class="hero__title">
-                            Interface &amp; Systems Architecture.<br>
-                            Built for reality.
-                        </h1>
-                    </div>
-
-                    <div class="hero__body">
-                        <p class="hero__copy">
-                            I design resilient interfaces and backend systems that survive the messy reality of operations. From consumer-GPU AI control planes to offline-first field ops tooling, I build software that respects hardware, network, and human limits.
-                        </p>
-                        <div class="hero__actions">
-                            <a href="#work" class="button button--primary">View current work</a>
-                            <a href="#contact" class="button button--ghost">Start a conversation</a>
-                        </div>
-                    </div>
-                </div>
-
-                <aside class="hero__rail" aria-label="Core principles">
-                    <dl class="hero__rail-item">
-                        <dt>Constraints</dt>
-                        <dd>8 GB VRAM budgets, thermal limits, offline field use, and irreversible actions that require human sign-off.</dd>
-                    </dl>
-                    <dl class="hero__rail-item">
-                        <dt>Philosophy</dt>
-                        <dd>Start from the messy reality of operations and limited hardware. Demos that ignore constraints are not systems.</dd>
-                    </dl>
-                    <dl class="hero__rail-item">
-                        <dt>Availability</dt>
-                        <dd>Select engagements on systems architecture, ops automation for trades, and control planes that stay accountable.</dd>
-                    </dl>
-                </aside>
-            </div>
-        </section>
-
-        <!-- WORK SECTION -->
-        <section id="work" class="work">
-            <div class="container">
-                <div class="section-intro">
-                    <p class="section-intro__eyebrow">SELECTED WORK</p>
-                    <h2 class="section-intro__title">Systems shaped by constraints.</h2>
-                    <p class="section-intro__copy">
-                        Active projects only. Maturity stated honestly. Built for consumer hardware and real operational friction.
+        <main id="main">
+            <section id="top" class="hero">
+                <div class="container">
+                    <h1 class="hero__title">Software engineer. Offline-first tools.</h1>
+                    <p class="hero__copy">
+                        I spent ten years on HVAC and construction crews. I write software for the same conditions: bad signal, cheap
+                        hardware, and jobs that fail if a part isn’t on the truck.
                     </p>
+                    <div class="hero__actions">
+                        <a href="#work" class="button button--primary">View work</a>
+                        <a href="mailto:jay@jaysystems.dev" class="button button--ghost">Email</a>
+                    </div>
                 </div>
+            </section>
 
-                <div class="work-grid">
-                    <!-- Featured: AetherForge -->
-                    <article class="work-featured">
-                        <div class="work-featured__media" aria-hidden="true">
-                            <img src="images/codeforge-slm.svg"
-                                 alt="AetherForge — Hardware-aware control plane visualization"
-                                 loading="lazy">
-                        </div>
-                        <div class="work-featured__content">
-                            <div class="work-featured__meta">
-                                <span class="work-featured__index">01</span>
-                                <span class="work-featured__category">Control Plane · Active</span>
-                            </div>
-                            <h3 class="work-featured__title">AetherForge</h3>
-                            <p class="work-featured__lede">
-                                Hardware-aware safety and control plane for local AI agents on consumer GPUs.
+            <section id="work" class="work">
+                <div class="container">
+                    <header class="section-intro">
+                        <p class="section-intro__eyebrow">Work</p>
+                        <h2 class="section-intro__title">Selected projects</h2>
+                        <p class="section-intro__copy">Status is stated as it is. Source is on GitHub.</p>
+                    </header>
+
+                    <div class="work-grid">
+                        <article class="work-card">
+                            <header class="work-card__header">
+                                <h3 class="work-card__title">Truck-Ready HVAC</h3>
+                                <p class="work-card__status">Active development</p>
+                            </header>
+                            <p class="work-card__body">
+                                Stages the right parts before the truck leaves. Exports an offline JSON or printable PDF checklist so the
+                                job still finishes when the site has no signal.
                             </p>
-
-                            <div class="project-breakdown">
-                                <div class="breakdown-item">
-                                    <h4 class="breakdown-label">Problem</h4>
-                                    <p>Local agents on 8–16 GB cards fail predictably: runaway generation, context blow-ups, thermal stress, and strategy thrash that OOM the only GPU available.</p>
-                                </div>
-                                <div class="breakdown-item">
-                                    <h4 class="breakdown-label">Approach</h4>
-                                    <p>FastAPI control plane with <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button">Economic Gatekeeper</span>, thermal/<span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button">VRAM circuit breakers</span> (503), context ceilings (413), tool discovery, and durable audit logs. Agents negotiate strategy; the plane can refuse unsafe work.</p>
-                                </div>
-                                <div class="breakdown-item">
-                                    <h4 class="breakdown-label">Status</h4>
-                                    <p>Wedge A verified under Mock engine (CI + no-GPU path). Real Fast-Swap / KV survival on 8 GB remains gated research (Wedge B). No production claim for unproven swap behavior.</p>
-                                </div>
-                            </div>
-
-                            <div class="work-featured__tags">
-                                <span>FastAPI</span>
-                                <span>Consumer GPU</span>
-                                <span>Safety Layer</span>
-                                <span>Mock-verified</span>
-                                <span>VRAM Guardrails</span>
-                                <a href="work/aetherforge.html" class="deep-dive-trigger">Architecture Deep Dive ↗</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Secondary -->
-                    <div class="work-secondary">
-                        <article class="work-card work-card--secondary">
-                            <div class="work-card__media" aria-hidden="true">
-                                <img src="images/agentville.svg"
-                                     alt="Unhinged Agent — Edge voice + local inference architecture"
-                                     loading="lazy">
-                            </div>
-                            <div class="work-card__content">
-                                <div class="work-card__header">
-                                    <span class="work-card__index">02</span>
-                                    <h3 class="work-card__title">Unhinged Agent</h3>
-                                </div>
-                                <p class="work-card__lede">
-                                    Thin-client private voice note assistant. ESP32-S3-BOX-3B edge device + RTX 4060 host for local STT/LLM/TTS with <span class="glossary-link" data-target="term-barge-in" tabindex="0" role="button">barge-in FSM</span>.
-                                </p>
-                                <p class="work-card__impact">
-                                    <em>Phase 1 Software PoC + browser digital twin complete. Physical hardware pending. Data stays local.</em>
-                                </p>
-                                <div class="work-card__tags">
-                                    <span>Edge + Host</span>
-                                    <span>Voice</span>
-                                    <span>Local LLM</span>
-                                    <span>FSM</span>
-                                    <a href="work/unhinged.html" class="deep-dive-trigger">Edge/Host Architecture ↗</a>
-                                </div>
-                            </div>
+                            <ul class="work-card__stack">
+                                <li>Python</li>
+                                <li>Streamlit</li>
+                                <li>Pydantic</li>
+                                <li>fpdf2</li>
+                            </ul>
+                            <a
+                                class="work-card__source"
+                                href="https://github.com/jayjz/truck-ready-hvac"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="View source for Truck-Ready HVAC on GitHub"
+                                >View Source</a
+                            >
                         </article>
 
-                        <article class="work-card work-card--secondary">
-                            <div class="work-card__media" aria-hidden="true">
-                                <img src="images/storyteller.svg"
-                                     alt="HVAC Ops — Multi-agent operations co-pilot from trades experience"
-                                     loading="lazy">
-                            </div>
-                            <div class="work-card__content">
-                                <div class="work-card__header">
-                                    <span class="work-card__index">03</span>
-                                    <h3 class="work-card__title">HVAC Ops + Truck-Ready</h3>
-                                </div>
-                                <p class="work-card__lede">
-                                    Multi-agent operations co-pilot (dispatch, inventory, AR, risk) plus offline pre-departure parts checklist. Built from real crew and field constraints.
-                                </p>
-                                <p class="work-card__impact">
-                                    <em>Phase 1 Streamlit demos with synthetic fallback + human-in-the-loop. Not production software — working pilot tooling.</em>
-                                </p>
-                                <div class="work-card__tags">
-                                    <span>Ops Native</span>
-                                    <span>Human Review</span>
-                                    <span>Offline</span>
-                                    <span>Trades</span>
-                                    <a href="work/hvac-ops.html" class="deep-dive-trigger">Field Constraints Pattern ↗</a>
-                                </div>
-                            </div>
+                        <article class="work-card">
+                            <header class="work-card__header">
+                                <h3 class="work-card__title">AetherForge</h3>
+                                <p class="work-card__status">Active development — mock path verified</p>
+                            </header>
+                            <p class="work-card__body">
+                                Control plane for local agents on consumer GPUs; it can refuse unsafe work before the only card on the
+                                machine is burned. Mock path is verified; live 8 GB swap is still research.
+                            </p>
+                            <ul class="work-card__stack">
+                                <li>Python</li>
+                                <li>FastAPI</li>
+                                <li>Pydantic</li>
+                            </ul>
+                            <a
+                                class="work-card__source"
+                                href="https://github.com/jayjz/aetherforge"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="View source for AetherForge on GitHub"
+                                >View Source</a
+                            >
+                        </article>
+
+                        <article class="work-card">
+                            <header class="work-card__header">
+                                <h3 class="work-card__title">Unhinged Agent</h3>
+                                <p class="work-card__status">Proof of concept — software complete</p>
+                            </header>
+                            <p class="work-card__body">
+                                Private voice notes on a thin ESP32 client talking to a local host. Software and browser twin are done;
+                                physical hardware is not on the bench yet.
+                            </p>
+                            <ul class="work-card__stack">
+                                <li>Python</li>
+                                <li>Ollama</li>
+                                <li>Whisper</li>
+                                <li>ESP32</li>
+                            </ul>
+                            <a
+                                class="work-card__source"
+                                href="https://github.com/jayjz/unhinged-agent"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="View source for Unhinged Agent on GitHub"
+                                >View Source</a
+                            >
+                        </article>
+
+                        <article class="work-card">
+                            <header class="work-card__header">
+                                <h3 class="work-card__title">HVAC Ops</h3>
+                                <p class="work-card__status">Proof of concept — working demo</p>
+                            </header>
+                            <p class="work-card__body">
+                                Dispatch, inventory, and risk helpers for HVAC crews. Streamlit demo with synthetic fallback and a human in
+                                the loop before anything irreversible.
+                            </p>
+                            <ul class="work-card__stack">
+                                <li>Python</li>
+                                <li>Streamlit</li>
+                                <li>FastAPI</li>
+                            </ul>
+                            <a
+                                class="work-card__source"
+                                href="https://github.com/jayjz/hvac-ops-agent"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="View source for HVAC Ops on GitHub"
+                                >View Source</a
+                            >
+                        </article>
+
+                        <article class="work-card">
+                            <header class="work-card__header">
+                                <h3 class="work-card__title">CipherLoop</h3>
+                                <p class="work-card__status">Active development</p>
+                            </header>
+                            <p class="work-card__body">
+                                Long-horizon code audits that keep the repo on the local machine. A planner and a local executor share a
+                                graph so context does not collapse mid-audit.
+                            </p>
+                            <ul class="work-card__stack">
+                                <li>Python</li>
+                                <li>LangGraph</li>
+                                <li>Ollama</li>
+                            </ul>
+                            <a
+                                class="work-card__source"
+                                href="https://github.com/jayjz/CipherLoop"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="View source for CipherLoop on GitHub"
+                                >View Source</a
+                            >
+                        </article>
+
+                        <article class="work-card">
+                            <header class="work-card__header">
+                                <h3 class="work-card__title">Fracture</h3>
+                                <p class="work-card__status">Scaffold / Research harness</p>
+                            </header>
+                            <p class="work-card__body">
+                                Breaks agent graphs on purpose — failed tools, bad state, goal drift — then measures which layouts actually
+                                recover. Research harness, not a product.
+                            </p>
+                            <ul class="work-card__stack">
+                                <li>Python</li>
+                            </ul>
+                            <a
+                                class="work-card__source"
+                                href="https://github.com/jayjz/fracture"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="View source for Fracture on GitHub"
+                                >View Source</a
+                            >
                         </article>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-                <!-- BEYOND THE EDGE: ENTERPRISE &amp; SECURITY -->
-        <section id="enterprise" class="enterprise">
-            <div class="container">
-                <div class="section-intro">
-                    <p class="section-intro__eyebrow">BEYOND THE EDGE</p>
-                    <h2 class="section-intro__title">Systems under pressure, at every layer.</h2>
-                    <p class="section-intro__copy">
-                        Edge constraints are only half the battle. True resilience requires securing the pipelines that deploy the agents and understanding the adversarial models that target them.
-                    </p>
-                </div>
-
-                <div class="work-secondary">
-                    <!-- GhostOps -->
-                    <article class="work-card work-card--secondary">
-                        <div class="work-card__content">
-                            <div class="work-card__header">
-                                <span class="work-card__index">04</span>
-                                <h3 class="work-card__title">GhostOps</h3>
-                            </div>
-                            <p class="work-card__lede">
-                                Offensive &amp; defensive cybersecurity toolkit. Monorepo simulating real-world adversary operations to inform threat models for local agent deployments.
-                            </p>
-                            <p class="work-card__impact">
-                                <em>You can't defend a system you don't know how to break. Adversarial simulation informs the kill-switches in AetherForge.</em>
-                            </p>
-                            <div class="work-card__tags">
-                                <span>Offensive Cyber</span>
-                                <span>Threat Modeling</span>
-                                <span>Python</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Compliance Canary -->
-                    <article class="work-card work-card--secondary">
-                        <div class="work-card__content">
-                            <div class="work-card__header">
-                                <span class="work-card__index">05</span>
-                                <h3 class="work-card__title">Compliance Canary</h3>
-                            </div>
-                            <p class="work-card__lede">
-                                Developer-first security and compliance automation platform. Nightly GitHub scans combining static analysis to catch drift before production.
-                            </p>
-                            <p class="work-card__impact">
-                                <em>Agents are only as safe as the pipelines that deploy them. Enterprise-grade governance for autonomous systems.</em>
-                            </p>
-                            <div class="work-card__tags">
-                                <span>DevSecOps</span>
-                                <span>Compliance</span>
-                                <span>TypeScript</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- CAPABILITIES -->
-        <section id="capabilities" class="capabilities">
-            <div class="container">
-                <div class="section-intro">
-                    <p class="section-intro__eyebrow">CAPABILITIES</p>
-                    <h2 class="section-intro__title">What I actually design and ship.</h2>
-                </div>
-                <div class="capabilities-list">
-                    <article class="capability">
-                        <div class="capability__marker" aria-hidden="true"></div>
-                        <div class="capability__content">
-                            <h3>Hardware-Aware Agent Control Planes</h3>
-                            <p>Safety layers, strategy negotiation, thermal/<span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button">VRAM circuit breakers</span>, and audit trails that sit between agents and local inference on consumer GPUs.</p>
-                        </div>
-                    </article>
-                    <article class="capability">
-                        <div class="capability__marker" aria-hidden="true"></div>
-                        <div class="capability__content">
-                            <h3>Edge + Host Architectures</h3>
-                            <p>Thin clients on constrained devices with heavy local inference on the host. Private by default. Barge-in and interruptibility treated as first-class requirements.</p>
-                        </div>
-                    </article>
-                    <article class="capability">
-                        <div class="capability__marker" aria-hidden="true"></div>
-                        <div class="capability__content">
-                            <h3>Ops Tooling Under Field Constraints</h3>
-                            <p>Multi-agent workflows and offline checklists shaped by real HVAC and construction realities: intermittent connectivity, human review before irreversible actions, and first-visit completion pressure.</p>
-                        </div>
-                    </article>
-                    <article class="capability">
-                        <div class="capability__marker" aria-hidden="true"></div>
-                        <div class="capability__content">
-                            <h3>Zero-Bloat High-Performance Interfaces</h3>
-                            <p>Vanilla frontends that stay fast under load. The site itself is evidence: no frameworks, progressive enhancement, and intentional motion.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- PRINCIPLES / THE ANTI-MANIFESTO -->
-        <section id="principles" class="principles">
-            <div class="container">
-                <div class="principles__header">
-                    <p class="section-intro__eyebrow">THE ANTI-MANIFESTO</p>
-                    <h2 class="section-intro__title">What I refuse to build.</h2>
-                    <p class="section-intro__copy" style="margin-bottom: 3rem;">
-                        A systems architect is defined by their boundaries. I don't ship vaporware. I build systems that survive the messy reality of physical operations and hardware limits.
-                    </p>
-                </div>
-                <div class="principles__list">
-                    <article class="principle">
-                        <div class="principle__number">01</div>
-                        <div class="principle__content">
-                            <h3>I refuse to ignore physical constraints.</h3>
-                            <p>I do not build cloud-dependent agent swarms that assume infinite compute and perfect 5G. If a system cannot degrade gracefully under an <span class="glossary-link" data-target="term-vram-breaker" tabindex="0" role="button">8 GB VRAM budget</span>, thermal throttling, or a cellular dead zone, it is a liability, not an architecture.</p>
-                        </div>
-                    </article>
-                    <article class="principle">
-                        <div class="principle__number">02</div>
-                        <div class="principle__content">
-                            <h3>I refuse to automate irreversible actions.</h3>
-                            <p>In physical trades, an AI hallucinating a $2,000 compressor order or scrambling a dispatch queue is catastrophic. I build systems where agents propose and operators decide. Strict human-in-the-loop execution gates are mandatory.</p>
-                        </div>
-                    </article>
-                    <article class="principle">
-                        <div class="principle__number">03</div>
-                        <div class="principle__content">
-                            <h3>I refuse to sell hype as production.</h3>
-                            <p>I state exactly what is verified and what is research. A mock-verified <span class="glossary-link" data-target="term-economic-gatekeeper" tabindex="0" role="button">control plane</span> with documented boundaries is infinitely more valuable to an engineering team than a fragile demo masquerading as a production-ready product.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="contact__inner">
-                    <div class="contact__header">
-                        <p class="section-intro__eyebrow">GET IN TOUCH</p>
-                        <h2 class="contact__title">Available for select, high-impact work.</h2>
-                        <p class="contact__lede">
-                            Systems architecture, hardware-aware control planes, ops automation for trades, or platforms that stay accountable under real constraints.
+            <section id="about" class="about">
+                <div class="container">
+                    <header class="section-intro">
+                        <p class="section-intro__eyebrow">About</p>
+                        <h2 class="section-intro__title">Field ops is the constraint</h2>
+                    </header>
+                    <div class="about__copy">
+                        <p>
+                            Ten years in the field — HVAC, construction, crews that lose signal in basements and job sites. That is the
+                            design constraint, not a footnote. I build tools that keep working when the network is gone and the machine is
+                            an 8 GB card, not a cluster.
+                        </p>
+                        <p>
+                            Earlier work (as ForDaCulture) covers contractor data, shop ops, security scanning, and approval queues. Stack:
+                            Python, FastAPI, Streamlit, Pydantic, LangGraph, Ollama/llama.cpp, TypeScript, vanilla HTML.
                         </p>
                     </div>
-                    <div class="contact__actions">
-                        <a href="mailto:jay@jaysystems.dev" class="contact-action">
-                            <span class="contact-action__label">Email</span>
-                            <span class="contact-action__value">jay@jaysystems.dev</span>
-                        </a>
-                        <a href="https://github.com/jayjz" target="_blank" rel="noopener noreferrer" class="contact-action">
-                            <span class="contact-action__label">GitHub</span>
-                            <span class="contact-action__value">@jayjz</span>
-                        </a>
-                    </div>
                 </div>
+            </section>
+        </main>
+
+        <footer id="contact" class="site-footer">
+            <div class="container site-footer__inner">
+                <p>© 2026 Jay</p>
+                <p>
+                    <a href="mailto:jay@jaysystems.dev">jay@jaysystems.dev</a>
+                    <span aria-hidden="true"> · </span>
+                    <a href="https://github.com/jayjz" target="_blank" rel="noopener noreferrer" aria-label="Jay on GitHub"
+                        >github.com/jayjz</a
+                    >
+                </p>
             </div>
-        </section>
-    </main>
+        </footer>
 
-    <footer class="site-footer">
-        <div class="container site-footer__inner">
-            <p>© 2026 Jay • jaysystems.dev</p>
-            <p>Vanilla. No frameworks. Built under constraints.</p>
-        </div>
-    </footer>
-
-    <script src="js/main.js" defer></script>
-</body>
+        <script src="js/main.js" defer></script>
+    </body>
 </html>
