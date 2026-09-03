@@ -22,7 +22,7 @@ No frameworks. No build step. Static files deployed on Vercel.
 
 - HTML5, CSS3 (custom properties, Grid, Flexbox)
 - Vanilla JS (ES6+)
-- Inter + JetBrains Mono
+- Space Grotesk + JetBrains Mono
 
 ## Local preview
 
