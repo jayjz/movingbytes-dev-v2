@@ -1,0 +1,111 @@
+/* Character-only styles. The approved homepage stylesheet and copy are reused. */
+.observer-identity-row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    min-height: 92px;
+    padding-right: 190px;
+}
+.observer-identity-row .ledger-hero__identity {
+    margin: 0;
+}
+.observer-mount {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    width: 170px;
+    flex: 0 0 auto;
+    margin: 0;
+    text-align: center;
+}
+.observer-character {
+    appearance: none;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 1.5rem;
+    background: transparent;
+    color: inherit;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+.observer-character:enabled {
+    cursor: pointer;
+}
+.observer-character:disabled {
+    opacity: 1;
+}
+.observer-character svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+}
+.observer-head {
+    transform-origin: 253px 142px;
+}
+.observer-caption {
+    font: 0.65rem/1.4 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+.observer-motion {
+    font: 0.72rem/1.4 var(--font-sans);
+    color: var(--text-secondary);
+    background: none;
+    border: 0;
+    padding: 0.4rem 0.5rem;
+    min-height: 32px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: var(--border-color);
+    text-underline-offset: 0.25em;
+    margin-inline: auto;
+}
+.observer-motion:not([hidden]) {
+    display: block;
+}
+.observer-motion:hover {
+    color: var(--text-primary);
+}
+.observer-character:focus-visible {
+    outline-offset: 0;
+}
+.observer-character:focus-visible .observer-head {
+    filter: brightness(1.07);
+}
+@media (max-width: 760px) {
+    .observer-identity-row {
+        gap: 0.4rem;
+        margin-bottom: 1.5rem;
+        min-height: 110px;
+        padding-right: 116px;
+    }
+    .observer-identity-row .ledger-hero__identity span {
+        display: block;
+        font-size: 0.9rem;
+    }
+    .observer-mount {
+        width: 108px;
+        top: -28px;
+    }
+    .observer-caption {
+        font-size: 0.55rem;
+    }
+    .observer-motion {
+        min-height: 44px;
+        font-size: 0.68rem;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .observer-head,
+    .observer-eye,
+    .observer-pupil {
+        transform: none !important;
+    }
+}

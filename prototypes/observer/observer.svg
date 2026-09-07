@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280" role="img" aria-labelledby="observer-title observer-desc">
+  <title id="observer-title">The Observer</title>
+  <desc id="observer-desc">A curious workshop loupe with a chamfered bone-colored housing, one large eye and one small eye, an orange side pivot, and a sturdy folding stand.</desc>
+  <defs>
+    <linearGradient id="shell" x1="0" y1="0" x2="0.8" y2="1">
+      <stop stop-color="#fff8e8"/><stop offset="1" stop-color="#c2bcae"/>
+    </linearGradient>
+    <linearGradient id="metal" x2="0.8" y2="1">
+      <stop stop-color="#656568"/><stop offset="1" stop-color="#282b30"/>
+    </linearGradient>
+    <clipPath id="left-window"><ellipse cx="127" cy="129" rx="36" ry="38"/></clipPath>
+    <clipPath id="right-window"><ellipse cx="212" cy="123" rx="23" ry="26"/></clipPath>
+  </defs>
+  <ellipse cx="164" cy="250" rx="94" ry="9" fill="#000" opacity=".45"/>
+  <!-- Fixed stand: the head pivots on the orange axle rather than floating. -->
+  <path d="M121 181 L105 237 L79 242 L79 250 L142 250 L157 198" fill="url(#metal)" stroke="#77766f" stroke-width="2"/>
+  <path d="M199 186 L221 236 L243 242 L243 250 L181 250 L168 200" fill="#34373c" stroke="#77766f" stroke-width="2"/>
+  <path d="M139 208 L187 208" stroke="#83837e" stroke-width="5"/>
+  <g class="observer-head">
+    <!-- Offset carry loop and bevel make the silhouette recognizable at small sizes. -->
+    <path d="M112 63 L119 31 Q123 21 136 23 L185 29 Q195 30 197 43 L199 61" fill="none" stroke="#aaa79e" stroke-width="11"/>
+    <path d="M116 62 L123 34 Q125 29 133 30 L181 36 Q188 37 189 45 L191 60" fill="none" stroke="#2c2f33" stroke-width="5"/>
+    <path d="M72 94 L98 58 L238 64 L264 96 L252 185 L222 207 L88 194 L63 162 Z" fill="#74756f" stroke="#17191c" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M60 89 L88 51 L226 58 L250 88 L240 175 L211 196 L76 183 L51 153 Z" fill="url(#shell)" stroke="#17191c" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M62 87 L91 57 L224 64" fill="none" stroke="#fffbed" stroke-width="3" opacity=".85"/>
+    <path d="M73 99 Q73 77 96 76 L214 80 Q235 81 234 105 L226 151 Q224 170 204 171 L94 167 Q73 165 70 145 Z" fill="#202328" stroke="#92928b" stroke-width="2"/>
+    <circle cx="257" cy="145" r="23" fill="#ab3913" stroke="#17191c" stroke-width="3"/>
+    <circle cx="253" cy="142" r="20" fill="#ff6a29"/>
+    <path d="M247 130 L259 151 M243 139 L260 140" stroke="#61260f" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="127" cy="128" r="49" fill="#111418" stroke="#585c60" stroke-width="4"/>
+    <circle cx="127" cy="128" r="43" fill="#353b3e" stroke="#ff6a29" stroke-width="3"/>
+    <circle cx="212" cy="123" r="32" fill="#111418" stroke="#64686a" stroke-width="3"/>
+    <g class="observer-eye observer-eye--left" style="transform-origin:127px 129px">
+      <ellipse cx="127" cy="129" rx="36" ry="38" fill="#eee9dc"/>
+      <g clip-path="url(#left-window)">
+        <g class="observer-pupil">
+          <ellipse cx="131" cy="131" rx="19" ry="24" fill="#15191d"/>
+          <ellipse cx="136" cy="124" rx="5" ry="7" fill="#fff8e8"/>
+          <circle cx="124" cy="142" r="2" fill="#aeb7b2"/>
+        </g>
+      </g>
+    </g>
+    <g class="observer-eye observer-eye--right" style="transform-origin:212px 123px">
+      <ellipse cx="212" cy="123" rx="23" ry="26" fill="#eee9dc"/>
+      <g clip-path="url(#right-window)">
+        <g class="observer-pupil">
+          <ellipse cx="214" cy="125" rx="12" ry="17" fill="#15191d"/>
+          <ellipse cx="218" cy="119" rx="3" ry="4.5" fill="#fff8e8"/>
+        </g>
+      </g>
+    </g>
+    <path d="M96 178 L118 180 M125 181 L133 181" stroke="#666962" stroke-width="3" stroke-linecap="round"/>
+    <path d="M183 181 L204 182" stroke="#33383a" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="72" cy="92" r="3" fill="#666962"/>
+    <circle cx="225" cy="70" r="3" fill="#666962"/>
+  </g>
+</svg>

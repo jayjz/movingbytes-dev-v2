@@ -1,0 +1,31 @@
+[
+  {
+    "width": 1440,
+    "overflow": false,
+    "externalRequests": 0,
+    "axeViolations": 0,
+    "interaction": "pass"
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "externalRequests": 0,
+    "axeViolations": 0,
+    "interaction": "pass"
+  },
+  {
+    "width": 320,
+    "overflow": false,
+    "externalRequests": 0,
+    "axeViolations": 0,
+    "interaction": "pass"
+  },
+  {
+    "mode": "no-js",
+    "staticCharacter": "pass"
+  },
+  {
+    "mode": "reduced-motion",
+    "staticCharacter": "pass"
+  }
+]
