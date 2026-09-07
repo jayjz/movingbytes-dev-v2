@@ -1,0 +1,321 @@
+/* Isolated opening revision; the original Ledger and lower sections are unchanged. */
+.opening {
+    padding: 3rem 0;
+}
+.identity {
+    margin: 0 0 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+}
+.identity span {
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+.opening-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 5rem;
+    align-items: end;
+}
+.opening h1 {
+    font-size: clamp(3rem, 5.3vw, 5rem);
+    letter-spacing: -0.065em;
+    line-height: 1.02;
+    margin: 0;
+    max-width: none;
+}
+.opening h1 span {
+    color: var(--muted);
+}
+.introduction {
+    max-width: 27rem;
+}
+.introduction p {
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+}
+.introduction p + p {
+    color: var(--muted);
+}
+.introduction .action {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+}
+.selected-opening {
+    padding: 0 0 6rem;
+}
+.work-divider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 0 2.3rem;
+}
+.work-divider .kicker {
+    margin: 0;
+}
+.work-divider > span {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+.cipher-revised {
+    display: grid;
+    grid-template-columns: 0.9fr 1.25fr;
+    gap: 2rem 4rem;
+    scroll-margin-top: 2rem;
+}
+.cipher-revised > * {
+    min-width: 0;
+}
+.project-intro > .kicker {
+    margin: 0 0 1rem;
+}
+.project-intro h2 {
+    font-size: clamp(3.2rem, 6vw, 5.5rem);
+    line-height: 1;
+    letter-spacing: -0.065em;
+    margin: 0 0 1.2rem;
+}
+.project-intro h2 span {
+    color: var(--hot);
+}
+.project-description {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    max-width: 29rem;
+    margin: 0;
+}
+.project-detail {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 31rem;
+    margin: 1.5rem 0 0;
+}
+.context-figure {
+    margin: 0;
+    background: #111315;
+    border: 1px solid var(--line);
+}
+.figure-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+.tool-output {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    font-size: 1rem;
+}
+.signal {
+    width: 7px;
+    height: 7px;
+    background: var(--hot);
+}
+.output-detail {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+.record-paths {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 1.5rem;
+}
+.record-branches {
+    display: block;
+    width: calc(100% - 3rem);
+    height: 48px;
+    margin: 0 1.5rem;
+    stroke: var(--hot);
+    stroke-width: 1;
+    fill: none;
+}
+.record-path {
+    padding: 1.2rem 1.2rem 1.4rem 0;
+}
+.disk-path {
+    border-left: 1px solid var(--line);
+    padding-left: 1.3rem;
+    padding-right: 0;
+}
+.path-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 0 0 1rem;
+}
+.record-path h3 {
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+    font-weight: 500;
+    margin: 0 0 1rem;
+}
+.record-path > p:not(.path-label) {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0;
+}
+.record-result {
+    display: flex;
+    gap: 0.8rem;
+    align-items: start;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+}
+.record-result > span {
+    color: var(--hot);
+}
+.record-result p {
+    font-size: 1.15rem;
+    margin: 0;
+}
+.record-result p span {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+.context-figure figcaption {
+    border-top: 1px solid var(--line);
+    padding: 1rem 1.5rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--muted);
+}
+.project-proof {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1.5rem;
+}
+.project-proof > p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    max-width: 39rem;
+    margin: 0;
+}
+.project-proof strong {
+    color: var(--ink);
+}
+.study-link {
+    color: var(--ink);
+    text-decoration-color: var(--hot);
+    text-underline-offset: 0.5rem;
+}
+.study-link span {
+    color: var(--hot);
+    margin-left: 0.6rem;
+}
+@media (max-width: 1000px) {
+    .opening-grid {
+        gap: 2rem;
+    }
+    .cipher-revised {
+        gap: 2rem;
+        grid-template-columns: 1fr 1.2fr;
+    }
+    .output-detail {
+        margin-left: 0;
+    }
+    .project-proof {
+        align-items: start;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+@media (max-width: 760px) {
+    .opening {
+        padding: 2.5rem 0 2.5rem;
+    }
+    .identity {
+        margin-bottom: 1.5rem;
+    }
+    .opening-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .opening h1 {
+        font-size: clamp(2.45rem, 10.5vw, 4.5rem);
+        line-height: 1.05;
+    }
+    .introduction p {
+        font-size: 1rem;
+    }
+    .work-divider {
+        padding: 1.2rem 0 2rem;
+    }
+    .work-divider > span {
+        display: none;
+    }
+    .cipher-revised {
+        grid-template-columns: 1fr;
+    }
+    .project-intro h2 {
+        font-size: 3.5rem;
+    }
+    .project-description {
+        font-size: 1.2rem;
+    }
+    .figure-heading {
+        padding: 1rem;
+    }
+    .figure-heading > span:last-child {
+        display: none;
+    }
+    .tool-output {
+        padding: 1.2rem 1rem;
+    }
+    .output-detail {
+        width: 100%;
+        margin-left: 1.1rem;
+    }
+    .record-paths {
+        margin: 0 1rem;
+        grid-template-columns: 1fr;
+        padding-left: 1rem;
+        border-left: 1px solid var(--hot);
+    }
+    .record-branches {
+        display: none;
+    }
+    .record-path,
+    .disk-path {
+        padding: 1.25rem 0;
+        border-left: 0;
+    }
+    .disk-path {
+        border-top: 1px solid var(--line);
+    }
+    .record-path h3 {
+        font-size: 1.6rem;
+    }
+    .record-path h3 br {
+        display: none;
+    }
+    .record-path > p:not(.path-label) {
+        font-size: 0.95rem;
+    }
+    .record-result p span,
+    .path-label {
+        font-size: 0.85rem;
+    }
+    .context-figure figcaption {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+    .project-proof > p {
+        font-size: 0.9rem;
+    }
+}
