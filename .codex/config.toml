@@ -1,0 +1,9 @@
+# Repository-local Codex settings. Loaded only when this project is trusted.
+# Keep personal authentication, model preferences, and MCP credentials in ~/.codex.
+# Do not set CODEX_HOME to this directory: that changes the user profile location.
+
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+network_access = false

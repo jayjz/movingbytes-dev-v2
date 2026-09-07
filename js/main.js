@@ -1,61 +1,31 @@
 (() => {
     'use strict';
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Native anchors retain focus, fragments, and history. Content never waits for JS.
+    if (!('IntersectionObserver' in window) || !window.matchMedia) return;
 
-    const $ = (selector, scope = document) => scope.querySelector(selector);
-    const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const figures = document.querySelectorAll('[data-signal]');
+    let observer;
 
-    function initSmoothScroll() {
-        $$('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', event => {
-                const href = link.getAttribute('href');
-                if (!href || href === '#') return;
+    function configureMotion() {
+        observer?.disconnect();
+        figures.forEach(figure => figure.classList.remove('is-observed'));
+        if (motion.matches) return;
 
-                const target = $(href);
-                if (!target) return;
-
-                event.preventDefault();
-
-                const header = $('.site-header');
-                const headerOffset = header ? header.offsetHeight : 0;
-                const y = target.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
-
-                window.scrollTo({
-                    top: Math.max(0, y),
-                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
-                });
-            });
-        });
-    }
-
-    function initReveal() {
-        const cards = $$('.work-card');
-        if (!cards.length) return;
-
-        if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-            cards.forEach(el => {
-                el.classList.add('is-visible');
-            });
-            return;
-        }
-
-        document.documentElement.classList.add('js-reveal');
-
-        const observer = new IntersectionObserver(
-            (entries, obs) => {
+        observer = new IntersectionObserver(
+            entries => {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
-                    entry.target.classList.add('is-visible');
-                    obs.unobserve(entry.target);
+                    entry.target.classList.add('is-observed');
+                    observer.unobserve(entry.target);
                 });
             },
-            { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+            { threshold: 0.2 }
         );
-
-        cards.forEach(card => observer.observe(card));
+        figures.forEach(figure => observer.observe(figure));
     }
 
-    initSmoothScroll();
-    initReveal();
+    configureMotion();
+    motion.addEventListener('change', configureMotion);
 })();

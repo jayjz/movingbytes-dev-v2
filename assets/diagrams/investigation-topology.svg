@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none">
+<title>Investigation topology — conceptual illustration</title>
+<desc>A question enters a loop of planning, inspection, evidence, and review around shared context. This illustrates a design question, not verified software behavior.</desc>
+<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke="#25262b" stroke-width="1"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="m2 1 6 4-6 4" stroke="#ff5f1f" stroke-width="1.5"/></marker></defs>
+<path fill="#101114" d="M0 0h640v640H0z"/><path fill="url(#grid)" d="M0 0h640v640H0z"/>
+<circle cx="320" cy="332" r="224" stroke="#36373d"/><circle cx="320" cy="332" r="166" stroke="#36373d" stroke-dasharray="3 9"/>
+<g stroke="#747780" stroke-dasharray="4 7"><path d="M320 216v64m112 52h-64m-48 52v64m-112-116h64"/></g>
+<g stroke="#ff5f1f" stroke-width="2" marker-end="url(#arrow)"><path d="M320 91v51"/><path d="M390 181h102v98"/><path d="M492 385v97H390"/><path d="M250 482H148v-97"/><path d="M148 279v-98h102"/></g>
+<g fill="#15161a" stroke="#747780"><rect x="248" y="145" width="144" height="72" rx="2"/><rect x="422" y="296" width="140" height="72" rx="2"/><rect x="248" y="447" width="144" height="72" rx="2"/><rect x="78" y="296" width="140" height="72" rx="2"/></g>
+<circle cx="320" cy="332" r="60" fill="#101114" stroke="#ff5f1f"/>
+<g fill="#f2eee6" font-family="system-ui, sans-serif" font-size="22" text-anchor="middle"><text x="320" y="188">Plan</text><text x="492" y="339">Inspect</text><text x="320" y="489">Evidence</text><text x="148" y="339">Review</text><text x="320" y="326" font-size="18">Shared</text><text x="320" y="350" font-size="18">context</text></g>
+<g fill="#b0b1b9" font-family="monospace" font-size="16" text-anchor="middle"><text x="320" y="70">Question</text><text x="320" y="596">ILLUSTRATIVE RELATIONSHIPS</text></g>
+<g fill="#ff5f1f"><circle cx="320" cy="91" r="4"/><circle cx="492" cy="181" r="4"/><circle cx="148" cy="482" r="4"/></g>
+</svg>

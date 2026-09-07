@@ -23,7 +23,7 @@ jobs:
                   npm install -g prettier html-validate
 
             - name: Prettier check
-              run: prettier --check "index.html" "css/**/*.css" "js/**/*.js"
+              run: prettier --check "index.html" "case-studies/**/*.html" "css/**/*.css" "js/**/*.js"
 
-            - name: HTML Validate — Homepage
-              run: html-validate index.html
+            - name: HTML Validate — Static pages
+              run: html-validate index.html "case-studies/**/*.html"
