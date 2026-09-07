@@ -671,3 +671,57 @@ dd {
         transform: none;
     }
 }
+
+/* Source-backed case study: evidence remains readable without enhancement. */
+.revision-note,
+.source-note {
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+}
+.source-note {
+    line-height: 1.8;
+}
+.case-section .system-figure--architecture img {
+    max-height: none;
+}
+.diagram-equivalent {
+    margin: 1.5rem 0 2rem;
+    border-block: 1px solid var(--border-color);
+    padding: 0.5rem 0;
+}
+.diagram-equivalent summary {
+    cursor: pointer;
+    padding: 0.75rem 0.25rem;
+    min-height: 44px;
+    color: var(--text-primary);
+}
+.diagram-equivalent ol {
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+}
+.diagram-equivalent li {
+    margin-bottom: 1rem;
+}
+.case-section .subsection-title {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+}
+.evidence-output {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-left: 2px solid var(--accent);
+    margin-block: 2rem;
+}
+.evidence-output pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font: 0.9rem/1.8 var(--font-mono);
+    margin: 1rem 0;
+}
+.evidence-output p:last-child {
+    font-size: 0.85rem;
+}
+code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+}

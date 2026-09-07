@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Jay · jaysystems.dev</title>
         <meta name="description" content="Jay builds AI systems, security tooling, and field software around real constraints." />
-        <link rel="canonical" href="https://jaysystems.dev/" />
+        <link rel="canonical" href="https://www.jaysystems.dev/" />
         <meta name="theme-color" content="#0a0a0c" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="jaysystems.dev" />
         <meta property="og:title" content="Jay · jaysystems.dev" />
         <meta property="og:description" content="AI systems, constrained compute, security tooling, and field software." />
-        <meta property="og:url" content="https://jaysystems.dev/" />
+        <meta property="og:url" content="https://www.jaysystems.dev/" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Jay · jaysystems.dev" />
         <meta name="twitter:description" content="AI systems, constrained compute, security tooling, and field software." />
@@ -21,7 +21,7 @@
             href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=optional"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style.css?v=20260907-evidence" />
     </head>
     <body>
         <a href="#main" class="skip-link">Skip to content</a>
@@ -76,32 +76,32 @@
                     </div>
                     <div class="featured__heading">
                         <h2>CipherLoop<span class="signal" aria-hidden="true">.</span></h2>
-                        <p class="status">Development snapshot · verification pending</p>
+                        <p class="status">Experimental framework · tested with mocks</p>
                     </div>
                     <div class="featured__grid">
                         <div class="featured__copy">
-                            <h3>An investigation should leave a trail.</h3>
+                            <h3>Keep the context. Question the evidence.</h3>
                             <p>
-                                CipherLoop explores a question: how can an agent investigate a repository without losing the thread of its
-                                reasoning?
+                                CipherLoop separates a tool-heavy investigation into hybrid planning, local tool execution, periodic message
+                                cleanup, and an AST evidence check.
                             </p>
                             <p>
-                                The project brief describes a planner, a local executor, and a shared graph intended to carry context
-                                through an audit. That is the design intent; the current execution paths and boundaries still need source
-                                verification.
+                                At the inspected revision, deterministic graph tests accept a fixture source-to-sink path and reject a
+                                constant-input control. Model calls, compression, and file reads are mocked in those tests; live audit
+                                behavior remains untested.
                             </p>
                             <dl class="feature-facts">
                                 <div>
                                     <dt>Focus</dt>
-                                    <dd>Context across a long investigation</dd>
+                                    <dd>Investigation context and reviewable evidence</dd>
                                 </div>
                                 <div>
                                     <dt>Constraint</dt>
-                                    <dd>Local execution and explicit boundaries</dd>
+                                    <dd>Local tools with explicit cloud boundaries</dd>
                                 </div>
                                 <div>
-                                    <dt>Open question</dt>
-                                    <dd>What evidence makes a finding reproducible?</dd>
+                                    <dt>Evidence</dt>
+                                    <dd>20 passing tests · source revision f03a1e1</dd>
                                 </div>
                             </dl>
                             <div class="hero__actions">
@@ -112,23 +112,24 @@
                                 >
                             </div>
                         </div>
-                        <figure class="system-figure" data-signal>
-                            <div class="figure-label"><span>Investigation topology</span><span>Concept / 01</span></div>
+                        <figure class="system-figure system-figure--architecture system-figure--preview" data-signal>
+                            <div class="figure-label"><span>Execution &amp; evidence boundaries</span><span>Revision f03a1e1</span></div>
                             <img
-                                src="/assets/diagrams/investigation-topology.svg"
+                                src="/assets/diagrams/cipherloop-overview.svg"
                                 width="640"
-                                height="640"
-                                alt="Conceptual loop: a question leads to planning, inspection, evidence, and review, which informs the next question. Shared context sits at the center."
+                                height="700"
+                                alt="Six-node graph: planner, local model, sandbox tools, compressor, AST validator, and synthesizer. Cloud calls and a separate trajectory recorder are labeled. Planner calls the cloud; local model calls tools or exits to compression and validation; validation loops or synthesizes. A full text description is in the case study."
                             />
                             <figcaption>
-                                Original conceptual illustration. Proposed relationships, not a verified CipherLoop architecture or a live
-                                execution trace.
+                                Simplified architecture derived from the inspected source. Arrows show control flow; dashed lines show
+                                selected writes to a separate host-side record. This is not a live execution trace.
                             </figcaption>
                         </figure>
                     </div>
                     <aside class="editorial-note">
-                        <strong>Case study in progress.</strong> Implementation evidence, reproducible findings, and execution boundaries
-                        are pending review. No production-readiness or validated security claims are made here.
+                        <strong>Source-backed, deliberately bounded.</strong> The study traces the implemented workflow and its
+                        deterministic evidence, including limits in AST coverage, accumulating state, and fallback error handling. No live
+                        autonomous audit or privacy guarantee is claimed.
                     </aside>
                 </div>
             </section>
@@ -302,6 +303,6 @@
             </div>
         </footer>
 
-        <script src="js/main.js" defer></script>
+        <script src="js/main.js?v=20260907-evidence" defer></script>
     </body>
 </html>

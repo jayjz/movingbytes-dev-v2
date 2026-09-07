@@ -1,0 +1,32 @@
+{
+  "kind": "supplementary offline probes; mocks noted in script",
+  "fixture_source": {
+    "file": "app.py",
+    "line": 8,
+    "symbol": "request.args.get"
+  },
+  "fixture_sink": {
+    "file": "app.py",
+    "line": 10,
+    "symbol": "subprocess.run"
+  },
+  "fixture_path": [
+    "app.py:8:request.args.get",
+    "app.py:8:ip",
+    "app.py:10:subprocess.run"
+  ],
+  "safe_fixture_trace": null,
+  "messages_before_sweep": 2,
+  "messages_after_reducer": 0,
+  "batches_after_two_appends": 2,
+  "fallback_results_before_compression": 1,
+  "fallback_candidates_after_compression": 0,
+  "structured_error_preserved_by_compressor": false,
+  "same_candidate_emitted_on_second_validation": true,
+  "ast_pattern_matches_not_exploitability": {
+    "shell_false_list_argument": true,
+    "sanitizer_not_modeled": true,
+    "aliased_sink_not_resolved": false,
+    "cross_function_flow_not_resolved": false
+  }
+}

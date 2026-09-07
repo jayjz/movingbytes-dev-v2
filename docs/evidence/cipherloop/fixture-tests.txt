@@ -1,0 +1,11 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- <venv>/bin/python
+rootdir: <isolated-source>
+configfile: pyproject.toml
+plugins: langsmith-0.12.2, anyio-4.15.1
+collecting ... collected 2 items
+
+tests/test_e2e_vulnerable.py::test_vulnerable_fixture_produces_an_ast_verified_report PASSED [ 50%]
+tests/test_e2e_safe.py::test_safe_fixture_produces_no_verified_findings_and_a_safe_report PASSED [100%]
+
+============================== 2 passed in 1.18s ===============================
