@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Field Notes — prototype</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600&display=optional"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/field-notes.css" />
+    </head>
+    <body>
+        <a class="skip" href="#main">Skip to content</a>
+        <header>
+            <a href="#top" class="brand">JAY / FIELD NOTES</a>
+            <nav aria-label="Primary"><a href="#work">Selected work</a><a href="#approach">Approach</a><a href="#contact">Contact</a></nav>
+        </header>
+        <main id="main" tabindex="-1">
+            <section id="top" class="opening" aria-label="Introduction">
+                <aside aria-label="Note metadata">
+                    <p>NOTE 01</p>
+                    <p>Independent software engineer</p>
+                    <p>2026 / ongoing</p>
+                </aside>
+                <div>
+                    <p class="eyebrow">Engineering notes from the edge conditions</p>
+                    <h1>Software has to make sense <i>after</i> the demo.</h1>
+                    <p class="lede">
+                        I build AI systems, security tooling, and field software with clear constraints, testable boundaries, and a record
+                        of what is actually known.
+                    </p>
+                    <a class="arrow" href="#cipherloop">Read the selected investigation <span>↓</span></a>
+                </div>
+            </section>
+            <section id="work" class="work" aria-label="Selected work">
+                <aside aria-label="Work metadata">
+                    <p>NOTE 02</p>
+                    <p>Selected work</p>
+                    <p>Read the evidence,<br />not the promise.</p>
+                </aside>
+                <div class="entries">
+                    <article id="cipherloop" class="feature">
+                        <header>
+                            <p class="eyebrow">CipherLoop / source-backed study</p>
+                            <h2>Context is useful only when the evidence survives.</h2>
+                            <p>
+                                Experimental hybrid-model repository investigation. At the inspected revision, deterministic tests accept a
+                                fixture source-to-sink path and reject a constant-input control.
+                            </p>
+                        </header>
+                        <figure>
+                            <img
+                                src="../../assets/diagrams/cipherloop-overview.svg"
+                                alt="Source-derived CipherLoop workflow diagram with planner, local model, sandbox tools, compressor, AST validator, synthesizer, and separate trajectory record."
+                            />
+                            <figcaption>
+                                <b>Evidence plate 01.</b> Simplified source-derived architecture at revision <code>f03a1e1</code>. It is not
+                                a live execution trace.
+                            </figcaption>
+                        </figure>
+                        <div class="marginal">
+                            <p><b>Observed</b><br />20 deterministic tests passed.</p>
+                            <p>
+                                <b>Boundary</b><br />Model calls, compression, and file reads are mocked in graph tests; live audit behavior
+                                is untested.
+                            </p>
+                        </div>
+                        <a class="arrow" href="../../case-studies/cipherloop.html">Open the case study <span>↗</span></a>
+                    </article>
+                    <article class="entry">
+                        <p class="eyebrow">AetherForge / development snapshot</p>
+                        <h3>A local-agent control plane for consumer GPUs.</h3>
+                        <p>Mock path verified; live 8 GB swapping remains a research goal.</p>
+                        <a href="https://github.com/jayjz/aetherforge">View source ↗</a>
+                    </article>
+                    <article class="entry">
+                        <p class="eyebrow">Truck-Ready HVAC / development snapshot</p>
+                        <h3>Parts staging for field work, described through offline data and printable checklists.</h3>
+                        <p>Current exports and field use await verification.</p>
+                        <a href="https://github.com/jayjz/truck-ready-hvac">View source ↗</a>
+                    </article>
+                    <article class="entry">
+                        <p class="eyebrow">Selected systems / research</p>
+                        <h3>Voice notes, dispatch helpers, and agent-graph recovery studies.</h3>
+                        <p>These remain intentionally scoped snapshots rather than production claims.</p>
+                        <a href="https://github.com/jayjz">View GitHub ↗</a>
+                    </article>
+                </div>
+            </section>
+            <section id="approach" class="essay" aria-label="Engineering approach">
+                <aside aria-label="Approach metadata">
+                    <p>NOTE 03</p>
+                    <p>Approach</p>
+                </aside>
+                <div>
+                    <h2>Engineering judgment begins with the conditions no interface can hide.</h2>
+                    <p>
+                        My background is in HVAC and construction: crews, job sites, and work that must hold up beyond ideal conditions. I
+                        look for boundaries that can be named—what runs locally, what depends on a network, and what evidence supports the
+                        next action.
+                    </p>
+                </div>
+            </section>
+        </main>
+        <footer id="contact">
+            <p>For a technical conversation:</p>
+            <a href="mailto:jay@jaysystems.dev">jay@jaysystems.dev</a><a href="https://github.com/jayjz">GitHub ↗</a>
+        </footer>
+    </body>
+</html>

@@ -42,95 +42,89 @@
         </header>
 
         <main id="main" tabindex="-1">
-            <section id="top" class="hero">
+            <section id="top" class="hero ledger-hero">
                 <div class="container">
-                    <div class="hero__masthead">
-                        <p class="eyebrow">Independent engineering / Jay</p>
-                        <p class="eyebrow">Systems Observatory</p>
-                    </div>
-                    <h1 class="hero__title">Intelligent systems.<br /><span>Real constraints.</span></h1>
-                    <div class="hero__bottom">
-                        <p class="hero__copy">
-                            I build AI systems, security tooling, and field software. My starting point: the compute available, the evidence
-                            needed, and the conditions outside the demo.
-                        </p>
-                        <div class="hero__actions">
-                            <a href="#work" class="button button--primary">Explore CipherLoop <span aria-hidden="true">↘</span></a
-                            ><a href="mailto:jay@jaysystems.dev" class="button button--ghost">Get in touch</a>
+                    <p class="ledger-hero__identity">Jay <span>/ Software engineer</span></p>
+                    <div class="ledger-hero__grid">
+                        <h1>AI systems.<br />Security tools.<br /><span>Field software.</span></h1>
+                        <div class="ledger-hero__introduction">
+                            <p>I build software with the constraints in view: compute, tool execution, and the people using it.</p>
+                            <p>My background in HVAC and construction shapes how I approach the work.</p>
+                            <a class="ledger-link" href="#cipherloop">Explore CipherLoop <span aria-hidden="true">↘</span></a>
                         </div>
                     </div>
-                    <ul class="hero__domains" aria-label="Engineering focus">
-                        <li>Agent architectures</li>
-                        <li>Constrained compute</li>
-                        <li>Security tooling</li>
-                        <li>Field software</li>
-                    </ul>
                 </div>
             </section>
 
-            <section id="work" class="featured section">
+            <section id="work" class="featured ledger-featured section" aria-label="Selected work">
                 <div class="container">
-                    <div class="section-marker">
-                        <p class="eyebrow">01 / Featured system</p>
-                        <p class="eyebrow">Local AI × repository auditing</p>
+                    <div class="ledger-work-divider">
+                        <p class="eyebrow">01 / Selected work</p>
+                        <span>Investigation workflows</span>
                     </div>
-                    <div class="featured__heading">
-                        <h2>CipherLoop<span class="signal" aria-hidden="true">.</span></h2>
-                        <p class="status">Experimental framework · tested with mocks</p>
-                    </div>
-                    <div class="featured__grid">
-                        <div class="featured__copy">
-                            <h3>Keep the context. Question the evidence.</h3>
-                            <p>
-                                CipherLoop separates a tool-heavy investigation into hybrid planning, local tool execution, periodic message
-                                cleanup, and an AST evidence check.
+                    <article id="cipherloop" class="cipherloop-feature">
+                        <div class="cipherloop-feature__intro">
+                            <p class="eyebrow">Experimental framework</p>
+                            <h2>CipherLoop<span aria-hidden="true">.</span></h2>
+                            <p class="cipherloop-feature__description">
+                                Repository investigation across cloud planning, a local model, and sandbox tools.
                             </p>
-                            <p>
-                                At the inspected revision, deterministic graph tests accept a fixture source-to-sink path and reject a
-                                constant-input control. Model calls, compression, and file reads are mocked in those tests; live audit
-                                behavior remains untested.
+                            <p class="cipherloop-feature__detail">
+                                The engineering problem: keep useful investigation context while retaining selected raw tool output for
+                                review.
                             </p>
-                            <dl class="feature-facts">
-                                <div>
-                                    <dt>Focus</dt>
-                                    <dd>Investigation context and reviewable evidence</dd>
+                        </div>
+                        <figure class="context-record">
+                            <div class="context-record__heading">
+                                <span>Active context / durable record</span><span>At compression</span>
+                            </div>
+                            <div class="context-record__source">
+                                <span class="context-record__signal" aria-hidden="true"></span>Tool-loop messages
+                                <span class="context-record__detail">Raw responses + tool calls</span>
+                            </div>
+                            <svg class="context-record__branches" viewBox="0 0 600 48" preserveAspectRatio="none" aria-hidden="true">
+                                <path d="M300 0 V16 M150 43 V16 H450 V43 M145 37 L150 43 L155 37 M445 37 L450 43 L455 37" />
+                            </svg>
+                            <div class="context-record__paths">
+                                <div class="context-record__path">
+                                    <p>In graph state</p>
+                                    <h3>Summarize. <br />Then sweep.</h3>
+                                    <p>Compression requests removal of messages with IDs.</p>
+                                    <div class="context-record__result">
+                                        <span aria-hidden="true">↓</span>
+                                        <p>Summary batches<br /><span>Accumulate in graph state</span></p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <dt>Constraint</dt>
-                                    <dd>Local tools with explicit cloud boundaries</dd>
+                                <div class="context-record__path context-record__path--disk">
+                                    <p>Separate disk record</p>
+                                    <h3>Record selected <br />raw messages.</h3>
+                                    <p>The compressor also writes selected tool-loop messages.</p>
+                                    <div class="context-record__result">
+                                        <span aria-hidden="true">↓</span>
+                                        <p>JSONL trajectory<br /><span>Separate from active messages</span></p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <dt>Evidence</dt>
-                                    <dd>20 passing tests · source revision f03a1e1</dd>
-                                </div>
-                            </dl>
-                            <div class="hero__actions">
-                                <a href="/case-studies/cipherloop.html" class="button button--primary"
-                                    >Read the case study <span aria-hidden="true">↗</span></a
-                                ><a class="text-link" href="https://github.com/jayjz/CipherLoop" target="_blank" rel="noopener noreferrer"
-                                    >CipherLoop source <span aria-hidden="true">↗</span></a
+                            </div>
+                            <figcaption>
+                                Simplified from revision <code>f03a1e1</code>. Recording occurs when compression runs; this is not a
+                                complete trace or a guaranteed context limit.
+                            </figcaption>
+                        </figure>
+                        <div class="cipherloop-feature__proof">
+                            <p>
+                                <strong>Observed</strong> 20 deterministic tests passed at the inspected revision. Graph tests use mocked
+                                model and tool boundaries; live audit behavior remains untested.
+                            </p>
+                            <div class="cipherloop-feature__actions">
+                                <a class="ledger-link" href="/case-studies/cipherloop.html"
+                                    >Read the engineering study <span aria-hidden="true">↗</span></a
+                                >
+                                <a class="text-link" href="https://github.com/jayjz/CipherLoop" target="_blank" rel="noopener noreferrer"
+                                    >Source <span aria-hidden="true">↗</span></a
                                 >
                             </div>
                         </div>
-                        <figure class="system-figure system-figure--architecture system-figure--preview" data-signal>
-                            <div class="figure-label"><span>Execution &amp; evidence boundaries</span><span>Revision f03a1e1</span></div>
-                            <img
-                                src="/assets/diagrams/cipherloop-overview.svg"
-                                width="640"
-                                height="700"
-                                alt="Six-node graph: planner, local model, sandbox tools, compressor, AST validator, and synthesizer. Cloud calls and a separate trajectory recorder are labeled. Planner calls the cloud; local model calls tools or exits to compression and validation; validation loops or synthesizes. A full text description is in the case study."
-                            />
-                            <figcaption>
-                                Simplified architecture derived from the inspected source. Arrows show control flow; dashed lines show
-                                selected writes to a separate host-side record. This is not a live execution trace.
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <aside class="editorial-note">
-                        <strong>Source-backed, deliberately bounded.</strong> The study traces the implemented workflow and its
-                        deterministic evidence, including limits in AST coverage, accumulating state, and fallback error handling. No live
-                        autonomous audit or privacy guarantee is claimed.
-                    </aside>
+                    </article>
                 </div>
             </section>
 

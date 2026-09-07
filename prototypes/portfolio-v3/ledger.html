@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Evidence Ledger Observatory — prototype</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=optional"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/ledger.css" />
+    </head>
+    <body>
+        <a class="skip" href="#main">Skip to content</a>
+        <header>
+            <a class="mark" href="#top">JAY <span>/ SYSTEMS OBSERVATORY</span></a>
+            <nav aria-label="Primary">
+                <a href="#work">Work</a><a href="#approach">Approach</a><a href="#contact">Contact</a
+                ><a href="https://github.com/jayjz" rel="noopener noreferrer">GitHub ↗</a>
+            </nav>
+        </header>
+        <main id="main" tabindex="-1">
+            <section id="top" class="hero">
+                <p class="kicker">Independent software engineer / evidence-led practice</p>
+                <h1>Systems for the <em>conditions</em> outside the demo.</h1>
+                <div class="hero-bottom">
+                    <p>
+                        I build AI systems, security tooling, and field software around compute, boundaries, and the evidence needed to make
+                        a decision.
+                    </p>
+                    <a class="action" href="#cipherloop">Inspect CipherLoop <span>↘</span></a>
+                </div>
+                <dl class="ledger">
+                    <div>
+                        <dt>Featured system</dt>
+                        <dd>CipherLoop</dd>
+                    </div>
+                    <div>
+                        <dt>Evidence layer</dt>
+                        <dd>Source inspection + deterministic tests</dd>
+                    </div>
+                    <div>
+                        <dt>Current boundary</dt>
+                        <dd>Live audit behavior remains untested</dd>
+                    </div>
+                </dl>
+            </section>
+            <section id="work" class="section">
+                <div class="section-head">
+                    <p class="kicker">01 / selected work</p>
+                    <p>One source-backed investigation; three explicitly scoped systems.</p>
+                </div>
+                <article id="cipherloop" class="flagship">
+                    <div class="flagship-copy">
+                        <p class="index">01</p>
+                        <h2>CipherLoop<span>.</span></h2>
+                        <h3>Keep the context.<br />Question the evidence.</h3>
+                        <p>
+                            Experimental hybrid-model repository investigation with a source-derived graph, local tool boundary, periodic
+                            message cleanup, and a narrow AST evidence threshold.
+                        </p>
+                        <div class="evidence">
+                            <p><b>Demonstrated</b> 20 deterministic tests passed at inspected revision <code>f03a1e1</code>.</p>
+                            <p><b>Not established</b> Live model, Docker, scanner, and production behavior.</p>
+                        </div>
+                        <div class="actions">
+                            <a class="action" href="../../case-studies/cipherloop.html">Read case study <span>↗</span></a
+                            ><a href="https://github.com/jayjz/CipherLoop" rel="noopener noreferrer">Source ↗</a>
+                        </div>
+                    </div>
+                    <figure>
+                        <img
+                            src="../../assets/diagrams/cipherloop-overview.svg"
+                            alt="Source-derived CipherLoop workflow showing planner, local model, sandbox tools, compressor, validator, synthesizer, and separate trajectory record."
+                        />
+                        <figcaption>Source-derived control flow; not a live trace.</figcaption>
+                    </figure>
+                </article>
+                <div class="systems">
+                    <article>
+                        <p class="index">02 / development snapshot</p>
+                        <h3>AetherForge</h3>
+                        <p>Local-agent control plane for consumer GPUs. Mock path verified; live 8 GB swapping remains research.</p>
+                        <a href="https://github.com/jayjz/aetherforge">View source ↗</a>
+                    </article>
+                    <article>
+                        <p class="index">03 / development snapshot</p>
+                        <h3>Truck-Ready HVAC</h3>
+                        <p>
+                            Parts staging with offline JSON and printable checklist workflow described in the project brief. Exports and
+                            field usage await verification.
+                        </p>
+                        <a href="https://github.com/jayjz/truck-ready-hvac">View source ↗</a>
+                    </article>
+                    <article>
+                        <p class="index">04 / selected systems</p>
+                        <h3>Research &amp; prototypes</h3>
+                        <p>
+                            Voice notes, dispatch helpers, and agent-graph recovery studies. Presented as scoped project snapshots, not
+                            production claims.
+                        </p>
+                        <a href="https://github.com/jayjz">View GitHub ↗</a>
+                    </article>
+                </div>
+            </section>
+            <section id="approach" class="approach">
+                <p class="kicker">02 / engineering approach</p>
+                <h2>The work is not just what runs.<br /><em>It is what can be inspected.</em></h2>
+                <div>
+                    <p>
+                        My background is in HVAC and construction: crews, job sites, and work that has to hold up beyond ideal conditions.
+                        That perspective informs field workflows, AI systems, and security tooling.
+                    </p>
+                    <p>
+                        I am interested in systems with understandable boundaries: what runs locally, what depends on a network, and what
+                        evidence supports a decision.
+                    </p>
+                </div>
+            </section>
+        </main>
+        <footer id="contact">
+            <p>Open to engineering collaborations and conversations.</p>
+            <a href="mailto:jay@jaysystems.dev">jay@jaysystems.dev ↗</a><a href="https://github.com/jayjz">github.com/jayjz ↗</a>
+        </footer>
+    </body>
+</html>
