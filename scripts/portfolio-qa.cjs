@@ -102,13 +102,15 @@ fs.mkdirSync(out, { recursive: true });
             }
             await page.emulateMedia({ reducedMotion: 'reduce' });
             assert.equal(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior), 'auto');
-            assert.equal(await page.locator('.system-figure').evaluate(el => getComputedStyle(el, '::after').animationName), 'none');
+            if (label === 'case')
+                assert.equal(await page.locator('.system-figure').evaluate(el => getComputedStyle(el, '::after').animationName), 'none');
             await page.emulateMedia({ reducedMotion: 'no-preference' });
             await page.goto(base + route, { waitUntil: 'networkidle' });
             if (width === 390 || width === 1440) {
                 await page.screenshot({ path: path.join(out, `after-${label}-${width}.png`), fullPage: true });
                 await page.screenshot({ path: path.join(out, `viewport-${label}-${width}.png`) });
-                await page.locator('.system-figure').screenshot({ path: path.join(out, `diagram-${label}-${width}.png`) });
+                const featureVisual = label === 'home' ? '.context-record' : '.system-figure';
+                await page.locator(featureVisual).screenshot({ path: path.join(out, `diagram-${label}-${width}.png`) });
                 if (label === 'case') await page.locator('.evidence-output').screenshot({ path: path.join(out, `evidence-${width}.png`) });
             }
             assert.deepEqual(errors, []);
@@ -131,10 +133,12 @@ fs.mkdirSync(out, { recursive: true });
             await page.goto(base + route, { waitUntil: 'networkidle' });
             if (mode === 'large-text') await page.addStyleTag({ content: 'html { font-size: 200%; }' });
             assert.equal(await page.locator('h1').isVisible(), true);
-            assert.equal(
-                await page.locator('.system-figure img').evaluate(el => el.complete && el.naturalWidth > 0),
-                mode !== 'blocked-image'
-            );
+            if (label === 'home') assert.equal(await page.locator('.context-record').isVisible(), true);
+            if (label === 'case')
+                assert.equal(
+                    await page.locator('.system-figure img').evaluate(el => el.complete && el.naturalWidth > 0),
+                    mode !== 'blocked-image'
+                );
             assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
             await page.keyboard.press('Tab');
             await page.keyboard.press('Enter');
