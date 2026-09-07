@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modular Systems Index — prototype</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=optional"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/systems-index.css" />
+    </head>
+    <body>
+        <a class="skip" href="#main">Skip to content</a>
+        <header>
+            <a href="#top" class="logo">JAY<span>SYS</span></a>
+            <p>Software engineering / selected systems</p>
+            <nav aria-label="Primary"><a href="#systems">Systems</a><a href="#approach">Method</a><a href="#contact">Contact</a></nav>
+        </header>
+        <main id="main" tabindex="-1">
+            <section id="top" class="intro">
+                <div>
+                    <p class="tag">INDEX / 2026</p>
+                    <h1>Build for the<br /><span>actual system.</span></h1>
+                    <p>
+                        AI systems, security tooling, and field software shaped by constraints, evidence, and the conditions outside the
+                        demo.
+                    </p>
+                </div>
+                <dl>
+                    <div>
+                        <dt>01</dt>
+                        <dd>Source-backed flagship</dd>
+                    </div>
+                    <div>
+                        <dt>03</dt>
+                        <dd>Scoped system entries</dd>
+                    </div>
+                    <div>
+                        <dt>0</dt>
+                        <dd>Invented claims</dd>
+                    </div>
+                </dl>
+            </section>
+            <section id="systems" class="board">
+                <div class="board-head">
+                    <p class="tag">SELECTED SYSTEMS</p>
+                    <p>Modules are arranged by evidence and current maturity—not visual equivalence.</p>
+                </div>
+                <article id="cipherloop" class="module cipher">
+                    <div class="module-id">SYSTEM / 01</div>
+                    <div class="module-body">
+                        <p class="tag">Experimental framework / source-backed</p>
+                        <h2>CipherLoop</h2>
+                        <p class="statement">
+                            Hybrid-model repository investigation with explicit local/cloud boundaries and an AST evidence threshold.
+                        </p>
+                        <dl>
+                            <div>
+                                <dt>Evidence</dt>
+                                <dd>20 deterministic tests at revision <code>f03a1e1</code></dd>
+                            </div>
+                            <div>
+                                <dt>Limit</dt>
+                                <dd>Live scanner, model, Docker, and audit behavior remain untested</dd>
+                            </div>
+                        </dl>
+                        <a class="button" href="../../case-studies/cipherloop.html">Open evidence study <span>↗</span></a>
+                    </div>
+                    <figure>
+                        <img src="../../assets/diagrams/cipherloop-overview.svg" alt="Source-derived CipherLoop workflow overview." />
+                        <figcaption>Source-derived workflow / not live telemetry</figcaption>
+                    </figure>
+                </article>
+                <article class="module aether">
+                    <div class="module-id">SYSTEM / 02</div>
+                    <h3>AetherForge</h3>
+                    <p>Consumer-GPU local-agent control plane.</p>
+                    <p class="status">Mock path verified / live 8 GB swap is research</p>
+                    <a href="https://github.com/jayjz/aetherforge">Source ↗</a>
+                </article>
+                <article class="module truck">
+                    <div class="module-id">SYSTEM / 03</div>
+                    <h3>Truck-Ready HVAC</h3>
+                    <p>Field parts staging with offline data and printable checklists.</p>
+                    <p class="status">Development snapshot / field use unverified</p>
+                    <a href="https://github.com/jayjz/truck-ready-hvac">Source ↗</a>
+                </article>
+                <article class="module research">
+                    <div class="module-id">SYSTEM / 04</div>
+                    <h3>Selected systems / research</h3>
+                    <p>Voice notes, dispatch helpers, and agent-graph recovery studies.</p>
+                    <p class="status">Scoped snapshots / evidence pending</p>
+                    <a href="https://github.com/jayjz">GitHub ↗</a>
+                </article>
+            </section>
+            <section id="approach" class="method">
+                <p class="tag">METHOD / FIELD CONDITIONS</p>
+                <h2>Evidence changes the shape of the interface.</h2>
+                <p>
+                    My background is in HVAC and construction: crews, job sites, and work that has to hold up beyond ideal conditions. That
+                    perspective informs how I approach software systems and the constraints around them.
+                </p>
+            </section>
+        </main>
+        <footer id="contact">
+            <div>
+                <p class="tag">CONTACT</p>
+                <a href="mailto:jay@jaysystems.dev">jay@jaysystems.dev</a>
+            </div>
+            <a href="https://github.com/jayjz">github.com/jayjz ↗</a>
+        </footer>
+    </body>
+</html>
