@@ -7,8 +7,23 @@ const { spawn } = require('node:child_process');
 const routes = ['ledger.html', 'field-notes.html', 'systems-index.html'];
 const output = path.resolve(process.env.PROTOTYPE_OUTPUT || 'prototypes/portfolio-v3/screenshots/final');
 let server;
+function checkLocalLinks(route) {
+    const file = path.join('prototypes', 'portfolio-v3', route);
+    const html = fs.readFileSync(file, 'utf8');
+    for (const [, value] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+        if (/^(https?:|mailto:|data:)/.test(value)) continue;
+        const url = new URL(value, `http://local/${file.replaceAll('\\', '/')}`);
+        const target = url.pathname.slice(1);
+        assert.ok(fs.existsSync(target), `${route}: missing ${value}`);
+        if (url.hash) {
+            const targetHtml = fs.readFileSync(target, 'utf8');
+            assert.ok(targetHtml.includes(`id="${decodeURIComponent(url.hash.slice(1))}"`), `${route}: missing fragment ${value}`);
+        }
+    }
+}
 async function main() {
     fs.mkdirSync(output, { recursive: true });
+    routes.forEach(checkLocalLinks);
     server = spawn(process.execPath, ['scripts/serve.cjs'], { env: { ...process.env, PORT: '4174' }, stdio: ['ignore', 'pipe', 'pipe'] });
     await new Promise((resolve, reject) => {
         const timer = setTimeout(() => reject(new Error('preview startup timed out')), 10000);
