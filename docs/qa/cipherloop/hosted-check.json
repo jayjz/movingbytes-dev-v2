@@ -1,0 +1,199 @@
+{
+  "checked_at": "2026-09-07T15:11:47.922Z",
+  "note": "Read-only deployed responses. Local changes may not be deployed.",
+  "responses": [
+    {
+      "url": "https://jaysystems.dev/",
+      "status": 308,
+      "headers": {
+        "location": "https://www.jaysystems.dev/",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "server": "Vercel"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/",
+      "status": 200,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"9cf9bbfc41bae6a474c14bc0389a0462\"",
+        "age": "2557",
+        "server": "Vercel",
+        "x-vercel-cache": "HIT"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/index.html",
+      "status": 308,
+      "headers": {
+        "location": "/",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "server": "Vercel"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/case-studies/cipherloop",
+      "status": 200,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"9949fa0584adb2c5cb446b3c803ddb15\"",
+        "age": "2539",
+        "server": "Vercel",
+        "x-vercel-cache": "HIT"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/case-studies/cipherloop.html",
+      "status": 308,
+      "headers": {
+        "location": "/case-studies/cipherloop",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "server": "Vercel"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/case-studies/cipherloop/",
+      "status": 308,
+      "headers": {
+        "location": "/case-studies/cipherloop",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "server": "Vercel"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/css/style.css",
+      "status": 200,
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "text/css; charset=utf-8",
+        "etag": "W/\"859bbc1b8cb6f53c236a4890ba9acad9\"",
+        "age": "2557",
+        "server": "Vercel",
+        "x-vercel-cache": "HIT"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/css/style.css?v=20260907-evidence",
+      "status": 200,
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "text/css; charset=utf-8",
+        "etag": "W/\"859bbc1b8cb6f53c236a4890ba9acad9\"",
+        "age": "2557",
+        "server": "Vercel",
+        "x-vercel-cache": "HIT"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/js/main.js",
+      "status": 200,
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "application/javascript; charset=utf-8",
+        "etag": "W/\"96b4cf1443ace2ff3a07d706b108ead9\"",
+        "age": "2557",
+        "server": "Vercel",
+        "x-vercel-cache": "HIT"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/js/main.js?v=20260907-evidence",
+      "status": 200,
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "application/javascript; charset=utf-8",
+        "etag": "W/\"96b4cf1443ace2ff3a07d706b108ead9\"",
+        "age": "2558",
+        "server": "Vercel",
+        "x-vercel-cache": "HIT"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/assets/diagrams/investigation-topology.svg",
+      "status": 200,
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "image/svg+xml",
+        "etag": "W/\"4c26acbe366aa1dd4103191f4c1d4ed1\"",
+        "age": "2558",
+        "server": "Vercel",
+        "x-vercel-cache": "HIT"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/assets/diagrams/cipherloop-architecture.svg",
+      "status": 404,
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Vercel"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/work/aetherforge",
+      "status": 301,
+      "headers": {
+        "location": "https://github.com/jayjz/aetherforge",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "server": "Vercel"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/work/aetherforge.html",
+      "status": 308,
+      "headers": {
+        "location": "/work/aetherforge",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "server": "Vercel"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/work/unhinged",
+      "status": 301,
+      "headers": {
+        "location": "https://github.com/jayjz/unhinged-agent",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "server": "Vercel"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/work/unhinged.html",
+      "status": 308,
+      "headers": {
+        "location": "/work/unhinged",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "server": "Vercel"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/work/hvac-ops",
+      "status": 301,
+      "headers": {
+        "location": "https://github.com/jayjz/hvac-ops-agent",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "server": "Vercel"
+      }
+    },
+    {
+      "url": "https://www.jaysystems.dev/work/hvac-ops.html",
+      "status": 308,
+      "headers": {
+        "location": "/work/hvac-ops",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "server": "Vercel"
+      }
+    }
+  ]
+}

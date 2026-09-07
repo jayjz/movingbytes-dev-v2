@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1400" fill="none">
+  <title>CipherLoop — simplified source-derived architecture</title>
+  <desc>Planner calls the configured cloud model, then local_model calls Ollama. Tool calls route through sandbox_tools to Docker tools and back to local_model. With no tool calls, compressor summarizes and removes messages, then validator reads source through the sandbox and checks Python AST patterns. Validation returns to planner or routes to synthesizer, which calls the cloud only when accepted findings exist, then ends. The compressor and validator write selected events to a separate host-side JSONL trajectory. CLI finalization writes metadata after successful graph completion.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke="#25262b"/></pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="m2 1 6 4-6 4" stroke="#ff5f1f" stroke-width="1.5"/></marker>
+    <marker id="record" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="m2 1 6 4-6 4" stroke="#adaeb7" stroke-width="1.5"/></marker>
+  </defs>
+  <path fill="#101114" d="M0 0h640v1400H0z"/><path fill="url(#grid)" d="M0 0h640v1400H0z"/>
+  <g font-family="monospace" font-size="18" fill="#adaeb7"><text x="32" y="38">GRAPH FLOW / f03a1e1</text></g>
+  <g stroke="#ff5f1f" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M320 170v67"/><path d="M320 340v93"/>
+    <path d="M530 494h36V292h-30"/>
+    <path d="M110 292H72v403h38"/>
+    <path d="M320 750v77"/><path d="M320 940v102"/>
+    <path d="M110 883H36V120h68"/>
+  </g>
+  <g fill="#adaeb7" font-family="system-ui,sans-serif" font-size="20" text-anchor="middle">
+    <text x="320" y="210">Tactical instruction</text>
+    <text x="320" y="389">Tool calls ↕ raw replies</text>
+    <text x="94" y="610" transform="rotate(-90 94 610)">No tool calls</text>
+    <text x="320" y="790">Candidate summaries</text>
+    <text x="320" y="987">Complete / empty plan</text><text x="320" y="1015">or 25 planner cycles</text>
+  </g>
+  <g fill="#15161a" stroke="#747780">
+    <rect x="110" y="70" width="420" height="100" rx="2"/>
+    <rect x="110" y="240" width="420" height="100" rx="2"/>
+    <rect x="110" y="435" width="420" height="142" rx="2"/>
+    <rect x="110" y="645" width="420" height="105" rx="2"/>
+    <rect x="110" y="830" width="420" height="110" rx="2"/>
+    <rect x="110" y="1045" width="420" height="105" rx="2"/>
+  </g>
+  <g font-family="system-ui,sans-serif" text-anchor="middle">
+    <g fill="#f2eee6" font-size="27"><text x="320" y="110">Planner</text><text x="320" y="280">Local model</text><text x="320" y="477">Sandbox tools</text><text x="320" y="685">Compressor</text><text x="320" y="870">AST validator</text><text x="320" y="1085">Synthesizer → end</text></g>
+    <g fill="#adaeb7" font-size="20"><text x="320" y="142">Configured cloud call</text><text x="320" y="314">Configured Ollama endpoint</text><text x="320" y="512">Host ToolNode → Docker commands</text><text x="320" y="547">Semgrep first · ripgrep on failure</text><text x="320" y="720">Summarize + remove messages</text><text x="320" y="904">Sandbox source read → host AST</text><text x="320" y="1120">Cloud call only with accepted findings</text></g>
+  </g>
+  <g fill="#ff5f1f" font-family="monospace" font-size="18"><text x="55" y="925" transform="rotate(-90 55 925)">Otherwise: return to planner</text></g>
+  <g stroke="#adaeb7" stroke-width="1.5" stroke-dasharray="5 7" marker-end="url(#record)"><path d="M530 695h62v560h-48"/><path d="M530 885h62"/></g>
+  <rect x="96" y="1205" width="448" height="140" fill="#15161a" stroke="#adaeb7" stroke-dasharray="5 5"/>
+  <g fill="#f2eee6" font-family="system-ui,sans-serif" text-anchor="middle"><text x="320" y="1243" font-size="25">Separate trajectory record</text><g fill="#adaeb7" font-size="20"><text x="320" y="1278">Selected tool messages + validation</text><text x="320" y="1311">JSONL · CLI finalizes metadata</text></g></g>
+  <text x="320" y="1380" fill="#adaeb7" font-family="monospace" font-size="18" text-anchor="middle">SIMPLIFIED SOURCE-DERIVED ARCHITECTURE</text>
+</svg>

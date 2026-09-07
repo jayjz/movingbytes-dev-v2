@@ -9,21 +9,26 @@ on:
 jobs:
     validate:
         runs-on: ubuntu-latest
+        timeout-minutes: 10
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
                   node-version: '22'
-
-            - name: Install validators
-              run: |
-                  npm install -g prettier html-validate
-
-            - name: Prettier check
-              run: prettier --check "index.html" "case-studies/**/*.html" "css/**/*.css" "js/**/*.js"
-
-            - name: HTML Validate — Static pages
-              run: html-validate index.html "case-studies/**/*.html"
+                  cache: npm
+            - name: Install pinned development tools
+              run: npm ci
+            - name: Validate static site
+              run: npm run check
+            - name: Install Chromium and Linux browser dependencies
+              run: npx playwright install --with-deps chromium
+            - name: Browser accessibility and resilience checks
+              run: npm run qa
+            - name: Upload browser review artifacts
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: portfolio-browser-qa
+                  path: test-results/portfolio/

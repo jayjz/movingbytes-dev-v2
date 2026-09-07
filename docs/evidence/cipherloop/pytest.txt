@@ -1,0 +1,29 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- <venv>/bin/python
+rootdir: <isolated-source>
+configfile: pyproject.toml
+plugins: langsmith-0.12.2, anyio-4.15.1
+collecting ... collected 20 items
+
+tests/test_compressor.py::test_process_semgrep_output_parses_and_ranks PASSED [  5%]
+tests/test_compressor.py::test_process_generic_tool_truncates_large_payloads PASSED [ 10%]
+tests/test_compressor.py::test_compressor_node_memory_sweeping PASSED    [ 15%]
+tests/test_config.py::test_missing_local_llm_config PASSED               [ 20%]
+tests/test_config.py::test_missing_anthropic_config PASSED               [ 25%]
+tests/test_config.py::test_missing_openai_config PASSED                  [ 30%]
+tests/test_config.py::test_missing_xai_config PASSED                     [ 35%]
+tests/test_config.py::test_valid_cloud_config_factory PASSED             [ 40%]
+tests/test_e2e_safe.py::test_safe_fixture_produces_no_verified_findings_and_a_safe_report PASSED [ 45%]
+tests/test_e2e_vulnerable.py::test_vulnerable_fixture_produces_an_ast_verified_report PASSED [ 50%]
+tests/test_local_node.py::test_semgrep_success_does_not_trigger_fallback PASSED [ 55%]
+tests/test_local_node.py::test_semgrep_crash_triggers_fallback PASSED    [ 60%]
+tests/test_local_node.py::test_semgrep_timeout_triggers_fallback PASSED  [ 65%]
+tests/test_local_node.py::test_both_tools_fail_gracefully PASSED         [ 70%]
+tests/test_sandbox_identity.py::test_reuses_sandbox_only_when_its_target_mount_matches PASSED [ 75%]
+tests/test_sandbox_identity.py::test_replaces_sandbox_when_its_target_mount_differs PASSED [ 80%]
+tests/test_trajectory.py::test_finalize_aggregates_tool_compression_metrics PASSED [ 85%]
+tests/test_validator.py::test_ast_trace_finds_request_argument_flowing_to_subprocess_run PASSED [ 90%]
+tests/test_validator.py::test_ast_trace_rejects_sink_without_an_untrusted_source PASSED [ 95%]
+tests/test_validator.py::test_validator_emits_only_a_complete_ast_verified_finding PASSED [100%]
+
+============================== 20 passed in 2.32s ==============================
