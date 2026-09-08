@@ -1,0 +1,498 @@
+[
+  {
+    "width": 1280,
+    "enlarged": false,
+    "hero": {
+      "x": 0,
+      "y": 89,
+      "width": 1280,
+      "height": 445.5625,
+      "bottom": 534.5625
+    },
+    "identity": {
+      "x": 24,
+      "y": 173.59375,
+      "width": 691.1875,
+      "height": 52.796875,
+      "bottom": 226.390625
+    },
+    "headline": {
+      "x": 24,
+      "y": 279,
+      "width": 691.1875,
+      "height": 207.5625,
+      "bottom": 486.5625
+    },
+    "introduction": {
+      "x": 795.1875,
+      "y": 287.75,
+      "width": 432,
+      "height": 198.8125,
+      "bottom": 486.5625
+    },
+    "character": {
+      "x": 795.1875,
+      "y": 137,
+      "width": 432,
+      "height": 126,
+      "bottom": 263
+    },
+    "caption": {
+      "x": 955.1875,
+      "y": 176.71875,
+      "width": 272,
+      "height": 46.5625,
+      "bottom": 223.28125
+    },
+    "cipherHeading": {
+      "x": 24,
+      "y": 647.5625,
+      "width": 488.921875,
+      "height": 76.796875,
+      "bottom": 724.359375
+    },
+    "cipherArticle": {
+      "x": 24,
+      "y": 612.375,
+      "width": 1232,
+      "height": 656.578125,
+      "bottom": 1268.953125
+    },
+    "overflow": false,
+    "overlap": []
+  },
+  {
+    "width": 1280,
+    "enlarged": true,
+    "hero": {
+      "x": 0,
+      "y": 89,
+      "width": 1280,
+      "height": 877.046875,
+      "bottom": 966.046875
+    },
+    "identity": {
+      "x": 48,
+      "y": 195.203125,
+      "width": 614.390625,
+      "height": 105.59375,
+      "bottom": 300.796875
+    },
+    "headline": {
+      "x": 48,
+      "y": 576.328125,
+      "width": 614.390625,
+      "height": 293.71875,
+      "bottom": 870.046875
+    },
+    "introduction": {
+      "x": 822.390625,
+      "y": 343,
+      "width": 409.609375,
+      "height": 527.046875,
+      "bottom": 870.046875
+    },
+    "character": {
+      "x": 822.390625,
+      "y": 185,
+      "width": 409.609375,
+      "height": 126,
+      "bottom": 311
+    },
+    "caption": {
+      "x": 998.390625,
+      "y": 204.515625,
+      "width": 233.609375,
+      "height": 86.96875,
+      "bottom": 291.484375
+    },
+    "cipherHeading": {
+      "x": 48,
+      "y": 1191.09375,
+      "width": 442.03125,
+      "height": 204.8125,
+      "bottom": 1395.90625
+    },
+    "cipherArticle": {
+      "x": 48,
+      "y": 1120.703125,
+      "width": 1184,
+      "height": 1999.78125,
+      "bottom": 3120.484375
+    },
+    "overflow": false,
+    "overlap": []
+  },
+  {
+    "width": 1440,
+    "enlarged": false,
+    "hero": {
+      "x": 0,
+      "y": 89,
+      "width": 1440,
+      "height": 471.484375,
+      "bottom": 560.484375
+    },
+    "identity": {
+      "x": 80,
+      "y": 173.59375,
+      "width": 720,
+      "height": 52.796875,
+      "bottom": 226.390625
+    },
+    "headline": {
+      "x": 80,
+      "y": 279,
+      "width": 720,
+      "height": 233.484375,
+      "bottom": 512.484375
+    },
+    "introduction": {
+      "x": 880,
+      "y": 313.671875,
+      "width": 432,
+      "height": 198.8125,
+      "bottom": 512.484375
+    },
+    "character": {
+      "x": 880,
+      "y": 137,
+      "width": 432,
+      "height": 126,
+      "bottom": 263
+    },
+    "caption": {
+      "x": 1040,
+      "y": 176.71875,
+      "width": 272,
+      "height": 46.5625,
+      "bottom": 223.28125
+    },
+    "cipherHeading": {
+      "x": 80,
+      "y": 673.484375,
+      "width": 509.015625,
+      "height": 86.40625,
+      "bottom": 759.890625
+    },
+    "cipherArticle": {
+      "x": 80,
+      "y": 638.296875,
+      "width": 1280,
+      "height": 663.953125,
+      "bottom": 1302.25
+    },
+    "overflow": false,
+    "overlap": []
+  },
+  {
+    "width": 1440,
+    "enlarged": true,
+    "hero": {
+      "x": 0,
+      "y": 89,
+      "width": 1440,
+      "height": 877.046875,
+      "bottom": 966.046875
+    },
+    "identity": {
+      "x": 80,
+      "y": 195.203125,
+      "width": 672,
+      "height": 105.59375,
+      "bottom": 300.796875
+    },
+    "headline": {
+      "x": 80,
+      "y": 576.328125,
+      "width": 672,
+      "height": 293.71875,
+      "bottom": 870.046875
+    },
+    "introduction": {
+      "x": 912,
+      "y": 343,
+      "width": 448,
+      "height": 527.046875,
+      "bottom": 870.046875
+    },
+    "character": {
+      "x": 912,
+      "y": 185,
+      "width": 448,
+      "height": 126,
+      "bottom": 311
+    },
+    "caption": {
+      "x": 1088,
+      "y": 204.515625,
+      "width": 272,
+      "height": 86.96875,
+      "bottom": 291.484375
+    },
+    "cipherHeading": {
+      "x": 80,
+      "y": 1191.09375,
+      "width": 482.21875,
+      "height": 204.8125,
+      "bottom": 1395.90625
+    },
+    "cipherArticle": {
+      "x": 80,
+      "y": 1120.703125,
+      "width": 1280,
+      "height": 1919.15625,
+      "bottom": 3039.859375
+    },
+    "overflow": false,
+    "overlap": []
+  },
+  {
+    "width": 390,
+    "enlarged": false,
+    "hero": {
+      "x": 0,
+      "y": 117,
+      "width": 390,
+      "height": 601.265625,
+      "bottom": 718.265625
+    },
+    "identity": {
+      "x": 16,
+      "y": 188.875,
+      "width": 246,
+      "height": 76.5625,
+      "bottom": 265.4375
+    },
+    "headline": {
+      "x": 16,
+      "y": 313.3125,
+      "width": 358,
+      "height": 129,
+      "bottom": 442.3125
+    },
+    "introduction": {
+      "x": 16,
+      "y": 458.3125,
+      "width": 358,
+      "height": 219.953125,
+      "bottom": 678.265625
+    },
+    "character": {
+      "x": 278,
+      "y": 157,
+      "width": 96,
+      "height": 140.3125,
+      "bottom": 297.3125
+    },
+    "caption": {
+      "x": 278,
+      "y": 241,
+      "width": 96,
+      "height": 56.3125,
+      "bottom": 297.3125
+    },
+    "cipherHeading": {
+      "x": 16,
+      "y": 824.828125,
+      "width": 358,
+      "height": 56,
+      "bottom": 880.828125
+    },
+    "cipherArticle": {
+      "x": 16,
+      "y": 789.640625,
+      "width": 358,
+      "height": 1355.6875,
+      "bottom": 2145.328125
+    },
+    "overflow": false,
+    "overlap": []
+  },
+  {
+    "width": 390,
+    "enlarged": true,
+    "hero": {
+      "x": 0,
+      "y": 204,
+      "width": 390,
+      "height": 1635.1875,
+      "bottom": 1839.1875
+    },
+    "identity": {
+      "x": 32,
+      "y": 308.828125,
+      "width": 198,
+      "height": 200.59375,
+      "bottom": 509.421875
+    },
+    "headline": {
+      "x": 32,
+      "y": 566.25,
+      "width": 326,
+      "height": 493.875,
+      "bottom": 1060.125
+    },
+    "introduction": {
+      "x": 32,
+      "y": 1092.125,
+      "width": 326,
+      "height": 667.0625,
+      "bottom": 1759.1875
+    },
+    "character": {
+      "x": 262,
+      "y": 284,
+      "width": 96,
+      "height": 250.25,
+      "bottom": 534.25
+    },
+    "caption": {
+      "x": 262,
+      "y": 368,
+      "width": 96,
+      "height": 166.25,
+      "bottom": 534.25
+    },
+    "cipherHeading": {
+      "x": 32,
+      "y": 2089.75,
+      "width": 326,
+      "height": 224,
+      "bottom": 2313.75
+    },
+    "cipherArticle": {
+      "x": 32,
+      "y": 1980.96875,
+      "width": 326,
+      "height": 4826.859375,
+      "bottom": 6807.828125
+    },
+    "overflow": false,
+    "overlap": []
+  },
+  {
+    "width": 320,
+    "enlarged": false,
+    "hero": {
+      "x": 0,
+      "y": 117,
+      "width": 320,
+      "height": 622.125,
+      "bottom": 739.125
+    },
+    "identity": {
+      "x": 16,
+      "y": 188.875,
+      "width": 176,
+      "height": 76.5625,
+      "bottom": 265.4375
+    },
+    "headline": {
+      "x": 16,
+      "y": 313.3125,
+      "width": 288,
+      "height": 123.46875,
+      "bottom": 436.78125
+    },
+    "introduction": {
+      "x": 16,
+      "y": 452.78125,
+      "width": 288,
+      "height": 246.34375,
+      "bottom": 699.125
+    },
+    "character": {
+      "x": 208,
+      "y": 157,
+      "width": 96,
+      "height": 140.3125,
+      "bottom": 297.3125
+    },
+    "caption": {
+      "x": 208,
+      "y": 241,
+      "width": 96,
+      "height": 56.3125,
+      "bottom": 297.3125
+    },
+    "cipherHeading": {
+      "x": 16,
+      "y": 845.6875,
+      "width": 288,
+      "height": 56,
+      "bottom": 901.6875
+    },
+    "cipherArticle": {
+      "x": 16,
+      "y": 810.5,
+      "width": 288,
+      "height": 1491.859375,
+      "bottom": 2302.359375
+    },
+    "overflow": false,
+    "overlap": []
+  },
+  {
+    "width": 320,
+    "enlarged": true,
+    "hero": {
+      "x": 0,
+      "y": 244.4375,
+      "width": 320,
+      "height": 2007.421875,
+      "bottom": 2251.859375
+    },
+    "identity": {
+      "x": 32,
+      "y": 325.515625,
+      "width": 128,
+      "height": 248.09375,
+      "bottom": 573.609375
+    },
+    "headline": {
+      "x": 32,
+      "y": 606.6875,
+      "width": 256,
+      "height": 658.5,
+      "bottom": 1265.1875
+    },
+    "introduction": {
+      "x": 32,
+      "y": 1297.1875,
+      "width": 256,
+      "height": 874.671875,
+      "bottom": 2171.859375
+    },
+    "character": {
+      "x": 192,
+      "y": 324.4375,
+      "width": 96,
+      "height": 250.25,
+      "bottom": 574.6875
+    },
+    "caption": {
+      "x": 192,
+      "y": 408.4375,
+      "width": 96,
+      "height": 166.25,
+      "bottom": 574.6875
+    },
+    "cipherHeading": {
+      "x": 32,
+      "y": 2540.8125,
+      "width": 256,
+      "height": 336,
+      "bottom": 2876.8125
+    },
+    "cipherArticle": {
+      "x": 32,
+      "y": 2432.03125,
+      "width": 256,
+      "height": 6457.890625,
+      "bottom": 8889.921875
+    },
+    "overflow": false,
+    "overlap": []
+  }
+]
