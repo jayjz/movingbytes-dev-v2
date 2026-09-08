@@ -1,0 +1,52 @@
+[
+  {
+    "width": 1440,
+    "overflow": false,
+    "externalRequests": 0,
+    "axeViolations": 0,
+    "interaction": "pass",
+    "gazeBoundsAndNeutral": "pass",
+    "pauseResume": "pass",
+    "heroOverlap": false,
+    "geometry": {
+      "heroTop": 261,
+      "cipherLoopTop": 655.484375
+    }
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "externalRequests": 0,
+    "axeViolations": 0,
+    "interaction": "pass",
+    "gazeBoundsAndNeutral": "not applicable (touch)",
+    "pauseResume": "pass",
+    "heroOverlap": false,
+    "geometry": {
+      "heroTop": 291,
+      "cipherLoopTop": 810.515625
+    }
+  },
+  {
+    "width": 320,
+    "overflow": false,
+    "externalRequests": 0,
+    "axeViolations": 0,
+    "interaction": "pass",
+    "gazeBoundsAndNeutral": "not applicable (touch)",
+    "pauseResume": "pass",
+    "heroOverlap": false,
+    "geometry": {
+      "heroTop": 291,
+      "cipherLoopTop": 831.375
+    }
+  },
+  {
+    "mode": "no-js",
+    "staticCharacter": "pass"
+  },
+  {
+    "mode": "reduced-motion",
+    "staticCharacter": "pass"
+  }
+]
