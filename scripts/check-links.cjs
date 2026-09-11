@@ -23,7 +23,16 @@ for (const file of pages) {
     }
 }
 const homepage = fs.readFileSync('index.html', 'utf8');
-for (const repo of ['CipherLoop', 'truck-ready-hvac', 'aetherforge', 'unhinged-agent', 'hvac-ops-agent', 'fracture']) {
+for (const repo of [
+    'CipherLoop',
+    'TraceForge',
+    'truck-ready-hvac',
+    'aetherforge',
+    'unhinged-agent',
+    'sightglass',
+    'hvac-ops-agent',
+    'fracture'
+]) {
     assert.ok(homepage.includes(`href="https://github.com/jayjz/${repo}"`), `Missing source: ${repo}`);
 }
 assert.ok(homepage.includes('mailto:jay@jaysystems.dev'));
@@ -42,4 +51,4 @@ for (const [slug, repo] of [
         );
     }
 }
-console.log('Internal assets/fragments, six project sources, contact, and legacy redirect definitions: pass');
+console.log('Internal assets/fragments, eight project sources, contact, and legacy redirect definitions: pass');

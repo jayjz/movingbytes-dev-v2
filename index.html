@@ -22,8 +22,9 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="css/style.css?v=20260907-evidence" />
+        <link rel="stylesheet" href="css/home.css" />
     </head>
-    <body>
+    <body class="home-page">
         <a href="#main" class="skip-link">Skip to content</a>
 
         <header class="site-header">
@@ -42,137 +43,281 @@
         </header>
 
         <main id="main" tabindex="-1">
-            <section id="top" class="hero ledger-hero">
+            <section id="top" class="mastery-hero">
                 <div class="container">
-                    <p class="ledger-hero__identity">Jay <span>/ Software engineer</span></p>
-                    <div class="ledger-hero__grid">
-                        <h1>AI systems.<br />Security tools.<br /><span>Field software.</span></h1>
-                        <div class="ledger-hero__introduction">
-                            <p>I build software with the constraints in view: compute, tool execution, and the people using it.</p>
-                            <p>My background in HVAC and construction shapes how I approach the work.</p>
-                            <a class="ledger-link" href="#cipherloop">Explore CipherLoop <span aria-hidden="true">↘</span></a>
+                    <div class="mastery-identity">
+                        <p>Jay <span>/ Software engineer</span></p>
+                        <div class="observer-mount" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280" width="320" height="280" aria-hidden="true">
+                                <title id="observer-title">The Observer</title>
+                                <desc id="observer-desc">
+                                    A curious workshop loupe with a chamfered bone-colored housing, one large eye and one small eye, an
+                                    orange side pivot, and a sturdy folding stand.
+                                </desc>
+                                <defs>
+                                    <linearGradient id="shell" x1="0" y1="0" x2="0.8" y2="1">
+                                        <stop stop-color="#fff8e8" />
+                                        <stop offset="1" stop-color="#c2bcae" />
+                                    </linearGradient>
+                                    <linearGradient id="metal" x2="0.8" y2="1">
+                                        <stop stop-color="#656568" />
+                                        <stop offset="1" stop-color="#282b30" />
+                                    </linearGradient>
+                                    <clipPath id="left-window"><ellipse cx="127" cy="129" rx="36" ry="38" /></clipPath>
+                                    <clipPath id="right-window"><ellipse cx="212" cy="123" rx="23" ry="26" /></clipPath>
+                                </defs>
+                                <ellipse cx="164" cy="250" rx="94" ry="9" fill="#000" opacity=".45" />
+                                <!-- Fixed stand: the head pivots on the orange axle rather than floating. -->
+                                <path
+                                    d="M121 181 L105 237 L79 242 L79 250 L142 250 L157 198"
+                                    fill="url(#metal)"
+                                    stroke="#77766f"
+                                    stroke-width="2"
+                                />
+                                <path
+                                    d="M199 186 L221 236 L243 242 L243 250 L181 250 L168 200"
+                                    fill="#34373c"
+                                    stroke="#77766f"
+                                    stroke-width="2"
+                                />
+                                <path d="M139 208 L187 208" stroke="#83837e" stroke-width="5" />
+                                <g class="observer-head">
+                                    <!-- Offset carry loop and bevel make the silhouette recognizable at small sizes. -->
+                                    <path
+                                        d="M112 63 L119 31 Q123 21 136 23 L185 29 Q195 30 197 43 L199 61"
+                                        fill="none"
+                                        stroke="#aaa79e"
+                                        stroke-width="11"
+                                    />
+                                    <path
+                                        d="M116 62 L123 34 Q125 29 133 30 L181 36 Q188 37 189 45 L191 60"
+                                        fill="none"
+                                        stroke="#2c2f33"
+                                        stroke-width="5"
+                                    />
+                                    <path
+                                        d="M72 94 L98 58 L238 64 L264 96 L252 185 L222 207 L88 194 L63 162 Z"
+                                        fill="#74756f"
+                                        stroke="#17191c"
+                                        stroke-width="3"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M60 89 L88 51 L226 58 L250 88 L240 175 L211 196 L76 183 L51 153 Z"
+                                        fill="url(#shell)"
+                                        stroke="#17191c"
+                                        stroke-width="3"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path d="M62 87 L91 57 L224 64" fill="none" stroke="#fffbed" stroke-width="3" opacity=".85" />
+                                    <path
+                                        d="M73 99 Q73 77 96 76 L214 80 Q235 81 234 105 L226 151 Q224 170 204 171 L94 167 Q73 165 70 145 Z"
+                                        fill="#202328"
+                                        stroke="#92928b"
+                                        stroke-width="2"
+                                    />
+                                    <circle cx="257" cy="145" r="23" fill="#ab3913" stroke="#17191c" stroke-width="3" />
+                                    <circle cx="253" cy="142" r="20" fill="#ff6a29" />
+                                    <path
+                                        d="M247 130 L259 151 M243 139 L260 140"
+                                        stroke="#61260f"
+                                        stroke-width="3"
+                                        stroke-linecap="round"
+                                    />
+                                    <circle cx="127" cy="128" r="49" fill="#111418" stroke="#585c60" stroke-width="4" />
+                                    <circle cx="127" cy="128" r="43" fill="#353b3e" stroke="#ff6a29" stroke-width="3" />
+                                    <circle cx="212" cy="123" r="32" fill="#111418" stroke="#64686a" stroke-width="3" />
+                                    <g class="observer-eye observer-eye--left" style="transform-origin: 127px 129px">
+                                        <ellipse cx="127" cy="129" rx="36" ry="38" fill="#eee9dc" />
+                                        <g clip-path="url(#left-window)">
+                                            <g class="observer-pupil">
+                                                <ellipse cx="131" cy="131" rx="19" ry="24" fill="#15191d" />
+                                                <ellipse cx="136" cy="124" rx="5" ry="7" fill="#fff8e8" />
+                                                <circle cx="124" cy="142" r="2" fill="#aeb7b2" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g class="observer-eye observer-eye--right" style="transform-origin: 212px 123px">
+                                        <ellipse cx="212" cy="123" rx="23" ry="26" fill="#eee9dc" />
+                                        <g clip-path="url(#right-window)">
+                                            <g class="observer-pupil">
+                                                <ellipse cx="214" cy="125" rx="12" ry="17" fill="#15191d" />
+                                                <ellipse cx="218" cy="119" rx="3" ry="4.5" fill="#fff8e8" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <path d="M96 178 L118 180 M125 181 L133 181" stroke="#666962" stroke-width="3" stroke-linecap="round" />
+                                    <path d="M183 181 L204 182" stroke="#33383a" stroke-width="4" stroke-linecap="round" />
+                                    <circle cx="72" cy="92" r="3" fill="#666962" />
+                                    <circle cx="225" cy="70" r="3" fill="#666962" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mastery-hero__grid">
+                        <h1>Build systems.<br /><span>Leave evidence.</span></h1>
+                        <div class="mastery-intro">
+                            <p>I build agents, local infrastructure, and software for the field.</p>
+                            <p>HVAC and construction taught me to start with the constraints. That carries into the code.</p>
+                            <a class="ledger-link" href="#cipherloop">Inspect the work <span aria-hidden="true">↘</span></a>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <section id="work" class="featured ledger-featured section" aria-label="Selected work">
+            <section id="work" class="featured evidence-feature" aria-label="Selected work">
                 <div class="container">
-                    <div class="ledger-work-divider">
-                        <p class="eyebrow">01 / Selected work</p>
-                        <span>Investigation workflows</span>
+                    <div class="evidence-divider">
+                        <p class="eyebrow">01 / Agent evidence</p>
+                        <p>Two systems. One inspectable handoff.</p>
                     </div>
-                    <article id="cipherloop" class="cipherloop-feature">
-                        <div class="cipherloop-feature__intro">
-                            <p class="eyebrow">Experimental framework</p>
-                            <h2>CipherLoop<span aria-hidden="true">.</span></h2>
-                            <p class="cipherloop-feature__description">
-                                Repository investigation across cloud planning, a local model, and sandbox tools.
-                            </p>
-                            <p class="cipherloop-feature__detail">
-                                The engineering problem: keep useful investigation context while retaining selected raw tool output for
-                                review.
-                            </p>
-                        </div>
-                        <figure class="context-record">
-                            <div class="context-record__heading">
-                                <span>Active context / durable record</span><span>At compression</span>
-                            </div>
-                            <div class="context-record__source">
-                                <span class="context-record__signal" aria-hidden="true"></span>Tool-loop messages
-                                <span class="context-record__detail">Raw responses + tool calls</span>
-                            </div>
-                            <svg class="context-record__branches" viewBox="0 0 600 48" preserveAspectRatio="none" aria-hidden="true">
-                                <path d="M300 0 V16 M150 43 V16 H450 V43 M145 37 L150 43 L155 37 M445 37 L450 43 L455 37" />
-                            </svg>
-                            <div class="context-record__paths">
-                                <div class="context-record__path">
-                                    <p>In graph state</p>
-                                    <h3>Summarize. <br />Then sweep.</h3>
-                                    <p>Compression requests removal of messages with IDs.</p>
-                                    <div class="context-record__result">
-                                        <span aria-hidden="true">↓</span>
-                                        <p>Summary batches<br /><span>Accumulate in graph state</span></p>
-                                    </div>
-                                </div>
-                                <div class="context-record__path context-record__path--disk">
-                                    <p>Separate disk record</p>
-                                    <h3>Record selected <br />raw messages.</h3>
-                                    <p>The compressor also writes selected tool-loop messages.</p>
-                                    <div class="context-record__result">
-                                        <span aria-hidden="true">↓</span>
-                                        <p>JSONL trajectory<br /><span>Separate from active messages</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <figcaption>
-                                Simplified from revision <code>f03a1e1</code>. Recording occurs when compression runs; this is not a
-                                complete trace or a guaranteed context limit.
+                    <article id="cipherloop">
+                        <h2 class="evidence-heading">CipherLoop <span aria-hidden="true">→</span> TraceForge</h2>
+                        <p class="evidence-question">Can an investigation be checked independently?</p>
+                        <p class="evidence-scope">Experimental agent + offline evaluator. Two fixtures, synthetic scanner responses.</p>
+                        <figure class="evidence-flow" aria-labelledby="handoff-caption">
+                            <ol>
+                                <li>
+                                    <p class="eyebrow">01 / CipherLoop components</p>
+                                    <h3>Investigate.<br />Keep the record.</h3>
+                                    <p>
+                                        Compression reduces active messages to summaries and writes selected raw tool messages to disk. The
+                                        capture harness exercises the compressor, AST validator and recorder.
+                                    </p>
+                                    <a
+                                        class="ledger-link"
+                                        href="https://github.com/jayjz/CipherLoop"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        >CipherLoop source <span aria-hidden="true">↗</span></a
+                                    >
+                                </li>
+                                <li class="evidence-capture">
+                                    <p class="eyebrow">02 / Offline capture harness</p>
+                                    <h3>The artifact boundary</h3>
+                                    <dl>
+                                        <dt>JSONL trajectory</dt>
+                                        <dd>Recorded messages and validation</dd>
+                                        <dt>Run metadata</dt>
+                                        <dd>Recorder summary</dd>
+                                        <dt>Capture sidecars</dt>
+                                        <dd>Harness outputs and provenance</dd>
+                                    </dl>
+                                    <p>A trajectory alone is insufficient for this adapter.</p>
+                                    <a
+                                        class="ledger-link"
+                                        href="https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/scripts/generate_cipherloop_baseline.py"
+                                        >Inspect the capture <span aria-hidden="true">↗</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <p class="eyebrow">03 / TraceForge</p>
+                                    <h3>Check against<br />a separate oracle.</h3>
+                                    <p>
+                                        The adapter reads captured files without importing CipherLoop runtime modules. The evaluator
+                                        compares them with independent fixture expectations.
+                                    </p>
+                                    <a
+                                        class="ledger-link"
+                                        href="https://github.com/jayjz/TraceForge"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        >TraceForge source <span aria-hidden="true">↗</span></a
+                                    >
+                                </li>
+                            </ol>
+                            <figcaption id="handoff-caption">
+                                Source-derived flow: CipherLoop <code>f03a1e1</code> → TraceForge <code>25668c4</code>. The harness supplies
+                                the scanner responses; no live planner, model or scanner runs.
                             </figcaption>
                         </figure>
-                        <div class="cipherloop-feature__proof">
+                        <div class="evidence-results">
+                            <section aria-labelledby="fixture-title">
+                                <h3 id="fixture-title">What the fixtures show</h3>
+                                <table class="fixture-table">
+                                    <caption>
+                                        Committed baseline · one supplied candidate per fixture
+                                    </caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Fixture</th>
+                                            <th scope="col">CipherLoop decision</th>
+                                            <th scope="col">TraceForge result</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">toy</th>
+                                            <td><span class="fixture-cell-label" aria-hidden="true">CipherLoop</span>Accepted</td>
+                                            <td><span class="fixture-cell-label" aria-hidden="true">TraceForge</span>Matches oracle</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">safe</th>
+                                            <td><span class="fixture-cell-label" aria-hidden="true">CipherLoop</span>Rejected</td>
+                                            <td><span class="fixture-cell-label" aria-hidden="true">TraceForge</span>Matches oracle</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="evidence-provenance">
+                                    <a
+                                        href="https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/tests/fixtures/cipherloop/artifacts/evaluation.json"
+                                        >Recorded results</a
+                                    >
+                                    ·
+                                    <a
+                                        href="https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/tests/fixtures/cipherloop/manifest.json"
+                                        >Independent expectations</a
+                                    >
+                                </p>
+                            </section>
+                            <section aria-labelledby="boundary-title">
+                                <h3 id="boundary-title">Agreement has a boundary.</h3>
+                                <p>
+                                    These fixtures exercise evidence capture and evaluation. They do not establish live audit accuracy or
+                                    exploitability. “Safe” is a fixture name, not a security certification.
+                                </p>
+                                <p class="evidence-provenance">
+                                    <a href="https://github.com/jayjz/TraceForge/actions/runs/34390717464"
+                                        >Hosted baseline CI passed · 9 Sep 2026</a
+                                    ><br />Source and recorded results inspected 11 Sep; project tests were not rerun for this portfolio
+                                    pass.
+                                </p>
+                            </section>
+                        </div>
+                        <div class="evidence-actions">
+                            <a class="ledger-link" href="/case-studies/cipherloop.html"
+                                >Read the CipherLoop engineering study <span aria-hidden="true">↗</span></a
+                            >
                             <p>
-                                <strong>Observed</strong> 20 deterministic tests passed at the inspected revision. Graph tests use mocked
-                                model and tool boundaries; live audit behavior remains untested.
+                                Study scoped to <code>f03a1e1</code> ·
+                                <a
+                                    href="https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/docs/cipherloop-baseline.md"
+                                    >TraceForge baseline and limits</a
+                                >
                             </p>
-                            <div class="cipherloop-feature__actions">
-                                <a class="ledger-link" href="/case-studies/cipherloop.html"
-                                    >Read the engineering study <span aria-hidden="true">↗</span></a
-                                >
-                                <a class="text-link" href="https://github.com/jayjz/CipherLoop" target="_blank" rel="noopener noreferrer"
-                                    >Source <span aria-hidden="true">↗</span></a
-                                >
-                            </div>
                         </div>
                     </article>
                 </div>
             </section>
-
             <section id="projects" class="work section">
                 <div class="container">
                     <header class="section-intro">
                         <p class="eyebrow">02 / Project index</p>
-                        <h2 class="section-intro__title">Further investigations</h2>
+                        <h2 class="section-intro__title">Other constraints. Same approach.</h2>
                         <p class="section-intro__copy">
-                            Five more projects across local AI and field operations. These summaries describe the existing portfolio
-                            snapshot; current capabilities and status remain unverified.
+                            AetherForge extends the work into constrained compute. The applied prototypes bring it back to technicians,
+                            voice interaction, and operational decisions. Source-inspected; maturity varies.
                         </p>
                     </header>
 
                     <div class="work-grid">
                         <article class="work-card">
                             <header class="work-card__header">
-                                <h3 class="work-card__title">Truck-Ready HVAC</h3>
-                                <p class="work-card__status">Development snapshot</p>
-                            </header>
-                            <p class="work-card__body">
-                                Parts staging for field work, with offline JSON and printable PDF checklists described in the project brief.
-                                Current exports and field usage await verification.
-                            </p>
-                            <ul class="work-card__stack">
-                                <li>Python</li>
-                                <li>Streamlit</li>
-                                <li>Pydantic</li>
-                                <li>fpdf2</li>
-                            </ul>
-                            <a
-                                class="work-card__source"
-                                href="https://github.com/jayjz/truck-ready-hvac"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View source for Truck-Ready HVAC on GitHub"
-                                >View Source</a
-                            >
-                        </article>
-
-                        <article class="work-card">
-                            <header class="work-card__header">
                                 <h3 class="work-card__title">AetherForge</h3>
-                                <p class="work-card__status">Development snapshot</p>
+                                <p class="work-card__status">Mock control-plane implementation</p>
                             </header>
                             <p class="work-card__body">
-                                A local-agent control plane for consumer GPUs. The snapshot reports a mock path; live 8 GB swapping remains
-                                a research goal, not a demonstrated capability here.
+                                An agent can request a GPU configuration; the control plane can reject it on context, expected benefit,
+                                queue or thermal constraints. Physical GPU swapping remains research.
                             </p>
                             <ul class="work-card__stack">
                                 <li>Python</li>
@@ -188,21 +333,42 @@
                                 >View Source</a
                             >
                         </article>
-
                         <article class="work-card">
                             <header class="work-card__header">
-                                <h3 class="work-card__title">Unhinged Agent</h3>
-                                <p class="work-card__status">Proof-of-concept snapshot</p>
+                                <h3 class="work-card__title">Truck-Ready HVAC</h3>
+                                <p class="work-card__status">Field workflow prototype</p>
                             </header>
                             <p class="work-card__body">
-                                Voice-note tooling around an ESP32 client and local host. The brief describes a browser twin; software
-                                completeness, privacy boundaries, and hardware behavior await verification.
+                                Aggregates parts demand across jobs, stages available stock, and identifies pickup shortfalls. Exports JSON
+                                and printable PDF checklists. Field outcomes remain unverified.
                             </p>
                             <ul class="work-card__stack">
                                 <li>Python</li>
-                                <li>Ollama</li>
-                                <li>Whisper</li>
-                                <li>ESP32</li>
+                                <li>Streamlit</li>
+                                <li>fpdf2</li>
+                            </ul>
+                            <a
+                                class="work-card__source"
+                                href="https://github.com/jayjz/truck-ready-hvac"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="View source for Truck-Ready HVAC on GitHub"
+                                >View Source</a
+                            >
+                        </article>
+                        <article class="work-card">
+                            <header class="work-card__header">
+                                <h3 class="work-card__title">Unhinged Agent</h3>
+                                <p class="work-card__status">Voice-system prototype</p>
+                            </header>
+                            <p class="work-card__body">
+                                A thin voice client with a cancellable host-side turn. The hardware-prep branch handles interruption by
+                                cancelling processing and returning to listening. Physical hardware remains unverified.
+                            </p>
+                            <ul class="work-card__stack">
+                                <li>Python</li>
+                                <li>ESPHome</li>
+                                <li>Local inference</li>
                             </ul>
                             <a
                                 class="work-card__source"
@@ -212,21 +378,47 @@
                                 aria-label="View source for Unhinged Agent on GitHub"
                                 >View Source</a
                             >
+                            <p class="evidence-provenance">
+                                <a href="https://github.com/jayjz/unhinged-agent/tree/ea86997c18cc375ae3355c3321b792c21f8d3284"
+                                    >Inspected hardware-prep revision</a
+                                >
+                            </p>
                         </article>
-
                         <article class="work-card">
                             <header class="work-card__header">
-                                <h3 class="work-card__title">HVAC Ops</h3>
-                                <p class="work-card__status">Proof-of-concept snapshot</p>
+                                <h3 class="work-card__title">Sightglass</h3>
+                                <p class="work-card__status">Inspection-interface demo</p>
                             </header>
                             <p class="work-card__body">
-                                Dispatch, inventory, and risk helpers for HVAC crews. The brief describes a Streamlit demo with synthetic
-                                fallback; approval enforcement and working paths await verification.
+                                Streams graph transitions into a job-inspection interface using mock inventory. The review UI is a
+                                prototype; durable synchronization and enforced approval are unfinished.
                             </p>
                             <ul class="work-card__stack">
                                 <li>Python</li>
-                                <li>Streamlit</li>
                                 <li>FastAPI</li>
+                                <li>SSE</li>
+                            </ul>
+                            <a
+                                class="work-card__source"
+                                href="https://github.com/jayjz/sightglass"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="View source for Sightglass on GitHub"
+                                >View Source</a
+                            >
+                        </article>
+                        <article class="work-card">
+                            <header class="work-card__header">
+                                <h3 class="work-card__title">HVAC Ops</h3>
+                                <p class="work-card__status">Recovery branch</p>
+                            </header>
+                            <p class="work-card__body">
+                                Keeps unknown inventory distinct from known zero stock. Separates source readiness, assessment and proposed
+                                actions. No live ordering or dispatch side effects are established.
+                            </p>
+                            <ul class="work-card__stack">
+                                <li>Python</li>
+                                <li>Dispatch assessment</li>
                             </ul>
                             <a
                                 class="work-card__source"
@@ -236,30 +428,18 @@
                                 aria-label="View source for HVAC Ops on GitHub"
                                 >View Source</a
                             >
-                        </article>
-
-                        <article class="work-card">
-                            <header class="work-card__header">
-                                <h3 class="work-card__title">Fracture</h3>
-                                <p class="work-card__status">Research-harness snapshot</p>
-                            </header>
-                            <p class="work-card__body">
-                                An exploration of agent-graph failures and recovery. Implemented experiments, measurement methods, and
-                                repeatable results await verification.
+                            <p class="evidence-provenance">
+                                <a href="https://github.com/jayjz/hvac-ops-agent/tree/d5ec6235e9558af227e7381b9821b8dee0c95eda"
+                                    >Inspected recovery revision</a
+                                >
                             </p>
-                            <ul class="work-card__stack">
-                                <li>Python</li>
-                            </ul>
-                            <a
-                                class="work-card__source"
-                                href="https://github.com/jayjz/fracture"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View source for Fracture on GitHub"
-                                >View Source</a
-                            >
                         </article>
                     </div>
+                    <p class="lab-entry">
+                        <span>Research / </span
+                        ><a href="https://github.com/jayjz/fracture" target="_blank" rel="noopener noreferrer">Fracture</a> — agent-graph
+                        failure scaffold. Runtime and evaluation harness remain unimplemented.
+                    </p>
                 </div>
             </section>
 
@@ -298,5 +478,6 @@
         </footer>
 
         <script src="js/main.js?v=20260907-evidence" defer></script>
+        <script src="js/observer.js" defer></script>
     </body>
 </html>

@@ -1,5 +1,17 @@
 # Project evidence register
 
+## Current portfolio audit — 2026-09-11
+
+The [source-pinned eight-project audit](evidence/portfolio-mastery-2026-09-11.md) is the current authority for the refreshed homepage. It records exact default branches, separately scoped feature work, implementation/test paths, captured results, hosted CI outcomes, limits and artifact choices. Earlier entries below remain historical records.
+
+- **Flagship:** CipherLoop `f03a1e1` + TraceForge `25668c4`: offline capture harness → files → independent adapter/evaluator and fixture oracle. Two synthetic-response fixtures, not live audit certification. The adapter needs capture sidecars as well as the JSONL and metadata.
+- **Current evidence:** committed toy/safe results both match their independent expectations. TraceForge hosted baseline workflow passed at the exact inspected main commit on 2026-09-09. Source, outputs and CI metadata inspected; project tests were not rerun in this portfolio pass.
+- **Separate branch work:** CipherLoop `37fcbe4` production evidence contract is not integrated into TraceForge main. The existing case study remains explicitly scoped to `f03a1e1`. Unhinged hardware-prep `ea86997` and HVAC Ops recovery `d5ec623` are labeled and directly linked when used in homepage copy.
+- **Hierarchy:** paired flagship → AetherForge mock control plane → Truck-Ready and Unhinged applied work → Sightglass/HVAC Ops prototypes → Fracture scaffold. Physical GPU/hardware and field outcomes remain unverified. Current AetherForge and Truck-Ready CI failures prevent a current passing-test claim. Sightglass is not an enforced approval or durable sync system.
+- **Homepage publication wording:** source-supported, bounded descriptions approved by this audit within the user's authorized implementation scope. No deploy or push authorized. No new business, performance, adoption or security outcome claims.
+
+---
+
 This is a verification register, not a source of newly verified facts. Initial entries come from the supplied portfolio snapshot. Reinspect the current repositories before publishing case-study claims. Record the commit or date inspected, exact evidence, and remaining limitations. Do not silently promote README descriptions into demonstrated results.
 
 ## CipherLoop

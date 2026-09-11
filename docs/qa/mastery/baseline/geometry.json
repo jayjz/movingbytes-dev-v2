@@ -1,0 +1,37 @@
+[
+  {
+    "route": "home",
+    "width": 1440,
+    "overflow": false,
+    "h1": "AI systems.\nSecurity tools.\nField software.",
+    "flagshipY": 503.28125
+  },
+  {
+    "route": "home",
+    "width": 1280,
+    "overflow": false,
+    "h1": "AI systems.\nSecurity tools.\nField software.",
+    "flagshipY": 477.359375
+  },
+  {
+    "route": "home",
+    "width": 768,
+    "overflow": false,
+    "h1": "AI systems.\nSecurity tools.\nField software.",
+    "flagshipY": 524.015625
+  },
+  {
+    "route": "home",
+    "width": 390,
+    "overflow": false,
+    "h1": "AI systems.\nSecurity tools.\nField software.",
+    "flagshipY": 646.75
+  },
+  {
+    "route": "home",
+    "width": 320,
+    "overflow": false,
+    "h1": "AI systems.\nSecurity tools.\nField software.",
+    "flagshipY": 667.609375
+  }
+]

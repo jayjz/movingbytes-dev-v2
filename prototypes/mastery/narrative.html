@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex" />
+        <title>Narrative · Portfolio direction</title>
+        <link rel="stylesheet" href="shared.css" />
+    </head>
+    <body class="narrative">
+        <a class="skip-link" href="#main">Skip to content</a>
+        <header class="container prototype-nav">
+            <a class="wordmark" href="/">jay<span> / </span>systems</a>
+            <nav aria-label="Primary">
+                <a href="#work">Work</a><a href="#perspective">Perspective</a><a href="mailto:jay@jaysystems.dev">Contact</a>
+            </nav>
+        </header>
+        <main id="main" tabindex="-1">
+            <section class="container proto-hero">
+                <div class="proto-identity">
+                    <p>Jay <span>/ Software engineer</span></p>
+                    <img class="proto-observer" src="../observer/observer.svg" width="320" height="280" alt="" />
+                </div>
+                <h1>Build.<br />Record.<br /><span>Question.</span></h1>
+                <div class="narrative-tail">
+                    <p>I build agents, local infrastructure, and field software. My HVAC background keeps the constraints in view.</p>
+                    <a class="ledger-link" href="#cipherloop">CipherLoop → TraceForge ↘</a>
+                </div>
+            </section>
+            <div id="work">
+                <section class="scene container" id="cipherloop">
+                    <p class="proto-kicker">01 / CipherLoop</p>
+                    <h2>The context gets smaller.<br />The record stays.</h2>
+                    <p>
+                        Selected raw tool messages are written at compression. Active context and the disk record serve different purposes.
+                    </p>
+                    <a class="ledger-link" href="https://github.com/jayjz/CipherLoop">Inspect the producer ↗</a>
+                </section>
+                <section class="scene scene--paper">
+                    <div class="container">
+                        <p class="proto-kicker">02 / Capture boundary</p>
+                        <h2>What survived the run?</h2>
+                        <div class="capture">
+                            <ul>
+                                <li>JSONL trajectory</li>
+                                <li>Run metadata</li>
+                                <li>Capture sidecars</li>
+                            </ul>
+                        </div>
+                        <p>Two offline fixture captures bridge the systems. This is a source-derived handoff, not a live data feed.</p>
+                    </div>
+                </section>
+                <section class="scene container">
+                    <p class="proto-kicker">03 / TraceForge</p>
+                    <h2>A second system<br />checks the first.</h2>
+                    <p>
+                        Captured artifacts are evaluated against an independent fixture oracle. The adapter imports no CipherLoop runtime
+                        modules.
+                    </p>
+                    <a class="ledger-link" href="https://github.com/jayjz/TraceForge">Inspect the evaluator ↗</a>
+                    <div class="proto-proof">
+                        <p>
+                            <strong>What the fixtures exercise</strong>Real compression, recording and validation code, checked against
+                            separate expectations.
+                        </p>
+                        <p>
+                            <strong>Where the evidence stops</strong>Synthetic scanner responses. No live audit certification. A trajectory
+                            alone is insufficient for this adapter.
+                        </p>
+                    </div>
+                </section>
+            </div>
+            <div class="container">
+                <section class="proto-index" id="perspective">
+                    <p class="proto-kicker">02 / Constraints beyond the agent</p>
+                    <a href="https://github.com/jayjz/aetherforge">AetherForge<span>Consumer GPU control plane · mock path</span><b>↗</b></a
+                    ><a href="https://github.com/jayjz/truck-ready-hvac"
+                        >Truck-Ready HVAC<span>Parts staging · field workflow prototype</span><b>↗</b></a
+                    ><a href="https://github.com/jayjz/unhinged-agent"
+                        >Unhinged Agent<span>Voice interaction · hardware unverified</span><b>↗</b></a
+                    >
+                </section>
+            </div>
+        </main>
+        <details class="container tuner">
+            <summary>Prototype tuning</summary>
+            <label
+                >Display scale<input type="range" data-token="--display-scale" min=".85" max="1.1" step="0.05" value="1" /><span
+                    aria-hidden="true"
+                    >1</span
+                ></label
+            ><label
+                >Section spacing<input type="range" data-token="--space-scale" min=".75" max="1.25" step="0.05" value="1" /><span
+                    aria-hidden="true"
+                    >1</span
+                ></label
+            ><label
+                >Observer scale<input type="range" data-token="--observer-scale" min=".75" max="1.25" step="0.05" value="1" /><span
+                    aria-hidden="true"
+                    >1</span
+                ></label
+            >
+        </details>
+        <footer class="container proto-footer">
+            Design study · Static source-derived diagrams · <a href="ledger.html">A / Ledger</a> ·
+            <a href="instrument.html">B / Instrument</a> · <a href="narrative.html">C / Narrative</a>
+        </footer>
+        <script src="tune.js" defer></script>
+    </body>
+</html>

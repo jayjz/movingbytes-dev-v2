@@ -1,0 +1,491 @@
+@import url('../../css/style.css');
+
+:root {
+    --display-scale: 1;
+    --space-scale: 1;
+    --observer-scale: 1;
+}
+body {
+    font-family: var(--font-sans);
+}
+.prototype-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.prototype-nav nav {
+    display: flex;
+    gap: 1.5rem;
+}
+.prototype-nav a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+.prototype-nav .wordmark {
+    font-size: 1.25rem;
+    letter-spacing: -0.05em;
+}
+.prototype-nav .wordmark span {
+    color: var(--accent);
+}
+.prototype-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+.proto-identity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.proto-identity p {
+    color: var(--text-primary);
+}
+.proto-identity p span {
+    color: var(--text-secondary);
+}
+.proto-observer {
+    width: calc(96px * var(--observer-scale));
+    height: auto;
+}
+.proto-intro p {
+    max-width: 31rem;
+}
+.proto-intro p:first-child {
+    color: var(--text-primary);
+}
+.proto-intro a {
+    margin-top: 1.5rem;
+}
+.proto-kicker {
+    font: 0.75rem/1.6 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.proto-rule {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0 2.5rem;
+    border-top: 1px solid var(--border-color);
+}
+.proto-rule p {
+    font-size: 0.8rem;
+}
+.proto-pair h2 {
+    font-size: clamp(2.3rem, 4.8vw, 4.4rem);
+}
+.proto-pair h2 span {
+    color: var(--accent);
+    font-weight: 400;
+}
+.proto-pair > p {
+    margin-top: 1rem;
+    max-width: 47rem;
+}
+.proto-flow {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr 1fr;
+    gap: 2.5rem;
+    padding: 3rem 0 1.5rem;
+    align-items: stretch;
+}
+.proto-flow section {
+    position: relative;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    min-width: 0;
+}
+.proto-flow h3 {
+    font-size: 1.55rem;
+    margin: 1rem 0;
+}
+.proto-flow p {
+    font-size: 0.95rem;
+}
+.proto-flow .capture {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border: 0;
+    padding: 1.4rem;
+}
+.capture p {
+    color: #444440;
+}
+.capture ul {
+    padding: 1.1rem 0;
+    margin: 0;
+    list-style: none;
+    font: 0.85rem/1.8 var(--font-mono);
+    border-block: 1px solid #99968e;
+}
+.capture::before,
+.capture::after {
+    content: '→';
+    color: var(--accent);
+    position: absolute;
+    top: 42%;
+    font-size: 1.5rem;
+}
+.capture::before {
+    left: -2rem;
+}
+.capture::after {
+    right: -2rem;
+}
+.proto-proof {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+.proto-proof strong {
+    display: block;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+}
+.proto-index {
+    padding-block: 3rem;
+}
+.proto-index a {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr auto;
+    gap: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding: 1.3rem 0;
+    text-decoration: none;
+}
+.proto-index a span {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+.proto-index a b {
+    color: var(--accent);
+    font-weight: 400;
+}
+.proto-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+.tuner {
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+}
+.tuner summary {
+    cursor: pointer;
+    min-height: 44px;
+}
+.tuner label {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+    font-size: 1rem;
+}
+.tuner input {
+    max-width: 140px;
+    accent-color: var(--accent);
+}
+
+/* A: compact typographic opening; the pair is one horizontal editorial plate. */
+.ledger .proto-hero {
+    padding: calc(1.5rem * var(--space-scale)) 0 calc(3.5rem * var(--space-scale));
+}
+.ledger .proto-hero-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    align-items: end;
+    gap: 4rem;
+    margin-top: 1.3rem;
+}
+.ledger h1 {
+    font-size: calc(clamp(3rem, 6.2vw, 5.6rem) * var(--display-scale));
+    line-height: 0.98;
+}
+.ledger h1 span {
+    color: var(--text-secondary);
+}
+.ledger .proto-intro {
+    font-size: 1rem;
+}
+
+/* B: document rail and an oversized, spatially ordered schematic. */
+.instrument .instrument-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.65fr);
+    gap: 4rem;
+    padding-block: 3rem;
+}
+.instrument .instrument-rail {
+    padding-top: 1rem;
+}
+.instrument h1 {
+    font-size: calc(clamp(2.8rem, 4vw, 4rem) * var(--display-scale));
+    margin-block: 2rem;
+}
+.instrument .instrument-rail .proto-observer {
+    width: 120px;
+    margin-top: 2rem;
+}
+.instrument .instrument-plate {
+    background: #ebe7de;
+    color: #191a18;
+    padding: 2rem;
+}
+.instrument .instrument-plate p {
+    color: #494b45;
+}
+.instrument .proto-pair h2 {
+    font-size: 2rem;
+}
+.instrument .proto-flow {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 1.5rem 0 0;
+}
+.instrument .proto-flow section {
+    display: grid;
+    grid-template-columns: 0.45fr 1fr;
+    column-gap: 1rem;
+    padding: 1.4rem 0;
+    border-top-color: #99968e;
+}
+.instrument .proto-flow h3 {
+    font-size: 2.3rem;
+    grid-column: 2;
+    margin: 0 0 1rem;
+}
+.instrument .proto-flow section > p:not(.proto-kicker),
+.instrument .proto-flow section > a,
+.instrument .proto-flow ul {
+    grid-column: 2;
+}
+.instrument .proto-flow .capture {
+    background: #dcd8cf;
+    padding: 1.5rem 1rem;
+    margin: 1rem 0;
+    border-left: 2px solid #bd3e08;
+}
+.instrument .capture::before,
+.instrument .capture::after {
+    display: none;
+}
+.instrument .instrument-plate a {
+    color: #9e3007;
+}
+.instrument .proto-proof {
+    display: block;
+    margin-top: 2rem;
+    border-top-color: #99968e;
+}
+.instrument .proto-proof strong {
+    color: #191a18;
+}
+
+/* C: sequential dark / bone / dark scenes, ordinary document scroll. */
+.narrative .proto-hero {
+    padding: 3rem 0 4rem;
+}
+.narrative h1 {
+    font-size: calc(clamp(4.5rem, 10.5vw, 9.5rem) * var(--display-scale));
+    line-height: 0.9;
+    margin: 3rem 0;
+}
+.narrative h1 span {
+    color: var(--accent);
+}
+.narrative .narrative-tail {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 2rem;
+}
+.narrative .narrative-tail p {
+    max-width: 30rem;
+}
+.narrative .scene {
+    padding-block: calc(4rem * var(--space-scale));
+}
+.narrative .scene h2 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    max-width: 60rem;
+    margin-block: 1.5rem;
+}
+.narrative .scene p {
+    max-width: 43rem;
+}
+.narrative .scene--paper {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+.narrative .scene--paper p {
+    color: #444440;
+}
+.narrative .scene--paper ul {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    padding: 2rem 0;
+}
+.narrative .scene--paper a {
+    color: #a6370c;
+}
+.narrative .scene--paper .capture {
+    padding: 0;
+}
+.narrative .capture::before,
+.narrative .capture::after {
+    display: none;
+}
+@media (max-width: 900px) {
+    .ledger .proto-hero-grid {
+        gap: 2rem;
+        grid-template-columns: 1.4fr 1fr;
+    }
+    .instrument .instrument-shell {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .instrument .instrument-rail {
+        display: grid;
+        grid-template-columns: 1fr 100px;
+        gap: 1rem;
+    }
+    .instrument .instrument-rail h1,
+    .instrument .proto-intro {
+        grid-column: 1 / -1;
+        margin-block: 0;
+    }
+    .instrument .instrument-rail .proto-observer {
+        grid-row: 1;
+        grid-column: 2;
+        width: 80px;
+        margin: 0;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        width: calc(100% - 2rem);
+    }
+    .prototype-nav {
+        padding-block: 0.5rem;
+        gap: 0;
+    }
+    .prototype-nav nav {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+    .proto-identity {
+        font-size: 0.85rem;
+    }
+    .proto-identity p span {
+        display: block;
+    }
+    .proto-observer {
+        width: calc(72px * var(--observer-scale));
+    }
+    .ledger .proto-hero {
+        padding: 1rem 0 2rem;
+    }
+    .ledger .proto-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+    .ledger h1 {
+        font-size: calc(clamp(2.6rem, 11.6vw, 4.3rem) * var(--display-scale));
+    }
+    .proto-intro {
+        font-size: 0.95rem;
+    }
+    .proto-intro p + p {
+        margin-top: 0.7rem;
+    }
+    .proto-intro a {
+        margin-top: 0.75rem;
+    }
+    .proto-rule {
+        padding-bottom: 1.7rem;
+    }
+    .proto-rule p:last-child {
+        text-align: right;
+    }
+    .proto-pair h2 {
+        font-size: 2.7rem;
+    }
+    .proto-pair h2 span {
+        display: block;
+        font-size: 1.4rem;
+        margin: 0.5rem 0;
+    }
+    .proto-flow {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding-top: 2rem;
+    }
+    .capture::before,
+    .capture::after {
+        display: none;
+    }
+    .proto-flow .capture {
+        border-left: 2px solid var(--accent);
+    }
+    .proto-proof {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .proto-proof p + p {
+        margin: 0;
+    }
+    .proto-index a {
+        grid-template-columns: 1fr auto;
+        gap: 0.3rem;
+    }
+    .proto-index a span {
+        grid-row: 2;
+    }
+    .proto-index a b {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .instrument .instrument-shell {
+        padding-block: 1.5rem;
+    }
+    .instrument .instrument-plate {
+        padding: 1rem;
+    }
+    .instrument .proto-flow section {
+        display: block;
+    }
+    .instrument .proto-flow h3 {
+        font-size: 2rem;
+        margin: 0.6rem 0;
+    }
+    .narrative .proto-hero {
+        padding: 1rem 0 2rem;
+    }
+    .narrative h1 {
+        font-size: calc(clamp(4rem, 19vw, 7rem) * var(--display-scale));
+    }
+    .narrative .narrative-tail {
+        display: block;
+    }
+    .narrative .scene {
+        padding-block: 2.5rem;
+    }
+    .tuner label {
+        display: flex;
+        margin: 1rem 0;
+        justify-content: space-between;
+    }
+}
