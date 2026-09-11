@@ -1,0 +1,37 @@
+[
+  {
+    "route": "home",
+    "width": 1440,
+    "overflow": false,
+    "workY": 438.546875,
+    "h1": "Build systems.\nLeave evidence."
+  },
+  {
+    "route": "home",
+    "width": 1280,
+    "overflow": false,
+    "workY": 449.53125,
+    "h1": "Build systems.\nLeave evidence."
+  },
+  {
+    "route": "home",
+    "width": 768,
+    "overflow": false,
+    "workY": 554.671875,
+    "h1": "Build systems.\nLeave evidence."
+  },
+  {
+    "route": "home",
+    "width": 390,
+    "overflow": false,
+    "workY": 498.9375,
+    "h1": "Build systems.\nLeave evidence."
+  },
+  {
+    "route": "home",
+    "width": 320,
+    "overflow": false,
+    "workY": 516.578125,
+    "h1": "Build systems.\nLeave evidence."
+  }
+]

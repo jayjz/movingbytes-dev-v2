@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex" />
+        <title>Ledger · Portfolio direction</title>
+        <link rel="stylesheet" href="shared.css" />
+    </head>
+    <body class="ledger">
+        <a class="skip-link" href="#main">Skip to content</a>
+        <header class="container prototype-nav">
+            <a class="wordmark" href="/">jay<span> / </span>systems</a>
+            <nav aria-label="Primary">
+                <a href="#work">Work</a><a href="#perspective">Perspective</a><a href="mailto:jay@jaysystems.dev">Contact</a>
+            </nav>
+        </header>
+        <main id="main" tabindex="-1">
+            <section class="container proto-hero">
+                <div class="proto-identity">
+                    <p>Jay <span>/ Software engineer</span></p>
+                    <img class="proto-observer" src="../observer/observer.svg" width="320" height="280" alt="" />
+                </div>
+                <div class="proto-hero-grid">
+                    <h1>Build systems.<br /><span>Leave evidence.</span></h1>
+                    <div class="proto-intro">
+                        <p>I build agents, local infrastructure, and software for the field.</p>
+                        <p>HVAC and construction taught me to start with the constraints. That carries into the code.</p>
+                        <a class="ledger-link" href="#cipherloop">Inspect the work <span aria-hidden="true">↘</span></a>
+                    </div>
+                </div>
+            </section>
+            <section class="container" id="work">
+                <div class="proto-rule">
+                    <p class="proto-kicker">01 / Agent evidence</p>
+                    <p>Two systems. One inspectable handoff.</p>
+                </div>
+                <article id="cipherloop">
+                    <header class="proto-pair">
+                        <h2>CipherLoop <span aria-hidden="true">→</span> TraceForge</h2>
+                        <p>Build an investigation agent that leaves enough evidence for a separate evaluator to check.</p>
+                    </header>
+                    <div class="proto-flow">
+                        <section>
+                            <p class="proto-kicker">01 / Produce</p>
+                            <h3>Investigate. Keep the record.</h3>
+                            <p>CipherLoop compresses active context and writes selected raw tool messages to disk.</p>
+                            <a class="ledger-link" href="https://github.com/jayjz/CipherLoop">CipherLoop source ↗</a>
+                        </section>
+                        <section class="capture">
+                            <p class="proto-kicker">02 / Capture boundary</p>
+                            <h3>Files, not shared state.</h3>
+                            <ul>
+                                <li>JSONL trajectory</li>
+                                <li>Run metadata</li>
+                                <li>Capture sidecars</li>
+                            </ul>
+                            <p>Two offline fixture captures.</p>
+                        </section>
+                        <section>
+                            <p class="proto-kicker">03 / Evaluate</p>
+                            <h3>Check against an independent oracle.</h3>
+                            <p>TraceForge reads captured artifacts without importing CipherLoop runtime modules.</p>
+                            <a class="ledger-link" href="https://github.com/jayjz/TraceForge">TraceForge source ↗</a>
+                        </section>
+                    </div>
+                    <div class="proto-proof">
+                        <p>
+                            <strong>What the fixtures exercise</strong>Real compression, recording and validation code, checked against
+                            separate expectations.
+                        </p>
+                        <p>
+                            <strong>Where the evidence stops</strong>Synthetic scanner responses. No live audit certification. A trajectory
+                            alone is insufficient for this adapter.
+                        </p>
+                    </div>
+                    <a class="ledger-link" href="/case-studies/cipherloop.html">Read the engineering study ↗</a>
+                </article>
+                <section class="proto-index" id="perspective">
+                    <p class="proto-kicker">02 / Constraints beyond the agent</p>
+                    <a href="https://github.com/jayjz/aetherforge">AetherForge<span>Consumer GPU control plane · mock path</span><b>↗</b></a
+                    ><a href="https://github.com/jayjz/truck-ready-hvac"
+                        >Truck-Ready HVAC<span>Parts staging · field workflow prototype</span><b>↗</b></a
+                    ><a href="https://github.com/jayjz/unhinged-agent"
+                        >Unhinged Agent<span>Voice interaction · hardware unverified</span><b>↗</b></a
+                    >
+                </section>
+            </section>
+        </main>
+        <details class="container tuner">
+            <summary>Prototype tuning</summary>
+            <label
+                >Display scale<input type="range" data-token="--display-scale" min=".85" max="1.1" step="0.05" value="1" /><span
+                    aria-hidden="true"
+                    >1</span
+                ></label
+            ><label
+                >Section spacing<input type="range" data-token="--space-scale" min=".75" max="1.25" step="0.05" value="1" /><span
+                    aria-hidden="true"
+                    >1</span
+                ></label
+            ><label
+                >Observer scale<input type="range" data-token="--observer-scale" min=".75" max="1.25" step="0.05" value="1" /><span
+                    aria-hidden="true"
+                    >1</span
+                ></label
+            >
+        </details>
+        <footer class="container proto-footer">
+            Design study · Static source-derived diagrams · <a href="ledger.html">A / Ledger</a> ·
+            <a href="instrument.html">B / Instrument</a> · <a href="narrative.html">C / Narrative</a>
+        </footer>
+        <script src="tune.js" defer></script>
+    </body>
+</html>

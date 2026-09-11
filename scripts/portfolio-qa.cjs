@@ -36,7 +36,7 @@ fs.mkdirSync(out, { recursive: true });
         ['home', '/'],
         ['case', '/case-studies/cipherloop.html']
     ]) {
-        for (const width of [320, 390, 768, 1440]) {
+        for (const width of [320, 390, 768, 1280, 1440]) {
             const context = await browser.newContext({ viewport: { width, height: 900 } });
             const page = await context.newPage();
             const errors = [];
@@ -77,9 +77,55 @@ fs.mkdirSync(out, { recursive: true });
                 `${label} axe ${width}`
             );
             if (label === 'home') {
-                for (const repo of ['CipherLoop', 'truck-ready-hvac', 'aetherforge', 'unhinged-agent', 'hvac-ops-agent', 'fracture']) {
+                for (const repo of [
+                    'CipherLoop',
+                    'TraceForge',
+                    'truck-ready-hvac',
+                    'aetherforge',
+                    'unhinged-agent',
+                    'sightglass',
+                    'hvac-ops-agent',
+                    'fracture'
+                ]) {
                     assert.equal(await page.locator(`a[href="https://github.com/jayjz/${repo}"]`).count(), 1);
                 }
+                const action = page.locator('.mastery-intro a');
+                await action.focus();
+                assert.equal(await action.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
+                if (width === 1440) {
+                    await page.locator('.mastery-hero').dispatchEvent('pointermove', {
+                        clientX: -10000,
+                        clientY: -10000,
+                        pointerType: 'mouse',
+                        buttons: 0
+                    });
+                    await page.waitForFunction(() => {
+                        const matrix = new DOMMatrix(getComputedStyle(document.querySelector('.observer-pupil')).transform);
+                        return matrix.e < -6.9;
+                    });
+                    const offsets = await page.locator('.observer-pupil').evaluateAll(pupils =>
+                        pupils.map(el => {
+                            const matrix = new DOMMatrix(getComputedStyle(el).transform);
+                            return { x: matrix.e, y: matrix.f };
+                        })
+                    );
+                    offsets.forEach((offset, i) => {
+                        assert.ok(Math.abs(offset.x) <= (i === 0 ? 7 : 4));
+                        assert.ok(Math.abs(offset.y) <= (i === 0 ? 4.55 : 2.6));
+                    });
+                    await page.locator('.mastery-hero').dispatchEvent('pointerleave');
+                    await page.waitForFunction(
+                        () => Math.abs(new DOMMatrix(getComputedStyle(document.querySelector('.observer-pupil')).transform).e) < 0.02
+                    );
+                }
+                const overlap = await page.evaluate(() => {
+                    const mount = document.querySelector('.observer-mount').getBoundingClientRect();
+                    return ['h1', '.mastery-intro', '.mastery-identity p'].some(selector => {
+                        const text = document.querySelector(selector).getBoundingClientRect();
+                        return mount.left < text.right && mount.right > text.left && mount.top < text.bottom && mount.bottom > text.top;
+                    });
+                });
+                assert.equal(overlap, false, `Observer overlaps text at ${width}`);
                 await page.locator('.site-nav a[href="#work"]').click();
                 await page.waitForFunction(() => location.hash === '#work');
                 await page.goBack();
@@ -102,6 +148,10 @@ fs.mkdirSync(out, { recursive: true });
             }
             await page.emulateMedia({ reducedMotion: 'reduce' });
             assert.equal(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior), 'auto');
+            if (label === 'home') {
+                await page.waitForFunction(() => getComputedStyle(document.querySelector('.observer-head')).transform === 'none');
+                assert.equal(await page.locator('.observer-mount').evaluate(el => el.getAnimations({ subtree: true }).length), 0);
+            }
             if (label === 'case')
                 assert.equal(await page.locator('.system-figure').evaluate(el => getComputedStyle(el, '::after').animationName), 'none');
             await page.emulateMedia({ reducedMotion: 'no-preference' });
@@ -109,7 +159,7 @@ fs.mkdirSync(out, { recursive: true });
             if (width === 390 || width === 1440) {
                 await page.screenshot({ path: path.join(out, `after-${label}-${width}.png`), fullPage: true });
                 await page.screenshot({ path: path.join(out, `viewport-${label}-${width}.png`) });
-                const featureVisual = label === 'home' ? '.context-record' : '.system-figure';
+                const featureVisual = label === 'home' ? '.evidence-flow' : '.system-figure';
                 await page.locator(featureVisual).screenshot({ path: path.join(out, `diagram-${label}-${width}.png`) });
                 if (label === 'case') await page.locator('.evidence-output').screenshot({ path: path.join(out, `evidence-${width}.png`) });
             }
@@ -117,10 +167,20 @@ fs.mkdirSync(out, { recursive: true });
             results.push({ page: label, width, axeViolations: axe.violations.length, ...metrics });
             await context.close();
         }
-        for (const mode of ['no-js', 'no-observer', 'blocked-fonts', 'reduced-at-load', 'blocked-image', 'large-text']) {
+        for (const mode of [
+            'no-js',
+            'no-observer',
+            'blocked-fonts',
+            'reduced-at-load',
+            'blocked-image',
+            'large-text',
+            ...(label === 'home' ? ['blocked-character-script', 'missing-character', 'touch', 'large-text-320'] : [])
+        ]) {
             const context = await browser.newContext({
-                viewport: { width: 390, height: 844 },
+                viewport: { width: mode === 'large-text-320' ? 320 : 390, height: 844 },
                 javaScriptEnabled: mode !== 'no-js',
+                hasTouch: mode === 'touch',
+                isMobile: mode === 'touch',
                 reducedMotion: mode === 'reduced-at-load' ? 'reduce' : 'no-preference'
             });
             if (mode === 'no-observer')
@@ -129,11 +189,52 @@ fs.mkdirSync(out, { recursive: true });
                 });
             if (mode === 'blocked-fonts') await context.route('https://fonts.**/*', route => route.abort());
             if (mode === 'blocked-image') await context.route('**/assets/diagrams/**', route => route.abort());
+            if (mode === 'blocked-character-script') await context.route('**/js/observer.js', route => route.abort());
+            if (mode === 'missing-character')
+                await context.route(base + '/', async route => {
+                    const response = await route.fetch();
+                    const html = (await response.text()).replace(/<div class="observer-mount"[\s\S]*?<\/div>/, '');
+                    await route.fulfill({ response, body: html });
+                });
             const page = await context.newPage();
+            const errors = [];
+            page.on('pageerror', error => errors.push(error.message));
             await page.goto(base + route, { waitUntil: 'networkidle' });
-            if (mode === 'large-text') await page.addStyleTag({ content: 'html { font-size: 200%; }' });
+            if (mode.startsWith('large-text')) await page.addStyleTag({ content: 'html { font-size: 200%; }' });
             assert.equal(await page.locator('h1').isVisible(), true);
-            if (label === 'home') assert.equal(await page.locator('.context-record').isVisible(), true);
+            if (label === 'home') {
+                assert.equal(await page.locator('.evidence-flow').isVisible(), true);
+                assert.equal(await page.locator('.fixture-table').isVisible(), true);
+                if (mode.startsWith('large-text')) {
+                    assert.equal(
+                        await page.evaluate(() => {
+                            const brand = document.querySelector('.brand').getBoundingClientRect();
+                            const nav = document.querySelector('.site-nav').getBoundingClientRect();
+                            return brand.bottom <= nav.top;
+                        }),
+                        true,
+                        'Enlarged brand overlaps navigation'
+                    );
+                    assert.equal(await page.locator('.fixture-cell-label').first().isVisible(), true);
+                    const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
+                    assert.deepEqual(
+                        axe.violations.map(violation => violation.id),
+                        [],
+                        `${mode} accessibility`
+                    );
+                }
+                if (mode !== 'missing-character') assert.equal(await page.locator('.observer-mount svg').isVisible(), true);
+                if (mode === 'touch') {
+                    await page.locator('.mastery-hero').dispatchEvent('pointermove', { pointerType: 'touch', clientX: 0, clientY: 0 });
+                    assert.equal(
+                        await page
+                            .locator('.observer-pupil')
+                            .first()
+                            .evaluate(el => new DOMMatrix(getComputedStyle(el).transform).e),
+                        0
+                    );
+                }
+            }
             if (label === 'case')
                 assert.equal(
                     await page.locator('.system-figure img').evaluate(el => el.complete && el.naturalWidth > 0),
@@ -150,6 +251,8 @@ fs.mkdirSync(out, { recursive: true });
                     true
                 );
             results.push({ page: label, mode, result: 'pass' });
+            assert.deepEqual(errors, [], `${label} page errors in ${mode}`);
+            if (label === 'home') await page.screenshot({ path: path.join(out, `${mode}-home.png`), fullPage: true });
             await context.close();
         }
     }

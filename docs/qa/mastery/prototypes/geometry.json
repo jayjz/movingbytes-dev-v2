@@ -1,0 +1,65 @@
+[
+  {
+    "route": "ledger",
+    "width": 1440,
+    "overflow": false,
+    "workY": 439.953125,
+    "h1": "Build systems.\nLeave evidence."
+  },
+  {
+    "route": "ledger",
+    "width": 390,
+    "overflow": false,
+    "workY": 473.40625,
+    "h1": "Build systems.\nLeave evidence."
+  },
+  {
+    "route": "ledger",
+    "width": 320,
+    "overflow": false,
+    "workY": 536.640625,
+    "h1": "Build systems.\nLeave evidence."
+  },
+  {
+    "route": "instrument",
+    "width": 1440,
+    "overflow": false,
+    "workY": 128.1875,
+    "h1": "Inspect\nthe handoff."
+  },
+  {
+    "route": "instrument",
+    "width": 390,
+    "overflow": false,
+    "workY": 502.84375,
+    "h1": "Inspect\nthe handoff."
+  },
+  {
+    "route": "instrument",
+    "width": 320,
+    "overflow": false,
+    "workY": 571.921875,
+    "h1": "Inspect\nthe handoff."
+  },
+  {
+    "route": "narrative",
+    "width": 1440,
+    "overflow": false,
+    "workY": 836.515625,
+    "h1": "Build.\nRecord.\nQuestion."
+  },
+  {
+    "route": "narrative",
+    "width": 390,
+    "overflow": false,
+    "workY": 608.15625,
+    "h1": "Build.\nRecord.\nQuestion."
+  },
+  {
+    "route": "narrative",
+    "width": 320,
+    "overflow": false,
+    "workY": 652.96875,
+    "h1": "Build.\nRecord.\nQuestion."
+  }
+]
