@@ -309,30 +309,265 @@
                         </p>
                     </header>
 
-                    <div class="work-grid">
-                        <article class="work-card">
-                            <header class="work-card__header">
-                                <h3 class="work-card__title">AetherForge</h3>
-                                <p class="work-card__status">Mock control-plane implementation</p>
-                            </header>
-                            <p class="work-card__body">
-                                An agent can request a GPU configuration; the control plane can reject it on context, expected benefit,
-                                queue or thermal constraints. Physical GPU swapping remains research.
-                            </p>
-                            <ul class="work-card__stack">
-                                <li>Python</li>
-                                <li>FastAPI</li>
-                                <li>Pydantic</li>
-                            </ul>
-                            <a
-                                class="work-card__source"
-                                href="https://github.com/jayjz/aetherforge"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View source for AetherForge on GitHub"
-                                >View Source</a
+                    <article class="af-instrument" id="aetherforge" aria-labelledby="af-title">
+                        <header class="af-heading">
+                            <div>
+                                <p class="eyebrow">AetherForge / Admission control</p>
+                                <h3 id="af-title">An agent requests compute.<br />The control plane decides.</h3>
+                            </div>
+                            <p class="af-scope">Source-derived scenarios<br />Mock engine · no live telemetry</p>
+                        </header>
+                        <div class="af-request-line">
+                            <span>Strategy request</span>
+                            <p><code>balanced</code> <span role="img" aria-label="to">→</span> <code>high_fidelity</code></p>
+                            <code>POST /system/strategy</code>
+                        </div>
+                        <fieldset class="af-selector">
+                            <legend>Change one constraint</legend>
+                            <label
+                                ><input
+                                    type="radio"
+                                    name="af-scenario"
+                                    value="baseline"
+                                    id="af-baseline"
+                                    aria-controls="af-case-baseline"
+                                    checked
+                                /><span><span class="af-index" aria-hidden="true">01</span>Baseline</span></label
                             >
-                        </article>
+                            <label
+                                ><input type="radio" name="af-scenario" value="short" id="af-short" aria-controls="af-case-short" /><span
+                                    ><span class="af-index" aria-hidden="true">02</span>Short output</span
+                                ></label
+                            >
+                            <label
+                                ><input
+                                    type="radio"
+                                    name="af-scenario"
+                                    value="thermal"
+                                    id="af-thermal"
+                                    aria-controls="af-case-thermal"
+                                /><span><span class="af-index" aria-hidden="true">03</span>Thermal lock</span></label
+                            >
+                            <label
+                                ><input type="radio" name="af-scenario" value="queue" id="af-queue" aria-controls="af-case-queue" /><span
+                                    ><span class="af-index" aria-hidden="true">04</span>Queue full</span
+                                ></label
+                            >
+                        </fieldset>
+                        <div class="af-cases">
+                            <section class="af-case" id="af-case-baseline" aria-label="Baseline decision" data-decision="admit">
+                                <div class="af-result">
+                                    <h4>Decision</h4>
+                                    <p class="af-verdict">Admit</p>
+                                    <p class="af-code"><code>strategy_applied</code><span>HTTP 200</span></p>
+                                    <p class="af-reason">Switching costs less than staying. The mock engine applies the strategy.</p>
+                                    <p class="af-active">Active mode <code>high_fidelity</code></p>
+                                </div>
+                                <div class="af-inputs">
+                                    <h4>Request constraints</h4>
+                                    <dl>
+                                        <div>
+                                            <dt>Context / ceiling</dt>
+                                            <dd>100 <span>/ 4,096 tokens</span></dd>
+                                        </div>
+                                        <div>
+                                            <dt>Expected output</dt>
+                                            <dd>2,000 <span>tokens</span></dd>
+                                        </div>
+                                        <div>
+                                            <dt>Thermal lock</dt>
+                                            <dd>Off</dd>
+                                        </div>
+                                        <div>
+                                            <dt>Available slots</dt>
+                                            <dd>5 <span>/ 5</span></dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                                <div class="af-gate">
+                                    <h4>Economic gate</h4>
+                                    <div class="af-comparison">
+                                        <p>
+                                            Stay <strong>166.67<span> s</span></strong>
+                                        </p>
+                                        <span class="af-operator" role="img" aria-label="greater than">&gt;</span>
+                                        <p>
+                                            Switch <strong>117.62<span> s</span></strong>
+                                        </p>
+                                    </div>
+                                    <p class="af-gate-rule">Admit only if switching costs less.</p>
+                                    <p class="af-estimate">Configured estimates<br />Switch = reload + state I/O + generation</p>
+                                    <div class="af-propagation" aria-hidden="true"><span></span><b>→</b></div>
+                                </div>
+                                <p class="af-case-proof">
+                                    Baseline ·
+                                    <a
+                                        href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L40"
+                                        >Swap matrix test</a
+                                    >
+                                    + <a href="docs/evidence/aetherforge/scenarios.json">recorded route probe</a>
+                                </p>
+                            </section>
+                            <section class="af-case" id="af-case-short" aria-label="Short output decision" data-decision="reject">
+                                <div class="af-result">
+                                    <h4>Decision</h4>
+                                    <p class="af-verdict">Reject</p>
+                                    <p class="af-code"><code>roi_negative</code><span>HTTP 200</span></p>
+                                    <p class="af-reason">Switching costs more than staying. Keep the active strategy.</p>
+                                    <p class="af-active">Active mode <code>balanced</code></p>
+                                </div>
+                                <div class="af-inputs">
+                                    <h4>Request constraints</h4>
+                                    <dl>
+                                        <div>
+                                            <dt>Context / ceiling</dt>
+                                            <dd>100 <span>/ 4,096 tokens</span></dd>
+                                        </div>
+                                        <div class="af-changed">
+                                            <dt>Expected output · changed</dt>
+                                            <dd>5 <span>tokens</span></dd>
+                                        </div>
+                                        <div>
+                                            <dt>Thermal lock</dt>
+                                            <dd>Off</dd>
+                                        </div>
+                                        <div>
+                                            <dt>Available slots</dt>
+                                            <dd>5 <span>/ 5</span></dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                                <div class="af-gate">
+                                    <h4>Economic gate</h4>
+                                    <div class="af-comparison">
+                                        <p>
+                                            Stay <strong>0.42<span> s</span></strong>
+                                        </p>
+                                        <span class="af-operator" role="img" aria-label="less than">&lt;</span>
+                                        <p>
+                                            Switch <strong>6.79<span> s</span></strong>
+                                        </p>
+                                    </div>
+                                    <p class="af-gate-rule">Admit only if switching costs less.</p>
+                                    <p class="af-estimate">Configured estimates<br />Switch = reload + state I/O + generation</p>
+                                    <div class="af-propagation" aria-hidden="true"><span></span><b>⊣</b></div>
+                                </div>
+                                <p class="af-case-proof">
+                                    One change from baseline ·
+                                    <a
+                                        href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L40"
+                                        >Swap matrix test</a
+                                    >
+                                    + <a href="docs/evidence/aetherforge/scenarios.json">recorded route probe</a>
+                                </p>
+                            </section>
+                            <section class="af-case" id="af-case-thermal" aria-label="Thermal lock decision" data-decision="reject">
+                                <div class="af-result">
+                                    <h4>Decision</h4>
+                                    <p class="af-verdict">Reject</p>
+                                    <p class="af-code"><code>thermal_lock_active</code><span>HTTP 503</span></p>
+                                    <p class="af-reason">An active thermal lock stops the request before the economic gate.</p>
+                                    <p class="af-active">Active mode <code>balanced</code></p>
+                                </div>
+                                <div class="af-inputs">
+                                    <h4>Request constraints</h4>
+                                    <dl>
+                                        <div>
+                                            <dt>Context / ceiling</dt>
+                                            <dd>100 <span>/ 4,096 tokens</span></dd>
+                                        </div>
+                                        <div>
+                                            <dt>Expected output</dt>
+                                            <dd>2,000 <span>tokens</span></dd>
+                                        </div>
+                                        <div class="af-changed">
+                                            <dt>Thermal lock · changed</dt>
+                                            <dd>Active</dd>
+                                        </div>
+                                        <div>
+                                            <dt>Available slots</dt>
+                                            <dd>5 <span>/ 5</span></dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                                <div class="af-gate">
+                                    <h4>Resource gate</h4>
+                                    <p class="af-stop">Thermal<br />lock</p>
+                                    <p class="af-gate-rule">Economic gate not evaluated.</p>
+                                    <p class="af-estimate">Retry-After: 10 seconds<br />From the structured HTTP response</p>
+                                    <div class="af-propagation" aria-hidden="true"><span></span><b>⊣</b></div>
+                                </div>
+                                <p class="af-case-proof">
+                                    One change from baseline ·
+                                    <a
+                                        href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L75"
+                                        >Thermal breaker test</a
+                                    >
+                                    + <a href="docs/evidence/aetherforge/scenarios.json">recorded route probe</a>
+                                </p>
+                            </section>
+                            <section class="af-case" id="af-case-queue" aria-label="Queue full decision" data-decision="reject">
+                                <div class="af-result">
+                                    <h4>Decision</h4>
+                                    <p class="af-verdict">Reject</p>
+                                    <p class="af-code"><code>queue_saturated</code><span>HTTP 503</span></p>
+                                    <p class="af-reason">No admission slots remain. The request stops before the economic gate.</p>
+                                    <p class="af-active">Active mode <code>balanced</code></p>
+                                </div>
+                                <div class="af-inputs">
+                                    <h4>Request constraints</h4>
+                                    <dl>
+                                        <div>
+                                            <dt>Context / ceiling</dt>
+                                            <dd>100 <span>/ 4,096 tokens</span></dd>
+                                        </div>
+                                        <div>
+                                            <dt>Expected output</dt>
+                                            <dd>2,000 <span>tokens</span></dd>
+                                        </div>
+                                        <div>
+                                            <dt>Thermal lock</dt>
+                                            <dd>Off</dd>
+                                        </div>
+                                        <div class="af-changed">
+                                            <dt>Available slots · changed</dt>
+                                            <dd>0 <span>/ 5</span></dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                                <div class="af-gate">
+                                    <h4>Resource gate</h4>
+                                    <p class="af-stop">Queue<br />saturated</p>
+                                    <p class="af-gate-rule">Economic gate not evaluated.</p>
+                                    <p class="af-estimate">Retry-After: 2 seconds<br />From the structured HTTP response</p>
+                                    <div class="af-propagation" aria-hidden="true"><span></span><b>⊣</b></div>
+                                </div>
+                                <p class="af-case-proof">
+                                    One change from baseline ·
+                                    <a
+                                        href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L89"
+                                        >Queue ceiling test</a
+                                    >
+                                    + <a href="docs/evidence/aetherforge/scenarios.json">recorded route probe</a>
+                                </p>
+                            </section>
+                        </div>
+                        <p class="af-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+                        <footer class="af-proof">
+                            <p>
+                                Proof scope: strategy admission with controlled mock responses. Physical GPU swapping remains experimental.
+                            </p>
+                            <div>
+                                <a
+                                    href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/src/server.py#L178-L239"
+                                    >Gate source ↗</a
+                                ><a href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/config.yaml"
+                                    >Estimate inputs ↗</a
+                                ><a href="https://github.com/jayjz/aetherforge">Repository ↗</a>
+                            </div>
+                        </footer>
+                    </article>
+                    <div class="work-grid">
                         <article class="work-card">
                             <header class="work-card__header">
                                 <h3 class="work-card__title">Truck-Ready HVAC</h3>
@@ -479,5 +714,6 @@
 
         <script src="js/main.js?v=20260907-evidence" defer></script>
         <script src="js/observer.js" defer></script>
+        <script src="js/aetherforge.js" defer></script>
     </body>
 </html>

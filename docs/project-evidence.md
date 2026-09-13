@@ -1,5 +1,11 @@
 # Project evidence register
 
+## AetherForge admission instrument — 2026-09-13
+
+The [focused source and execution record](evidence/aetherforge/verification.md) supersedes earlier AetherForge verification wording for this slice only. Remote HEAD remains `265c26769eba257ac40540a7e1da5378d7515532`. Four controlled `/system/strategy` probes and five existing route tests passed locally with documented mock isolation. The homepage shows strategy admission, insufficient switching benefit, forced thermal lock and exhausted semaphore capacity; values and responses are recorded in [scenarios.json](evidence/aetherforge/scenarios.json).
+
+Timings are configured estimates. Physical GPU swapping and actual thermal events remain unverified. This is not a new hosted CI result or whole-workload execution claim. Other project evidence and historical audit records are unchanged.
+
 ## Current portfolio audit — 2026-09-11
 
 The [source-pinned eight-project audit](evidence/portfolio-mastery-2026-09-11.md) is the current authority for the refreshed homepage. It records exact default branches, separately scoped feature work, implementation/test paths, captured results, hosted CI outcomes, limits and artifact choices. Earlier entries below remain historical records.
