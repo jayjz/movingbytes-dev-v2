@@ -1,0 +1,104 @@
+{
+  "source_commit": "265c26769eba257ac40540a7e1da5378d7515532",
+  "configured_estimates": {
+    "balanced_tps": 12.0,
+    "high_fidelity_tps": 18.0,
+    "swap_seconds": 6.0,
+    "io_base_seconds": 0.5,
+    "io_seconds_per_token": 0.0001
+  },
+  "cases": [
+    {
+      "id": "baseline",
+      "request": {
+        "mode": "high_fidelity",
+        "estimated_context_tokens": 100,
+        "expected_output_tokens": 2000
+      },
+      "thermal_lock": false,
+      "available_slots": 5,
+      "context_ceiling": 4096,
+      "stay_seconds": 166.66666666666666,
+      "switch_seconds": 117.62111111111112,
+      "economic_gate_evaluated": true,
+      "http_status": 200,
+      "response": {
+        "status": "strategy_applied",
+        "active_mode": "high_fidelity"
+      },
+      "retry_after": null,
+      "active_mode": "high_fidelity"
+    },
+    {
+      "id": "short",
+      "request": {
+        "mode": "high_fidelity",
+        "estimated_context_tokens": 100,
+        "expected_output_tokens": 5
+      },
+      "thermal_lock": false,
+      "available_slots": 5,
+      "context_ceiling": 4096,
+      "stay_seconds": 0.4166666666666667,
+      "switch_seconds": 6.7877777777777775,
+      "economic_gate_evaluated": true,
+      "http_status": 200,
+      "response": {
+        "status": "rejected",
+        "error": "roi_negative",
+        "active_mode": "balanced"
+      },
+      "retry_after": null,
+      "active_mode": "balanced"
+    },
+    {
+      "id": "thermal",
+      "request": {
+        "mode": "high_fidelity",
+        "estimated_context_tokens": 100,
+        "expected_output_tokens": 2000
+      },
+      "thermal_lock": true,
+      "available_slots": 5,
+      "context_ceiling": 4096,
+      "stay_seconds": 166.66666666666666,
+      "switch_seconds": 117.62111111111112,
+      "economic_gate_evaluated": false,
+      "http_status": 503,
+      "response": {
+        "detail": {
+          "error": "thermal_lock_active",
+          "temp_c": 45,
+          "retry_after_seconds": 10
+        }
+      },
+      "retry_after": "10",
+      "active_mode": "balanced"
+    },
+    {
+      "id": "queue",
+      "request": {
+        "mode": "high_fidelity",
+        "estimated_context_tokens": 100,
+        "expected_output_tokens": 2000
+      },
+      "thermal_lock": false,
+      "available_slots": 0,
+      "context_ceiling": 4096,
+      "stay_seconds": 166.66666666666666,
+      "switch_seconds": 117.62111111111112,
+      "economic_gate_evaluated": false,
+      "http_status": 503,
+      "response": {
+        "detail": {
+          "error": "queue_saturated",
+          "queue_depth": 5,
+          "retry_after_seconds": 2
+        }
+      },
+      "retry_after": "2",
+      "active_mode": "balanced"
+    }
+  ],
+  "existing_tests": "5 passed under documented isolation"
+}

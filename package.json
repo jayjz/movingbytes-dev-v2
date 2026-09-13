@@ -11,10 +11,11 @@
         "format:check": "prettier --check index.html \"case-studies/**/*.html\" \"css/**/*.css\" \"js/**/*.js\" \"scripts/**/*.cjs\" package.json vercel.json .github/workflows/ci.yml",
         "validate:html": "html-validate index.html \"case-studies/**/*.html\"",
         "validate:links": "node scripts/check-links.cjs",
-        "validate:syntax": "node --check js/main.js && node --check js/observer.js && node --check scripts/portfolio-qa.cjs && node --check scripts/serve.cjs && node --check scripts/check-links.cjs && node --check scripts/check-hosted.cjs",
+        "validate:syntax": "node --check js/main.js && node --check js/observer.js && node --check scripts/portfolio-qa.cjs && node --check scripts/serve.cjs && node --check scripts/check-links.cjs && node --check scripts/check-hosted.cjs && node --check js/aetherforge.js && node --check scripts/aetherforge-qa.cjs",
         "check": "npm run format:check && npm run validate:html && npm run validate:links && npm run validate:syntax",
         "qa:install": "playwright install chromium",
-        "qa": "node scripts/portfolio-qa.cjs"
+        "qa": "node scripts/portfolio-qa.cjs",
+        "qa:aetherforge": "node scripts/aetherforge-qa.cjs"
     },
     "devDependencies": {
         "@axe-core/playwright": "4.13.0",
