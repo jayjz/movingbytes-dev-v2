@@ -1,5 +1,32 @@
 # Project evidence register
 
+## Secondary roster refresh - 2026-09-13
+
+The homepage roster below AetherForge now promotes SHAD0W, Unhinged Agent, and Truck-Ready HVAC as the three secondary cards. Sightglass, Fracture, and HVAC Ops remain linked in a quieter research line. No live-trading, profitability, hardware-validation, adoption, or production-use claim is made.
+
+### SHAD0W
+
+- **Repository / inspected revision:** `jayjz/SHAD0W @ ed773c51c9a75bb2ae2a00a4222c5992329d441f` (public `main`; inspected 2026-09-13).
+- **Implementation / test evidence:** `data/validation.py` and `fingerprint.py` provide fail-closed contracts and deterministic identity; feature/timeline tests cover causal computation; `execution/` models quote-side fills, slippage, and fees; `risk/` and `test_paper_risk*.py` cover fail-closed paper admission; Alpaca stream/evidence code and `test_live_shadow.py` cover bounded capture/replay.
+- **Limitation / public wording:** Shadow mode explicitly has no order submission; paper execution is separately gated and no profitability claim is made. Public wording: Market-data contracts, causal timelines, and deterministic feature computation for quantitative research. Models fees and slippage behind a fail-closed paper-risk gate; Alpaca shadow mode observes live data only.
+
+### Unhinged Agent
+
+- **Repository / inspected revision:** `jayjz/unhinged-agent @ d38ad91cdf4464766421b3159b9495105555a92a` (public `main`; inspected 2026-09-13).
+- **Implementation / test evidence:** `api/websocket.py`, `api/server.py`, `tests/test_websocket.py`, and `tests/test_fsm.py` cover the asynchronous gateway, voice-turn state, cancellation, and interruption; main includes the local voice pipeline and ESPHome bridge contract.
+- **Limitation / public wording:** Physical ESP32 validation is not established. Public wording: An asynchronous WebSocket gateway for a thin voice client with cancellation and barge-in across a local STT, LLM, and TTS turn. Physical hardware remains unverified.
+
+### Truck-Ready HVAC
+
+- **Repository / inspected revision:** `jayjz/truck-ready-hvac @ d1f4d53313c6a8a1a5c92cb12670e8f551bb8edb` (public `main`; inspected 2026-09-13).
+- **Implementation / test evidence:** `core.py` aggregates demand by SKU and separates staging from pickup shortfalls; `export.py` creates self-contained JSON; `pdf.py` renders printable checklists; core/export/PDF tests cover those boundaries.
+- **Limitation / public wording:** No customer adoption, field-time saving, or production-use evidence was inspected. Public wording: Aggregates parts demand across jobs, stages available stock, and identifies pickup shortfalls. Exports JSON and printable PDF checklists for an offline pre-departure workflow. Field outcomes remain unverified.
+
+### Quieter linked work
+
+- **Sightglass:** `jayjz/sightglass @ 6343bab6230e106f3704eaeec099e8e7296acdd9`; `backend/main.py` implements FastAPI/SSE LangGraph event streaming and the source includes the Next.js/React Flow interface. Mock inventory and prototype approval behavior remain limits; no absolute data-leakage claim is published.
+- **Fracture:** `jayjz/fracture @ 300ef83a0ee999857189542bd836f215490da116`; dispatcher, five failure injectors, Pipeline/Supervisor/Diamond foundations, and injector tests are implemented. The roadmap still leaves comparative recovery experiments and result aggregation unfinished.
+- **HVAC Ops:** `jayjz/hvac-ops-agent @ 9130ce8e2488f062a39dbd8d9ee64f63791e0e58`; current-main assessment tests preserve known-zero versus unknown-inventory semantics and retain no side-effect adapter.
 ## AetherForge admission instrument — 2026-09-13
 
 The [focused source and execution record](evidence/aetherforge/verification.md) supersedes earlier AetherForge verification wording for this slice only. Remote HEAD remains `265c26769eba257ac40540a7e1da5378d7515532`. Four controlled `/system/strategy` probes and five existing route tests passed locally with documented mock isolation. The homepage shows strategy admission, insufficient switching benefit, forced thermal lock and exhausted semaphore capacity; values and responses are recorded in [scenarios.json](evidence/aetherforge/scenarios.json).

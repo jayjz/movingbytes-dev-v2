@@ -570,12 +570,58 @@
                     <div class="work-grid">
                         <article class="work-card">
                             <header class="work-card__header">
+                                <h3 class="work-card__title">SHAD0W</h3>
+                                <p class="work-card__status">Deterministic market research</p>
+                            </header>
+                            <p class="work-card__body">
+                                Market-data contracts, causal timelines, and deterministic feature computation for quantitative research.
+                                Models fees and slippage behind a fail-closed paper-risk gate; Alpaca shadow mode observes live data only.
+                            </p>
+                            <ul class="work-card__stack">
+                                <li>Python</li>
+                                <li>Data contracts</li>
+                                <li>Replay / streams</li>
+                            </ul>
+                            <a
+                                class="work-card__source"
+                                href="https://github.com/jayjz/SHAD0W"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="View source for SHAD0W on GitHub"
+                                >View Source</a
+                            >
+                        </article>
+                        <article class="work-card">
+                            <header class="work-card__header">
+                                <h3 class="work-card__title">Unhinged Agent</h3>
+                                <p class="work-card__status">Voice-system prototype</p>
+                            </header>
+                            <p class="work-card__body">
+                                An asynchronous WebSocket gateway for a thin voice client with cancellation and barge-in across a local STT,
+                                LLM, and TTS turn. Physical hardware remains unverified.
+                            </p>
+                            <ul class="work-card__stack">
+                                <li>Python</li>
+                                <li>ESPHome</li>
+                                <li>Local inference</li>
+                            </ul>
+                            <a
+                                class="work-card__source"
+                                href="https://github.com/jayjz/unhinged-agent"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="View source for Unhinged Agent on GitHub"
+                                >View Source</a
+                            >
+                        </article>
+                        <article class="work-card">
+                            <header class="work-card__header">
                                 <h3 class="work-card__title">Truck-Ready HVAC</h3>
                                 <p class="work-card__status">Field workflow prototype</p>
                             </header>
                             <p class="work-card__body">
                                 Aggregates parts demand across jobs, stages available stock, and identifies pickup shortfalls. Exports JSON
-                                and printable PDF checklists. Field outcomes remain unverified.
+                                and printable PDF checklists for an offline pre-departure workflow. Field outcomes remain unverified.
                             </p>
                             <ul class="work-card__stack">
                                 <li>Python</li>
@@ -591,89 +637,17 @@
                                 >View Source</a
                             >
                         </article>
-                        <article class="work-card">
-                            <header class="work-card__header">
-                                <h3 class="work-card__title">Unhinged Agent</h3>
-                                <p class="work-card__status">Voice-system prototype</p>
-                            </header>
-                            <p class="work-card__body">
-                                A thin voice client with a cancellable host-side turn. The hardware-prep branch handles interruption by
-                                cancelling processing and returning to listening. Physical hardware remains unverified.
-                            </p>
-                            <ul class="work-card__stack">
-                                <li>Python</li>
-                                <li>ESPHome</li>
-                                <li>Local inference</li>
-                            </ul>
-                            <a
-                                class="work-card__source"
-                                href="https://github.com/jayjz/unhinged-agent"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View source for Unhinged Agent on GitHub"
-                                >View Source</a
-                            >
-                            <p class="evidence-provenance">
-                                <a href="https://github.com/jayjz/unhinged-agent/tree/ea86997c18cc375ae3355c3321b792c21f8d3284"
-                                    >Inspected hardware-prep revision</a
-                                >
-                            </p>
-                        </article>
-                        <article class="work-card">
-                            <header class="work-card__header">
-                                <h3 class="work-card__title">Sightglass</h3>
-                                <p class="work-card__status">Inspection-interface demo</p>
-                            </header>
-                            <p class="work-card__body">
-                                Streams graph transitions into a job-inspection interface using mock inventory. The review UI is a
-                                prototype; durable synchronization and enforced approval are unfinished.
-                            </p>
-                            <ul class="work-card__stack">
-                                <li>Python</li>
-                                <li>FastAPI</li>
-                                <li>SSE</li>
-                            </ul>
-                            <a
-                                class="work-card__source"
-                                href="https://github.com/jayjz/sightglass"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View source for Sightglass on GitHub"
-                                >View Source</a
-                            >
-                        </article>
-                        <article class="work-card">
-                            <header class="work-card__header">
-                                <h3 class="work-card__title">HVAC Ops</h3>
-                                <p class="work-card__status">Recovery branch</p>
-                            </header>
-                            <p class="work-card__body">
-                                Keeps unknown inventory distinct from known zero stock. Separates source readiness, assessment and proposed
-                                actions. No live ordering or dispatch side effects are established.
-                            </p>
-                            <ul class="work-card__stack">
-                                <li>Python</li>
-                                <li>Dispatch assessment</li>
-                            </ul>
-                            <a
-                                class="work-card__source"
-                                href="https://github.com/jayjz/hvac-ops-agent"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View source for HVAC Ops on GitHub"
-                                >View Source</a
-                            >
-                            <p class="evidence-provenance">
-                                <a href="https://github.com/jayjz/hvac-ops-agent/tree/d5ec6235e9558af227e7381b9821b8dee0c95eda"
-                                    >Inspected recovery revision</a
-                                >
-                            </p>
-                        </article>
                     </div>
                     <p class="lab-entry">
-                        <span>Research / </span
-                        ><a href="https://github.com/jayjz/fracture" target="_blank" rel="noopener noreferrer">Fracture</a> — agent-graph
-                        failure scaffold. Runtime and evaluation harness remain unimplemented.
+                        <span>More systems / research: </span
+                        ><a href="https://github.com/jayjz/sightglass" target="_blank" rel="noopener noreferrer">Sightglass</a> -
+                        local-first inspection UI with FastAPI, SSE, LangGraph, and React Flow; mock inventory and approval boundaries
+                        remain prototype. <span aria-hidden="true">·</span>
+                        <a href="https://github.com/jayjz/fracture" target="_blank" rel="noopener noreferrer">Fracture</a> - agent-graph
+                        chaos harness with implemented failure injection and topology foundations; comparative recovery experiments remain
+                        unfinished. <span aria-hidden="true">·</span>
+                        <a href="https://github.com/jayjz/hvac-ops-agent" target="_blank" rel="noopener noreferrer">HVAC Ops</a> - separates
+                        source readiness, assessment, and proposed actions; no live ordering or dispatch side effects established.
                     </p>
                 </div>
             </section>
