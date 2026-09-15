@@ -1,5 +1,11 @@
 # Project evidence register
 
+## Hireability update — 2026-09-14
+
+The [dated revision and evidence register](evidence/project-evidence-2026-09-14.md) is the current homepage authority. It supersedes the older sidecar-only pairing, adds SHAD0W and Evidence Strategy Skills, corrects Fracture maturity, and separates Truck-Ready historical workflow evidence from its current CSV regression. The frozen fixture oracle and AetherForge mock instrument remain independently scoped. No source-project tests were rerun for this update.
+
+The older “current” headings below are historical records; their dates and pins control their scope.
+
 ## AetherForge admission instrument — 2026-09-13
 
 The [focused source and execution record](evidence/aetherforge/verification.md) supersedes earlier AetherForge verification wording for this slice only. Remote HEAD remains `265c26769eba257ac40540a7e1da5378d7515532`. Four controlled `/system/strategy` probes and five existing route tests passed locally with documented mock isolation. The homepage shows strategy admission, insufficient switching benefit, forced thermal lock and exhausted semaphore capacity; values and responses are recorded in [scenarios.json](evidence/aetherforge/scenarios.json).

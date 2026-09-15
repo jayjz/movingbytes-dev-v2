@@ -30,7 +30,8 @@ for (const repo of [
     'aetherforge',
     'unhinged-agent',
     'sightglass',
-    'hvac-ops-agent',
+    'SHAD0W',
+    'evidence-strategy-skills',
     'fracture'
 ]) {
     assert.ok(homepage.includes(`href="https://github.com/jayjz/${repo}"`), `Missing source: ${repo}`);
@@ -51,4 +52,4 @@ for (const [slug, repo] of [
         );
     }
 }
-console.log('Internal assets/fragments, eight project sources, contact, and legacy redirect definitions: pass');
+console.log('Internal assets/fragments, nine project sources, contact, and legacy redirect definitions: pass');

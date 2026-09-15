@@ -53,7 +53,7 @@
         <main id="main" tabindex="-1" class="case-study">
             <header class="case-hero container" id="top">
                 <a class="text-link" href="/index.html#work">← Back to selected work</a>
-                <p class="eyebrow">System study / 01 · CipherLoop</p>
+                <p class="eyebrow">System study / 01 · CipherLoop · historical f03a1e1</p>
                 <h1>Keep the context.<br /><span class="muted">Question the evidence.</span></h1>
                 <p class="case-hero__copy">
                     Engineering a tool-heavy investigation workflow with hybrid model calls, periodic memory sweeping, and a narrow,
@@ -75,6 +75,41 @@
                     >. This study separates source inspection, mocked integration tests, and live behavior that remains untested.
                 </p>
             </header>
+            <section id="current-contract" class="container contract-intro" aria-labelledby="current-title">
+                <p class="eyebrow">Current contract / 14 September 2026</p>
+                <h2 id="current-title">Two files. An independent reader.</h2>
+                <p>
+                    CipherLoop feature revision <code>c98c5d8</code> records the producer lifecycle in a JSONL ledger and commits to its
+                    bytes in metadata. TraceForge main <code>51af0f4</code> reads those two files without importing producer runtime
+                    modules, checking integrity and source locations.
+                </p>
+                <p>
+                    Unavailable scanner output is an error, never a successful zero-finding result. Failed execution remains visible;
+                    altered ledger bytes are rejected. Integrity <code>PASS</code> establishes neither task success nor target safety.
+                </p>
+                <p>
+                    <a
+                        href="https://github.com/jayjz/CipherLoop/blob/c98c5d80e507ad3010d8004c86d7d6b8a4ac0c87/docs/production-evidence-contract.md"
+                        >Production-v2 contract</a
+                    >
+                    ·
+                    <a
+                        href="https://github.com/jayjz/TraceForge/blob/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd/docs/cipherloop-production.md"
+                        >Independent reader and replay</a
+                    >
+                    ·
+                    <a href="https://github.com/jayjz/TraceForge/actions/runs/34901295949">Passing Linux baseline and production replay</a>
+                </p>
+                <p>
+                    The independent historical fixture oracle remains separate. No detection accuracy or hosted Windows verification is
+                    claimed.
+                </p>
+                <h2>Historical study / f03a1e1</h2>
+                <p>
+                    The sections below preserve the 7 September source, test results, and immutable references. They describe the earlier
+                    revision, not the current production-v2 contract.
+                </p>
+            </section>
             <div class="container case-layout">
                 <nav class="case-nav" aria-label="Case study sections">
                     <p class="eyebrow">In this study</p>
@@ -85,9 +120,9 @@
                 </nav>
                 <div class="case-content">
                     <aside class="editorial-note">
-                        <strong>Evidence scope.</strong> The unchanged source suite passes 20 tests. The two fixture graph tests mock model
-                        calls, compression, and file access; the positive test also mocks synthesis. No live autonomous audit, Docker
-                        integration, or LLM evaluation is claimed.
+                        <strong>Historical evidence scope.</strong> The source suite at <code>f03a1e1</code> passed 20 tests in the recorded
+                        7 September run. The two fixture graph tests mock model calls, compression, and file access; the positive test also
+                        mocks synthesis. No live autonomous audit, Docker integration, or LLM evaluation is claimed.
                     </aside>
                     <section id="problem" class="case-section">
                         <p class="eyebrow">01 / The problem</p>
