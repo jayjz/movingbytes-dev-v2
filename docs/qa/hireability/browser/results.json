@@ -1,0 +1,272 @@
+[
+  {
+    "page": "home",
+    "width": 320,
+    "axeViolations": 0,
+    "lcpMs": 248,
+    "cls": 0,
+    "resourceBytes": 46694,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "home",
+    "width": 390,
+    "axeViolations": 0,
+    "lcpMs": 220,
+    "cls": 0,
+    "resourceBytes": 46385,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "home",
+    "width": 768,
+    "axeViolations": 0,
+    "lcpMs": 256,
+    "cls": 0,
+    "resourceBytes": 46385,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "home",
+    "width": 1280,
+    "axeViolations": 0,
+    "lcpMs": 208,
+    "cls": 0,
+    "resourceBytes": 46385,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "home",
+    "width": 1440,
+    "axeViolations": 0,
+    "lcpMs": 208,
+    "cls": 0,
+    "resourceBytes": 46385,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "home",
+    "mode": "no-js",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "no-observer",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "blocked-fonts",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "reduced-at-load",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "blocked-image",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "large-text",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "large-text-320",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "blocked-character-script",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "missing-character",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "touch",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "width": 320,
+    "axeViolations": 0,
+    "lcpMs": 192,
+    "cls": 0,
+    "resourceBytes": 27065,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "case",
+    "width": 390,
+    "axeViolations": 0,
+    "lcpMs": 192,
+    "cls": 0,
+    "resourceBytes": 27065,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "case",
+    "width": 768,
+    "axeViolations": 0,
+    "lcpMs": 212,
+    "cls": 0,
+    "resourceBytes": 27065,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "case",
+    "width": 1280,
+    "axeViolations": 0,
+    "lcpMs": 176,
+    "cls": 0,
+    "resourceBytes": 27065,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "case",
+    "width": 1440,
+    "axeViolations": 0,
+    "lcpMs": 184,
+    "cls": 0,
+    "resourceBytes": 27065,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "case",
+    "mode": "no-js",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "no-observer",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "blocked-fonts",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "reduced-at-load",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "blocked-image",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "large-text",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "large-text-320",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "width": 320,
+    "axeViolations": 0,
+    "lcpMs": 160,
+    "cls": 0,
+    "resourceBytes": 22477,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "shadow",
+    "width": 390,
+    "axeViolations": 0,
+    "lcpMs": 172,
+    "cls": 0,
+    "resourceBytes": 22477,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "shadow",
+    "width": 768,
+    "axeViolations": 0,
+    "lcpMs": 176,
+    "cls": 0,
+    "resourceBytes": 22477,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "shadow",
+    "width": 1280,
+    "axeViolations": 0,
+    "lcpMs": 176,
+    "cls": 0,
+    "resourceBytes": 22477,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "shadow",
+    "width": 1440,
+    "axeViolations": 0,
+    "lcpMs": 188,
+    "cls": 0,
+    "resourceBytes": 22477,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "shadow",
+    "mode": "no-js",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "no-observer",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "blocked-fonts",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "reduced-at-load",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "blocked-image",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "large-text",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "large-text-320",
+    "result": "pass"
+  }
+]

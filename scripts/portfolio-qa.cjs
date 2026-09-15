@@ -34,7 +34,8 @@ fs.mkdirSync(out, { recursive: true });
     const results = [];
     for (const [label, route] of [
         ['home', '/'],
-        ['case', '/case-studies/cipherloop.html']
+        ['case', '/case-studies/cipherloop.html'],
+        ['shadow', '/case-studies/shadow.html']
     ]) {
         for (const width of [320, 390, 768, 1280, 1440]) {
             const context = await browser.newContext({ viewport: { width, height: 900 } });
@@ -84,12 +85,13 @@ fs.mkdirSync(out, { recursive: true });
                     'aetherforge',
                     'unhinged-agent',
                     'sightglass',
-                    'hvac-ops-agent',
+                    'SHAD0W',
+                    'evidence-strategy-skills',
                     'fracture'
                 ]) {
                     assert.equal(await page.locator(`a[href="https://github.com/jayjz/${repo}"]`).count(), 1);
                 }
-                const action = page.locator('.mastery-intro a');
+                const action = page.locator('.mastery-intro .ledger-link');
                 await action.focus();
                 assert.equal(await action.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
                 if (width === 1440) {
@@ -133,7 +135,12 @@ fs.mkdirSync(out, { recursive: true });
                 await page.locator('.featured a[href="/case-studies/cipherloop.html"]').click();
                 assert.equal(new URL(page.url()).pathname, '/case-studies/cipherloop.html');
                 await page.goBack();
-            } else {
+                await page.locator('.shadow-feature a[href="/case-studies/shadow.html"]').click();
+                assert.equal(new URL(page.url()).pathname, '/case-studies/shadow.html');
+                await page.goBack();
+                assert.equal(await page.locator('.mastery-intro a[href^="mailto:"]').isVisible(), true);
+                assert.equal(await page.locator('#contact h2').isVisible(), true);
+            } else if (label === 'case') {
                 const summary = page.locator('.diagram-equivalent summary');
                 await summary.focus();
                 await page.keyboard.press('Enter');
@@ -145,6 +152,14 @@ fs.mkdirSync(out, { recursive: true });
                 await page.waitForFunction(() => location.hash === '#evidence');
                 await page.waitForTimeout(800);
                 assert.ok(await page.locator('#evidence').evaluate(el => el.getBoundingClientRect().top >= 0));
+            }
+            if (label === 'shadow') {
+                await page.locator('.case-nav a[href="#evidence"]').click();
+                await page.waitForFunction(() => location.hash === '#evidence');
+            }
+            if (label !== 'case') {
+                assert.equal(await page.locator('.decision-timeline li').count(), 4);
+                assert.equal(await page.locator('.timeline-rejected').isVisible(), true);
             }
             await page.emulateMedia({ reducedMotion: 'reduce' });
             assert.equal(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior), 'auto');
@@ -159,7 +174,7 @@ fs.mkdirSync(out, { recursive: true });
             if (width === 390 || width === 1440) {
                 await page.screenshot({ path: path.join(out, `after-${label}-${width}.png`), fullPage: true });
                 await page.screenshot({ path: path.join(out, `viewport-${label}-${width}.png`) });
-                const featureVisual = label === 'home' ? '.evidence-flow' : '.system-figure';
+                const featureVisual = label === 'home' ? '.evidence-flow' : label === 'shadow' ? '.decision-timeline' : '.system-figure';
                 await page.locator(featureVisual).screenshot({ path: path.join(out, `diagram-${label}-${width}.png`) });
                 if (label === 'case') await page.locator('.evidence-output').screenshot({ path: path.join(out, `evidence-${width}.png`) });
             }
@@ -174,7 +189,8 @@ fs.mkdirSync(out, { recursive: true });
             'reduced-at-load',
             'blocked-image',
             'large-text',
-            ...(label === 'home' ? ['blocked-character-script', 'missing-character', 'touch', 'large-text-320'] : [])
+            'large-text-320',
+            ...(label === 'home' ? ['blocked-character-script', 'missing-character', 'touch'] : [])
         ]) {
             const context = await browser.newContext({
                 viewport: { width: mode === 'large-text-320' ? 320 : 390, height: 844 },
@@ -234,6 +250,19 @@ fs.mkdirSync(out, { recursive: true });
                         0
                     );
                 }
+            }
+            if (label !== 'case') {
+                assert.equal(await page.locator('.decision-timeline').isVisible(), true);
+                const bounds = await page.locator('.decision-timeline li').evaluateAll(items =>
+                    items.map(el => {
+                        const r = el.getBoundingClientRect();
+                        return { left: r.left, right: r.right };
+                    })
+                );
+                assert.ok(
+                    bounds.every(r => r.left >= 0 && r.right <= (mode === 'large-text-320' ? 320 : 390)),
+                    'Timeline reflow'
+                );
             }
             if (label === 'case')
                 assert.equal(

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SHAD0W — causality and execution · Jay</title>
+        <meta
+            name="description"
+            content="SHAD0W: chronological eligibility, lifecycle simulation, independent paper-risk admission, and market-data replay."
+        />
+        <link rel="canonical" href="https://www.jaysystems.dev/case-studies/shadow" />
+        <meta name="theme-color" content="#0a0a0c" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="jaysystems.dev" />
+        <meta property="og:title" content="SHAD0W — causality and execution · Jay" />
+        <meta
+            property="og:description"
+            content="Chronological eligibility, lifecycle simulation, independent paper-risk admission, and market-data replay."
+        />
+        <meta property="og:url" content="https://www.jaysystems.dev/case-studies/shadow" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="SHAD0W — causality and execution · Jay" />
+        <meta
+            name="twitter:description"
+            content="Chronological eligibility, lifecycle simulation, independent paper-risk admission, and market-data replay."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=optional"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/css/style.css?v=20260907-evidence" />
+    </head>
+    <body>
+        <a href="#main" class="skip-link">Skip to content</a>
+
+        <header class="site-header">
+            <div class="site-header__inner">
+                <a href="/index.html#top" class="brand" aria-label="jaysystems.dev home">
+                    <span class="brand__name">jay</span>
+                    <span class="brand__domain">jaysystems.dev</span>
+                </a>
+                <nav class="site-nav" aria-label="Primary">
+                    <a href="/index.html#work">Work</a>
+                    <a href="/index.html#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a href="https://github.com/jayjz" target="_blank" rel="noopener noreferrer" aria-label="Jay on GitHub">GitHub</a>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" class="case-study">
+            <header class="case-hero container" id="top">
+                <a class="text-link" href="/index.html#shadow">← Back to SHAD0W</a>
+                <p class="eyebrow">System study / 02 · SHAD0W</p>
+                <h1>When is a decision<br /><span class="muted">allowed to act?</span></h1>
+                <p class="case-hero__copy">
+                    Chronology is a contract. A decision cannot execute against the closing observation that made it possible.
+                </p>
+                <p class="revision-note">
+                    Source and tests inspected at published main <code>ed773c5</code>. Project tests were not rerun in this portfolio pass.
+                    Live-data support is implemented; an observed live session is not established here.
+                </p>
+            </header>
+            <div class="container case-layout">
+                <nav class="case-nav" aria-label="Case study sections">
+                    <p class="eyebrow">In this study</p>
+                    <a href="#causality">01 / Causality</a><a href="#lifecycle">02 / Lifecycle</a><a href="#risk">03 / Risk authority</a
+                    ><a href="#replay">04 / Ingestion and replay</a><a href="#evidence">05 / Evidence and limits</a>
+                </nav>
+                <div class="case-content">
+                    <section id="causality" class="case-section">
+                        <h2>Availability comes before eligibility.</h2>
+                        <p>
+                            A completed bar becomes an observation; a strategy derives a signal from it. Even if the event ordering places
+                            the signal before an execution opportunity, equal timestamps remain ineligible. The opportunity must be strictly
+                            later than signal availability.
+                        </p>
+                        <figure class="decision-timeline" aria-labelledby="timeline-caption">
+                            <ol>
+                                <li>
+                                    <span class="eyebrow">01 / Observation available</span>
+                                    <h3>The bar completes.</h3>
+                                    <p>Its closing data can now inform a decision.</p>
+                                </li>
+                                <li>
+                                    <span class="eyebrow">02 / Signal created</span>
+                                    <h3>Record availability.</h3>
+                                    <p>The signal carries the time its inputs became available.</p>
+                                </li>
+                                <li class="timeline-rejected">
+                                    <span class="eyebrow">03 / Same timestamp</span>
+                                    <h3>Execution ineligible.</h3>
+                                    <p>That same close cannot execute the decision it just informed.</p>
+                                </li>
+                                <li>
+                                    <span class="eyebrow">04 / Strictly later</span>
+                                    <h3>Eligibility opens.</h3>
+                                    <p>A later opportunity may qualify. A fill and risk admission are separate decisions.</p>
+                                </li>
+                            </ol>
+                            <figcaption id="timeline-caption">
+                                Source-derived chronology, not a market replay or trading result. Eligibility requires an opportunity
+                                strictly later than signal availability.
+                            </figcaption>
+                        </figure>
+                        <p>
+                            <a
+                                href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/src/shadow/simulation/timeline.py"
+                                >Chronological eligibility implementation</a
+                            >
+                            ·
+                            <a
+                                href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/tests/test_simulation_timeline.py"
+                                >Timeline regressions</a
+                            >
+                        </p>
+                    </section>
+                    <section id="lifecycle" class="case-section">
+                        <h2>Eligibility is not a fill.</h2>
+                        <p>
+                            The timeline records whether an opportunity is chronologically legal. Lifecycle simulation separately tracks
+                            pending actions and execution outcomes. A fill can consume an action; merely becoming eligible does not.
+                        </p>
+                        <p>
+                            Execution economics model costs and slippage separately from signal creation. Keeping those boundaries explicit
+                            makes a replay inspectable without treating a signal as an executed trade.
+                        </p>
+                        <p>
+                            <a
+                                href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/src/shadow/simulation/lifecycle.py"
+                                >Lifecycle transitions</a
+                            >
+                            ·
+                            <a
+                                href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/tests/test_simulation_lifecycle.py"
+                                >Lifecycle tests</a
+                            >
+                            ·
+                            <a
+                                href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/src/shadow/execution/economics.py"
+                                >Execution economics</a
+                            >
+                        </p>
+                    </section>
+                    <section id="risk" class="case-section">
+                        <h2>Risk admission has its own authority.</h2>
+                        <p>
+                            A strategy proposal does not authorize its own execution. Independent paper-risk admission checks the proposal
+                            against risk state and limits. Chronological eligibility, risk authorization, and a simulated fill remain
+                            separate decisions.
+                        </p>
+                        <p>
+                            <a
+                                href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/docs/decisions/0004-paper-risk-admission-authority.md"
+                                >Risk authority decision</a
+                            >
+                            ·
+                            <a href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/src/shadow/risk/gate.py"
+                                >Admission gate</a
+                            >
+                            ·
+                            <a
+                                href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/tests/test_paper_risk_adversarial.py"
+                                >Adversarial risk tests</a
+                            >
+                        </p>
+                    </section>
+                    <section id="replay" class="case-section">
+                        <h2>External data still needs a boundary.</h2>
+                        <p>
+                            Market-data shadow ingestion records observations and control events for replay. Application receipt time stays
+                            distinct from provider time. The adapter observes market data; it has no live-capital order-submission surface.
+                        </p>
+                        <h3>A sparse acknowledgement exposed an assumption.</h3>
+                        <p>
+                            A provider can omit unused subscription channels. Requiring those empty fields rejects an otherwise valid
+                            acknowledgement. The adapter accepts their absence while requiring exact requested bar and quote symbols and
+                            rejecting unexpected populated channels. Regression tests cover the sparse response.
+                        </p>
+                        <p>
+                            <a
+                                href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/src/shadow/adapters/alpaca/stream.py"
+                                >Subscription boundary</a
+                            >
+                            ·
+                            <a
+                                href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/src/shadow/application/live_shadow.py"
+                                >Ingestion and replay entry point</a
+                            >
+                            ·
+                            <a
+                                href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/tests/test_live_shadow.py"
+                                >Stream and replay tests</a
+                            >
+                        </p>
+                    </section>
+                    <section id="evidence" class="case-section">
+                        <h2>Implemented support. Bounded evidence.</h2>
+                        <p>
+                            This study is based on source and test inspection at <code>ed773c51c9a75bb2ae2a00a4222c5992329d441f</code>. It
+                            does not establish a successful live session, profitability, real execution quality, or live-capital safety.
+                        </p>
+                        <p>
+                            <a href="https://github.com/jayjz/SHAD0W/tree/ed773c51c9a75bb2ae2a00a4222c5992329d441f"
+                                >Inspect the pinned source</a
+                            >
+                            · <a href="/docs/evidence/project-evidence-2026-09-14.md">Full evidence register</a>
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer id="contact" class="site-footer">
+            <div class="container site-footer__inner">
+                <p>© 2026 Jay</p>
+                <p>
+                    <a href="mailto:jay@jaysystems.dev">jay@jaysystems.dev</a>
+                    <span aria-hidden="true"> · </span>
+                    <a href="https://github.com/jayjz" target="_blank" rel="noopener noreferrer" aria-label="Jay on GitHub"
+                        >github.com/jayjz</a
+                    >
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/main.js?v=20260907-evidence" defer></script>
+    </body>
+</html>

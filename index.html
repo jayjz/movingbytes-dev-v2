@@ -3,18 +3,27 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Jay · jaysystems.dev</title>
-        <meta name="description" content="Jay builds AI systems, security tooling, and field software around real constraints." />
+        <title>Jay — Backend &amp; AI Infrastructure Engineer</title>
+        <meta
+            name="description"
+            content="Jay builds backend and AI infrastructure around explicit contracts, execution state, and failure boundaries."
+        />
         <link rel="canonical" href="https://www.jaysystems.dev/" />
         <meta name="theme-color" content="#0a0a0c" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="jaysystems.dev" />
-        <meta property="og:title" content="Jay · jaysystems.dev" />
-        <meta property="og:description" content="AI systems, constrained compute, security tooling, and field software." />
+        <meta property="og:title" content="Jay — Backend &amp; AI Infrastructure Engineer" />
+        <meta
+            property="og:description"
+            content="Backend and AI infrastructure around explicit contracts, execution state, and failure boundaries."
+        />
         <meta property="og:url" content="https://www.jaysystems.dev/" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Jay · jaysystems.dev" />
-        <meta name="twitter:description" content="AI systems, constrained compute, security tooling, and field software." />
+        <meta name="twitter:title" content="Jay — Backend &amp; AI Infrastructure Engineer" />
+        <meta
+            name="twitter:description"
+            content="Backend and AI infrastructure around explicit contracts, execution state, and failure boundaries."
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -157,9 +166,13 @@
                     <div class="mastery-hero__grid">
                         <h1>Build systems.<br /><span>Leave evidence.</span></h1>
                         <div class="mastery-intro">
-                            <p>I build agents, local infrastructure, and software for the field.</p>
-                            <p>HVAC and construction taught me to start with the constraints. That carries into the code.</p>
-                            <a class="ledger-link" href="#cipherloop">Inspect the work <span aria-hidden="true">↘</span></a>
+                            <p>I build backend and AI infrastructure around explicit contracts, execution state, and failure boundaries.</p>
+                            <a class="ledger-link" href="#cipherloop">Inspect the work <span aria-hidden="true">↘</span></a
+                            ><a class="hero-email" href="mailto:jay@jaysystems.dev">Email Jay ↗</a>
+                            <nav class="hero-projects" aria-label="Leading projects">
+                                <a href="#cipherloop">CipherLoop → TraceForge</a><a href="#shadow">SHAD0W</a
+                                ><a href="#aetherforge">AetherForge</a>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -167,21 +180,23 @@
             <section id="work" class="featured evidence-feature" aria-label="Selected work">
                 <div class="container">
                     <div class="evidence-divider">
-                        <p class="eyebrow">01 / Agent evidence</p>
+                        <p class="eyebrow">01 / Flagship</p>
                         <p>Two systems. One inspectable handoff.</p>
                     </div>
                     <article id="cipherloop">
                         <h2 class="evidence-heading">CipherLoop <span aria-hidden="true">→</span> TraceForge</h2>
                         <p class="evidence-question">Can an investigation be checked independently?</p>
-                        <p class="evidence-scope">Experimental agent + offline evaluator. Two fixtures, synthetic scanner responses.</p>
+                        <p class="evidence-scope">
+                            Production-v2 evidence contract · experimental producer + independent reader · offline replay verified.
+                        </p>
                         <figure class="evidence-flow" aria-labelledby="handoff-caption">
                             <ol>
                                 <li>
-                                    <p class="eyebrow">01 / CipherLoop components</p>
+                                    <p class="eyebrow">01 / Producer lifecycle</p>
                                     <h3>Investigate.<br />Keep the record.</h3>
                                     <p>
-                                        Compression reduces active messages to summaries and writes selected raw tool messages to disk. The
-                                        capture harness exercises the compressor, AST validator and recorder.
+                                        The producer records tool observations, validation decisions, and how execution ended. Explicit
+                                        lifecycle events keep failed execution visible.
                                     </p>
                                     <a
                                         class="ledger-link"
@@ -192,29 +207,27 @@
                                     >
                                 </li>
                                 <li class="evidence-capture">
-                                    <p class="eyebrow">02 / Offline capture harness</p>
+                                    <p class="eyebrow">02 / Two-file handoff</p>
                                     <h3>The artifact boundary</h3>
                                     <dl>
                                         <dt>JSONL trajectory</dt>
-                                        <dd>Recorded messages and validation</dd>
+                                        <dd>Ordered lifecycle and source observations</dd>
                                         <dt>Run metadata</dt>
-                                        <dd>Recorder summary</dd>
-                                        <dt>Capture sidecars</dt>
-                                        <dd>Harness outputs and provenance</dd>
+                                        <dd>Ledger hash, event count, and final references</dd>
                                     </dl>
-                                    <p>A trajectory alone is insufficient for this adapter.</p>
+                                    <p>The metadata commits to the exact ledger bytes. Both files are required.</p>
                                     <a
                                         class="ledger-link"
-                                        href="https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/scripts/generate_cipherloop_baseline.py"
-                                        >Inspect the capture <span aria-hidden="true">↗</span></a
+                                        href="https://github.com/jayjz/CipherLoop/blob/c98c5d80e507ad3010d8004c86d7d6b8a4ac0c87/docs/production-evidence-contract.md"
+                                        >Inspect the contract <span aria-hidden="true">↗</span></a
                                     >
                                 </li>
                                 <li>
                                     <p class="eyebrow">03 / TraceForge</p>
-                                    <h3>Check against<br />a separate oracle.</h3>
+                                    <h3>Verify integrity.<br />Locate the evidence.</h3>
                                     <p>
-                                        The adapter reads captured files without importing CipherLoop runtime modules. The evaluator
-                                        compares them with independent fixture expectations.
+                                        The reader checks integrity and source locations without importing CipherLoop runtime modules.
+                                        Evaluation stays separate from the producer’s observations.
                                     </p>
                                     <a
                                         class="ledger-link"
@@ -226,16 +239,49 @@
                                 </li>
                             </ol>
                             <figcaption id="handoff-caption">
-                                Source-derived flow: CipherLoop <code>f03a1e1</code> → TraceForge <code>25668c4</code>. The harness supplies
-                                the scanner responses; no live planner, model or scanner runs.
+                                Source-derived contract: CipherLoop feature revision <code>c98c5d8</code> → TraceForge main
+                                <code>51af0f4</code>. Recorded offline replay uses scripted tool responses, not a live audit.
                             </figcaption>
                         </figure>
+                        <div class="contract-outcomes">
+                            <section>
+                                <h3>Valid capture</h3>
+                                <p>
+                                    Integrity and source-location checks can return <code>PASS</code>. This does not mean task success or
+                                    target safety.
+                                </p>
+                            </section>
+                            <section>
+                                <h3>Failed execution</h3>
+                                <p>
+                                    Unavailable scanner output must not become a successful zero-finding result. The reader reports an
+                                    error.
+                                </p>
+                            </section>
+                            <section>
+                                <h3>Altered artifact</h3>
+                                <p>
+                                    Changed ledger bytes invalidate the commitment. The reader rejects the input instead of silently
+                                    dropping evidence.
+                                </p>
+                            </section>
+                        </div>
+                        <p class="evidence-provenance">
+                            <a
+                                href="https://github.com/jayjz/TraceForge/blob/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd/tests/test_cipherloop_production.py"
+                                >Adversarial contract tests</a
+                            >
+                            ·
+                            <a href="https://github.com/jayjz/TraceForge/actions/runs/34901295949"
+                                >Linux baseline + pinned production replay passed</a
+                            >. Frozen fixtures remain byte-stable. No hosted Windows or detection-accuracy claim.
+                        </p>
                         <div class="evidence-results">
                             <section aria-labelledby="fixture-title">
-                                <h3 id="fixture-title">What the fixtures show</h3>
+                                <h3 id="fixture-title">Historical fixture oracle</h3>
                                 <table class="fixture-table">
                                     <caption>
-                                        Committed baseline · one supplied candidate per fixture
+                                        Separate offline baseline · synthetic responses · one candidate per fixture
                                     </caption>
                                     <thead>
                                         <tr>
@@ -270,7 +316,7 @@
                                 </p>
                             </section>
                             <section aria-labelledby="boundary-title">
-                                <h3 id="boundary-title">Agreement has a boundary.</h3>
+                                <h3 id="boundary-title">An independent oracle, with a narrow scope.</h3>
                                 <p>
                                     These fixtures exercise evidence capture and evaluation. They do not establish live audit accuracy or
                                     exploitability. “Safe” is a fixture name, not a security certification.
@@ -288,7 +334,7 @@
                                 >Read the CipherLoop engineering study <span aria-hidden="true">↗</span></a
                             >
                             <p>
-                                Study scoped to <code>f03a1e1</code> ·
+                                Historical study scoped to <code>f03a1e1</code> ·
                                 <a
                                     href="https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/docs/cipherloop-baseline.md"
                                     >TraceForge baseline and limits</a
@@ -298,17 +344,66 @@
                     </article>
                 </div>
             </section>
+            <section id="shadow" class="shadow-feature section">
+                <div class="container">
+                    <div class="evidence-divider">
+                        <p class="eyebrow">02 / SHAD0W systems</p>
+                        <p>Causality before execution.</p>
+                    </div>
+                    <h2 class="evidence-heading">SHAD0W</h2>
+                    <p class="evidence-question">When is a decision allowed to act?</p>
+                    <p class="section-intro__copy">
+                        A decision derived from a completed bar cannot execute against that same close. I separate chronological
+                        eligibility, lifecycle simulation, execution costs, and independent paper-risk admission.
+                    </p>
+                    <figure class="decision-timeline" aria-labelledby="timeline-caption">
+                        <ol>
+                            <li>
+                                <span class="eyebrow">01 / Observation available</span>
+                                <h3>The bar completes.</h3>
+                                <p>Its closing data can now inform a decision.</p>
+                            </li>
+                            <li>
+                                <span class="eyebrow">02 / Signal created</span>
+                                <h3>Record availability.</h3>
+                                <p>The signal carries the time its inputs became available.</p>
+                            </li>
+                            <li class="timeline-rejected">
+                                <span class="eyebrow">03 / Same timestamp</span>
+                                <h3>Execution ineligible.</h3>
+                                <p>That same close cannot execute the decision it just informed.</p>
+                            </li>
+                            <li>
+                                <span class="eyebrow">04 / Strictly later</span>
+                                <h3>Eligibility opens.</h3>
+                                <p>A later opportunity may qualify. A fill and risk admission are separate decisions.</p>
+                            </li>
+                        </ol>
+                        <figcaption id="timeline-caption">
+                            Source-derived chronology, not a market replay or trading result. Eligibility requires an opportunity strictly
+                            later than signal availability.
+                        </figcaption>
+                    </figure>
+                    <div class="evidence-actions">
+                        <a class="ledger-link" href="/case-studies/shadow.html">Read the causality study ↗</a
+                        ><a href="https://github.com/jayjz/SHAD0W">SHAD0W source ↗</a>
+                    </div>
+                    <p class="evidence-provenance">
+                        Published main <code>ed773c5</code> implements market-data shadow ingestion and replay. It observes data and submits
+                        no live-capital orders. Source and tests inspected; an observed live session is not established here.
+                    </p>
+                </div>
+            </section>
             <section id="projects" class="work section">
                 <div class="container">
                     <header class="section-intro">
-                        <p class="eyebrow">02 / Project index</p>
-                        <h2 class="section-intro__title">Other constraints. Same approach.</h2>
+                        <p class="eyebrow">03 / AetherForge infrastructure</p>
+                        <h2 class="section-intro__title">Make capacity a contract.</h2>
                         <p class="section-intro__copy">
-                            AetherForge extends the work into constrained compute. The applied prototypes bring it back to technicians,
-                            voice interaction, and operational decisions. Source-inspected; maturity varies.
+                            Bounded admission and shared capacity give agents explicit failure responses. Thermal rejection and exhausted
+                            slots stop a request before the economic gate.
                         </p>
                     </header>
-
                     <article class="af-instrument" id="aetherforge" aria-labelledby="af-title">
                         <header class="af-heading">
                             <div>
@@ -567,121 +662,122 @@
                             </div>
                         </footer>
                     </article>
-                    <div class="work-grid">
-                        <article class="work-card">
+                </div>
+            </section>
+            <section id="applied" class="section">
+                <div class="container">
+                    <header class="section-intro">
+                        <p class="eyebrow">04 / Applied systems</p>
+                        <h2 class="section-intro__title">Own the state. Respect the constraint.</h2>
+                    </header>
+                    <div class="work-grid applied-grid">
+                        <article class="work-card" id="unhinged">
+                            <header class="work-card__header">
+                                <h3 class="work-card__title">Unhinged Agent</h3>
+                                <p class="work-card__status">Hardware-prep prototype · ea86997</p>
+                            </header>
+                            <p class="work-card__body">
+                                A new wake event cancels the active turn and returns the host to listening. Shared inference services own
+                                model instances; bounded audio buffers constrain memory as the thin client streams audio.
+                            </p>
+                            <p>
+                                Interruption tests use mocked services. The physical wake → transcription → response loop remains
+                                unverified.
+                            </p>
+                            <a class="work-card__source" href="https://github.com/jayjz/unhinged-agent">Unhinged source ↗</a>
+                            <p class="evidence-provenance">
+                                <a
+                                    href="https://github.com/jayjz/unhinged-agent/blob/ea86997c18cc375ae3355c3321b792c21f8d3284/tests/test_esphome_bridge_stress.py"
+                                    >Mocked interruption tests at the feature revision</a
+                                >
+                            </p>
+                        </article>
+                        <article class="work-card" id="truck-ready">
                             <header class="work-card__header">
                                 <h3 class="work-card__title">Truck-Ready HVAC</h3>
                                 <p class="work-card__status">Field workflow prototype</p>
                             </header>
                             <p class="work-card__body">
-                                Aggregates parts demand across jobs, stages available stock, and identifies pickup shortfalls. Exports JSON
-                                and printable PDF checklists. Field outcomes remain unverified.
+                                Need three, have one → stage one and pick up two. Pure domain logic aggregates demand and computes staging
+                                and shortfalls separately from file adapters and the UI.
                             </p>
-                            <ul class="work-card__stack">
-                                <li>Python</li>
-                                <li>Streamlit</li>
-                                <li>fpdf2</li>
-                            </ul>
-                            <a
-                                class="work-card__source"
-                                href="https://github.com/jayjz/truck-ready-hvac"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View source for Truck-Ready HVAC on GitHub"
-                                >View Source</a
-                            >
-                        </article>
-                        <article class="work-card">
-                            <header class="work-card__header">
-                                <h3 class="work-card__title">Unhinged Agent</h3>
-                                <p class="work-card__status">Voice-system prototype</p>
-                            </header>
-                            <p class="work-card__body">
-                                A thin voice client with a cancellable host-side turn. The hardware-prep branch handles interruption by
-                                cancelling processing and returning to listening. Physical hardware remains unverified.
+                            <p>
+                                Validation and JSON/PDF workflow evidence is historical at <code>517fc82</code>. Published main
+                                <code>d1f4d53</code> has a known current CSV integration regression; current end-to-end behavior and field
+                                outcomes are not claimed.
                             </p>
-                            <ul class="work-card__stack">
-                                <li>Python</li>
-                                <li>ESPHome</li>
-                                <li>Local inference</li>
-                            </ul>
-                            <a
-                                class="work-card__source"
-                                href="https://github.com/jayjz/unhinged-agent"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View source for Unhinged Agent on GitHub"
-                                >View Source</a
-                            >
+                            <a class="work-card__source" href="https://github.com/jayjz/truck-ready-hvac">Truck-Ready source ↗</a>
                             <p class="evidence-provenance">
-                                <a href="https://github.com/jayjz/unhinged-agent/tree/ea86997c18cc375ae3355c3321b792c21f8d3284"
-                                    >Inspected hardware-prep revision</a
-                                >
-                            </p>
-                        </article>
-                        <article class="work-card">
-                            <header class="work-card__header">
-                                <h3 class="work-card__title">Sightglass</h3>
-                                <p class="work-card__status">Inspection-interface demo</p>
-                            </header>
-                            <p class="work-card__body">
-                                Streams graph transitions into a job-inspection interface using mock inventory. The review UI is a
-                                prototype; durable synchronization and enforced approval are unfinished.
-                            </p>
-                            <ul class="work-card__stack">
-                                <li>Python</li>
-                                <li>FastAPI</li>
-                                <li>SSE</li>
-                            </ul>
-                            <a
-                                class="work-card__source"
-                                href="https://github.com/jayjz/sightglass"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View source for Sightglass on GitHub"
-                                >View Source</a
-                            >
-                        </article>
-                        <article class="work-card">
-                            <header class="work-card__header">
-                                <h3 class="work-card__title">HVAC Ops</h3>
-                                <p class="work-card__status">Recovery branch</p>
-                            </header>
-                            <p class="work-card__body">
-                                Keeps unknown inventory distinct from known zero stock. Separates source readiness, assessment and proposed
-                                actions. No live ordering or dispatch side effects are established.
-                            </p>
-                            <ul class="work-card__stack">
-                                <li>Python</li>
-                                <li>Dispatch assessment</li>
-                            </ul>
-                            <a
-                                class="work-card__source"
-                                href="https://github.com/jayjz/hvac-ops-agent"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View source for HVAC Ops on GitHub"
-                                >View Source</a
-                            >
-                            <p class="evidence-provenance">
-                                <a href="https://github.com/jayjz/hvac-ops-agent/tree/d5ec6235e9558af227e7381b9821b8dee0c95eda"
-                                    >Inspected recovery revision</a
+                                <a
+                                    href="https://github.com/jayjz/truck-ready-hvac/blob/517fc82fc3a739a7d5d79769436eed179c43cc5b/tests/test_core.py"
+                                    >Historical domain tests</a
                                 >
                             </p>
                         </article>
                     </div>
-                    <p class="lab-entry">
-                        <span>Research / </span
-                        ><a href="https://github.com/jayjz/fracture" target="_blank" rel="noopener noreferrer">Fracture</a> — agent-graph
-                        failure scaffold. Runtime and evaluation harness remain unimplemented.
+                </div>
+            </section>
+            <section id="research" class="section">
+                <div class="container">
+                    <header class="section-intro">
+                        <p class="eyebrow">05 / Research</p>
+                        <h2 class="section-intro__title">Questions still under construction.</h2>
+                    </header>
+                    <article class="research-entry" id="evidence-strategy">
+                        <h3><a href="https://github.com/jayjz/evidence-strategy-skills">Evidence Strategy Skills ↗</a></h3>
+                        <p>
+                            Structural evidence validation and an evaluation methodology at <code>bccaac8</code>. Controlled comparisons,
+                            held-out evaluation, and cost accounting are prescribed methods; demonstrated effectiveness results are not yet
+                            established.
+                        </p>
+                    </article>
+                    <article class="research-entry" id="fracture">
+                        <h3><a href="https://github.com/jayjz/fracture">Fracture ↗</a></h3>
+                        <p>
+                            Research scaffold at <code>300ef83</code>: dispatcher, failure injectors, and graph topologies are implemented.
+                            Generic runtime and comparative evaluation harness remain stubs; no comparative result is claimed.
+                        </p>
+                    </article>
+                    <article class="research-entry" id="sightglass">
+                        <h3><a href="https://github.com/jayjz/sightglass">Sightglass ↗</a></h3>
+                        <p>
+                            Small inspection-interface prototype with graph pause/resume and mock inventory. Approval enforcement and
+                            durable synchronization remain incomplete.
+                        </p>
+                    </article>
+                    <p class="evidence-provenance">
+                        <a href="docs/evidence/project-evidence-2026-09-14.md">Source revisions, evidence levels, and limitations ↗</a>
                     </p>
+                </div>
+            </section>
+            <section class="section capabilities" aria-labelledby="capabilities-title">
+                <div class="container">
+                    <p class="eyebrow">Engineering capabilities</p>
+                    <h2 id="capabilities-title" class="section-intro__title">The decisions behind the work.</h2>
+                    <div class="capability-grid">
+                        <section>
+                            <h3>Contracts and state</h3>
+                            <p>Make lifecycle and eligibility explicit.</p>
+                            <a href="#cipherloop">CipherLoop → TraceForge</a> · <a href="#shadow">SHAD0W</a>
+                        </section>
+                        <section>
+                            <h3>Reliability and evaluation</h3>
+                            <p>Reject incomplete evidence and separate checks from outcomes.</p>
+                            <a href="#cipherloop">Independent reader</a> · <a href="#evidence-strategy">Evaluation methodology</a>
+                        </section>
+                        <section>
+                            <h3>Backend and AI infrastructure</h3>
+                            <p>Own shared capacity and cancellation boundaries.</p>
+                            <a href="#aetherforge">AetherForge</a> · <a href="#unhinged">Unhinged</a>
+                        </section>
+                    </div>
                 </div>
             </section>
 
             <section id="about" class="about">
                 <div class="container">
                     <header class="section-intro">
-                        <p class="eyebrow">03 / Perspective</p>
+                        <p class="eyebrow">Perspective</p>
                         <h2 class="section-intro__title">Engineering starts outside the demo.</h2>
                     </header>
                     <div class="about__copy">
@@ -691,8 +787,8 @@
                             tooling.
                         </p>
                         <p>
-                            I’m interested in systems with understandable boundaries: what runs locally, what depends on a network, and what
-                            evidence supports a decision.
+                            I carry that into software through explicit contracts, visible execution state, and failure handling that
+                            preserves what happened. The project evidence shows both the implemented boundary and what remains unverified.
                         </p>
                     </div>
                 </div>
@@ -700,6 +796,11 @@
         </main>
 
         <footer id="contact" class="site-footer">
+            <div class="container employment-cta">
+                <p class="eyebrow">Work together</p>
+                <h2>Hiring for systems ownership?</h2>
+                <p>I’m interested in Backend, AI Infrastructure, Agent Systems, Platform, and Applied AI roles.</p>
+            </div>
             <div class="container site-footer__inner">
                 <p>© 2026 Jay</p>
                 <p>
