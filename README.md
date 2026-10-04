@@ -4,7 +4,7 @@ Jay's engineering portfolio: backend and AI infrastructure around explicit contr
 
 ## Pages and files
 
-- `index.html`: hero, five numbered project groups, nine source repositories, capability summaries, perspective, and employment contact.
+- `index.html`: hand-designed flagship stories, generated focus/map/ledger/registry sections, capability summaries, perspective, and employment contact.
 - `case-studies/cipherloop.html`: current production-v2 introduction and preserved historical `f03a1e1` study; public clean URL `/case-studies/cipherloop`.
 - `case-studies/shadow.html`: causality, lifecycle, paper-risk admission, and data replay; public clean URL `/case-studies/shadow`.
 - `css/style.css`, `js/main.js`: shared visual foundation and optional, reduced-motion-aware figure accent. Native anchors and all essential content work without JavaScript.
@@ -23,9 +23,33 @@ CipherLoop is an **experimental framework**. Its case study distinguishes inspec
 | Unhinged Agent | [jayjz/unhinged-agent](https://github.com/jayjz/unhinged-agent) |
 | TraceForge | [jayjz/TraceForge](https://github.com/jayjz/TraceForge) |
 | SHAD0W | [jayjz/SHAD0W](https://github.com/jayjz/SHAD0W) |
+| TEMPER | [jayjz/TEMPER](https://github.com/jayjz/TEMPER) |
 | Evidence Strategy Skills | [jayjz/evidence-strategy-skills](https://github.com/jayjz/evidence-strategy-skills) |
 | Sightglass | [jayjz/sightglass](https://github.com/jayjz/sightglass) |
 | Fracture | [jayjz/fracture](https://github.com/jayjz/fracture) |
+
+## Updating portfolio data
+
+See [data ownership and refresh model](docs/portfolio-live-system.md). Edit
+`data/projects.json` and `data/research.json` for curated metadata and evidence;
+keep flagship stories and case studies authored. The public-only allowlist lives
+in `data/github.json`. Refresh metadata and render the two marked HTML regions:
+
+```sh
+npm run data:refresh
+npm run data:render
+npm run check
+```
+
+Refresh needs network access but no token. Rendering and the served site work
+offline. A failed refresh preserves the previous snapshot. Commit the reviewed
+JSON and HTML together on a feature branch; no scheduled writes or deployments
+are configured. New GitHub metadata never changes claims, maturity or evidence
+pins. [TEMPER evidence scope](docs/evidence/portfolio-live-system.md).
+
+`npm run qa:live-system` checks the new sections, expanded records, preserved
+anchors, console/network failures, and no runtime data fetches. The existing
+`npm run qa:aetherforge` checks the retained admission instrument.
 
 ## Preview
 
@@ -48,7 +72,7 @@ npm run qa:install
 npm run qa
 ```
 
-`check` runs Prettier, HTML Validate, internal file/fragment checks, preserved-link/redirect checks, and JS syntax checks. `qa:install` downloads the Chromium revision used by pinned Playwright. On a clean Linux machine, browser system libraries may also be required: `npx playwright install --with-deps chromium` (may require administrator privileges).
+`check` runs Prettier, HTML Validate, internal file/fragment checks, preserved-link/redirect checks, JS syntax checks, data validation, generated-HTML freshness, and updater failure tests. `qa:install` downloads the Chromium revision used by pinned Playwright. On a clean Linux machine, browser system libraries may also be required: `npx playwright install --with-deps chromium` (may require administrator privileges).
 
 `qa` starts its own local-only server on port **4173**, runs checks, saves screenshots/results to ignored `test-results/portfolio/`, and closes its browser/server. It covers desktop/mobile layout, axe scans, keyboard skip-link focus, fragment/history navigation, case-study links, reduced motion, no-JS, missing observer, blocked fonts/images, and enlarged text. These checks do not replace a screen-reader, cross-browser, or hosted assessment.
 

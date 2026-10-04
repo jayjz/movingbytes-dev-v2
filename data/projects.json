@@ -1,0 +1,265 @@
+{
+    "version": 1,
+    "projects": [
+        {
+            "id": "cipherloop",
+            "name": "CipherLoop",
+            "repository": {
+                "slug": "jayjz/CipherLoop",
+                "url": "https://github.com/jayjz/CipherLoop"
+            },
+            "category": "experimental",
+            "status": "experimental",
+            "description": "Repository investigation with production-v2 evidence capture.",
+            "role": "Produces an inspectable execution record.",
+            "visibility": "public",
+            "selection": "featured",
+            "revision": "c98c5d80e507ad3010d8004c86d7d6b8a4ac0c87",
+            "evidence": [
+                {
+                    "label": "Pinned source",
+                    "url": "https://github.com/jayjz/CipherLoop/blob/c98c5d80e507ad3010d8004c86d7d6b8a4ac0c87/docs/production-evidence-contract.md"
+                },
+                {
+                    "label": "Scope and limitations",
+                    "url": "/docs/evidence/project-evidence-2026-09-14.md"
+                }
+            ],
+            "limits": "Feature revision inspected; offline scripted replay is not a live audit."
+        },
+        {
+            "id": "traceforge",
+            "name": "TraceForge",
+            "repository": {
+                "slug": "jayjz/TraceForge",
+                "url": "https://github.com/jayjz/TraceForge"
+            },
+            "category": "experimental",
+            "status": "implemented",
+            "description": "Independent reader for the CipherLoop ledger and metadata pair.",
+            "role": "Checks artifact integrity independently of the producer runtime.",
+            "visibility": "public",
+            "selection": "featured",
+            "revision": "51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd",
+            "evidence": [
+                {
+                    "label": "Pinned source",
+                    "url": "https://github.com/jayjz/TraceForge/blob/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd/src/traceforge/adapters/cipherloop_production.py"
+                },
+                {
+                    "label": "Scope and limitations",
+                    "url": "/docs/evidence/project-evidence-2026-09-14.md"
+                }
+            ],
+            "limits": "Pinned reader and recorded Linux replay; no detection-accuracy claim."
+        },
+        {
+            "id": "shadow",
+            "name": "SHAD0W",
+            "repository": {
+                "slug": "jayjz/SHAD0W",
+                "url": "https://github.com/jayjz/SHAD0W"
+            },
+            "category": "experimental",
+            "status": "implemented",
+            "description": "Chronological eligibility, lifecycle simulation and independent paper-risk admission.",
+            "role": "Separates simulation state from execution authority.",
+            "visibility": "public",
+            "selection": "featured",
+            "revision": "ed773c51c9a75bb2ae2a00a4222c5992329d441f",
+            "evidence": [
+                {
+                    "label": "Pinned source",
+                    "url": "https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/src/shadow/risk/gate.py"
+                },
+                {
+                    "label": "Scope and limitations",
+                    "url": "/docs/evidence/project-evidence-2026-09-14.md"
+                }
+            ],
+            "limits": "Source and tests inspected; no live-capital or profitability claim."
+        },
+        {
+            "id": "temper",
+            "name": "TEMPER",
+            "repository": {
+                "slug": "jayjz/TEMPER",
+                "url": "https://github.com/jayjz/TEMPER"
+            },
+            "category": "experimental",
+            "status": "experimental",
+            "description": "Research into calibrated specialists, abstention, verification and selective escalation.",
+            "role": "Asks when a bounded learned decision should be accepted or escalated.",
+            "visibility": "public",
+            "selection": "supporting",
+            "revision": "0747730d18cdb692142d9c2b50f9e8bc1ff0c45f",
+            "evidence": [
+                {
+                    "label": "Pinned source",
+                    "url": "https://github.com/jayjz/TEMPER/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/src/temper/evaluation/metrics.py"
+                },
+                {
+                    "label": "Scope and limitations",
+                    "url": "/docs/evidence/portfolio-live-system.md"
+                }
+            ],
+            "limits": "Metrics implementation and tests inspected, not executed; no cost or reliability advantage established here."
+        },
+        {
+            "id": "aetherforge",
+            "name": "AetherForge",
+            "repository": {
+                "slug": "jayjz/aetherforge",
+                "url": "https://github.com/jayjz/aetherforge"
+            },
+            "category": "applied",
+            "status": "experimental",
+            "description": "Strategy admission under lease, thermal, capacity and switching constraints.",
+            "role": "Makes compute admission an explicit decision.",
+            "visibility": "public",
+            "selection": "featured",
+            "revision": "265c26769eba257ac40540a7e1da5378d7515532",
+            "evidence": [
+                {
+                    "label": "Pinned source",
+                    "url": "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/src/server.py"
+                },
+                {
+                    "label": "Scope and limitations",
+                    "url": "/docs/evidence/project-evidence-2026-09-14.md"
+                }
+            ],
+            "limits": "Recorded mock probes only; physical GPU swapping remains unverified."
+        },
+        {
+            "id": "unhinged",
+            "name": "Unhinged Agent",
+            "repository": {
+                "slug": "jayjz/unhinged-agent",
+                "url": "https://github.com/jayjz/unhinged-agent"
+            },
+            "category": "applied",
+            "status": "experimental",
+            "description": "Voice-agent hardware-preparation prototype with cancellable turns.",
+            "role": "Explores bounded state and interruption at the device boundary.",
+            "visibility": "public",
+            "selection": "supporting",
+            "revision": "ea86997c18cc375ae3355c3321b792c21f8d3284",
+            "evidence": [
+                {
+                    "label": "Pinned source",
+                    "url": "https://github.com/jayjz/unhinged-agent/blob/ea86997c18cc375ae3355c3321b792c21f8d3284/services/esphome_bridge.py"
+                },
+                {
+                    "label": "Scope and limitations",
+                    "url": "/docs/evidence/project-evidence-2026-09-14.md"
+                }
+            ],
+            "limits": "Feature revision; physical hardware loop unverified."
+        },
+        {
+            "id": "truck-ready",
+            "name": "Truck-Ready HVAC",
+            "repository": {
+                "slug": "jayjz/truck-ready-hvac",
+                "url": "https://github.com/jayjz/truck-ready-hvac"
+            },
+            "category": "applied",
+            "status": "implemented",
+            "description": "Parts staging and shortfall domain logic.",
+            "role": "Carries explicit state into field-work preparation.",
+            "visibility": "public",
+            "selection": "supporting",
+            "revision": "d1f4d53313c6a8a1a5c92cb12670e8f551bb8edb",
+            "evidence": [
+                {
+                    "label": "Pinned source",
+                    "url": "https://github.com/jayjz/truck-ready-hvac/blob/d1f4d53313c6a8a1a5c92cb12670e8f551bb8edb/src/truck_ready/core.py"
+                },
+                {
+                    "label": "Scope and limitations",
+                    "url": "/docs/evidence/project-evidence-2026-09-14.md"
+                }
+            ],
+            "limits": "Pinned CSV integration regression; historical export evidence does not establish current end-to-end behavior."
+        },
+        {
+            "id": "evidence-strategy",
+            "name": "Evidence Strategy Skills",
+            "repository": {
+                "slug": "jayjz/evidence-strategy-skills",
+                "url": "https://github.com/jayjz/evidence-strategy-skills"
+            },
+            "category": "research",
+            "status": "experimental",
+            "description": "Structural evidence validation and an evaluation methodology.",
+            "role": "Defines how evidence should be compared and accounted for.",
+            "visibility": "public",
+            "selection": "archive",
+            "revision": "bccaac84eed9994846d435f39e01c9e62a9dd737",
+            "evidence": [
+                {
+                    "label": "Pinned source",
+                    "url": "https://github.com/jayjz/evidence-strategy-skills/blob/bccaac84eed9994846d435f39e01c9e62a9dd737/docs/evaluation-standard.md"
+                },
+                {
+                    "label": "Scope and limitations",
+                    "url": "/docs/evidence/project-evidence-2026-09-14.md"
+                }
+            ],
+            "limits": "Prescribed methodology, not demonstrated effectiveness."
+        },
+        {
+            "id": "fracture",
+            "name": "Fracture",
+            "repository": {
+                "slug": "jayjz/fracture",
+                "url": "https://github.com/jayjz/fracture"
+            },
+            "category": "research",
+            "status": "experimental",
+            "description": "Failure injectors, dispatcher and graph topologies.",
+            "role": "Explores failure and recovery questions.",
+            "visibility": "public",
+            "selection": "archive",
+            "revision": "300ef83a0ee999857189542bd836f215490da116",
+            "evidence": [
+                {
+                    "label": "Pinned source",
+                    "url": "https://github.com/jayjz/fracture/blob/300ef83a0ee999857189542bd836f215490da116/src/fracture/injectors/dispatcher.py"
+                },
+                {
+                    "label": "Scope and limitations",
+                    "url": "/docs/evidence/project-evidence-2026-09-14.md"
+                }
+            ],
+            "limits": "Generic runtime and comparative harness remain stubs; no comparative result."
+        },
+        {
+            "id": "sightglass",
+            "name": "Sightglass",
+            "repository": {
+                "slug": "jayjz/sightglass",
+                "url": "https://github.com/jayjz/sightglass"
+            },
+            "category": "research",
+            "status": "experimental",
+            "description": "Inspection-interface prototype with graph pause/resume and mock inventory.",
+            "role": "Explores visibility into agent state.",
+            "visibility": "public",
+            "selection": "archive",
+            "revision": "6343bab6230e106f3704eaeec099e8e7296acdd9",
+            "evidence": [
+                {
+                    "label": "Pinned source",
+                    "url": "https://github.com/jayjz/sightglass/blob/6343bab6230e106f3704eaeec099e8e7296acdd9/backend/app/graph/builder.py"
+                },
+                {
+                    "label": "Scope and limitations",
+                    "url": "/docs/evidence/project-evidence-2026-09-14.md"
+                }
+            ],
+            "limits": "Approval enforcement and durable synchronization remain incomplete."
+        }
+    ]
+}

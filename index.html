@@ -32,6 +32,7 @@
         />
         <link rel="stylesheet" href="css/style.css?v=20260907-evidence" />
         <link rel="stylesheet" href="css/home.css" />
+        <link rel="stylesheet" href="css/live-system.css" />
     </head>
     <body class="home-page">
         <a href="#main" class="skip-link">Skip to content</a>
@@ -177,6 +178,42 @@
                     </div>
                 </div>
             </section>
+            <!-- portfolio:focus:start -->
+            <section class="live-focus" aria-labelledby="focus-title">
+                <div class="container">
+                    <div>
+                        <p class="eyebrow">Current focus / Machine-Native Systems</p>
+                        <h2 id="focus-title">
+                            Reliable intelligent systems with explicit semantic boundaries, authority, execution state, and independently
+                            verifiable evidence.
+                        </h2>
+                        <p class="live-muted">
+                            An engineering direction, not a scientific result. This public summary does not expose the private research
+                            repository.
+                        </p>
+                    </div>
+                    <div class="focus-notes">
+                        <article>
+                            <h3>Separate decisions from authority</h3>
+                            <p>Make the boundary between a proposed action, an admitted action and an observed result inspectable.</p>
+                            <p class="live-meta"><a href="#registry-shadow">SHAD0W</a> · <a href="#registry-aetherforge">AetherForge</a></p>
+                        </article>
+                        <article>
+                            <h3>Keep evidence independently readable</h3>
+                            <p>Connect execution records to independent checks; study when learned decisions should abstain or escalate.</p>
+                            <p class="live-meta">
+                                <a href="#registry-cipherloop">CipherLoop</a> · <a href="#registry-traceforge">TraceForge</a> ·
+                                <a href="#registry-temper">TEMPER</a>
+                            </p>
+                        </article>
+                    </div>
+                    <nav class="live-nav" aria-label="Portfolio system">
+                        <a href="#systems-map">Systems map ↘</a><a href="#recent-work">Recent work ↘</a
+                        ><a href="#evidence-ledger">Evidence ledger ↘</a><a href="#project-registry">Project registry ↘</a>
+                    </nav>
+                </div>
+            </section>
+            <!-- portfolio:focus:end -->
             <section id="work" class="featured evidence-feature" aria-label="Selected work">
                 <div class="container">
                     <div class="evidence-divider">
@@ -717,39 +754,390 @@
                     </div>
                 </div>
             </section>
-            <section id="research" class="section">
+            <!-- portfolio:system:start -->
+            <section id="systems-map" class="section live-system" aria-labelledby="systems-title">
                 <div class="container">
-                    <header class="section-intro">
-                        <p class="eyebrow">05 / Research</p>
-                        <h2 class="section-intro__title">Questions still under construction.</h2>
-                    </header>
-                    <article class="research-entry" id="evidence-strategy">
-                        <h3><a href="https://github.com/jayjz/evidence-strategy-skills">Evidence Strategy Skills ↗</a></h3>
-                        <p>
-                            Structural evidence validation and an evaluation methodology at <code>bccaac8</code>. Controlled comparisons,
-                            held-out evaluation, and cost accounting are prescribed methods; demonstrated effectiveness results are not yet
-                            established.
-                        </p>
-                    </article>
-                    <article class="research-entry" id="fracture">
-                        <h3><a href="https://github.com/jayjz/fracture">Fracture ↗</a></h3>
-                        <p>
-                            Research scaffold at <code>300ef83</code>: dispatcher, failure injectors, and graph topologies are implemented.
-                            Generic runtime and comparative evaluation harness remain stubs; no comparative result is claimed.
-                        </p>
-                    </article>
-                    <article class="research-entry" id="sightglass">
-                        <h3><a href="https://github.com/jayjz/sightglass">Sightglass ↗</a></h3>
-                        <p>
-                            Small inspection-interface prototype with graph pause/resume and mock inventory. Approval enforcement and
-                            durable synchronization remain incomplete.
-                        </p>
-                    </article>
-                    <p class="evidence-provenance">
-                        <a href="docs/evidence/project-evidence-2026-09-14.md">Source revisions, evidence levels, and limitations ↗</a>
+                    <p class="eyebrow">Systems map / authored relationships</p>
+                    <h2 id="systems-title">Different systems. Shared questions.</h2>
+                    <p class="live-lead">
+                        Machine-Native Systems is the research direction. The systems below explore evidence, authority and bounded
+                        execution at different layers.
+                    </p>
+                    <ol class="system-lanes">
+                        <li class="system-lane lane-artifact">
+                            <span class="live-meta">01 / Artifact handoff</span>
+                            <h3><a href="#registry-cipherloop">CipherLoop</a> · <a href="#registry-traceforge">TraceForge</a></h3>
+                            <p>Production-v2 ledger + metadata → independent reader</p>
+                            <a href="/docs/evidence/project-evidence-2026-09-14.md">Relationship evidence ↗</a>
+                        </li>
+                        <li class="system-lane lane-theme">
+                            <span class="live-meta">02 / Shared design concern</span>
+                            <h3><a href="#registry-shadow">SHAD0W</a> · <a href="#registry-aetherforge">AetherForge</a></h3>
+                            <p>Shared design concern: admission authority is separate from proposed execution.</p>
+                            <a href="/docs/evidence/project-evidence-2026-09-14.md">Relationship evidence ↗</a>
+                        </li>
+                        <li class="system-lane lane-question">
+                            <span class="live-meta">03 / Research question</span>
+                            <h3><a href="#registry-temper">TEMPER</a> · <a href="#registry-traceforge">TraceForge</a></h3>
+                            <p>Research connection: what evidence is sufficient to accept a decision? No integration claimed.</p>
+                            <a href="/docs/evidence/portfolio-live-system.md">Relationship evidence ↗</a>
+                        </li>
+                    </ol>
+                    <p class="live-muted">
+                        Only the artifact handoff describes an implemented connection. Shared concerns and research questions do not imply
+                        runtime dependencies.
                     </p>
                 </div>
             </section>
+            <section id="recent-work" class="section live-system" aria-labelledby="recent-title">
+                <div class="container">
+                    <p class="eyebrow">Recent work / selected movement</p>
+                    <h2 id="recent-title">What changed, and what it means.</h2>
+                    <p class="live-lead">
+                        Curated engineering notes explain meaningful changes. The separate GitHub snapshot reports repository metadata only.
+                    </p>
+                    <ol class="work-notes">
+                        <li>
+                            <p class="live-meta"><time datetime="2026-10-03">2026-10-03</time> · Curated note</p>
+                            <h3><a href="/docs/evidence/portfolio-live-system.md">TEMPER enters the public research map</a></h3>
+                            <p>
+                                Pinned metrics source and unit tests inspected. Research scope added; no experiment rerun or performance
+                                claim.
+                            </p>
+                            <p class="live-meta"><a href="#registry-temper">TEMPER</a></p>
+                        </li>
+                        <li>
+                            <p class="live-meta"><time datetime="2026-09-14">2026-09-14</time> · Curated note</p>
+                            <h3>
+                                <a href="/docs/evidence/project-evidence-2026-09-14.md">The evidence handoff becomes a two-file contract</a>
+                            </h3>
+                            <p>
+                                Recorded source review separates production-v2 capture from the independent reader and the older fixture
+                                oracle.
+                            </p>
+                            <p class="live-meta">
+                                <a href="#registry-cipherloop">CipherLoop</a> · <a href="#registry-traceforge">TraceForge</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="live-meta"><time datetime="2026-09-13">2026-09-13</time> · Curated note</p>
+                            <h3><a href="/docs/evidence/aetherforge/verification.md">Admission decisions become inspectable</a></h3>
+                            <p>Recorded mock probes isolate switching economics, forced thermal lock and exhausted capacity.</p>
+                            <p class="live-meta"><a href="#registry-aetherforge">AetherForge</a></p>
+                        </li>
+                    </ol>
+                    <details class="metadata-snapshot">
+                        <summary>Generated GitHub snapshot · 2026-10-04</summary>
+                        <p class="live-muted">
+                            Collected 2026-10-04T02:55:02.670Z. Stored snapshot; not live status. Push times may include other branches. No
+                            claims or verification status are derived from this metadata.
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/jayjz/CipherLoop/commit/f03a1e186e491cf24aa0f0e0671cac766c1fa8ab"
+                                    >CipherLoop · f03a1e1</a
+                                ><span>Repository pushed <time datetime="2026-09-15T10:35:07Z">2026-09-15</time></span>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayjz/TraceForge/commit/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd"
+                                    >TraceForge · 51af0f4</a
+                                ><span>Repository pushed <time datetime="2026-09-14T21:53:49Z">2026-09-14</time></span>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayjz/SHAD0W/commit/8e5e6f9e94dd47a7ca2a209e73d6019d51ac201f"
+                                    >SHAD0W · 8e5e6f9</a
+                                ><span>Repository pushed <time datetime="2026-09-27T02:12:24Z">2026-09-27</time></span>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayjz/TEMPER/commit/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f"
+                                    >TEMPER · 0747730</a
+                                ><span>Repository pushed <time datetime="2026-09-17T16:59:14Z">2026-09-17</time></span>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jayjz/aetherforge/commit/265c26769eba257ac40540a7e1da5378d7515532"
+                                    >aetherforge · 265c267</a
+                                ><span>Repository pushed <time datetime="2026-08-23T20:40:20Z">2026-08-23</time></span>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+            </section>
+            <section id="evidence-ledger" class="section live-system" aria-labelledby="ledger-title">
+                <div class="container">
+                    <p class="eyebrow">Evidence ledger / bounded observations</p>
+                    <h2 id="ledger-title">Status belongs to a claim.</h2>
+                    <p class="live-lead">
+                        Experimental marks an investigation. Implemented means source exists. Verified is scoped to a recorded check.
+                        Historical is a frozen result. Unverified remains an open question.
+                    </p>
+                    <ul class="evidence-ledger">
+                        <li>
+                            <span class="evidence-state state-experimental">experimental</span>
+                            <div>
+                                <h3><a href="#registry-cipherloop">CipherLoop</a></h3>
+                                <p>Can execution evidence remain inspectable across an independent handoff?</p>
+                                <a href="/docs/evidence/project-evidence-2026-09-14.md">Inspect evidence and limits ↗</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="evidence-state state-implemented">implemented</span>
+                            <div>
+                                <h3><a href="#registry-shadow">SHAD0W</a></h3>
+                                <p>
+                                    Pinned source separates paper-risk admission from simulated eligibility and fills; tests not rerun here.
+                                </p>
+                                <a href="/docs/evidence/project-evidence-2026-09-14.md">Inspect evidence and limits ↗</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="evidence-state state-verified">verified</span>
+                            <div>
+                                <h3><a href="#registry-aetherforge">AetherForge</a></h3>
+                                <p>Four controlled mock probes and five route tests recorded on 13 September 2026; hardware excluded.</p>
+                                <a href="/docs/evidence/aetherforge/verification.md">Inspect evidence and limits ↗</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="evidence-state state-historical">historical</span>
+                            <div>
+                                <h3><a href="#registry-traceforge">TraceForge</a></h3>
+                                <p>Two synthetic fixture outputs matched independent expectations at the frozen 25668c4 revision.</p>
+                                <a href="/docs/evidence/project-evidence-2026-09-14.md">Inspect evidence and limits ↗</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="evidence-state state-unverified">unverified</span>
+                            <div>
+                                <h3><a href="#registry-temper">TEMPER</a></h3>
+                                <p>
+                                    A cost or reliability advantage from selective specialist cascades is a hypothesis, not a portfolio
+                                    result.
+                                </p>
+                                <a href="/docs/evidence/portfolio-live-system.md">Inspect evidence and limits ↗</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section id="project-registry" class="section live-system" aria-labelledby="registry-title">
+                <div class="container">
+                    <p id="research" class="eyebrow">Project registry / experimental → applied → earlier research</p>
+                    <h2 id="registry-title">The wider body of work.</h2>
+                    <p class="live-lead">
+                        Pinned descriptions and maturity are curated independently of GitHub activity. Open a record for its role, source
+                        and limitations.
+                    </p>
+                    <div class="project-registry">
+                        <details id="registry-cipherloop">
+                            <summary>
+                                <span>CipherLoop</span><span class="live-meta">experimental / featured</span
+                                ><span class="evidence-state state-experimental">experimental</span>
+                            </summary>
+                            <div class="registry-body">
+                                <p>Repository investigation with production-v2 evidence capture.</p>
+                                <p><strong>System role:</strong> Produces an inspectable execution record.</p>
+                                <p class="live-muted">Feature revision inspected; offline scripted replay is not a live audit.</p>
+                                <p class="live-meta">Public source · Pinned revision <code>c98c5d8</code></p>
+                                <p>
+                                    <a href="https://github.com/jayjz/CipherLoop">CipherLoop repository ↗</a> ·
+                                    <a
+                                        href="https://github.com/jayjz/CipherLoop/blob/c98c5d80e507ad3010d8004c86d7d6b8a4ac0c87/docs/production-evidence-contract.md"
+                                        >Pinned source</a
+                                    >
+                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
+                                </p>
+                            </div>
+                        </details>
+                        <details id="registry-traceforge">
+                            <summary>
+                                <span>TraceForge</span><span class="live-meta">experimental / featured</span
+                                ><span class="evidence-state state-implemented">implemented</span>
+                            </summary>
+                            <div class="registry-body">
+                                <p>Independent reader for the CipherLoop ledger and metadata pair.</p>
+                                <p><strong>System role:</strong> Checks artifact integrity independently of the producer runtime.</p>
+                                <p class="live-muted">Pinned reader and recorded Linux replay; no detection-accuracy claim.</p>
+                                <p class="live-meta">Public source · Pinned revision <code>51af0f4</code></p>
+                                <p>
+                                    <a href="https://github.com/jayjz/TraceForge">TraceForge repository ↗</a> ·
+                                    <a
+                                        href="https://github.com/jayjz/TraceForge/blob/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd/src/traceforge/adapters/cipherloop_production.py"
+                                        >Pinned source</a
+                                    >
+                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
+                                </p>
+                            </div>
+                        </details>
+                        <details id="registry-shadow">
+                            <summary>
+                                <span>SHAD0W</span><span class="live-meta">experimental / featured</span
+                                ><span class="evidence-state state-implemented">implemented</span>
+                            </summary>
+                            <div class="registry-body">
+                                <p>Chronological eligibility, lifecycle simulation and independent paper-risk admission.</p>
+                                <p><strong>System role:</strong> Separates simulation state from execution authority.</p>
+                                <p class="live-muted">Source and tests inspected; no live-capital or profitability claim.</p>
+                                <p class="live-meta">Public source · Pinned revision <code>ed773c5</code></p>
+                                <p>
+                                    <a href="https://github.com/jayjz/SHAD0W">SHAD0W repository ↗</a> ·
+                                    <a
+                                        href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/src/shadow/risk/gate.py"
+                                        >Pinned source</a
+                                    >
+                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
+                                </p>
+                            </div>
+                        </details>
+                        <details id="registry-temper">
+                            <summary>
+                                <span>TEMPER</span><span class="live-meta">experimental / supporting</span
+                                ><span class="evidence-state state-experimental">experimental</span>
+                            </summary>
+                            <div class="registry-body">
+                                <p>Research into calibrated specialists, abstention, verification and selective escalation.</p>
+                                <p><strong>System role:</strong> Asks when a bounded learned decision should be accepted or escalated.</p>
+                                <p class="live-muted">
+                                    Metrics implementation and tests inspected, not executed; no cost or reliability advantage established
+                                    here.
+                                </p>
+                                <p class="live-meta">Public source · Pinned revision <code>0747730</code></p>
+                                <p>
+                                    <a href="https://github.com/jayjz/TEMPER">TEMPER repository ↗</a> ·
+                                    <a
+                                        href="https://github.com/jayjz/TEMPER/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/src/temper/evaluation/metrics.py"
+                                        >Pinned source</a
+                                    >
+                                    · <a href="/docs/evidence/portfolio-live-system.md">Scope and limitations</a>
+                                </p>
+                            </div>
+                        </details>
+                        <details id="registry-aetherforge">
+                            <summary>
+                                <span>AetherForge</span><span class="live-meta">applied / featured</span
+                                ><span class="evidence-state state-experimental">experimental</span>
+                            </summary>
+                            <div class="registry-body">
+                                <p>Strategy admission under lease, thermal, capacity and switching constraints.</p>
+                                <p><strong>System role:</strong> Makes compute admission an explicit decision.</p>
+                                <p class="live-muted">Recorded mock probes only; physical GPU swapping remains unverified.</p>
+                                <p class="live-meta">Public source · Pinned revision <code>265c267</code></p>
+                                <p>
+                                    <a href="https://github.com/jayjz/aetherforge">AetherForge repository ↗</a> ·
+                                    <a
+                                        href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/src/server.py"
+                                        >Pinned source</a
+                                    >
+                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
+                                </p>
+                            </div>
+                        </details>
+                        <details id="registry-unhinged">
+                            <summary>
+                                <span>Unhinged Agent</span><span class="live-meta">applied / supporting</span
+                                ><span class="evidence-state state-experimental">experimental</span>
+                            </summary>
+                            <div class="registry-body">
+                                <p>Voice-agent hardware-preparation prototype with cancellable turns.</p>
+                                <p><strong>System role:</strong> Explores bounded state and interruption at the device boundary.</p>
+                                <p class="live-muted">Feature revision; physical hardware loop unverified.</p>
+                                <p class="live-meta">Public source · Pinned revision <code>ea86997</code></p>
+                                <p>
+                                    <a href="https://github.com/jayjz/unhinged-agent">Unhinged Agent repository ↗</a> ·
+                                    <a
+                                        href="https://github.com/jayjz/unhinged-agent/blob/ea86997c18cc375ae3355c3321b792c21f8d3284/services/esphome_bridge.py"
+                                        >Pinned source</a
+                                    >
+                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
+                                </p>
+                            </div>
+                        </details>
+                        <details id="registry-truck-ready">
+                            <summary>
+                                <span>Truck-Ready HVAC</span><span class="live-meta">applied / supporting</span
+                                ><span class="evidence-state state-implemented">implemented</span>
+                            </summary>
+                            <div class="registry-body">
+                                <p>Parts staging and shortfall domain logic.</p>
+                                <p><strong>System role:</strong> Carries explicit state into field-work preparation.</p>
+                                <p class="live-muted">
+                                    Pinned CSV integration regression; historical export evidence does not establish current end-to-end
+                                    behavior.
+                                </p>
+                                <p class="live-meta">Public source · Pinned revision <code>d1f4d53</code></p>
+                                <p>
+                                    <a href="https://github.com/jayjz/truck-ready-hvac">Truck-Ready HVAC repository ↗</a> ·
+                                    <a
+                                        href="https://github.com/jayjz/truck-ready-hvac/blob/d1f4d53313c6a8a1a5c92cb12670e8f551bb8edb/src/truck_ready/core.py"
+                                        >Pinned source</a
+                                    >
+                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
+                                </p>
+                            </div>
+                        </details>
+                        <details id="registry-evidence-strategy">
+                            <summary>
+                                <span id="evidence-strategy">Evidence Strategy Skills</span><span class="live-meta">research / archive</span
+                                ><span class="evidence-state state-experimental">experimental</span>
+                            </summary>
+                            <div class="registry-body">
+                                <p>Structural evidence validation and an evaluation methodology.</p>
+                                <p><strong>System role:</strong> Defines how evidence should be compared and accounted for.</p>
+                                <p class="live-muted">Prescribed methodology, not demonstrated effectiveness.</p>
+                                <p class="live-meta">Public source · Pinned revision <code>bccaac8</code></p>
+                                <p>
+                                    <a href="https://github.com/jayjz/evidence-strategy-skills">Evidence Strategy Skills repository ↗</a> ·
+                                    <a
+                                        href="https://github.com/jayjz/evidence-strategy-skills/blob/bccaac84eed9994846d435f39e01c9e62a9dd737/docs/evaluation-standard.md"
+                                        >Pinned source</a
+                                    >
+                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
+                                </p>
+                            </div>
+                        </details>
+                        <details id="registry-fracture">
+                            <summary>
+                                <span id="fracture">Fracture</span><span class="live-meta">research / archive</span
+                                ><span class="evidence-state state-experimental">experimental</span>
+                            </summary>
+                            <div class="registry-body">
+                                <p>Failure injectors, dispatcher and graph topologies.</p>
+                                <p><strong>System role:</strong> Explores failure and recovery questions.</p>
+                                <p class="live-muted">Generic runtime and comparative harness remain stubs; no comparative result.</p>
+                                <p class="live-meta">Public source · Pinned revision <code>300ef83</code></p>
+                                <p>
+                                    <a href="https://github.com/jayjz/fracture">Fracture repository ↗</a> ·
+                                    <a
+                                        href="https://github.com/jayjz/fracture/blob/300ef83a0ee999857189542bd836f215490da116/src/fracture/injectors/dispatcher.py"
+                                        >Pinned source</a
+                                    >
+                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
+                                </p>
+                            </div>
+                        </details>
+                        <details id="registry-sightglass">
+                            <summary>
+                                <span id="sightglass">Sightglass</span><span class="live-meta">research / archive</span
+                                ><span class="evidence-state state-experimental">experimental</span>
+                            </summary>
+                            <div class="registry-body">
+                                <p>Inspection-interface prototype with graph pause/resume and mock inventory.</p>
+                                <p><strong>System role:</strong> Explores visibility into agent state.</p>
+                                <p class="live-muted">Approval enforcement and durable synchronization remain incomplete.</p>
+                                <p class="live-meta">Public source · Pinned revision <code>6343bab</code></p>
+                                <p>
+                                    <a href="https://github.com/jayjz/sightglass">Sightglass repository ↗</a> ·
+                                    <a
+                                        href="https://github.com/jayjz/sightglass/blob/6343bab6230e106f3704eaeec099e8e7296acdd9/backend/app/graph/builder.py"
+                                        >Pinned source</a
+                                    >
+                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
+                                </p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+            <!-- portfolio:system:end -->
             <section class="section capabilities" aria-labelledby="capabilities-title">
                 <div class="container">
                     <p class="eyebrow">Engineering capabilities</p>
