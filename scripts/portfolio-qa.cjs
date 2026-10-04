@@ -89,7 +89,7 @@ fs.mkdirSync(out, { recursive: true });
                     'evidence-strategy-skills',
                     'fracture'
                 ]) {
-                    assert.equal(await page.locator(`a[href="https://github.com/jayjz/${repo}"]`).count(), 1);
+                    assert.ok((await page.locator(`a[href="https://github.com/jayjz/${repo}"]`).count()) >= 1);
                 }
                 const action = page.locator('.mastery-intro .ledger-link');
                 await action.focus();
@@ -128,6 +128,22 @@ fs.mkdirSync(out, { recursive: true });
                     });
                 });
                 assert.equal(overlap, false, `Observer overlaps text at ${width}`);
+                for (const id of ['focus-title', 'systems-map', 'recent-work', 'evidence-ledger', 'project-registry']) {
+                    assert.equal(await page.locator(`#${id}`).isVisible(), true);
+                }
+                const registry = page.locator('#registry-temper');
+                await registry.locator('summary').focus();
+                await page.keyboard.press('Enter');
+                assert.equal(await registry.locator('.registry-body').isVisible(), true);
+                assert.ok((await registry.textContent()).includes('not executed'));
+                await page.keyboard.press('Enter');
+                const snapshot = page.locator('.metadata-snapshot');
+                await snapshot.locator('summary').focus();
+                await page.keyboard.press('Enter');
+                assert.equal(await snapshot.locator('li').count(), JSON.parse(fs.readFileSync('data/activity.json')).repositories.length);
+                await snapshot.locator('summary').focus();
+                await page.keyboard.press('Enter');
+
                 await page.locator('.site-nav a[href="#work"]').click();
                 await page.waitForFunction(() => location.hash === '#work');
                 await page.goBack();
@@ -174,6 +190,11 @@ fs.mkdirSync(out, { recursive: true });
             if (width === 390 || width === 1440) {
                 await page.screenshot({ path: path.join(out, `after-${label}-${width}.png`), fullPage: true });
                 await page.screenshot({ path: path.join(out, `viewport-${label}-${width}.png`) });
+                if (label === 'home') {
+                    for (const section of ['systems-map', 'recent-work', 'evidence-ledger', 'project-registry']) {
+                        await page.locator(`#${section}`).screenshot({ path: path.join(out, `${section}-${width}.png`) });
+                    }
+                }
                 const featureVisual = label === 'home' ? '.evidence-flow' : label === 'shadow' ? '.decision-timeline' : '.system-figure';
                 await page.locator(featureVisual).screenshot({ path: path.join(out, `diagram-${label}-${width}.png`) });
                 if (label === 'case') await page.locator('.evidence-output').screenshot({ path: path.join(out, `evidence-${width}.png`) });
@@ -220,6 +241,8 @@ fs.mkdirSync(out, { recursive: true });
             assert.equal(await page.locator('h1').isVisible(), true);
             if (label === 'home') {
                 assert.equal(await page.locator('.evidence-flow').isVisible(), true);
+                assert.equal(await page.locator('#systems-map').isVisible(), true);
+                assert.equal(await page.locator('#evidence-ledger').isVisible(), true);
                 assert.equal(await page.locator('.fixture-table').isVisible(), true);
                 if (mode.startsWith('large-text')) {
                     assert.equal(
@@ -273,6 +296,11 @@ fs.mkdirSync(out, { recursive: true });
             await page.keyboard.press('Tab');
             await page.keyboard.press('Enter');
             assert.equal(await page.locator('#main').evaluate(el => el === document.activeElement), true);
+            if (label === 'home') {
+                await page.locator('#registry-temper summary').click();
+                assert.equal(await page.locator('#registry-temper .registry-body').isVisible(), true);
+                await page.locator('#registry-temper summary').click();
+            }
             assert.equal(await page.locator('a[href="mailto:jay@jaysystems.dev"]').first().isVisible(), true);
             if (label === 'home')
                 assert.equal(

@@ -1,0 +1,98 @@
+{
+    "version": 1,
+    "thesis": {
+        "name": "Machine-Native Systems",
+        "statement": "Reliable intelligent systems with explicit semantic boundaries, authority, execution state, and independently verifiable evidence.",
+        "scope": "An engineering direction, not a scientific result. This public summary does not expose the private research repository."
+    },
+    "focus": [
+        {
+            "title": "Separate decisions from authority",
+            "text": "Make the boundary between a proposed action, an admitted action and an observed result inspectable.",
+            "projects": ["shadow", "aetherforge"]
+        },
+        {
+            "title": "Keep evidence independently readable",
+            "text": "Connect execution records to independent checks; study when learned decisions should abstain or escalate.",
+            "projects": ["cipherloop", "traceforge", "temper"]
+        }
+    ],
+    "relationships": [
+        {
+            "from": "cipherloop",
+            "to": "traceforge",
+            "kind": "artifact",
+            "label": "Production-v2 ledger + metadata \u2192 independent reader",
+            "evidence": "/docs/evidence/project-evidence-2026-09-14.md"
+        },
+        {
+            "from": "shadow",
+            "to": "aetherforge",
+            "kind": "theme",
+            "label": "Shared design concern: admission authority is separate from proposed execution.",
+            "evidence": "/docs/evidence/project-evidence-2026-09-14.md"
+        },
+        {
+            "from": "temper",
+            "to": "traceforge",
+            "kind": "question",
+            "label": "Research connection: what evidence is sufficient to accept a decision? No integration claimed.",
+            "evidence": "/docs/evidence/portfolio-live-system.md"
+        }
+    ],
+    "ledger": [
+        {
+            "project": "cipherloop",
+            "status": "experimental",
+            "text": "Can execution evidence remain inspectable across an independent handoff?",
+            "url": "/docs/evidence/project-evidence-2026-09-14.md"
+        },
+        {
+            "project": "shadow",
+            "status": "implemented",
+            "text": "Pinned source separates paper-risk admission from simulated eligibility and fills; tests not rerun here.",
+            "url": "/docs/evidence/project-evidence-2026-09-14.md"
+        },
+        {
+            "project": "aetherforge",
+            "status": "verified",
+            "text": "Four controlled mock probes and five route tests recorded on 13 September 2026; hardware excluded.",
+            "url": "/docs/evidence/aetherforge/verification.md"
+        },
+        {
+            "project": "traceforge",
+            "status": "historical",
+            "text": "Two synthetic fixture outputs matched independent expectations at the frozen 25668c4 revision.",
+            "url": "/docs/evidence/project-evidence-2026-09-14.md"
+        },
+        {
+            "project": "temper",
+            "status": "unverified",
+            "text": "A cost or reliability advantage from selective specialist cascades is a hypothesis, not a portfolio result.",
+            "url": "/docs/evidence/portfolio-live-system.md"
+        }
+    ],
+    "notes": [
+        {
+            "date": "2026-10-03",
+            "projects": ["temper"],
+            "title": "TEMPER enters the public research map",
+            "text": "Pinned metrics source and unit tests inspected. Research scope added; no experiment rerun or performance claim.",
+            "url": "/docs/evidence/portfolio-live-system.md"
+        },
+        {
+            "date": "2026-09-14",
+            "projects": ["cipherloop", "traceforge"],
+            "title": "The evidence handoff becomes a two-file contract",
+            "text": "Recorded source review separates production-v2 capture from the independent reader and the older fixture oracle.",
+            "url": "/docs/evidence/project-evidence-2026-09-14.md"
+        },
+        {
+            "date": "2026-09-13",
+            "projects": ["aetherforge"],
+            "title": "Admission decisions become inspectable",
+            "text": "Recorded mock probes isolate switching economics, forced thermal lock and exhausted capacity.",
+            "url": "/docs/evidence/aetherforge/verification.md"
+        }
+    ]
+}
