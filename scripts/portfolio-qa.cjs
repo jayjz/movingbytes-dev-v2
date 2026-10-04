@@ -297,9 +297,11 @@ fs.mkdirSync(out, { recursive: true });
             await page.keyboard.press('Enter');
             assert.equal(await page.locator('#main').evaluate(el => el === document.activeElement), true);
             if (label === 'home') {
-                await page.locator('#registry-temper summary').click();
+                const temperSummary = page.locator('#registry-temper summary');
+                await temperSummary.focus();
+                await page.keyboard.press('Enter');
                 assert.equal(await page.locator('#registry-temper .registry-body').isVisible(), true);
-                await page.locator('#registry-temper summary').click();
+                await page.keyboard.press('Enter');
             }
             assert.equal(await page.locator('a[href="mailto:jay@jaysystems.dev"]').first().isVisible(), true);
             if (label === 'home')
