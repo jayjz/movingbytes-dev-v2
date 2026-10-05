@@ -5,9 +5,11 @@ Jay's engineering portfolio: backend and AI infrastructure around explicit contr
 ## Pages and files
 
 - `index.html`: hand-designed flagship stories, generated focus/map/ledger/registry sections, capability summaries, perspective, and employment contact.
+- `research.html`: authored Machine-Native Systems program, canonical `/research`; working position, experiment progression, frontier, durable questions, limits and pinned evidence. Enter from the homepage's Now section. No page JavaScript or runtime data fetching.
 - `case-studies/cipherloop.html`: current production-v2 introduction and preserved historical `f03a1e1` study; public clean URL `/case-studies/cipherloop`.
 - `case-studies/shadow.html`: causality, lifecycle, paper-risk admission, and data replay; public clean URL `/case-studies/shadow`.
 - `css/style.css`, `js/main.js`: shared visual foundation and optional, reduced-motion-aware figure accent. Native anchors and all essential content work without JavaScript.
+- `css/research.css`: editorial research layout using the shared palette, fonts and focus/reduced-motion foundation.
 - `assets/diagrams/`: original SVGs. Current CipherLoop diagrams derive from recorded source; the previous conceptual asset remains available for existing links.
 - `docs/project-evidence.md`: immutable source permalinks, claim scope, results, and publication decisions.
 - `docs/evidence/cipherloop/`: deterministic demonstration, sanitized test output, dependency record, and offline boundary probes. No source checkout, secrets, or raw audit traces are included.
@@ -47,6 +49,13 @@ JSON and HTML together on a feature branch; no scheduled writes or deployments
 are configured. New GitHub metadata never changes claims, maturity or evidence
 pins. [TEMPER evidence scope](docs/evidence/portfolio-live-system.md).
 
+Research copy is maintained directly in `research.html`, outside generated slots.
+Its editorial source is the public summary pinned to
+`393a2ceb7c8372e4e020c81c782af1c12ade96bb`; review a new canonical summary and its
+evidence explicitly before changing claims or the frontier. Metadata refresh does
+not update this page. See the [research brief](docs/research-program-page.md) and
+[claim/QA record](docs/qa/research-program-page.md).
+
 `npm run qa:live-system` checks the new sections, expanded records, preserved
 anchors, console/network failures, and no runtime data fetches. The existing
 `npm run qa:aetherforge` checks the retained admission instrument.
@@ -60,6 +69,9 @@ npm run dev
 ```
 
 Open `http://127.0.0.1:8000/` or `http://127.0.0.1:8000/case-studies/cipherloop.html`. This preview needs no npm dependencies. Alternatively, `python3 -m http.server 8000 --bind 127.0.0.1` serves the same static files. Neither local server emulates Vercel redirects or cache headers.
+
+Research preview: `http://127.0.0.1:8000/research.html`. Production uses `/research`
+through the existing Vercel clean-URL policy; portable preview uses physical paths.
 
 ## Reproducible validation
 
@@ -82,9 +94,16 @@ Optional overrides:
 CHROME_PATH=/usr/bin/google-chrome npm run qa
 PORTFOLIO_BASE_URL=http://127.0.0.1:8000 npm run qa
 PORTFOLIO_QA_OUTPUT=/tmp/portfolio-review npm run qa
+PORTFOLIO_QA_PAGE=research npm run qa
 ```
 
 `CHROME_PATH` uses an existing browser and is less reproducible than pinned Chromium. `PORTFOLIO_BASE_URL` skips server startup and expects the local physical `.html` routes. `PLAYWRIGHT_BROWSERS_PATH` may point at a writable custom browser directory; use the same value during install and QA. Use the separate hosted check documented in [DEPLOY.md](DEPLOY.md) for real Vercel behavior.
+
+`PORTFOLIO_QA_PAGE` optionally limits an iteration to one page label (`research`,
+`home`, `case`, `shadow`). Default QA still covers every page. Research coverage
+adds the complete argument in no-JS/offline modes, contents navigation, both home
+return paths, 200% text and evidence/frontier structure. Final verification uses
+the default full suite.
 
 CI uses `npm ci`, the same validation/browser commands, and uploads review artifacts. No build output is generated. Google Fonts remains external with optional display and system fallbacks; no analytics or trackers are added.
 

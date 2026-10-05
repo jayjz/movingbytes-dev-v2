@@ -4,6 +4,11 @@ const path = require('node:path');
 const routes = [
     '/',
     '/index.html',
+    '/research',
+    '/research.html',
+    '/research/',
+    '/css/research.css',
+    '/favicon.svg',
     '/case-studies/cipherloop',
     '/case-studies/cipherloop.html',
     '/case-studies/cipherloop/',

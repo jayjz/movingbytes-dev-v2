@@ -1,0 +1,301 @@
+/* Authored research notebook. The argument and navigation need no JavaScript. */
+.research-page {
+    container-type: inline-size;
+}
+.research-page .container {
+    container-type: inline-size;
+}
+.research-page .brand {
+    flex-wrap: wrap;
+}
+.research-page .brand__name {
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+}
+.research-page .site-nav [aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+}
+.research-opening {
+    padding-block: clamp(2.5rem, 5vw, 5rem) 3rem;
+}
+.research-byline {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+.research-byline img {
+    flex: 0 0 28px;
+}
+.research-opening h1 {
+    max-width: 21ch;
+    font-size: clamp(2.6rem, 7vw, 6.5rem);
+    line-height: 1.04;
+    margin-block: 1.5rem 2.5rem;
+    text-wrap: balance;
+}
+.research-orientation,
+.research-split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
+    gap: 1.5rem 4rem;
+    align-items: start;
+}
+.research-orientation > div,
+.research-body {
+    max-width: 67ch;
+    min-width: 0;
+}
+.research-status {
+    font: 0.85rem/1.8 var(--font-mono);
+    color: var(--text-primary);
+}
+.research-page .research-lead {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    line-height: 1.55;
+}
+.research-orientation .hero__actions {
+    margin-top: 1.2rem;
+}
+.research-orientation .ledger-link {
+    margin-top: 0;
+}
+.research-contents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 2rem;
+    border-top: 1px solid var(--border-color);
+    padding-block: 1rem;
+}
+.research-contents a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 0.9rem;
+}
+.research-section {
+    padding-block: clamp(3rem, 6vw, 6rem);
+    border-top: 1px solid var(--border-color);
+}
+.research-section h2 {
+    font-size: clamp(2rem, 3.7vw, 3.5rem);
+    line-height: 1.15;
+    max-width: 24ch;
+    margin-bottom: 1.7rem;
+    text-wrap: balance;
+}
+.research-section > .eyebrow {
+    padding-top: 0.35rem;
+}
+.research-position {
+    margin: 2rem 0;
+}
+.research-position > div {
+    border-top: 1px solid var(--border-color);
+    padding-block: 1.3rem;
+}
+.research-position dt {
+    font: 0.8rem/1.7 var(--font-mono);
+    margin-bottom: 0.7rem;
+}
+.research-position > div:first-child {
+    border-top: 2px dashed var(--border-color);
+}
+.research-position > div:first-child dd {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    line-height: 1.55;
+}
+.research-spine-intro {
+    max-width: 52rem;
+}
+.research-spine-intro h2,
+.research-section > h2 {
+    margin-top: 1rem;
+}
+.research-page .research-sequence {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.1rem;
+    font: 1rem/1.8 var(--font-mono);
+    color: var(--text-primary);
+    margin-block: 2rem;
+}
+.research-sequence span {
+    color: var(--accent);
+}
+.research-spine {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.research-spine > li {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 2rem 5rem;
+    padding-block: 2.5rem;
+    border-top: 1px solid var(--border-color);
+}
+.research-spine > li:last-child {
+    padding-bottom: 0;
+}
+.research-stage h3 {
+    font-size: clamp(1.8rem, 2.8vw, 2.7rem);
+    line-height: 1.2;
+    max-width: 24ch;
+    margin-block: 1rem;
+    text-wrap: balance;
+}
+.research-stage .eyebrow {
+    color: var(--text-primary);
+}
+.research-record {
+    margin: 0;
+    max-width: 64ch;
+}
+.research-record > div + div {
+    margin-top: 1.2rem;
+}
+.research-record dt {
+    font: 0.75rem/1.7 var(--font-mono);
+    margin-bottom: 0.3rem;
+}
+.research-record strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+.research-frontier {
+    border-block: 1px solid var(--border-color);
+    background: var(--bg-card);
+}
+.research-frontier h2 {
+    font-size: clamp(2.8rem, 7.2vw, 6.5rem);
+    line-height: 1.02;
+    margin-block: 1.5rem 3rem;
+}
+.research-frontier .research-status {
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+}
+.research-frontier .text-link {
+    margin-top: 1rem;
+}
+.research-questions {
+    list-style: none;
+    counter-reset: question;
+    padding: 0;
+    margin: 3rem 0 0;
+}
+.research-questions li {
+    counter-increment: question;
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 1rem 2rem;
+    align-items: baseline;
+    border-top: 1px solid var(--border-color);
+    padding-block: 1.6rem;
+}
+.research-questions li::before {
+    content: counter(question, decimal-leading-zero);
+    font: 0.85rem/1.7 var(--font-mono);
+    color: var(--text-secondary);
+}
+.research-questions h3 {
+    font-size: clamp(1.35rem, 2.2vw, 2rem);
+    line-height: 1.25;
+    max-width: 32ch;
+}
+.research-questions p {
+    max-width: 43ch;
+}
+.research-limits {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+}
+.research-limits li {
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    padding-block: 1.3rem;
+}
+.research-limits strong {
+    display: block;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+}
+.research-evidence {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+.research-evidence li {
+    border-top: 1px solid var(--border-color);
+    padding-block: 0.4rem;
+}
+.research-evidence a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+.research-provenance {
+    font-size: 0.9rem;
+    line-height: 1.9;
+}
+@media (max-width: 760px) {
+    .research-opening {
+        padding-block: 2rem;
+    }
+    .research-opening h1 {
+        margin-bottom: 1.8rem;
+    }
+    .research-contents {
+        column-gap: 1.3rem;
+    }
+}
+/* Available measure, including 200% text, controls column collapse. */
+@container (max-width: 58rem) {
+    .research-spine > li {
+        column-gap: 2rem;
+    }
+}
+@container (max-width: 44rem) {
+    .research-orientation,
+    .research-split,
+    .research-spine > li,
+    .research-questions li {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .research-orientation,
+    .research-split {
+        gap: 1.2rem;
+    }
+    .research-spine > li {
+        gap: 1.5rem;
+    }
+    .research-questions li {
+        gap: 0.7rem;
+    }
+}
+@container (max-width: 20rem) {
+    .research-opening h1 {
+        font-size: 2.3rem;
+    }
+    .research-section h2,
+    .research-stage h3 {
+        font-size: 1.8rem;
+    }
+    .research-frontier h2 {
+        font-size: 2.5rem;
+    }
+}
+@container (max-width: 12rem) {
+    .research-opening h1,
+    .research-frontier h2 {
+        font-size: 1.45rem;
+    }
+}
