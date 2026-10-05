@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const root = process.cwd();
 const pages = [
     'index.html',
+    'research.html',
     ...fs
         .readdirSync('case-studies')
         .filter(f => f.endsWith('.html'))
@@ -42,6 +43,23 @@ for (const repo of [
 }
 assert.ok(homepage.includes('mailto:jay@jaysystems.dev'));
 const config = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
+assert.equal(config.cleanUrls, true, '/research depends on the existing cleanUrls mapping');
+assert.equal(config.trailingSlash, false);
+assert.ok(homepage.includes('href="/research.html"'), 'Homepage research entrance');
+const research = fs.readFileSync('research.html', 'utf8');
+assert.ok(research.includes('<link rel="canonical" href="https://www.jaysystems.dev/research"'));
+assert.ok(research.includes('href="/index.html#work"'), 'Research return to selected work');
+assert.ok(!research.includes('<script'), 'Research must remain authored static HTML');
+const researchRevision = '393a2ceb7c8372e4e020c81c782af1c12ade96bb';
+for (const [, url] of research.matchAll(/href="(https:\/\/github\.com\/jayjz\/machine-native-systems[^\"]*)"/g)) {
+    assert.ok(
+        url === 'https://github.com/jayjz/machine-native-systems' ||
+            url.includes(`/blob/${researchRevision}/`) ||
+            url.endsWith(`/commit/${researchRevision}`) ||
+            url.endsWith('/commit/2b9a04cf0920b54f7b994e2e2b67b5707d5192e6'),
+        `Unreviewed research evidence revision: ${url}`
+    );
+}
 for (const [slug, repo] of [
     ['aetherforge', 'aetherforge'],
     ['unhinged', 'unhinged-agent'],

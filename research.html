@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Machine-Native Systems — Jay's research program</title>
+        <meta
+            name="description"
+            content="Jay's research program on what must survive between intelligent components: meaning, authority, attempts, and evidence. Experiments, open questions, and limits."
+        />
+        <link rel="canonical" href="https://www.jaysystems.dev/research" />
+        <meta name="theme-color" content="#0a0a0c" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="jaysystems.dev" />
+        <meta property="og:title" content="Machine-Native Systems — Jay's research program" />
+        <meta
+            property="og:description"
+            content="What must survive when intelligent components hand off work? A falsifiable position, four experiments that narrowed it, and the unresolved frontier."
+        />
+        <meta property="og:url" content="https://www.jaysystems.dev/research" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Machine-Native Systems — Jay's research program" />
+        <meta
+            name="twitter:description"
+            content="What must survive when intelligent components hand off work? A falsifiable position, four experiments that narrowed it, and the unresolved frontier."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=optional"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/css/style.css?v=20260907-evidence" />
+        <link rel="stylesheet" href="/css/research.css" />
+    </head>
+    <body class="research-page">
+        <a href="#main" class="skip-link">Skip to content</a>
+        <header class="site-header">
+            <div class="site-header__inner">
+                <a href="/index.html#top" class="brand" aria-label="Jay / jaysystems.dev home">
+                    <span class="brand__name">jay</span>
+                    <span class="brand__domain">jaysystems.dev</span>
+                </a>
+                <nav class="site-nav" aria-label="Primary">
+                    <a href="/research.html" aria-current="page">Research</a>
+                    <a href="/index.html#work">Selected work</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Authored from PUBLIC_RESEARCH_SUMMARY.md at 393a2ceb7c8372e4e020c81c782af1c12ade96bb.
+             Review a new canonical summary before changing claims; activity refresh never owns this page. -->
+        <main id="main" tabindex="-1">
+            <header id="top" class="research-opening container">
+                <p class="eyebrow research-byline">
+                    <img src="/favicon.svg" width="28" height="28" alt="" /> Research program / Machine-Native Systems
+                </p>
+                <h1>What must survive when intelligent components hand off work?</h1>
+                <div class="research-orientation">
+                    <p class="research-status">By Jay · Active research program</p>
+                    <div>
+                        <p class="research-lead">
+                            Machine-Native Systems investigates how different intelligent components communicate, coordinate, authorize
+                            actions, represent uncertainty, and establish evidence.
+                        </p>
+                        <p>
+                            It asks what information must cross a component boundary without assuming conversational language is the
+                            universal internal substrate. The program combines literature synthesis with bounded experiments. Its working
+                            position is still open to failure.
+                        </p>
+                        <div class="hero__actions">
+                            <a class="ledger-link" href="#experiments">Read the research record <span aria-hidden="true">↓</span></a>
+                            <a class="text-link" href="#frontier">Current frontier</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <nav class="research-contents container" aria-label="Research program sections">
+                <a href="#why">Why this question</a>
+                <a href="#position">Working position</a>
+                <a href="#experiments">Experiment record</a>
+                <a href="#frontier">Frontier</a>
+                <a href="#questions">Durable questions</a>
+                <a href="#limits">Limits</a>
+                <a href="#evidence">Evidence</a>
+            </nav>
+
+            <section id="why" class="research-section container research-split" aria-labelledby="why-title">
+                <p class="eyebrow">01 / Motivation</p>
+                <div class="research-body">
+                    <h2 id="why-title">An answer, permission, and an outcome are different things.</h2>
+                    <p>
+                        My background in HVAC and construction taught me to notice hidden state and unclear handoffs. I bring that concern
+                        to software: what a component proposes, what it is allowed to do, and what actually happened need to remain
+                        distinguishable.
+                    </p>
+                    <p>
+                        This program gives those concerns a testable form. A producer supplies information; a consumer uses it to decide
+                        what comes next. Their boundary is the exchange between them. The question is whether that exchange preserves useful
+                        meaning—and whether the consumer acts on it—at an acceptable full-system cost.
+                    </p>
+                </div>
+            </section>
+
+            <section id="position" class="research-section container research-split" aria-labelledby="position-title">
+                <p class="eyebrow">02 / Current position</p>
+                <div class="research-body">
+                    <h2 id="position-title">Explicit semantics. An open hypothesis.</h2>
+                    <dl class="research-position">
+                        <div>
+                            <dt>Working hypothesis</dt>
+                            <dd>
+                                Consequential state, authority, attempts, and evidence may benefit from explicit semantics at component
+                                boundaries. Representational freedom inside intelligent components remains allowed.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Observed in these experiments</dt>
+                            <dd>
+                                A contract can preserve relevant facts while a learned consumer fails to use them. E7 and E7.1 materially
+                                complicate the claim that such a boundary is semantically sufficient.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Still unresolved</dt>
+                            <dd>
+                                Whether the approach offers useful coherence, recovery, or component substitution once information loss and
+                                integration costs are included. Those costs can outweigh the gains and weaken the position.
+                            </dd>
+                        </div>
+                    </dl>
+                    <p>Neither typed-format superiority nor universal explicit-boundary failure is established.</p>
+                </div>
+            </section>
+
+            <section id="experiments" class="research-section container" aria-labelledby="experiments-title">
+                <header class="research-spine-intro">
+                    <p class="eyebrow">03 / Experiment record</p>
+                    <h2 id="experiments-title">Each experiment made the thesis narrower.</h2>
+                    <p>
+                        Start with information loss. Then separate safe behavior from useful work. Finally ask whether a learned component
+                        uses the facts it already has.
+                    </p>
+                    <p class="research-sequence">
+                        E4 <span aria-hidden="true">→</span> E4.1 <span aria-hidden="true">→</span> E7
+                        <span aria-hidden="true">→</span> E7.1
+                    </p>
+                </header>
+                <ol class="research-spine">
+                    <li id="e4">
+                        <div class="research-stage">
+                            <p class="eyebrow">E4 / Representation</p>
+                            <h3>Format was not the advantage.</h3>
+                            <a
+                                class="text-link"
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/experiments/e4-boundary/RESULTS.md"
+                                >Read E4 results ↗</a
+                            >
+                        </div>
+                        <dl class="research-record">
+                            <div>
+                                <dt>Test</dt>
+                                <dd>
+                                    Compare controlled prose, JSON, and hybrid representations with the same full information, plus a
+                                    compact representation, in a scripted fixture world.
+                                </dd>
+                            </div>
+                            <div>
+                                <dt>Observation</dt>
+                                <dd>
+                                    The three full-information representations tied. Compact representation lost relevant distinctions;
+                                    optimistic missing-state defaults contributed to disagreement and duplicate effects.
+                                </dd>
+                            </div>
+                            <div>
+                                <dt>Revision</dt>
+                                <dd>
+                                    The result directs attention to preserved meaning and default behavior. It provides no evidence that
+                                    typed formats are superior.
+                                </dd>
+                            </div>
+                        </dl>
+                    </li>
+                    <li id="e4-1">
+                        <div class="research-stage">
+                            <p class="eyebrow">E4.1 / Omission &amp; defaults</p>
+                            <h3>Safe omission and useful progress are different problems.</h3>
+                            <a
+                                class="text-link"
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/experiments/e4-1/RESULTS.md"
+                                >Read E4.1 results ↗</a
+                            >
+                        </div>
+                        <dl class="research-record">
+                            <div>
+                                <dt>Test</dt>
+                                <dd>
+                                    Restore omitted fields while varying optimistic and fail-closed defaults, keeping the consumer and
+                                    fixtures fixed.
+                                </dd>
+                            </div>
+                            <div>
+                                <dt>Observation</dt>
+                                <dd>
+                                    Fail-closed behavior prevented duplicate effects while sacrificing useful completion.
+                                    <code>alternatives + attempt + status</code> recovered the required behavior.
+                                </dd>
+                            </div>
+                            <div>
+                                <dt>Revision</dt>
+                                <dd>
+                                    That combination was a minimum sufficient subset only among the tested omissions, for this consumer,
+                                    fixtures, oracle, and exact receipt model. It is not a universal minimum.
+                                </dd>
+                            </div>
+                        </dl>
+                    </li>
+                    <li id="e7">
+                        <div class="research-stage">
+                            <p class="eyebrow">E7 / Learned novelty</p>
+                            <h3>Available context can still be ignored.</h3>
+                            <a
+                                class="text-link"
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/experiments/e7/RESULTS.md"
+                                >Read E7 results ↗</a
+                            >
+                        </div>
+                        <dl class="research-record">
+                            <div>
+                                <dt>Test</dt>
+                                <dd>
+                                    Compare rich shared context, explicit, hybrid, and inventory-first adaptive boundaries with two fitted
+                                    statistical text-model families under novelty.
+                                </dd>
+                            </div>
+                            <div>
+                                <dt>Observation</dt>
+                                <dd>
+                                    Rich shared context outperformed the other arms. Hybrid supplied contradictory supporting facts, but
+                                    learned consumers often failed to use them. The implemented adaptive retrieval changed no final
+                                    decision.
+                                </dd>
+                            </div>
+                            <div>
+                                <dt>Revision</dt>
+                                <dd>
+                                    Economical fixed/adaptive semantic sufficiency weakened for this implementation. Information
+                                    availability and use are distinct. This does not establish that explicit boundaries generally fail.
+                                </dd>
+                            </div>
+                        </dl>
+                    </li>
+                    <li id="e7-1">
+                        <div class="research-stage">
+                            <p class="eyebrow">E7.1 / Assessment interference</p>
+                            <h3>Producer assessment can interfere. The mechanism remains unresolved.</h3>
+                            <a
+                                class="text-link"
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/experiments/e7-1/RESULTS.md"
+                                >Read E7.1 results ↗</a
+                            >
+                        </div>
+                        <dl class="research-record">
+                            <div>
+                                <dt>Test</dt>
+                                <dd>
+                                    Vary producer-assessment presence and training reliability while keeping supporting facts fixed. An
+                                    assessment bundle includes the producer's judgment and confidence signals.
+                                </dd>
+                            </div>
+                            <div>
+                                <dt>Observation</dt>
+                                <dd>
+                                    Masking assessments improved novelty behavior in several configurations. With supporting facts
+                                    unchanged, this causally establishes assessment-bundle interference there. The preregistered pooled
+                                    verdict remained <strong>D / inconclusive</strong>.
+                                </dd>
+                            </div>
+                            <div>
+                                <dt>Revision</dt>
+                                <dd>
+                                    Universal shortcut learning and assessment as the sole cause remain unestablished. Confidence
+                                    fingerprints and rendering or fitting effects remain plausible. Masking also reduced some useful
+                                    completion across the full set; it is not a deployment remedy.
+                                </dd>
+                            </div>
+                        </dl>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="frontier" class="research-section research-frontier" aria-labelledby="frontier-title">
+                <div class="container">
+                    <p class="eyebrow">04 / Current frontier</p>
+                    <h2 id="frontier-title">Diagnosis<br />before redesign.</h2>
+                    <div class="research-split">
+                        <p class="research-status">E7.2 / Proposed · Not run</p>
+                        <div class="research-body">
+                            <p class="research-lead">
+                                Can a learned component distinguish when producer assessments should yield to contradictory supporting
+                                context—and can that failure be diagnosed cleanly before introducing context-recovery architecture?
+                            </p>
+                            <p>
+                                The proposed E7.2 diagnostic would control confidence signals and assessment presence. It asks whether
+                                context use can survive fallible, present assessments without sacrificing safe useful work or collapsing the
+                                rich-context control.
+                            </p>
+                            <p>
+                                No context-recovery or escape-hatch architecture has been validated. The next step is a proposed test of the
+                                failure, with its outcome still open.
+                            </p>
+                            <a
+                                class="text-link"
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/experiments/e7-1/RESULTS.md#hypotheses-and-single-justified-next-experiment"
+                                >Inspect the E7.2 diagnostic rationale ↗</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="questions" class="research-section container" aria-labelledby="questions-title">
+                <p class="eyebrow">05 / Durable questions</p>
+                <h2 id="questions-title">The questions outlast the experiments.</h2>
+                <ol class="research-questions">
+                    <li>
+                        <h3>What information must survive a boundary?</h3>
+                        <p>What decision-relevant meaning must survive compression, novelty, and boundary evolution?</p>
+                    </li>
+                    <li>
+                        <h3>Who owns transitions and permission?</h3>
+                        <p>Can intelligence change while transition ownership, authority, and accountability remain stable?</p>
+                    </li>
+                    <li>
+                        <h3>What independently establishes a result?</h3>
+                        <p>What establishes an outcome beyond the producer's explanation?</p>
+                    </li>
+                    <li>
+                        <h3>How should uncertainty change behavior?</h3>
+                        <p>How should uncertainty and dependent evidence change abstention, escalation, and action?</p>
+                    </li>
+                    <li>
+                        <h3>What coordination remains coherent under faults and heterogeneity?</h3>
+                        <p>
+                            Which mechanisms preserve useful coordination across faults and different components, at acceptable full-system
+                            cost?
+                        </p>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="limits" class="research-section container research-split" aria-labelledby="limits-title">
+                <p class="eyebrow">06 / Scope of evidence</p>
+                <div class="research-body">
+                    <h2 id="limits-title">What this does not establish.</h2>
+                    <ul class="research-limits">
+                        <li>
+                            <strong>Small, same-author synthetic worlds.</strong> E4/E4.1 use scripted consumers. E7/E7.1 use two bounded
+                            statistical text-model families; novel locations still use familiar vocabulary.
+                        </li>
+                        <li>
+                            <strong>Uncalibrated probabilities and trusted simulations.</strong> Authority and receipt stores are simulated
+                            and trusted. Valid permission, receipt integrity, and deterministic reproduction do not establish semantic
+                            correctness or deployment reliability.
+                        </li>
+                        <li>
+                            <strong>Correlated executions.</strong> Crossed executions repeat combinations of cases and configurations. They
+                            are not independent population samples.
+                        </li>
+                        <li>
+                            <strong>No demonstrated general advantage.</strong> These results establish no open-world, production-scale,
+                            general-LLM, or lifecycle-cost advantage. E7.1 masking is not a deployment-wide remedy.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="evidence" class="research-section container research-split" aria-labelledby="evidence-title">
+                <p class="eyebrow">07 / Inspect the record</p>
+                <div class="research-body">
+                    <h2 id="evidence-title">The research repository is canonical.</h2>
+                    <p>
+                        This page is an authored reading of the public research summary. Protocols, results, raw artifacts, and publication
+                        history remain in the research record.
+                    </p>
+                    <ul class="research-evidence">
+                        <li>
+                            <a href="https://github.com/jayjz/machine-native-systems">Machine-Native Systems · canonical repository ↗</a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/PUBLIC_RESEARCH_SUMMARY.md"
+                                >Reviewed public research summary ↗</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/experiments/e4-boundary/RESULTS.md"
+                                >E4 · representation results ↗</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/experiments/e4-1/RESULTS.md"
+                                >E4.1 · omission and defaults results ↗</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/experiments/e7/RESULTS.md"
+                                >E7 · learned-boundary results ↗</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/experiments/e7-1/RESULTS.md"
+                                >E7.1 · causal results and pooled verdict ↗</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/RESEARCH_QUESTIONS.md"
+                                >Durable research questions ↗</a
+                            >
+                            ·
+                            <a
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/HYPOTHESES.md"
+                                >Hypotheses and falsification criteria ↗</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/experiments/e7-1/POSTRUN_AUDIT.json"
+                                >E7.1 postrun audit ↗</a
+                            >
+                            ·
+                            <a
+                                href="https://github.com/jayjz/machine-native-systems/blob/393a2ceb7c8372e4e020c81c782af1c12ade96bb/experiments/e7-1/PUBLICATION.json"
+                                >E7.1 publication ancestry ↗</a
+                            >
+                        </li>
+                    </ul>
+                    <p class="research-provenance">
+                        Source reviewed <time datetime="2026-10-05">5 October 2026</time>.<br />Public summary revision:
+                        <a href="https://github.com/jayjz/machine-native-systems/commit/393a2ceb7c8372e4e020c81c782af1c12ade96bb"
+                            ><code>393a2ceb7c8372e4e020c81c782af1c12ade96bb</code></a
+                        >.<br />Accumulated research reviewed by that summary:
+                        <a href="https://github.com/jayjz/machine-native-systems/commit/2b9a04cf0920b54f7b994e2e2b67b5707d5192e6"
+                            ><code>2b9a04cf0920b54f7b994e2e2b67b5707d5192e6</code></a
+                        >.
+                    </p>
+                    <a class="ledger-link" href="/index.html#work">Return to Jay's selected work <span aria-hidden="true">↗</span></a>
+                </div>
+            </section>
+        </main>
+        <footer id="contact" class="site-footer">
+            <div class="container site-footer__inner">
+                <p>© 2026 Jay</p>
+                <p>
+                    <a href="/index.html#top">Jay / Home</a><span aria-hidden="true"> · </span
+                    ><a href="mailto:jay@jaysystems.dev">jay@jaysystems.dev</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -29,6 +29,20 @@ Each legacy `.html` route first returned a clean-URL 308 to its extensionless fo
 
 Canonical and Open Graph URLs now use the observed `www` host, while source/email links remain unchanged. Internal links retain physical `.html` paths for portable static preview; Vercel canonicalizes them. The case-study route and previous assets remain available.
 
+### Research page addition — 2026-10-05
+
+`research.html` declares canonical and OG URL `https://www.jaysystems.dev/research`.
+The unchanged `cleanUrls: true` maps the physical page to `/research`; under the
+[documented Vercel policy](https://vercel.com/docs/project-configuration/vercel-json#cleanurls),
+`/research.html` should 308 to `/research`. Existing `trailingSlash: false` should
+canonicalize `/research/` as well. Internal links use `/research.html` for portable
+preview, which does not emulate those redirects.
+
+No deployment configuration was changed. The hosted checker now includes all
+three research route variants, its stylesheet and the favicon for the next
+authorized release review. These new hosted responses are not yet verified;
+local success and configuration inspection do not establish deployed behavior.
+
 ## Cache correction in this proposed diff
 
 Hosted `/css/style.css`, `/js/main.js`, and the original SVG returned **`public, max-age=31536000, immutable`** despite stable filenames. [Captured responses](docs/qa/cipherloop/hosted-before.json) establish the stale-client risk.

@@ -8,8 +8,8 @@
     },
     "scripts": {
         "dev": "node scripts/serve.cjs",
-        "format:check": "prettier --check index.html \"case-studies/**/*.html\" \"css/**/*.css\" \"js/**/*.js\" \"scripts/**/*.cjs\" \"data/**/*.json\" package.json vercel.json .github/workflows/ci.yml",
-        "validate:html": "html-validate index.html \"case-studies/**/*.html\"",
+        "format:check": "prettier --check index.html research.html \"case-studies/**/*.html\" \"css/**/*.css\" \"js/**/*.js\" \"scripts/**/*.cjs\" \"data/**/*.json\" package.json vercel.json .github/workflows/ci.yml",
+        "validate:html": "html-validate index.html research.html \"case-studies/**/*.html\"",
         "validate:links": "node scripts/check-links.cjs",
         "validate:syntax": "node --check js/main.js && node --check js/observer.js && node --check scripts/portfolio-qa.cjs && node --check scripts/serve.cjs && node --check scripts/check-links.cjs && node --check scripts/check-hosted.cjs && node --check js/aetherforge.js && node --check scripts/aetherforge-qa.cjs",
         "check": "npm run format:check && npm run validate:html && npm run validate:links && npm run validate:syntax && npm run data:check && npm run test:data",
