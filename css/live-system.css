@@ -204,3 +204,15 @@
         margin: 0.5rem 0;
     }
 }
+
+/* Evidence is a readable secondary layer after Jay's selected work. */
+.live-focus,
+.live-system.section {
+    padding-block: 2.5rem;
+}
+.live-focus h2 {
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+}
+.live-system h2 {
+    font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+}

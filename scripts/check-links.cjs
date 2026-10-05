@@ -11,6 +11,10 @@ const pages = [
 ];
 for (const file of pages) {
     const html = fs.readFileSync(file, 'utf8');
+    assert.ok(
+        html.includes('<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any"'),
+        `${file}: missing shared Observer favicon`
+    );
     for (const [, value] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
         if (/^(https?:|mailto:|data:)/.test(value)) continue;
         const url = new URL(value, `http://local/${file}`);

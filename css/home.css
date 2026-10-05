@@ -833,13 +833,6 @@
     display: inline-block;
     margin: 1rem 0 0 1.2rem;
 }
-.hero-projects {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem 1rem;
-    margin-top: 1.2rem;
-    font-size: 0.8rem;
-}
 .contract-outcomes,
 .capability-grid {
     display: grid;
@@ -882,5 +875,158 @@
     .applied-grid,
     .research-entry {
         grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Jay's authored opening; existing project instruments remain the proof layer. */
+.home-page .mastery-hero h1 {
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    line-height: 1.08;
+    max-width: 19ch;
+}
+.home-page .mastery-hero .hero-name {
+    display: block;
+    color: var(--text-primary);
+    font-size: clamp(5rem, 12vw, 10rem);
+    line-height: 0.95;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.065em;
+}
+.mastery-hero__grid {
+    align-items: end;
+    margin-top: 0.5rem;
+    container-type: inline-size;
+}
+.home-page .about {
+    padding-block: 3rem 4rem;
+    border-top: 1px solid var(--border-color);
+}
+.home-page .about .section-intro__title {
+    font-size: clamp(2rem, 3.5vw, 3.3rem);
+}
+.brand-section {
+    padding-block: 3rem 4rem;
+    border-top: 1px solid var(--border-color);
+}
+.brand-section__intro h2 {
+    font-size: clamp(2.4rem, 4.5vw, 4rem);
+    margin-block: 0.75rem 1.2rem;
+}
+.brand-section__intro > p:last-child {
+    max-width: 48ch;
+}
+.principle-list {
+    container-type: inline-size;
+    counter-reset: principle;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+}
+.principle-list li {
+    counter-increment: principle;
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 1rem 2rem;
+    padding-block: 1.7rem;
+    border-top: 1px solid var(--border-color);
+    align-items: baseline;
+}
+.principle-list li::before {
+    content: counter(principle, decimal-leading-zero);
+    color: var(--accent);
+    font: 0.8rem/1.7 var(--font-mono);
+}
+.principle-list h3 {
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    line-height: 1.25;
+    max-width: 32ch;
+}
+.principle-list p {
+    max-width: 40ch;
+}
+.now .container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    gap: 2rem 4rem;
+}
+.now__copy > p {
+    color: var(--text-primary);
+    max-width: 55ch;
+    font-size: 1.15rem;
+}
+.now__copy h3 {
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+.now-questions {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+    max-width: 55ch;
+    color: var(--text-secondary);
+}
+.now-questions li {
+    padding-left: 0.5rem;
+    margin-top: 0.8rem;
+}
+.home-page .capabilities {
+    padding-block: 2.5rem;
+}
+.home-page .capabilities .section-intro__title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+.home-page .evidence-heading {
+    max-width: 23ch;
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    line-height: 1.12;
+}
+.project-identity {
+    font: 0.9rem/1.7 var(--font-mono);
+    margin-block: 1rem;
+}
+@media (max-width: 800px) {
+    .principle-list li {
+        grid-template-columns: 2rem minmax(0, 1fr);
+        column-gap: 1rem;
+    }
+    .principle-list p {
+        grid-column: 2;
+    }
+    .now .container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.5rem;
+    }
+}
+@media (max-width: 600px) {
+    .home-page .mastery-hero h1 {
+        font-size: clamp(1.85rem, 7.5vw, 2.7rem);
+    }
+    .home-page .about,
+    .brand-section {
+        padding-block: 2rem 2.5rem;
+    }
+    .home-page .about .container {
+        gap: 1rem;
+    }
+    .home-page .site-nav {
+        column-gap: 1rem;
+    }
+    .hero-email {
+        margin-left: 0.8rem;
+    }
+}
+
+/* Respond to available text width, including enlarged root text. */
+@container (max-width: 16rem) {
+    .home-page .mastery-hero h1 {
+        font-size: 1.4rem;
+    }
+}
+@container (max-width: 18rem) {
+    .principle-list li {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.75rem;
+    }
+    .principle-list p {
+        grid-column: 1;
     }
 }
