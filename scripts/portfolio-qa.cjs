@@ -58,6 +58,10 @@ fs.mkdirSync(out, { recursive: true });
             });
             const response = await page.goto(base + route, { waitUntil: 'networkidle' });
             assert.equal(response.status(), 200);
+            assert.equal(await page.locator('link[rel="icon"]').getAttribute('href'), '/favicon.svg');
+            const icon = await page.request.get(base + '/favicon.svg');
+            assert.equal(icon.status(), 200);
+            assert.ok(icon.headers()['content-type'].includes('image/svg+xml'));
             await page.evaluate(() => document.fonts.ready);
             assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `${label} overflow ${width}`);
             const metrics = await page.evaluate(() => ({
@@ -78,6 +82,35 @@ fs.mkdirSync(out, { recursive: true });
                 `${label} axe ${width}`
             );
             if (label === 'home') {
+                const opening = await page.evaluate(() => {
+                    const ids = [
+                        'top',
+                        'about',
+                        'principles',
+                        'now',
+                        'work',
+                        'projects',
+                        'systems-map',
+                        'recent-work',
+                        'evidence-ledger',
+                        'project-registry'
+                    ];
+                    const sections = [...document.querySelectorAll('main > section')];
+                    return {
+                        order: ids.map(id => sections.indexOf(document.getElementById(id))),
+                        githubInOpening: document.querySelectorAll('.site-header a[href*="github.com"], #top a[href*="github.com"]').length
+                    };
+                });
+                assert.ok(
+                    opening.order.every((n, i, list) => n >= 0 && (i === 0 || n > list[i - 1])),
+                    'Personal hierarchy precedes evidence'
+                );
+                assert.equal(opening.githubInOpening, 0);
+                assert.equal(await page.locator('h1 .hero-name').textContent(), 'Jay');
+                assert.equal(await page.locator('.hero-projects').count(), 0);
+                assert.equal(await page.locator('#principles li').count(), 4);
+                assert.equal(await page.locator('#now li').count(), 3);
+                assert.equal(await page.locator('.mastery-intro a[href="#work"]').count(), 1);
                 for (const repo of [
                     'CipherLoop',
                     'TraceForge',
@@ -187,11 +220,19 @@ fs.mkdirSync(out, { recursive: true });
                 assert.equal(await page.locator('.system-figure').evaluate(el => getComputedStyle(el, '::after').animationName), 'none');
             await page.emulateMedia({ reducedMotion: 'no-preference' });
             await page.goto(base + route, { waitUntil: 'networkidle' });
-            if (width === 390 || width === 1440) {
+            if (width === 320 || width === 390 || width === 1440) {
                 await page.screenshot({ path: path.join(out, `after-${label}-${width}.png`), fullPage: true });
                 await page.screenshot({ path: path.join(out, `viewport-${label}-${width}.png`) });
                 if (label === 'home') {
-                    for (const section of ['systems-map', 'recent-work', 'evidence-ledger', 'project-registry']) {
+                    for (const section of [
+                        'about',
+                        'principles',
+                        'now',
+                        'systems-map',
+                        'recent-work',
+                        'evidence-ledger',
+                        'project-registry'
+                    ]) {
                         await page.locator(`#${section}`).screenshot({ path: path.join(out, `${section}-${width}.png`) });
                     }
                 }
@@ -240,6 +281,7 @@ fs.mkdirSync(out, { recursive: true });
             if (mode.startsWith('large-text')) await page.addStyleTag({ content: 'html { font-size: 200%; }' });
             assert.equal(await page.locator('h1').isVisible(), true);
             if (label === 'home') {
+                for (const id of ['about', 'principles', 'now']) assert.equal(await page.locator(`#${id}`).isVisible(), true);
                 assert.equal(await page.locator('.evidence-flow').isVisible(), true);
                 assert.equal(await page.locator('#systems-map').isVisible(), true);
                 assert.equal(await page.locator('#evidence-ledger').isVisible(), true);
