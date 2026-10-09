@@ -16,14 +16,14 @@
         <meta property="og:title" content="Jay — Backend &amp; AI Infrastructure Engineer" />
         <meta
             property="og:description"
-            content="Systems engineering, grounded in field work. Backend and AI infrastructure with explicit authority, state, and evidence."
+            content="Backend systems and AI infrastructure. Agent workflows, execution controls, and inspectable failures, grounded in HVAC and construction."
         />
         <meta property="og:url" content="https://www.jaysystems.dev/" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Jay — Backend &amp; AI Infrastructure Engineer" />
         <meta
             name="twitter:description"
-            content="Systems engineering, grounded in field work. Backend and AI infrastructure with explicit authority, state, and evidence."
+            content="Backend systems and AI infrastructure. Agent workflows, execution controls, and inspectable failures, grounded in HVAC and construction."
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,10 +45,9 @@
                     <span class="brand__domain">jaysystems.dev</span>
                 </a>
                 <nav class="site-nav" aria-label="Primary">
-                    <a href="#about">Perspective</a>
-                    <a href="#principles">Principles</a>
-                    <a href="#now">Now</a>
                     <a href="#work">Work</a>
+                    <a href="#about">About</a>
+                    <a href="/research.html">Research</a>
                     <a href="#contact">Contact</a>
                 </nav>
             </div>
@@ -167,11 +166,12 @@
                         </div>
                     </div>
                     <div class="mastery-hero__grid">
-                        <h1><span class="hero-name">Jay</span> Systems engineering,<br />grounded in field work.</h1>
+                        <h1><span class="hero-name">Jay</span> Backend systems.<br />AI infrastructure.</h1>
                         <div class="mastery-intro">
                             <p>
-                                I’m a software engineer with a background in HVAC and construction. I build backend and AI infrastructure,
-                                with an interest in intelligent systems where authority, state, and evidence remain explicit.
+                                I’m a software engineer building agent workflows, execution controls, and tools that make failures
+                                inspectable. My background in HVAC and construction shapes how I handle software handoffs: make the state
+                                visible and the responsibility clear.
                             </p>
                             <a class="ledger-link" href="#work">Selected work <span aria-hidden="true">↘</span></a
                             ><a class="hero-email" href="mailto:jay@jaysystems.dev">Email Jay ↗</a>
@@ -180,6 +180,109 @@
                 </div>
             </section>
 
+            <section id="work" class="featured evidence-feature" aria-label="Selected work">
+                <div class="container">
+                    <div class="evidence-divider">
+                        <p class="eyebrow">01 / Selected work</p>
+                        <p>Two systems. One inspectable handoff.</p>
+                    </div>
+                    <article id="cipherloop">
+                        <h2 class="evidence-heading">Can an investigation be checked independently?</h2>
+                        <p class="evidence-question project-identity">CipherLoop → TraceForge</p>
+                        <p class="evidence-scope">Experimental agent workflow + independent evidence reader · Python</p>
+                        <div class="project-summary">
+                            <p>
+                                <strong>My implementation.</strong> I built an investigation workflow that records tool observations and
+                                failed execution, plus a separate reader that checks the saved record without importing the producer’s
+                                runtime.
+                            </p>
+                            <p>
+                                <strong>Recorded result.</strong> The pinned Linux offline replay passes integrity checks for valid
+                                captures, reports unavailable scanner output as an error, and rejects altered ledger bytes.
+                            </p>
+                            <p>
+                                <strong>Limits.</strong> Scripted tool responses; no live audit or detection-accuracy result. Integrity
+                                checks do not prove task success or target safety.
+                            </p>
+                        </div>
+                        <div class="evidence-actions">
+                            <a class="ledger-link" href="/case-studies/cipherloop.html#current-contract"
+                                >Read the implementation and evidence ↗</a
+                            >
+                            <a href="#cipherloop-details">Inspect the artifact walkthrough ↓</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <section id="shadow" class="shadow-feature section">
+                <div class="container">
+                    <div class="evidence-divider">
+                        <p class="eyebrow">02 / Selected work</p>
+                        <p>Causality before execution.</p>
+                    </div>
+                    <h2 class="evidence-heading">When is a decision allowed to act?</h2>
+                    <p class="evidence-question project-identity">SHAD0W</p>
+                    <p class="section-intro__copy">
+                        A trading simulation can look convincing if it lets a decision act on data before that data was available. SHAD0W
+                        makes the timing and permission to act explicit.
+                    </p>
+                    <div class="project-summary">
+                        <p>
+                            <strong>My implementation.</strong> I separate when a signal becomes available, when it may execute, how
+                            simulated actions progress, and whether an independent paper-risk gate permits them.
+                        </p>
+                        <p>
+                            <strong>Evidence.</strong> Pinned Python source and regression tests cover same-timestamp rejection, lifecycle
+                            transitions, and paper-risk admission. This is source/test inspection; these tests were not rerun for this
+                            portfolio update.
+                        </p>
+                        <p>
+                            <strong>Limits.</strong> Market-data ingestion and replay are implemented. An observed live session,
+                            profitability, and live-capital execution are not established here.
+                        </p>
+                    </div>
+                    <div class="evidence-actions">
+                        <a class="ledger-link" href="/case-studies/shadow.html">Read the implementation and evidence ↗</a
+                        ><a href="https://github.com/jayjz/SHAD0W">SHAD0W source ↗</a>
+                    </div>
+                    <p class="evidence-provenance">
+                        Pinned main <code>ed773c5</code> ·
+                        <a href="/docs/evidence/project-evidence-2026-09-14.md">Evidence record and revision links ↗</a>
+                    </p>
+                </div>
+            </section>
+            <section class="section capabilities" aria-labelledby="capabilities-title">
+                <div class="container">
+                    <p class="eyebrow">Engineering capabilities</p>
+                    <h2 id="capabilities-title" class="section-intro__title">What I build. Where to inspect it.</h2>
+                    <div class="capability-grid">
+                        <section>
+                            <h3>Backend contracts and state</h3>
+                            <p>
+                                Record how work starts, changes state, and ends. Keep a proposed action separate from permission to execute
+                                it.
+                            </p>
+                            <a href="#cipherloop">CipherLoop → TraceForge</a> · <a href="#shadow">SHAD0W</a>
+                        </section>
+                        <section>
+                            <h3>Failure handling and verification</h3>
+                            <p>
+                                Build readers and regression checks that reject incomplete or altered evidence, with limits on what a
+                                passing check means.
+                            </p>
+                            <a href="#cipherloop">Independent reader</a> · <a href="#evidence-strategy">Evaluation methodology</a>
+                        </section>
+                        <section>
+                            <h3>AI service coordination</h3>
+                            <p>
+                                Coordinate access to shared inference services and preserve cancellation boundaries. Mock-path checks and
+                                hardware limits are documented.
+                            </p>
+                            <a href="#aetherforge">AetherForge</a> · <a href="#unhinged">Unhinged</a>
+                        </section>
+                    </div>
+                </div>
+            </section>
             <section id="about" class="about">
                 <div class="container">
                     <header class="section-intro">
@@ -193,8 +296,8 @@
                             informs how I approach software.
                         </p>
                         <p>
-                            I care about explicit contracts, visible execution state, and failure handling that preserves what happened. The
-                            work below shows how I explore those concerns—and what remains unverified.
+                            I care about explicit contracts, visible execution state, and failure handling that preserves what happened. My
+                            projects make those concerns concrete, with implementation links and explicit verification limits.
                         </p>
                     </div>
                 </div>
@@ -204,7 +307,7 @@
                     <header class="brand-section__intro">
                         <p class="eyebrow">How I think</p>
                         <h2 id="principles-title">Working principles</h2>
-                        <p>These are my current engineering principles: ideas I use to guide decisions and continue to question.</p>
+                        <p>Ideas I use to guide decisions and continue to question. <a href="#now">Current questions ↓</a></p>
                     </header>
                     <ol class="principle-list">
                         <li>
@@ -237,8 +340,8 @@
                     </header>
                     <div class="now__copy">
                         <p>
-                            I’m exploring reliable intelligent systems: how semantic boundaries, explicit authority, and independently
-                            readable evidence can make their behavior easier to inspect.
+                            I’m testing what information must survive when one intelligent component hands work to another. The research
+                            program records the experiments, unresolved questions, and limits.
                         </p>
                         <h3>Questions I’m working through</h3>
                         <ul class="now-questions">
@@ -252,41 +355,16 @@
                     </div>
                 </div>
             </section>
-            <section class="section capabilities" aria-labelledby="capabilities-title">
+            <section id="engineering-details" class="section" aria-labelledby="details-title">
                 <div class="container">
-                    <p class="eyebrow">Engineering capabilities</p>
-                    <h2 id="capabilities-title" class="section-intro__title">The decisions behind the work.</h2>
-                    <div class="capability-grid">
-                        <section>
-                            <h3>Contracts and state</h3>
-                            <p>Make lifecycle and eligibility explicit.</p>
-                            <a href="#cipherloop">CipherLoop → TraceForge</a> · <a href="#shadow">SHAD0W</a>
-                        </section>
-                        <section>
-                            <h3>Reliability and evaluation</h3>
-                            <p>Reject incomplete evidence and separate checks from outcomes.</p>
-                            <a href="#cipherloop">Independent reader</a> · <a href="#evidence-strategy">Evaluation methodology</a>
-                        </section>
-                        <section>
-                            <h3>Backend and AI infrastructure</h3>
-                            <p>Own shared capacity and cancellation boundaries.</p>
-                            <a href="#aetherforge">AetherForge</a> · <a href="#unhinged">Unhinged</a>
-                        </section>
-                    </div>
-                </div>
-            </section>
-            <section id="work" class="featured evidence-feature" aria-label="Selected work">
-                <div class="container">
-                    <div class="evidence-divider">
-                        <p class="eyebrow">01 / Selected work</p>
-                        <p>Two systems. One inspectable handoff.</p>
-                    </div>
-                    <article id="cipherloop">
-                        <h2 class="evidence-heading">Can an investigation be checked independently?</h2>
-                        <p class="evidence-question project-identity">CipherLoop → TraceForge</p>
-                        <p class="evidence-scope">
-                            Production-v2 evidence contract · experimental producer + independent reader · offline replay verified.
-                        </p>
+                    <p class="eyebrow">Deeper reading / engineering evidence</p>
+                    <h2 id="details-title" class="section-intro__title">Inspect the mechanisms.</h2>
+                    <p>
+                        The selected studies above provide the overview. These walkthroughs retain the artifact contract, historical
+                        controls, and execution timeline.
+                    </p>
+                    <article id="cipherloop-details">
+                        <h3>CipherLoop → TraceForge / artifact walkthrough</h3>
                         <figure class="evidence-flow" aria-labelledby="handoff-caption">
                             <ol>
                                 <li>
@@ -440,62 +518,43 @@
                             </p>
                         </div>
                     </article>
-                </div>
-            </section>
-            <section id="shadow" class="shadow-feature section">
-                <div class="container">
-                    <div class="evidence-divider">
-                        <p class="eyebrow">02 / Selected work</p>
-                        <p>Causality before execution.</p>
-                    </div>
-                    <h2 class="evidence-heading">When is a decision allowed to act?</h2>
-                    <p class="evidence-question project-identity">SHAD0W</p>
-                    <p class="section-intro__copy">
-                        A decision derived from a completed bar cannot execute against that same close. I separate chronological
-                        eligibility, lifecycle simulation, execution costs, and independent paper-risk admission.
-                    </p>
-                    <figure class="decision-timeline" aria-labelledby="timeline-caption">
-                        <ol>
-                            <li>
-                                <span class="eyebrow">01 / Observation available</span>
-                                <h3>The bar completes.</h3>
-                                <p>Its closing data can now inform a decision.</p>
-                            </li>
-                            <li>
-                                <span class="eyebrow">02 / Signal created</span>
-                                <h3>Record availability.</h3>
-                                <p>The signal carries the time its inputs became available.</p>
-                            </li>
-                            <li class="timeline-rejected">
-                                <span class="eyebrow">03 / Same timestamp</span>
-                                <h3>Execution ineligible.</h3>
-                                <p>That same close cannot execute the decision it just informed.</p>
-                            </li>
-                            <li>
-                                <span class="eyebrow">04 / Strictly later</span>
-                                <h3>Eligibility opens.</h3>
-                                <p>A later opportunity may qualify. A fill and risk admission are separate decisions.</p>
-                            </li>
-                        </ol>
-                        <figcaption id="timeline-caption">
-                            Source-derived chronology, not a market replay or trading result. Eligibility requires an opportunity strictly
-                            later than signal availability.
-                        </figcaption>
-                    </figure>
-                    <div class="evidence-actions">
-                        <a class="ledger-link" href="/case-studies/shadow.html">Read the causality study ↗</a
-                        ><a href="https://github.com/jayjz/SHAD0W">SHAD0W source ↗</a>
-                    </div>
-                    <p class="evidence-provenance">
-                        Published main <code>ed773c5</code> implements market-data shadow ingestion and replay. It observes data and submits
-                        no live-capital orders. Source and tests inspected; an observed live session is not established here.
-                    </p>
+                    <article id="shadow-details">
+                        <h3>SHAD0W / chronological eligibility</h3>
+                        <figure class="decision-timeline" aria-labelledby="timeline-caption">
+                            <ol>
+                                <li>
+                                    <span class="eyebrow">01 / Observation available</span>
+                                    <h3>The bar completes.</h3>
+                                    <p>Its closing data can now inform a decision.</p>
+                                </li>
+                                <li>
+                                    <span class="eyebrow">02 / Signal created</span>
+                                    <h3>Record availability.</h3>
+                                    <p>The signal carries the time its inputs became available.</p>
+                                </li>
+                                <li class="timeline-rejected">
+                                    <span class="eyebrow">03 / Same timestamp</span>
+                                    <h3>Execution ineligible.</h3>
+                                    <p>That same close cannot execute the decision it just informed.</p>
+                                </li>
+                                <li>
+                                    <span class="eyebrow">04 / Strictly later</span>
+                                    <h3>Eligibility opens.</h3>
+                                    <p>A later opportunity may qualify. A fill and risk admission are separate decisions.</p>
+                                </li>
+                            </ol>
+                            <figcaption id="timeline-caption">
+                                Source-derived chronology, not a market replay or trading result. Eligibility requires an opportunity
+                                strictly later than signal availability.
+                            </figcaption>
+                        </figure>
+                    </article>
                 </div>
             </section>
             <section id="projects" class="work section">
                 <div class="container">
                     <header class="section-intro">
-                        <p class="eyebrow">03 / Selected work · AetherForge</p>
+                        <p class="eyebrow">Supporting work / AetherForge</p>
                         <h2 class="section-intro__title evidence-heading">When should a system admit more work?</h2>
                         <p class="section-intro__copy">
                             Bounded admission and shared capacity give agents explicit failure responses. Thermal rejection and exhausted
@@ -1240,7 +1299,7 @@
         <footer id="contact" class="site-footer">
             <div class="container employment-cta">
                 <p class="eyebrow">Work together</p>
-                <h2>Hiring for systems ownership?</h2>
+                <h2>Hiring for backend or AI infrastructure?</h2>
                 <p>I’m interested in Backend, AI Infrastructure, Agent Systems, Platform, and Applied AI roles.</p>
             </div>
             <div class="container site-footer__inner">
