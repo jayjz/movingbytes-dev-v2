@@ -829,6 +829,23 @@
 }
 
 /* Hiring path and deliberately unequal project hierarchy. */
+.project-summary {
+    max-width: 70ch;
+    margin-top: 1.5rem;
+}
+.project-summary strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+#engineering-details > .container > p {
+    max-width: 70ch;
+}
+#engineering-details article {
+    margin-top: 3rem;
+}
+#engineering-details article > h3 {
+    font-size: 1.5rem;
+}
 .hero-email {
     display: inline-block;
     margin: 1rem 0 0 1.2rem;

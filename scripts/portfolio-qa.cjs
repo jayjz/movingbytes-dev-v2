@@ -99,10 +99,12 @@ fs.mkdirSync(out, { recursive: true });
                 const opening = await page.evaluate(() => {
                     const ids = [
                         'top',
+                        'work',
+                        'shadow',
                         'about',
                         'principles',
                         'now',
-                        'work',
+                        'engineering-details',
                         'projects',
                         'systems-map',
                         'recent-work',
@@ -117,9 +119,13 @@ fs.mkdirSync(out, { recursive: true });
                 });
                 assert.ok(
                     opening.order.every((n, i, list) => n >= 0 && (i === 0 || n > list[i - 1])),
-                    'Personal hierarchy precedes evidence'
+                    'Identity leads directly to both selected projects; detailed evidence follows the overview'
                 );
                 assert.equal(opening.githubInOpening, 0);
+                assert.equal(await page.locator('#work .project-summary').count(), 1);
+                assert.equal(await page.locator('#shadow .project-summary').count(), 1);
+                assert.equal(await page.locator('#work .evidence-flow').count(), 0);
+                assert.equal(await page.locator('#engineering-details .evidence-flow').count(), 1);
                 assert.equal(await page.locator('h1 .hero-name').textContent(), 'Jay');
                 assert.equal(await page.locator('.hero-projects').count(), 0);
                 assert.equal(await page.locator('#principles li').count(), 4);
@@ -195,8 +201,9 @@ fs.mkdirSync(out, { recursive: true });
                 await page.waitForFunction(() => location.hash === '#work');
                 await page.goBack();
                 assert.equal(new URL(page.url()).hash, '#main');
-                await page.locator('.featured a[href="/case-studies/cipherloop.html"]').click();
+                await page.locator('.featured a[href="/case-studies/cipherloop.html#current-contract"]').click();
                 assert.equal(new URL(page.url()).pathname, '/case-studies/cipherloop.html');
+                assert.equal(new URL(page.url()).hash, '#current-contract');
                 await page.goBack();
                 await page.locator('.shadow-feature a[href="/case-studies/shadow.html"]').click();
                 assert.equal(new URL(page.url()).pathname, '/case-studies/shadow.html');
