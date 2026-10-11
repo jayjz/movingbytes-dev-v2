@@ -113,7 +113,7 @@ CI uses `npm ci`, the same validation/browser commands, and uploads review artif
 - [Source-backed milestone review](docs/qa/cipherloop/report.md)
 - [Deployment and cache behavior](DEPLOY.md)
 
-Current canonical host: [www.jaysystems.dev](https://www.jaysystems.dev/). Contact: [wizardordinals@gmail.com](mailto:wizardordinals@gmail.com) · [GitHub](https://github.com/jayjz). MIT license.
+Current canonical host: [www.jaysystems.dev](https://www.jaysystems.dev/). Contact: [wizardordinals@gmail.com]· [GitHub](https://github.com/jayjz). MIT license.
 
 ## Hireability verification
 
