@@ -456,7 +456,7 @@ fs.mkdirSync(out, { recursive: true });
                 assert.equal(await page.locator('#registry-temper .registry-body').isVisible(), true);
                 await page.keyboard.press('Enter');
             }
-            assert.equal(await page.locator('a[href="mailto:jay@jaysystems.dev"]').first().isVisible(), true);
+            assert.equal(await page.locator('a[href="mailto:datawizardpros@gmail.com"]').first().isVisible(), true);
             if (label === 'home')
                 assert.equal(
                     await page.locator('.work-card').evaluateAll(cards => cards.every(el => getComputedStyle(el).opacity === '1')),
