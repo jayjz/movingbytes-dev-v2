@@ -41,7 +41,7 @@ for (const repo of [
 ]) {
     assert.ok(homepage.includes(`href="https://github.com/jayjz/${repo}"`), `Missing source: ${repo}`);
 }
-assert.ok(homepage.includes('mailto:jay@jaysystems.dev'));
+assert.ok(homepage.includes('mailto:datawizardpros@gmail.com'));
 const config = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
 assert.equal(config.cleanUrls, true, '/research depends on the existing cleanUrls mapping');
 assert.equal(config.trailingSlash, false);
