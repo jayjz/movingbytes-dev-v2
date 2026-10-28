@@ -895,24 +895,40 @@
     }
 }
 
-/* Jay's authored opening; existing project instruments remain the proof layer. */
+/* Personal frontispiece; existing project instruments form the archive. */
+.home-page .mastery-hero {
+    padding-block: 2rem 5rem;
+}
+.home-page .mastery-identity p {
+    max-width: 29ch;
+}
 .home-page .mastery-hero h1 {
-    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-size: clamp(2rem, 4.2vw, 4.1rem);
     line-height: 1.08;
     max-width: 19ch;
 }
 .home-page .mastery-hero .hero-name {
     display: block;
     color: var(--text-primary);
-    font-size: clamp(5rem, 12vw, 10rem);
+    font-size: clamp(6rem, 16vw, 14rem);
     line-height: 0.95;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.8rem;
     letter-spacing: -0.065em;
 }
 .mastery-hero__grid {
     align-items: end;
-    margin-top: 0.5rem;
+    margin-top: 2rem;
     container-type: inline-size;
+}
+.mastery-intro p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+.hero-archive {
+    display: block;
+    margin-top: 1.25rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 .home-page .about {
     padding-block: 3rem 4rem;
@@ -934,32 +950,30 @@
 }
 .principle-list {
     container-type: inline-size;
-    counter-reset: principle;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 3rem;
     list-style: none;
     padding: 0;
     margin: 2rem 0 0;
 }
 .principle-list li {
-    counter-increment: principle;
-    display: grid;
-    grid-template-columns: 3rem minmax(0, 1.3fr) minmax(0, 1fr);
-    gap: 1rem 2rem;
-    padding-block: 1.7rem;
+    display: block;
+    padding-block: 1.3rem;
     border-top: 1px solid var(--border-color);
     align-items: baseline;
 }
 .principle-list li::before {
-    content: counter(principle, decimal-leading-zero);
-    color: var(--accent);
-    font: 0.8rem/1.7 var(--font-mono);
+    content: none;
 }
 .principle-list h3 {
-    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    font-size: 1.35rem;
     line-height: 1.25;
     max-width: 32ch;
 }
 .principle-list p {
     max-width: 40ch;
+    margin-top: 0.6rem;
 }
 .now .container {
     display: grid;
@@ -992,21 +1006,17 @@
     font-size: clamp(1.8rem, 3vw, 2.5rem);
 }
 .home-page .evidence-heading {
-    max-width: 23ch;
-    font-size: clamp(2rem, 4.5vw, 4rem);
-    line-height: 1.12;
+    max-width: 34ch;
+    font-size: clamp(1.6rem, 2.6vw, 2.5rem);
+    line-height: 1.2;
 }
 .project-identity {
     font: 0.9rem/1.7 var(--font-mono);
     margin-block: 1rem;
 }
 @media (max-width: 800px) {
-    .principle-list li {
-        grid-template-columns: 2rem minmax(0, 1fr);
-        column-gap: 1rem;
-    }
-    .principle-list p {
-        grid-column: 2;
+    .principle-list {
+        grid-template-columns: minmax(0, 1fr);
     }
     .now .container {
         grid-template-columns: minmax(0, 1fr);
@@ -1038,12 +1048,190 @@
         font-size: 1.4rem;
     }
 }
-@container (max-width: 18rem) {
-    .principle-list li {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 0.75rem;
+@container (max-width: 12rem) {
+    .home-page .mastery-hero .hero-name {
+        font-size: 3rem;
     }
-    .principle-list p {
-        grid-column: 1;
+}
+
+/* The reading invitation is the one large visual departure from the Observatory. */
+.editorial-label {
+    font: 0.9rem/1.6 var(--font-mono);
+    letter-spacing: 0;
+    text-transform: none;
+}
+.explorations .container {
+    display: block;
+}
+.explorations .brand-section__intro {
+    margin-bottom: 3rem;
+}
+.jonah-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    background: #e5dfd0;
+    color: #20211f;
+}
+.jonah-feature p {
+    color: #484b47;
+}
+.jonah-frontispiece {
+    min-width: 0;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    border-right: 1px solid #b3b0a5;
+}
+.jonah-frontispiece h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(4rem, 8vw, 8rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    margin-block: 2.5rem;
+}
+.jonah-frontispiece h3 span {
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 0.28em;
+    line-height: 1.3;
+    font-style: italic;
+    letter-spacing: -0.025em;
+}
+.jonah-edition {
+    font-size: 1rem;
+}
+.jonah-invitation {
+    align-self: center;
+    padding: clamp(1.5rem, 3vw, 3rem);
+}
+.jonah-invitation > p:first-child {
+    color: #20211f;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+.jonah-invitation .ledger-link {
+    margin-top: 2rem;
+    color: #9e350e;
+}
+.jonah-feature a:hover {
+    color: #702708;
+}
+.jonah-feature :focus-visible {
+    outline-color: #9e350e;
+}
+.jonah-invitation .exploration-context {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+.model-exploration {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 2rem 5rem;
+    padding-top: 4rem;
+}
+.model-exploration > *,
+.jonah-feature > * {
+    min-width: 0;
+}
+.model-exploration h3 {
+    margin-top: 1rem;
+    max-width: 20ch;
+    font-size: clamp(2rem, 3.4vw, 3rem);
+}
+.model-exploration .now__copy > p {
+    font-size: 1.0625rem;
+    color: var(--text-secondary);
+}
+.model-exploration .now-questions {
+    margin-block: 1.5rem;
+}
+.model-exploration .now__copy .exploration-limit {
+    font-size: 0.95rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-color);
+}
+.exploration-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+.field-note {
+    padding-block: 4rem 5rem;
+}
+.field-note .container {
+    border-left: 2px solid var(--accent);
+    padding-left: clamp(1.25rem, 4vw, 4rem);
+}
+.field-note h2 {
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    margin-block: 1rem 1.5rem;
+    max-width: 25ch;
+}
+.field-note p:last-child {
+    max-width: 64ch;
+    font-size: 1.15rem;
+}
+.home-page .principles .brand-section__intro h2 {
+    font-size: clamp(1.8rem, 2.7vw, 2.5rem);
+}
+.archive-entrances {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+}
+.home-page #work,
+.home-page #shadow {
+    padding-block: 2rem 3rem;
+}
+.home-page #work .project-summary,
+.home-page #shadow .project-summary {
+    font-size: 1rem;
+}
+.home-page .evidence-divider .eyebrow {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.95rem;
+}
+@media (max-width: 800px) {
+    .jonah-feature,
+    .model-exploration {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .jonah-frontispiece {
+        border-right: 0;
+        border-bottom: 1px solid #b3b0a5;
+    }
+    .model-exploration {
+        gap: 1.5rem;
+    }
+}
+@media (max-width: 600px) {
+    .home-page .mastery-hero {
+        padding-block: 1.5rem 3rem;
+    }
+    .mastery-identity {
+        align-items: flex-start;
+    }
+    .mastery-identity span {
+        display: block;
+    }
+    .mastery-hero__grid {
+        gap: 2rem;
+    }
+    .mastery-intro .hero-email {
+        display: block;
+        margin-left: 0;
+    }
+    .explorations .brand-section__intro {
+        margin-bottom: 2rem;
+    }
+    .jonah-frontispiece h3 {
+        font-size: clamp(3rem, 18vw, 5rem);
+        margin-block: 2rem;
+    }
+    .field-note {
+        padding-block: 2.5rem 3rem;
     }
 }

@@ -99,11 +99,12 @@ fs.mkdirSync(out, { recursive: true });
                 const opening = await page.evaluate(() => {
                     const ids = [
                         'top',
-                        'work',
-                        'shadow',
                         'about',
                         'principles',
                         'now',
+                        'field-note',
+                        'work',
+                        'shadow',
                         'engineering-details',
                         'projects',
                         'systems-map',
@@ -119,7 +120,7 @@ fs.mkdirSync(out, { recursive: true });
                 });
                 assert.ok(
                     opening.order.every((n, i, list) => n >= 0 && (i === 0 || n > list[i - 1])),
-                    'Identity leads directly to both selected projects; detailed evidence follows the overview'
+                    'Personal perspective, principles and explorations precede the engineering archive'
                 );
                 assert.equal(opening.githubInOpening, 0);
                 assert.equal(await page.locator('#work .project-summary').count(), 1);
@@ -130,6 +131,12 @@ fs.mkdirSync(out, { recursive: true });
                 assert.equal(await page.locator('.hero-projects').count(), 0);
                 assert.equal(await page.locator('#principles li').count(), 4);
                 assert.equal(await page.locator('#now li').count(), 3);
+                assert.equal(await page.locator('#now > .container > article').count(), 2);
+                assert.equal(await page.locator('#jonah a').getAttribute('href'), 'https://biblemap-pink.vercel.app/jonah/');
+                assert.match(await page.locator('#model-question').textContent(), /no cost or reliability\s+advantage/);
+                assert.equal(await page.locator('#model-question a[href*="/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/"]').count(), 1);
+                assert.equal(await page.locator('#field-note').getAttribute('data-editorial-status'), 'owner-review');
+                assert.equal(await page.locator('.mastery-intro a[href="#now"]').count(), 1);
                 assert.equal(await page.locator('.mastery-intro a[href="#work"]').count(), 1);
                 for (const repo of [
                     'CipherLoop',
@@ -355,7 +362,8 @@ fs.mkdirSync(out, { recursive: true });
             if (mode.startsWith('large-text')) await page.addStyleTag({ content: 'html { font-size: 200%; }' });
             assert.equal(await page.locator('h1').isVisible(), true);
             if (label === 'home') {
-                for (const id of ['about', 'principles', 'now']) assert.equal(await page.locator(`#${id}`).isVisible(), true);
+                for (const id of ['about', 'principles', 'now', 'jonah', 'model-question', 'field-note'])
+                    assert.equal(await page.locator(`#${id}`).isVisible(), true);
                 assert.equal(await page.locator('.evidence-flow').isVisible(), true);
                 assert.equal(await page.locator('#systems-map').isVisible(), true);
                 assert.equal(await page.locator('#evidence-ledger').isVisible(), true);
