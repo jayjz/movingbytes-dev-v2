@@ -7,9 +7,11 @@ Repository: `jayjz/movingbytes-dev-v2`. Vercel project: `movingbytes-dev-v2`.
 - Repository-root project, Framework preset **Other**.
 - No build command; output directory `.`.
 - `vercel.json` sets **`installCommand: ""`** so development tooling does not introduce a deployment install step. This is the documented static-config override ([Vercel reference](https://vercel.com/docs/project-configuration/vercel-json#installcommand)). Account settings were not accessed or changed; confirm the override in the next authorized deployment log.
-- Existing documentation identifies `main` as the deployment branch. Push, merge, and deployment require explicit authorization; local validation does not authorize any of them.
+- **Verified 2026-10-28:** Vercel project `movingbytes-dev-v2` production deployment metadata identifies GitHub repository `jayjz/movingbytes-dev-v2`, branch `main`, and commit `521568014f8de9a846858b4e88e4731db5b34922` (deployment `dpl_M9vdFMBSoKws5sVjGo28uLHN69ki`, state `READY`). Attached domains include `jaysystems.dev` and `www.jaysystems.dev`. Project metadata separately reports `live: false`, so this verification does not establish public reachability. Push, merge, promotion and production deployment require explicit authorization.
 
 ## Public routes and observed canonicalization
+
+The following table is historical observation from September 2026, **not a current live recheck**. Run the hosted checker after any authorized production release before treating these responses as current.
 
 Read-only checks on **2026-09-07**, before the source-backed milestone is deployed:
 
@@ -38,12 +40,12 @@ The unchanged `cleanUrls: true` maps the physical page to `/research`; under the
 canonicalize `/research/` as well. Internal links use `/research.html` for portable
 preview, which does not emulate those redirects.
 
-No deployment configuration was changed. The hosted checker now includes all
+No deployment configuration was changed for the October research-page work. The hosted checker includes all
 three research route variants, its stylesheet and the favicon for the next
 authorized release review. These new hosted responses are not yet verified;
 local success and configuration inspection do not establish deployed behavior.
 
-## Cache correction in this proposed diff
+## Historical cache correction (September 2026)
 
 Hosted `/css/style.css`, `/js/main.js`, and the original SVG returned **`public, max-age=31536000, immutable`** despite stable filenames. [Captured responses](docs/qa/cipherloop/hosted-before.json) establish the stale-client risk.
 
@@ -51,7 +53,7 @@ The relevant asset header now requests **`public, max-age=0, must-revalidate`**.
 
 Old cached responses cannot be retroactively invalidated by a new header. Both pages therefore reference shared CSS/JS with the one-time version query **`?v=20260907-evidence`**. The source-derived diagrams use new filenames. This gives existing clients fresh asset URLs without a bundler or renaming/removing old public paths. After the header is deployed and verified, routine edits can use revalidation; retain this query value rather than generating a new one for every change. If immutable caching is reintroduced later, use reliably versioned content URLs with an explicit release policy.
 
-The corrected header and query behavior are **not yet verified on a deployment containing this diff**. After a separately authorized release, check the new query URLs, their revalidation headers and conditional responses. A hard reload is not an adequate test of a returning visitor with a cached old asset.
+The original September record stated that corrected headers and query behavior were not yet verified. This document has not rechecked their present production behavior; run `node scripts/check-hosted.cjs` against the live site to establish current responses. After a separately authorized release, check the new query URLs, their revalidation headers and conditional responses. A hard reload is not an adequate test of a returning visitor with a cached old asset.
 
 ## Local and hosted checks
 
