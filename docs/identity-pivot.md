@@ -74,3 +74,36 @@ Command-line Git cannot connect through the configured proxy at 127.0.0.1.
 The authorized GitHub integration will persist equivalent fast-forward
 checkpoints with an expected-head check, and each remote head will be verified.
 This transport difference must be explicit in the delivery report.
+
+## Featured content evidence and owner review
+
+On 28 October, Firecrawl fetched the live
+[Jonah reader](https://biblemap-pink.vercel.app/jonah/) with HTTP 200 (fresh fetch,
+`maxAge: 0`). Its title is *Jonah: The Man Who Ran · BibleMap*. The retrieved
+reader includes all four chapters, the World English Bible attribution, optional
+geographic notes, and optional Pascal/Aquinas perspectives with source links.
+The homepage invitation describes this reading experience without asserting
+editorial approval, historical verification, or Jay's theological position.
+The cream typographic frontispiece is original site typography, not a screenshot
+or a reconstruction of an ancient object.
+
+TEMPER's pinned [metrics source](https://github.com/jayjz/TEMPER/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/src/temper/evaluation/metrics.py)
+and [test source](https://github.com/jayjz/TEMPER/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/tests/unit/test_metrics.py)
+were re-inspected through GitHub. The feature's three questions map to coverage,
+selective risk and calibration respectively. The tests contain hand-calculated
+examples and rejection of an empty acceptance set; they were not executed here.
+No result or project status is promoted. The original evidence register remains
+the linked account of scope and limitations.
+
+Jay should review the title/metadata, hero, perspective, shortened principle
+headings, exploration introductions, and contact invitation as proposed voice.
+In particular, the field note is marked `data-editorial-status="owner-review"`
+and an adjacent HTML comment. Proposed wording:
+
+> A stopped unit and a missing signal can look like the same failure from the
+> outside. I want to know what the component received, what it did, and what the
+> next person was told. I ask the same questions at a software boundary.
+
+This is a general observation for approval, not an account of an invented job,
+failure, conversation, credential, or personal event. Neither the draft PR nor
+the preview constitutes approval to publish that voice to production.

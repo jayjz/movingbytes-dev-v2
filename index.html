@@ -229,28 +229,75 @@
                     </ol>
                 </div>
             </section>
-            <!-- Hand-authored: update focus/questions here, outside portfolio renderer slots. -->
-            <section id="now" class="brand-section now" aria-labelledby="now-title">
+            <!-- Authored explorations, separate from all generated portfolio slots. Personal copy is proposed for owner review. -->
+            <section id="now" class="brand-section now explorations" aria-labelledby="now-title">
                 <div class="container">
                     <header class="brand-section__intro">
-                        <p class="eyebrow">Current thinking</p>
-                        <h2 id="now-title">Now</h2>
+                        <p class="editorial-label">Current explorations</p>
+                        <h2 id="now-title">What has my attention.</h2>
                     </header>
-                    <div class="now__copy">
-                        <p>
-                            I’m testing what information must survive when one intelligent component hands work to another. The research
-                            program records the experiments, unresolved questions, and limits.
-                        </p>
-                        <h3>Questions I’m working through</h3>
-                        <ul class="now-questions">
-                            <li>How can a proposed action, an admitted action, and an observed result stay distinct?</li>
-                            <li>What evidence is sufficient to accept a decision?</li>
-                            <li>When should a learned decision abstain or escalate?</li>
-                        </ul>
-                        <a class="ledger-link" href="/research.html"
-                            >Machine-Native Systems / Research program <span aria-hidden="true">↗</span></a
-                        >
-                    </div>
+                    <article id="jonah" class="jonah-feature" aria-labelledby="jonah-title">
+                        <div class="jonah-frontispiece">
+                            <p class="editorial-label">BibleMap · A reading experience</p>
+                            <h3 id="jonah-title">Jonah<span>The Man Who Ran</span></h3>
+                            <p class="jonah-edition">Four chapters. Room to linger.</p>
+                        </div>
+                        <div class="jonah-invitation">
+                            <p>A story to spend time with.</p>
+                            <p>
+                                Read all four chapters of Jonah, with Scripture at the center and optional historical and philosophical
+                                context alongside it. Move through the story at your own pace.
+                            </p>
+                            <a class="ledger-link" href="https://biblemap-pink.vercel.app/jonah/"
+                                >Enter the Jonah experience <span aria-hidden="true">↗</span></a
+                            >
+                            <p class="exploration-context">Scripture · Geography · Humanities</p>
+                        </div>
+                    </article>
+                    <article id="model-question" class="model-exploration" aria-labelledby="model-question-title">
+                        <div>
+                            <p class="editorial-label">Model behavior · TEMPER</p>
+                            <h3 id="model-question-title">When should a model decline to answer?</h3>
+                        </div>
+                        <div class="now__copy">
+                            <p>
+                                A confident answer can still be wrong. I’m interested in what happens when a system can abstain or pass a
+                                decision on.
+                            </p>
+                            <p>
+                                The inspected TEMPER source measures coverage, errors among accepted predictions, and calibration. Those are
+                                tools for asking the question; they don’t establish that a model knows when to stop.
+                            </p>
+                            <ul class="now-questions">
+                                <li>How many decisions remain when the confidence threshold rises?</li>
+                                <li>How often are the accepted decisions wrong?</li>
+                                <li>Does reported confidence match observed correctness?</li>
+                            </ul>
+                            <p class="exploration-limit">
+                                Source inspected at <code>0747730</code>. Tests and experiments not rerun here; no cost or reliability
+                                advantage established.
+                            </p>
+                            <div class="exploration-links">
+                                <a
+                                    href="https://github.com/jayjz/TEMPER/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/src/temper/evaluation/metrics.py"
+                                    >Inspect the metrics source ↗</a
+                                >
+                                <a href="/docs/evidence/portfolio-live-system.md">Evidence and limits ↗</a>
+                                <a href="/research.html">Read the wider research ↗</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <!-- Proposed personal wording: Jay must review before publication. This is an observation, not an autobiographical incident. -->
+            <section id="field-note" class="field-note" aria-labelledby="field-note-title" data-editorial-status="owner-review">
+                <div class="container">
+                    <p class="editorial-label">A note from field work</p>
+                    <h2 id="field-note-title">Check what reached the component.</h2>
+                    <p>
+                        A stopped unit and a missing signal can look like the same failure from the outside. I want to know what the
+                        component received, what it did, and what the next person was told. I ask the same questions at a software boundary.
+                    </p>
                 </div>
             </section>
             <section id="work" class="featured evidence-feature" aria-label="Engineering archive">
@@ -1299,9 +1346,9 @@
 
         <footer id="contact" class="site-footer">
             <div class="container employment-cta">
-                <p class="eyebrow">Work together</p>
-                <h2>Hiring for backend or AI infrastructure?</h2>
-                <p>I’m interested in Backend, AI Infrastructure, Agent Systems, Platform, and Applied AI roles.</p>
+                <p class="editorial-label">Get in touch</p>
+                <h2>Something worth comparing notes on?</h2>
+                <p>For questions, collaboration, or a conversation about the work, email me.</p>
             </div>
             <div class="container site-footer__inner">
                 <p>© 2026 Jay</p>
