@@ -99,11 +99,11 @@ fs.mkdirSync(out, { recursive: true });
                 const opening = await page.evaluate(() => {
                     const ids = [
                         'top',
-                        'work',
-                        'shadow',
                         'about',
                         'principles',
                         'now',
+                        'work',
+                        'shadow',
                         'engineering-details',
                         'projects',
                         'systems-map',
@@ -119,7 +119,7 @@ fs.mkdirSync(out, { recursive: true });
                 });
                 assert.ok(
                     opening.order.every((n, i, list) => n >= 0 && (i === 0 || n > list[i - 1])),
-                    'Identity leads directly to both selected projects; detailed evidence follows the overview'
+                    'Personal perspective, principles and explorations precede the engineering archive'
                 );
                 assert.equal(opening.githubInOpening, 0);
                 assert.equal(await page.locator('#work .project-summary').count(), 1);
