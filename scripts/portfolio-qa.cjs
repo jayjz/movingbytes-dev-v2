@@ -133,7 +133,7 @@ fs.mkdirSync(out, { recursive: true });
                 assert.equal(await page.locator('#now li').count(), 3);
                 assert.equal(await page.locator('#now > .container > article').count(), 2);
                 assert.equal(await page.locator('#jonah a').getAttribute('href'), 'https://biblemap-pink.vercel.app/jonah/');
-                assert.ok((await page.locator('#model-question').textContent()).includes('no cost or reliability advantage'));
+                assert.match(await page.locator('#model-question').textContent(), /no cost or reliability\s+advantage/);
                 assert.equal(await page.locator('#model-question a[href*="/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/"]').count(), 1);
                 assert.equal(await page.locator('#field-note').getAttribute('data-editorial-status'), 'owner-review');
                 assert.equal(await page.locator('.mastery-intro a[href="#now"]').count(), 1);
