@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository is Jay's personal engineering website.
+This repository is Jay's personal intellectual and engineering website. Its primary job is to represent the person and connect his thinking across work, not to function primarily as a portfolio, sales funnel, or repository index.
 
 The site should communicate who Jay is, how he thinks, what he is currently exploring, and what technical work supports those ideas.
 
@@ -22,7 +22,7 @@ GitHub and repository metadata are supporting evidence, not the site's identity.
 
 ## Positioning
 
-Jay is a software engineer with a background in HVAC and construction, focused on backend systems, AI infrastructure, agent reliability, explicit authority boundaries, execution state, and independently inspectable evidence.
+Jay has a background in HVAC/construction field work and builds software. His current interests include model behavior, AI agents and infrastructure, BibleMap's Jonah experience, Scripture, history, philosophy, astronomy, and new technology. His field experience informs a practical habit of checking failed components and communication handoffs. Do not invent a universal thesis connecting these interests.
 
 Do not inflate this positioning into unsupported claims of expertise, scientific validation, production scale, reliability, performance, business outcomes, or uniqueness.
 
@@ -30,7 +30,7 @@ The website should feel like Jay's intellectual and professional home.
 
 ## Design direction
 
-Preserve the existing "Systems Observatory" identity, but prioritize human authorship over instrumentation.
+Evolve the existing Systems Observatory visual language toward a more human, editorial identity. Preserve useful established design and technical credibility without freezing the homepage as an engineering portfolio.
 
 Visual identity:
 
@@ -52,20 +52,19 @@ The site should feel editorial, technical, personal, and deliberate.
 
 Personal sections should lead.
 
-Prefer this order:
+Prefer this order for the next homepage revision (proposed, not yet implemented):
 
-- Hero
-- Perspective / background
-- Working principles
-- Now / current questions
-- Selected work
-- Systems map / evidence / registry
-- Capabilities
-- Contact
+- Human introduction and perspective
+- Current explorations: BibleMap/Jonah and one source-verified model/agent investigation (omit a second feature if no suitable evidence exists)
+- One specific authored observation
+- Selective past work with the full evidence archive still reachable
+- About / contact
+
+Do not automatically create a journal, CMS, publishing pipeline, extra routes, or a new frontend framework. Preserve existing URLs.
 
 Repository names should not dominate the first viewport.
 
-Selected work should lead with the engineering question or problem being investigated, with project/repository names as secondary identifiers.
+Feature current work according to actual attention and demonstrable substance, not repo count. The Jonah experience is a creative/Scripture exploration; do not force it into a technical evidence template. For technical experiments, distinguish observed evidence from hypotheses. Project names should not dominate the first viewport.
 
 ## Content ownership
 
@@ -221,7 +220,7 @@ After implementation:
 
 ## Validation
 
-For meaningful portfolio changes, run the relevant existing checks, including as applicable:
+For meaningful website changes, run the relevant existing checks, including as applicable:
 
 ```sh
 npm run check
@@ -265,4 +264,4 @@ When choosing between:
 
 prefer personal clarity unless the additional technical detail materially improves evidence or credibility.
 
-The site should make Jay memorable first, then make his work inspectable.
+The site should make Jay's perspective visible through specific writing and current work, then make technical claims inspectable. Codex may propose copy, but personal voice and autobiographical claims require Jay's review before publication.
