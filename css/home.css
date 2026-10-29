@@ -903,8 +903,8 @@
     padding-block: 2rem 4.5rem;
 }
 .home-page .mastery-identity p {
-    max-width: 42ch;
-    font-size: 0.9rem;
+    max-width: 52ch;
+    font-size: var(--type-note);
 }
 .home-page .mastery-hero h1 {
     grid-column: 1;
@@ -951,7 +951,7 @@
     border-bottom: 1px solid var(--accent);
 }
 .mastery-intro p {
-    font-size: 1.0625rem;
+    font-size: var(--type-body, 1.0625rem);
     line-height: 1.7;
 }
 .mastery-intro {
@@ -981,7 +981,7 @@
 }
 .home-page .about .section-intro__title {
     max-width: 15ch;
-    font: 400 clamp(2rem, 3vw, 3rem) / 1.1 var(--font-editorial);
+    font: 400 clamp(2.25rem, 3vw, 3rem) / 1.15 var(--font-editorial);
     letter-spacing: -0.045em;
 }
 .home-page .about__copy {
@@ -1054,7 +1054,7 @@
 }
 .home-page .principles {
     border-top: 0;
-    padding-block: 1rem 6rem;
+    padding-block: clamp(3rem, 6vw, 6rem) clamp(3rem, 5vw, 5rem);
 }
 .principles .container {
     display: grid;
@@ -1178,12 +1178,12 @@
 
 /* Jonah: a warm exhibition spread, with the complete museum image. */
 .editorial-label {
-    font: 0.9rem/1.6 var(--font-mono);
+    font: var(--type-caption, 0.9rem)/1.6 var(--font-mono);
     letter-spacing: 0;
     text-transform: none;
 }
 .home-page .explorations {
-    padding-block: 2rem 0;
+    padding-block: clamp(3rem, 5vw, 5rem) 0;
     border-top: 0;
 }
 .explorations > .container {
@@ -1301,7 +1301,7 @@
 .jonah-invitation p {
     max-width: 52ch;
     color: #62574a;
-    font-size: 1.1rem;
+    font-size: var(--type-body);
 }
 .jonah-invitation > p + p {
     margin-top: 0;
@@ -1322,7 +1322,7 @@
 .jonah-reflection-preview figcaption {
     margin-top: 1.5rem;
     max-width: 32ch;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     line-height: 1.7;
     color: var(--text-secondary);
 }
@@ -1340,7 +1340,7 @@
 }
 .authored-reflection .authored-reflection__context {
     margin-block: 1rem 1.5rem;
-    font-size: 0.9rem;
+    font-size: var(--type-note);
 }
 .authored-reflection blockquote {
     margin: 0 0 1.5rem;
@@ -1365,13 +1365,13 @@
 }
 .jonah-invitation .exploration-context {
     margin-top: 1rem;
-    font-size: 0.9rem;
+    font-size: var(--type-note);
 }
 .jonah-invitation .jonah-credit {
     margin-top: 2rem;
     padding-top: 1rem;
     border-top: 1px solid #b3a68f;
-    font-size: 0.8125rem;
+    font-size: var(--type-caption);
 }
 .jonah-onward {
     justify-self: start;
@@ -1385,8 +1385,8 @@
 /* Curiosity: a question at publication scale, followed by a working instrument. */
 .curiosity {
     background: #0e1416;
-    border-top: 8px solid #a76645;
-    padding-block: clamp(3rem, 7vw, 7rem) 2rem;
+    border-top: 0;
+    padding-block: clamp(4rem, 8vw, 8rem) clamp(3rem, 6vw, 6rem);
 }
 .curiosity-heading {
     display: flex;
@@ -1416,13 +1416,13 @@
 }
 .intelligence-reflection figcaption {
     margin-top: 1.5rem;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     color: var(--text-secondary);
 }
 .intelligence-reflection__context {
     max-width: 60ch;
     margin-top: 1.5rem;
-    font-size: 0.95rem;
+    font-size: var(--type-note);
 }
 .model-exploration {
     display: block;
@@ -1449,7 +1449,7 @@
 }
 .model-exploration .now__copy > p {
     margin: 0;
-    font-size: 1rem;
+    font-size: var(--type-body);
     color: var(--text-secondary);
 }
 .model-exploration .now__copy > p:first-child {
@@ -1461,13 +1461,13 @@
     margin: 0;
     max-width: 48ch;
     padding-left: 1rem;
-    font-size: 0.95rem;
+    font-size: var(--type-note);
 }
 .model-exploration .now-questions li:first-child {
     margin-top: 0;
 }
 .model-exploration .now__copy .exploration-limit {
-    font-size: 0.9rem;
+    font-size: var(--type-note);
     padding-top: 1rem;
     border-top: 1px solid var(--border-color);
 }
@@ -1477,7 +1477,7 @@
     flex-wrap: wrap;
     gap: 0.75rem 1.5rem;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: var(--type-note);
 }
 .threshold-instrument {
     grid-column: 1 / -1;
@@ -1524,7 +1524,7 @@
     cursor: pointer;
 }
 .instrument-controls p {
-    font-size: 0.8125rem;
+    font-size: var(--type-caption);
 }
 .decision-samples {
     display: grid;
@@ -1568,7 +1568,7 @@
 }
 .decision-sample .sample-values {
     margin-top: 0.4rem;
-    font-size: 0.8125rem;
+    font-size: var(--type-caption);
 }
 .decision-sample .sample-admission {
     margin-top: 0.75rem;
@@ -1589,7 +1589,7 @@
 .instrument-readings dt span {
     display: block;
     color: var(--text-secondary);
-    font-size: 0.8125rem;
+    font-size: var(--type-caption);
 }
 .instrument-readings dd {
     margin: 0.5rem 0 0;
@@ -1602,7 +1602,7 @@
 .threshold-instrument figcaption {
     max-width: 80ch;
     margin-top: 1rem;
-    font-size: 0.875rem;
+    font-size: var(--type-caption);
     line-height: 1.7;
     color: var(--text-secondary);
 }
@@ -1732,7 +1732,7 @@
         margin-top: 2.5rem;
     }
     .mastery-intro p {
-        font-size: 1rem;
+        font-size: var(--type-body, 1rem);
     }
     .home-page .principles {
         padding-bottom: 3rem;

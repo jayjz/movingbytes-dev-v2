@@ -1,0 +1,1312 @@
+{
+  "fragments": [
+    {
+      "id": "main",
+      "destination": "index.html#main",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "top",
+      "destination": "index.html#top",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "observer-title",
+      "destination": "index.html#observer-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "observer-desc",
+      "destination": "index.html#observer-desc",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "shell",
+      "destination": "index.html#shell",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "metal",
+      "destination": "index.html#metal",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "left-window",
+      "destination": "index.html#left-window",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "right-window",
+      "destination": "index.html#right-window",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "about",
+      "destination": "index.html#about",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "sinai-sketch",
+      "destination": "index.html#sinai-sketch",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "now",
+      "destination": "index.html#now",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "now-title",
+      "destination": "index.html#now-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "jonah",
+      "destination": "index.html#jonah",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "jonah-title",
+      "destination": "index.html#jonah-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "jonah-reflection",
+      "destination": "index.html#jonah-reflection",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "curiosity",
+      "destination": "index.html#curiosity",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "curiosity-title",
+      "destination": "index.html#curiosity-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "intelligence-reflection",
+      "destination": "index.html#intelligence-reflection",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "model-question",
+      "destination": "index.html#model-question",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "model-question-title",
+      "destination": "index.html#model-question-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "threshold-title",
+      "destination": "index.html#threshold-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "threshold-value",
+      "destination": "index.html#threshold-value",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "confidence-threshold",
+      "destination": "index.html#confidence-threshold",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "threshold-help",
+      "destination": "index.html#threshold-help",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "field-note",
+      "destination": "index.html#field-note",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "field-note-title",
+      "destination": "index.html#field-note-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "principles",
+      "destination": "index.html#principles",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "principles-title",
+      "destination": "index.html#principles-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "work",
+      "destination": "work/evidence.html#work",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "cipherloop",
+      "destination": "work/evidence.html#cipherloop",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "shadow",
+      "destination": "work/evidence.html#shadow",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "capabilities-title",
+      "destination": "work/evidence.html#capabilities-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "engineering-details",
+      "destination": "work/evidence.html#engineering-details",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "details-title",
+      "destination": "work/evidence.html#details-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "cipherloop-details",
+      "destination": "work/evidence.html#cipherloop-details",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "handoff-caption",
+      "destination": "work/evidence.html#handoff-caption",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "fixture-title",
+      "destination": "work/evidence.html#fixture-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "boundary-title",
+      "destination": "work/evidence.html#boundary-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "shadow-details",
+      "destination": "work/evidence.html#shadow-details",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "timeline-caption",
+      "destination": "work/evidence.html#timeline-caption",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "projects",
+      "destination": "work/evidence.html#projects",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "aetherforge",
+      "destination": "work/evidence.html#aetherforge",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "af-title",
+      "destination": "work/evidence.html#af-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "af-baseline",
+      "destination": "work/evidence.html#af-baseline",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "af-short",
+      "destination": "work/evidence.html#af-short",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "af-thermal",
+      "destination": "work/evidence.html#af-thermal",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "af-queue",
+      "destination": "work/evidence.html#af-queue",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "af-case-baseline",
+      "destination": "work/evidence.html#af-case-baseline",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "af-case-short",
+      "destination": "work/evidence.html#af-case-short",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "af-case-thermal",
+      "destination": "work/evidence.html#af-case-thermal",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "af-case-queue",
+      "destination": "work/evidence.html#af-case-queue",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "applied",
+      "destination": "work/evidence.html#applied",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "unhinged",
+      "destination": "work/evidence.html#unhinged",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "truck-ready",
+      "destination": "work/evidence.html#truck-ready",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "focus-title",
+      "destination": "work/evidence.html#focus-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "systems-map",
+      "destination": "work/evidence.html#systems-map",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "systems-title",
+      "destination": "work/evidence.html#systems-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "recent-work",
+      "destination": "work/evidence.html#recent-work",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "recent-title",
+      "destination": "work/evidence.html#recent-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "evidence-ledger",
+      "destination": "work/evidence.html#evidence-ledger",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "ledger-title",
+      "destination": "work/evidence.html#ledger-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "project-registry",
+      "destination": "work/evidence.html#project-registry",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "research",
+      "destination": "work/evidence.html#research",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "registry-title",
+      "destination": "work/evidence.html#registry-title",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "registry-cipherloop",
+      "destination": "work/evidence.html#registry-cipherloop",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "registry-traceforge",
+      "destination": "work/evidence.html#registry-traceforge",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "registry-shadow",
+      "destination": "work/evidence.html#registry-shadow",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "registry-temper",
+      "destination": "work/evidence.html#registry-temper",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "registry-aetherforge",
+      "destination": "work/evidence.html#registry-aetherforge",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "registry-unhinged",
+      "destination": "work/evidence.html#registry-unhinged",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "registry-truck-ready",
+      "destination": "work/evidence.html#registry-truck-ready",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "registry-evidence-strategy",
+      "destination": "work/evidence.html#registry-evidence-strategy",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "evidence-strategy",
+      "destination": "work/evidence.html#evidence-strategy",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "registry-fracture",
+      "destination": "work/evidence.html#registry-fracture",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "fracture",
+      "destination": "work/evidence.html#fracture",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "registry-sightglass",
+      "destination": "work/evidence.html#registry-sightglass",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "sightglass",
+      "destination": "work/evidence.html#sightglass",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "contact",
+      "destination": "index.html#contact",
+      "javaScriptEnabled": true,
+      "result": "pass"
+    },
+    {
+      "id": "main",
+      "destination": "index.html#main",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "top",
+      "destination": "index.html#top",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "observer-title",
+      "destination": "index.html#observer-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "observer-desc",
+      "destination": "index.html#observer-desc",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "shell",
+      "destination": "index.html#shell",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "metal",
+      "destination": "index.html#metal",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "left-window",
+      "destination": "index.html#left-window",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "right-window",
+      "destination": "index.html#right-window",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "about",
+      "destination": "index.html#about",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "sinai-sketch",
+      "destination": "index.html#sinai-sketch",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "now",
+      "destination": "index.html#now",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "now-title",
+      "destination": "index.html#now-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "jonah",
+      "destination": "index.html#jonah",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "jonah-title",
+      "destination": "index.html#jonah-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "jonah-reflection",
+      "destination": "index.html#jonah-reflection",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "curiosity",
+      "destination": "index.html#curiosity",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "curiosity-title",
+      "destination": "index.html#curiosity-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "intelligence-reflection",
+      "destination": "index.html#intelligence-reflection",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "model-question",
+      "destination": "index.html#model-question",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "model-question-title",
+      "destination": "index.html#model-question-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "threshold-title",
+      "destination": "index.html#threshold-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "threshold-value",
+      "destination": "index.html#threshold-value",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "confidence-threshold",
+      "destination": "index.html#confidence-threshold",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "threshold-help",
+      "destination": "index.html#threshold-help",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "field-note",
+      "destination": "index.html#field-note",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "field-note-title",
+      "destination": "index.html#field-note-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "principles",
+      "destination": "index.html#principles",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "principles-title",
+      "destination": "index.html#principles-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "work",
+      "destination": "work/evidence.html#work",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "cipherloop",
+      "destination": "work/evidence.html#cipherloop",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "shadow",
+      "destination": "work/evidence.html#shadow",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "capabilities-title",
+      "destination": "work/evidence.html#capabilities-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "engineering-details",
+      "destination": "work/evidence.html#engineering-details",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "details-title",
+      "destination": "work/evidence.html#details-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "cipherloop-details",
+      "destination": "work/evidence.html#cipherloop-details",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "handoff-caption",
+      "destination": "work/evidence.html#handoff-caption",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "fixture-title",
+      "destination": "work/evidence.html#fixture-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "boundary-title",
+      "destination": "work/evidence.html#boundary-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "shadow-details",
+      "destination": "work/evidence.html#shadow-details",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "timeline-caption",
+      "destination": "work/evidence.html#timeline-caption",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "projects",
+      "destination": "work/evidence.html#projects",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "aetherforge",
+      "destination": "work/evidence.html#aetherforge",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "af-title",
+      "destination": "work/evidence.html#af-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "af-baseline",
+      "destination": "work/evidence.html#af-baseline",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "af-short",
+      "destination": "work/evidence.html#af-short",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "af-thermal",
+      "destination": "work/evidence.html#af-thermal",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "af-queue",
+      "destination": "work/evidence.html#af-queue",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "af-case-baseline",
+      "destination": "work/evidence.html#af-case-baseline",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "af-case-short",
+      "destination": "work/evidence.html#af-case-short",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "af-case-thermal",
+      "destination": "work/evidence.html#af-case-thermal",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "af-case-queue",
+      "destination": "work/evidence.html#af-case-queue",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "applied",
+      "destination": "work/evidence.html#applied",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "unhinged",
+      "destination": "work/evidence.html#unhinged",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "truck-ready",
+      "destination": "work/evidence.html#truck-ready",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "focus-title",
+      "destination": "work/evidence.html#focus-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "systems-map",
+      "destination": "work/evidence.html#systems-map",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "systems-title",
+      "destination": "work/evidence.html#systems-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "recent-work",
+      "destination": "work/evidence.html#recent-work",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "recent-title",
+      "destination": "work/evidence.html#recent-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "evidence-ledger",
+      "destination": "work/evidence.html#evidence-ledger",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "ledger-title",
+      "destination": "work/evidence.html#ledger-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "project-registry",
+      "destination": "work/evidence.html#project-registry",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "research",
+      "destination": "work/evidence.html#research",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "registry-title",
+      "destination": "work/evidence.html#registry-title",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "registry-cipherloop",
+      "destination": "work/evidence.html#registry-cipherloop",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "registry-traceforge",
+      "destination": "work/evidence.html#registry-traceforge",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "registry-shadow",
+      "destination": "work/evidence.html#registry-shadow",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "registry-temper",
+      "destination": "work/evidence.html#registry-temper",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "registry-aetherforge",
+      "destination": "work/evidence.html#registry-aetherforge",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "registry-unhinged",
+      "destination": "work/evidence.html#registry-unhinged",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "registry-truck-ready",
+      "destination": "work/evidence.html#registry-truck-ready",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "registry-evidence-strategy",
+      "destination": "work/evidence.html#registry-evidence-strategy",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "evidence-strategy",
+      "destination": "work/evidence.html#evidence-strategy",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "registry-fracture",
+      "destination": "work/evidence.html#registry-fracture",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "fracture",
+      "destination": "work/evidence.html#fracture",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "registry-sightglass",
+      "destination": "work/evidence.html#registry-sightglass",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "sightglass",
+      "destination": "work/evidence.html#sightglass",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    },
+    {
+      "id": "contact",
+      "destination": "index.html#contact",
+      "javaScriptEnabled": false,
+      "result": "pass"
+    }
+  ],
+  "originalURLs": 89,
+  "localDestinations": [
+    {
+      "url": "/favicon.svg",
+      "status": 200
+    },
+    {
+      "url": "/css/style.css?v=20260907-evidence",
+      "status": 200
+    },
+    {
+      "url": "/css/home.css",
+      "status": 200
+    },
+    {
+      "url": "/css/live-system.css",
+      "status": 200
+    },
+    {
+      "url": "/css/library.css",
+      "status": 200
+    },
+    {
+      "url": "/#main",
+      "status": 200
+    },
+    {
+      "url": "/#top",
+      "status": 200
+    },
+    {
+      "url": "/#now",
+      "status": 200
+    },
+    {
+      "url": "/#about",
+      "status": 200
+    },
+    {
+      "url": "/#work",
+      "status": 200
+    },
+    {
+      "url": "/work/",
+      "status": 200
+    },
+    {
+      "url": "/#contact",
+      "status": 200
+    },
+    {
+      "url": "/assets/authored/sinai-golden-calf.webp",
+      "status": 200
+    },
+    {
+      "url": "/assets/authored/sinai-golden-calf-original.png",
+      "status": 200
+    },
+    {
+      "url": "/assets/jonah/jonah-under-the-vine.jpg",
+      "status": 200
+    },
+    {
+      "url": "/#curiosity",
+      "status": 200
+    },
+    {
+      "url": "/docs/evidence/portfolio-live-system.md",
+      "status": 200
+    },
+    {
+      "url": "/research.html",
+      "status": 200
+    },
+    {
+      "url": "/work/#black-lantern",
+      "status": 200
+    },
+    {
+      "url": "/case-studies/shadow.html",
+      "status": 200
+    },
+    {
+      "url": "/work/#automated-social",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#work",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#cipherloop",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#shadow",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#capabilities-title",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#engineering-details",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#details-title",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#cipherloop-details",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#handoff-caption",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#fixture-title",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#boundary-title",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#shadow-details",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#timeline-caption",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#projects",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#aetherforge",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#af-title",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#af-baseline",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#af-short",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#af-thermal",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#af-queue",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#af-case-baseline",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#af-case-short",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#af-case-thermal",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#af-case-queue",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#applied",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#unhinged",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#truck-ready",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#focus-title",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#systems-map",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#systems-title",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#recent-work",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#recent-title",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#evidence-ledger",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#ledger-title",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#project-registry",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#research",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#registry-title",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#registry-cipherloop",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#registry-traceforge",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#registry-shadow",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#registry-temper",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#registry-aetherforge",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#registry-unhinged",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#registry-truck-ready",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#registry-evidence-strategy",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#evidence-strategy",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#registry-fracture",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#fracture",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#registry-sightglass",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#sightglass",
+      "status": 200
+    },
+    {
+      "url": "/js/main.js?v=20260907-evidence",
+      "status": 200
+    },
+    {
+      "url": "/js/threshold.js",
+      "status": 200
+    },
+    {
+      "url": "/js/observer.js",
+      "status": 200
+    },
+    {
+      "url": "/work/#main",
+      "status": 200
+    },
+    {
+      "url": "/index.html#top",
+      "status": 200
+    },
+    {
+      "url": "/index.html",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html",
+      "status": 200
+    },
+    {
+      "url": "/index.html#contact",
+      "status": 200
+    },
+    {
+      "url": "/work/#investigation",
+      "status": 200
+    },
+    {
+      "url": "/work/#decisions",
+      "status": 200
+    },
+    {
+      "url": "/work/#coordination",
+      "status": 200
+    },
+    {
+      "url": "/work/#field-systems",
+      "status": 200
+    },
+    {
+      "url": "/work/#research-questions",
+      "status": 200
+    },
+    {
+      "url": "/work/#history",
+      "status": 200
+    },
+    {
+      "url": "/case-studies/cipherloop.html#current-contract",
+      "status": 200
+    },
+    {
+      "url": "/docs/evidence/three-doors.md",
+      "status": 200
+    },
+    {
+      "url": "/work/evidence.html#main",
+      "status": 200
+    },
+    {
+      "url": "/docs/evidence/project-evidence-2026-09-14.md",
+      "status": 200
+    },
+    {
+      "url": "/case-studies/cipherloop.html",
+      "status": 200
+    },
+    {
+      "url": "/docs/evidence/aetherforge/scenarios.json",
+      "status": 200
+    },
+    {
+      "url": "/docs/evidence/aetherforge/verification.md",
+      "status": 200
+    },
+    {
+      "url": "/js/aetherforge.js",
+      "status": 200
+    }
+  ],
+  "externalAvailability": "Original hrefs retained; remote availability is not retested."
+}

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Jaysystems craft comparison</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                background: #0a0a0c;
+                color: #f2eee6;
+                font:
+                    1rem/1.6 system-ui,
+                    sans-serif;
+            }
+            header {
+                padding: 1.5rem;
+                border-bottom: 1px solid #303137;
+            }
+            h1 {
+                margin: 0 0 1rem;
+                font-size: 1.5rem;
+            }
+            label {
+                display: inline-block;
+                margin: 0 1rem 1rem 0;
+            }
+            select {
+                padding: 0.5rem;
+                font: inherit;
+                color: inherit;
+                background: #101114;
+                border: 1px solid #adaeb7;
+            }
+            :focus-visible {
+                outline: 2px solid #ff5f1f;
+                outline-offset: 4px;
+            }
+            main {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+                padding: 1rem;
+            }
+            figure {
+                margin: 0;
+                min-width: 0;
+            }
+            figcaption {
+                padding-bottom: 0.75rem;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                vertical-align: top;
+                border: 1px solid #303137;
+            }
+            a {
+                color: inherit;
+            }
+            p {
+                max-width: 75ch;
+            }
+            @media (max-width: 700px) {
+                main {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Jaysystems visual craft · before / after</h1>
+            <label
+                >View
+                <select id="view">
+                    <option value="doors">Three doors</option>
+                    <option value="home-viewport">Homepage first viewport</option>
+                    <option value="library-viewport">Library first viewport</option>
+                    <option value="home-full">Complete homepage</option>
+                    <option value="library-full">Complete library</option>
+                    <option value="now">Entering Jonah</option>
+                    <option value="curiosity">Entering Curiosity</option>
+                    <option value="principles">Principles to engineering</option>
+                </select>
+            </label>
+            <label
+                >Capture width
+                <select id="width">
+                    <option>1440</option>
+                    <option>1280</option>
+                    <option>768</option>
+                    <option>390</option>
+                    <option>320</option>
+                </select>
+            </label>
+            <p>
+                Real Chrome screenshots at 1000px viewport height, reduced motion. Images fit these columns; open an image for its original
+                dimensions. <a href="report.md">Read findings, measurements and limitations.</a>
+            </p>
+        </header>
+        <main>
+            <figure>
+                <figcaption>Before · origin/main 6b025dc</figcaption>
+                <a id="before-link" href="before/doors-1440.jpg"
+                    ><img id="before" src="before/doors-1440.jpg" alt="Baseline three doors at 1440px"
+                /></a>
+            </figure>
+            <figure>
+                <figcaption>After · visual craft</figcaption>
+                <a id="after-link" href="after/doors-1440.jpg"
+                    ><img id="after" src="after/doors-1440.jpg" alt="Refined three doors at 1440px"
+                /></a>
+            </figure>
+        </main>
+        <script>
+            const view = document.getElementById('view');
+            const width = document.getElementById('width');
+            function update() {
+                const [name, mode] = view.value.split('-');
+                const file = `${name}-${width.value}${mode ? '-' + mode : ''}.jpg`;
+                for (const phase of ['before', 'after']) {
+                    document.getElementById(phase).src = `${phase}/${file}`;
+                    document.getElementById(phase).alt = `${phase}: ${view.selectedOptions[0].text} at ${width.value}px`;
+                    document.getElementById(`${phase}-link`).href = `${phase}/${file}`;
+                }
+            }
+            view.addEventListener('change', update);
+            width.addEventListener('change', update);
+        </script>
+    </body>
+</html>

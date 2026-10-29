@@ -1,0 +1,130 @@
+[
+  {
+    "name": "home",
+    "profile": "mobile",
+    "baseline": {
+      "performance": 98,
+      "accessibility": 100,
+      "lcpMs": 2030.9305044774032,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 477419,
+      "requests": 14
+    },
+    "candidate": {
+      "performance": 98,
+      "accessibility": 100,
+      "lcpMs": 2028.4140924454523,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 479376,
+      "requests": 14
+    },
+    "delta": {
+      "performance": 0,
+      "accessibility": 0,
+      "lcpMs": -2.5164120319509493,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 1957,
+      "requests": 0
+    },
+    "flags": []
+  },
+  {
+    "name": "home",
+    "profile": "desktop",
+    "baseline": {
+      "performance": 98,
+      "accessibility": 100,
+      "lcpMs": 898.6620455616534,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 477419,
+      "requests": 14
+    },
+    "candidate": {
+      "performance": 98,
+      "accessibility": 100,
+      "lcpMs": 849.7235498441362,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 479376,
+      "requests": 14
+    },
+    "delta": {
+      "performance": 0,
+      "accessibility": 0,
+      "lcpMs": -48.938495717517185,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 1957,
+      "requests": 0
+    },
+    "flags": []
+  },
+  {
+    "name": "library",
+    "profile": "mobile",
+    "baseline": {
+      "performance": 99,
+      "accessibility": 100,
+      "lcpMs": 1656.7570500000002,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 147875,
+      "requests": 9
+    },
+    "candidate": {
+      "performance": 99,
+      "accessibility": 100,
+      "lcpMs": 1654.1086500000001,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 148788,
+      "requests": 9
+    },
+    "delta": {
+      "performance": 0,
+      "accessibility": 0,
+      "lcpMs": -2.648400000000038,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 913,
+      "requests": 0
+    },
+    "flags": []
+  },
+  {
+    "name": "library",
+    "profile": "desktop",
+    "baseline": {
+      "performance": 100,
+      "accessibility": 100,
+      "lcpMs": 521.6726,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 147875,
+      "requests": 9
+    },
+    "candidate": {
+      "performance": 100,
+      "accessibility": 100,
+      "lcpMs": 522.8093,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 148788,
+      "requests": 9
+    },
+    "delta": {
+      "performance": 0,
+      "accessibility": 0,
+      "lcpMs": 1.136700000000019,
+      "cls": 0,
+      "tbtMs": 0,
+      "bytes": 913,
+      "requests": 0
+    },
+    "flags": []
+  }
+]

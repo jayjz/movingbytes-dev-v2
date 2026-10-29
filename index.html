@@ -484,10 +484,16 @@
                             <h3>What actually enforces an agent’s boundaries?</h3>
                             <p class="door-project">Black Lantern</p>
                             <svg class="door-mechanism" viewBox="0 0 320 128" aria-hidden="true" focusable="false">
-                                <path d="M16 42H106L152 64M16 90H106L152 64M184 64H300" />
-                                <path class="mechanism-accent" d="M168 20V108" />
-                                <circle cx="168" cy="64" r="15" />
-                                <circle cx="284" cy="64" r="5" />
+                                <!-- Conceptual authorization boundary and separate resource observation. -->
+                                <path class="mechanism-faint" d="M166 10V118" />
+                                <path d="M12 48H134M184 48H250" />
+                                <path class="mechanism-accent" d="M166 10V34M166 62V118" />
+                                <circle class="mechanism-accent" cx="166" cy="48" r="14" />
+                                <path d="M250 32H296V64H250Z" />
+                                <path class="mechanism-observation" d="M273 64V98H102" />
+                                <circle cx="91" cy="98" r="10" />
+                                <circle cx="91" cy="98" r="3" />
+                                <path class="mechanism-faint" d="M30 40V56M48 40V56M66 40V56" />
                             </svg>
                             <p class="door-implementation">
                                 Harness-bound identity reaches a final authorization check; a separate observer records the synthetic
@@ -504,9 +510,16 @@
                             <h3>When is an action eligible to happen?</h3>
                             <p class="door-project">SHAD0W</p>
                             <svg class="door-mechanism" viewBox="0 0 320 128" aria-hidden="true" focusable="false">
-                                <path d="M16 80H304M80 38V102M166 38V102M252 38V102" />
-                                <circle cx="80" cy="80" r="5" />
-                                <path class="mechanism-accent" d="M155 69L177 91M177 69L155 91M240 80L249 89L268 65" />
+                                <!-- Time eligibility and the independent paper-risk gate are distinct. -->
+                                <path
+                                    class="mechanism-faint"
+                                    d="M14 83H302M36 78V88M72 78V88M108 78V88M144 78V88M180 78V88M216 78V88M252 78V88"
+                                />
+                                <path class="mechanism-history" d="M18 62H140" />
+                                <path class="mechanism-accent" d="M140 14V91M156 62H292L284 54M292 62L284 70" />
+                                <circle cx="66" cy="62" r="5" />
+                                <circle class="mechanism-accent" cx="201" cy="62" r="5" />
+                                <path d="M201 89V104H260L274 90L288 104L274 118L260 104" />
                             </svg>
                             <p class="door-implementation">
                                 A chronological timeline admits opportunities strictly after signal availability. Explicit lifecycle state
@@ -524,10 +537,15 @@
                             <h3>Can intelligence operate without publishing authority?</h3>
                             <p class="door-project">Automated Social</p>
                             <svg class="door-mechanism" viewBox="0 0 320 128" aria-hidden="true" focusable="false">
-                                <path d="M16 64H62M102 64H144M184 64H226" />
-                                <path d="M62 42H102V86H62ZM144 42H184V86H144Z" />
-                                <circle cx="246" cy="64" r="20" />
-                                <path class="mechanism-accent" d="M281 28V100M291 28V100" />
+                                <!-- A bound review handoff; no path confers publishing authority. -->
+                                <path class="mechanism-faint" d="M18 24H66V78M24 30H72V84" />
+                                <path d="M30 36H78V90H30ZM40 50H66M40 60H66M40 70H58M78 63H112" />
+                                <rect class="mechanism-accent" x="112" y="20" width="76" height="86" rx="3" />
+                                <path d="M124 42H176M124 52H162M124 74H176M124 84H162M188 63H228" />
+                                <circle cx="247" cy="63" r="19" />
+                                <circle cx="247" cy="58" r="5" />
+                                <path d="M236 74Q247 61 258 74" />
+                                <path class="mechanism-accent" d="M286 20V106M296 20V106" />
                             </svg>
                             <p class="door-implementation">
                                 Ollama drafts locally. SQLite binds review to an exact revision and payload hash; Telegram carries the human

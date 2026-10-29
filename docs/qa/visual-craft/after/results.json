@@ -1,0 +1,77 @@
+{
+  "chrome": "156.0.8078.49",
+  "base": "http://127.0.0.1:8000",
+  "height": 1000,
+  "results": [
+    {
+      "name": "home",
+      "width": 320,
+      "textHash": "cab98ff47c64e14df2f4fd8eb29e3c24560f08be4da0aeda647aa30fa4270ad2",
+      "linksHash": "b1f643dc1b751f1d3cbd3b1f282d5dede28481c6c0dd812883b58641ddb0dcd9",
+      "errors": []
+    },
+    {
+      "name": "library",
+      "width": 320,
+      "textHash": "1edcab9b60eac70226e9c1bd4b1e709b952c89602f6f10c9c5aad35685d07896",
+      "linksHash": "b3e93d55993d5cb5b3438fca7b7adc8a396b9c9ba33b137abbc84d799cca1ac2",
+      "errors": []
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "textHash": "cab98ff47c64e14df2f4fd8eb29e3c24560f08be4da0aeda647aa30fa4270ad2",
+      "linksHash": "b1f643dc1b751f1d3cbd3b1f282d5dede28481c6c0dd812883b58641ddb0dcd9",
+      "errors": []
+    },
+    {
+      "name": "library",
+      "width": 390,
+      "textHash": "1edcab9b60eac70226e9c1bd4b1e709b952c89602f6f10c9c5aad35685d07896",
+      "linksHash": "b3e93d55993d5cb5b3438fca7b7adc8a396b9c9ba33b137abbc84d799cca1ac2",
+      "errors": []
+    },
+    {
+      "name": "home",
+      "width": 768,
+      "textHash": "cab98ff47c64e14df2f4fd8eb29e3c24560f08be4da0aeda647aa30fa4270ad2",
+      "linksHash": "b1f643dc1b751f1d3cbd3b1f282d5dede28481c6c0dd812883b58641ddb0dcd9",
+      "errors": []
+    },
+    {
+      "name": "library",
+      "width": 768,
+      "textHash": "1edcab9b60eac70226e9c1bd4b1e709b952c89602f6f10c9c5aad35685d07896",
+      "linksHash": "b3e93d55993d5cb5b3438fca7b7adc8a396b9c9ba33b137abbc84d799cca1ac2",
+      "errors": []
+    },
+    {
+      "name": "home",
+      "width": 1280,
+      "textHash": "cab98ff47c64e14df2f4fd8eb29e3c24560f08be4da0aeda647aa30fa4270ad2",
+      "linksHash": "b1f643dc1b751f1d3cbd3b1f282d5dede28481c6c0dd812883b58641ddb0dcd9",
+      "errors": []
+    },
+    {
+      "name": "library",
+      "width": 1280,
+      "textHash": "1edcab9b60eac70226e9c1bd4b1e709b952c89602f6f10c9c5aad35685d07896",
+      "linksHash": "b3e93d55993d5cb5b3438fca7b7adc8a396b9c9ba33b137abbc84d799cca1ac2",
+      "errors": []
+    },
+    {
+      "name": "home",
+      "width": 1440,
+      "textHash": "cab98ff47c64e14df2f4fd8eb29e3c24560f08be4da0aeda647aa30fa4270ad2",
+      "linksHash": "b1f643dc1b751f1d3cbd3b1f282d5dede28481c6c0dd812883b58641ddb0dcd9",
+      "errors": []
+    },
+    {
+      "name": "library",
+      "width": 1440,
+      "textHash": "1edcab9b60eac70226e9c1bd4b1e709b952c89602f6f10c9c5aad35685d07896",
+      "linksHash": "b3e93d55993d5cb5b3438fca7b7adc8a396b9c9ba33b137abbc84d799cca1ac2",
+      "errors": []
+    }
+  ]
+}
