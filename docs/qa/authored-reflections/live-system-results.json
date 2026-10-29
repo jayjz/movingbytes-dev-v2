@@ -1,0 +1,62 @@
+[
+  {
+    "width": 320,
+    "mode": "normal",
+    "errors": [],
+    "failures": [],
+    "badResponses": [],
+    "dataRequests": [],
+    "axeViolations": [],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "mode": "normal",
+    "errors": [],
+    "failures": [],
+    "badResponses": [],
+    "dataRequests": [],
+    "axeViolations": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "mode": "normal",
+    "errors": [],
+    "failures": [],
+    "badResponses": [],
+    "dataRequests": [],
+    "axeViolations": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "mode": "normal",
+    "errors": [],
+    "failures": [],
+    "badResponses": [],
+    "dataRequests": [],
+    "axeViolations": [],
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "mode": "large-text",
+    "errors": [],
+    "failures": [],
+    "badResponses": [],
+    "dataRequests": [],
+    "axeViolations": [],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "mode": "no-js",
+    "errors": [],
+    "failures": [],
+    "badResponses": [],
+    "dataRequests": [],
+    "axeViolations": null,
+    "overflow": false
+  }
+]

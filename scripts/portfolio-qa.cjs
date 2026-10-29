@@ -9,6 +9,109 @@ const base = process.env.PORTFOLIO_BASE_URL || 'http://127.0.0.1:4173';
 const out = path.resolve(process.env.PORTFOLIO_QA_OUTPUT || 'test-results/portfolio');
 let preview;
 let browser;
+const authoredSource = fs.readFileSync(path.resolve(__dirname, '../docs/authored/reflections-2026-10-29.md'), 'utf8');
+const normalizeText = text => text.replace(/\s+/g, ' ').trim();
+function originalReflection(heading) {
+    return authoredSource
+        .split(`## ${heading} — verbatim`)[1]
+        .split('\n## ')[0]
+        .split('\n')
+        .filter(line => line.startsWith('>'))
+        .map(line => line.replace(/^> ?/, '').trim())
+        .filter(Boolean);
+}
+const jonahReflection = originalReflection('BibleMap / Jonah');
+const intelligenceReflection = originalReflection('Intelligence / human future');
+const originalSketch = fs.readFileSync(path.resolve(__dirname, '../assets/authored/sinai-golden-calf-original.png'));
+const sketchDimensions = [originalSketch.readUInt32BE(16), originalSketch.readUInt32BE(20)];
+
+async function checkAuthoredMaterial(page, capture, mode = 'normal') {
+    const sketch = page.locator('#sinai-sketch img');
+    await sketch.scrollIntoViewIfNeeded();
+    assert.equal(await sketch.getAttribute('loading'), 'lazy');
+    assert.equal(await sketch.getAttribute('decoding'), 'async');
+    assert.match(await sketch.getAttribute('alt'), /Jay.*hand-drawn.*tablets.*calf/);
+    assert.match(await page.locator('#sinai-sketch figcaption').textContent(), /Original drawing · Jay/);
+    assert.match(await page.locator('#sinai-sketch figcaption').textContent(), /symbolic duality/);
+    if (mode !== 'blocked-authored-image') await sketch.evaluate(img => img.decode());
+    const geometry = await sketch.evaluate(img => {
+        const rect = img.getBoundingClientRect();
+        return {
+            natural: [img.naturalWidth, img.naturalHeight],
+            intrinsic: [Number(img.getAttribute('width')), Number(img.getAttribute('height'))],
+            ratio: rect.width / rect.height,
+            left: rect.left,
+            right: rect.right,
+            viewport: innerWidth,
+            objectFit: getComputedStyle(img).objectFit
+        };
+    });
+    assert.deepEqual(geometry.intrinsic, sketchDimensions);
+    assert.ok(geometry.left >= 0 && geometry.right <= geometry.viewport, `Sketch reflow: ${capture}`);
+    assert.notEqual(geometry.objectFit, 'cover');
+    if (mode !== 'blocked-authored-image') {
+        assert.deepEqual(geometry.natural, sketchDimensions);
+        assert.ok(Math.abs(geometry.ratio - sketchDimensions[0] / sketchDimensions[1]) < 0.001, `Uncropped sketch: ${capture}`);
+    } else assert.deepEqual(geometry.natural, [0, 0]);
+    const original = page.locator('#sinai-sketch a');
+    assert.equal(await original.getAttribute('href'), 'assets/authored/sinai-golden-calf-original.png');
+    await original.focus();
+    assert.equal(await original.evaluate(el => el === document.activeElement), true);
+    assert.equal(await original.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
+    assert.equal(await page.locator('#sinai-sketch figcaption').isVisible(), true);
+    assert.equal(await original.isVisible(), true);
+
+    assert.equal(normalizeText(await page.locator('.jonah-reflection-preview blockquote').textContent()), jonahReflection[1]);
+    const reflection = page.locator('#jonah-reflection');
+    assert.deepEqual((await reflection.locator('blockquote p').allTextContents()).map(normalizeText), jonahReflection);
+    assert.match(await reflection.locator('.authored-reflection__context').textContent(), /personal interpretation/);
+    const summary = reflection.locator('summary');
+    await summary.focus();
+    assert.equal(await summary.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
+    assert.equal(await reflection.locator('blockquote').isVisible(), false);
+    await page.keyboard.press('Enter');
+    assert.equal(await reflection.locator('blockquote').isVisible(), true, `Full reflection available: ${capture}`);
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `Expanded reflow: ${capture}`);
+    if (mode !== 'no-js') {
+        const axe = await new AxeBuilder({ page })
+            .include('#sinai-sketch')
+            .include('.jonah-invitation')
+            .include('#intelligence-reflection')
+            .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
+            .analyze();
+        assert.deepEqual(
+            axe.violations.map(v => ({ id: v.id, targets: v.nodes.map(n => n.target) })),
+            [],
+            `Authored a11y: ${capture}`
+        );
+    }
+    const reflectionCapture = path.join(out, `reflection-open-${capture}.png`);
+    // No-JS element capture stalls in Chromium's stability wait with normal motion.
+    // A full-page capture preserves the open disclosure without changing motion.
+    if (mode === 'no-js') await page.screenshot({ path: reflectionCapture, fullPage: true });
+    else await reflection.screenshot({ path: reflectionCapture });
+    await summary.focus();
+    await page.keyboard.press('Space');
+    assert.equal(await reflection.locator('blockquote').isVisible(), false);
+    const intelligence = page.locator('#intelligence-reflection');
+    assert.deepEqual((await intelligence.locator('blockquote p').allTextContents()).map(normalizeText), intelligenceReflection);
+    assert.match(await intelligence.locator('figcaption').textContent(), /personal thesis & open question/);
+    assert.match(await intelligence.locator('figcaption').textContent(), /does not test this broader thesis/);
+    assert.equal(await intelligence.isVisible(), true);
+    assert.equal(
+        await page.evaluate(() =>
+            Boolean(
+                document.getElementById('intelligence-reflection').compareDocumentPosition(document.getElementById('model-question')) & 4
+            )
+        ),
+        true,
+        'The personal question precedes the limited TEMPER exploration'
+    );
+    if (mode !== 'no-js') {
+        await page.locator('#sinai-sketch').screenshot({ path: path.join(out, `sketch-${capture}.png`) });
+        await intelligence.screenshot({ path: path.join(out, `intelligence-${capture}.png`) });
+    }
+}
 async function startPreview() {
     if (process.env.PORTFOLIO_BASE_URL) return;
     preview = spawn(process.execPath, ['scripts/serve.cjs'], { env: { ...process.env, PORT: '4173' }, stdio: ['ignore', 'pipe', 'pipe'] });
@@ -46,8 +149,13 @@ fs.mkdirSync(out, { recursive: true });
             const errors = [];
             const researchRequests = [];
             const localFailures = [];
+            const originalImageRequests = [];
             page.on('pageerror', error => errors.push(error.message));
-            if (label === 'research') {
+            if (label === 'home')
+                page.on('request', request => {
+                    if (request.url().endsWith('/sinai-golden-calf-original.png')) originalImageRequests.push(request.url());
+                });
+            if (label === 'research' || label === 'home') {
                 page.on('request', request => researchRequests.push(request.url()));
                 page.on('requestfailed', request => {
                     if (request.url().startsWith(base)) localFailures.push(request.url());
@@ -137,6 +245,16 @@ fs.mkdirSync(out, { recursive: true });
                 assert.equal(await page.locator('#curiosity > .container > article, #curiosity > .container > section').count(), 2);
                 assert.equal(await page.locator('#curiosity #model-question + #field-note').count(), 1);
                 assert.equal(await page.locator('#now #model-question').count(), 0);
+                await checkAuthoredMaterial(page, `${width}`);
+                assert.deepEqual(originalImageRequests, [], 'The full PNG is only loaded on request');
+                assert.deepEqual(localFailures, [], 'Homepage assets load without local errors');
+                const webImage = await page.request.get(base + '/assets/authored/sinai-golden-calf.webp');
+                assert.equal(webImage.status(), 200);
+                assert.ok(webImage.headers()['content-type'].includes('image/webp'));
+                const png = await page.request.get(base + '/assets/authored/sinai-golden-calf-original.png');
+                assert.equal(png.status(), 200);
+                assert.ok(png.headers()['content-type'].includes('image/png'));
+                assert.deepEqual(await png.body(), originalSketch, 'The original is served unchanged');
                 const onward = page.locator('.jonah-onward');
                 await onward.focus();
                 assert.equal(await onward.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
@@ -402,7 +520,14 @@ fs.mkdirSync(out, { recursive: true });
                       'large-text',
                       'large-text-320',
                       ...(label === 'home'
-                          ? ['blocked-character-script', 'blocked-threshold-script', 'blocked-jonah-image', 'missing-character', 'touch']
+                          ? [
+                                'blocked-character-script',
+                                'blocked-threshold-script',
+                                'blocked-jonah-image',
+                                'blocked-authored-image',
+                                'missing-character',
+                                'touch'
+                            ]
                           : [])
                   ];
         for (const mode of modes) {
@@ -423,6 +548,7 @@ fs.mkdirSync(out, { recursive: true });
             if (mode === 'blocked-character-script') await context.route('**/js/observer.js', route => route.abort());
             if (mode === 'blocked-threshold-script') await context.route('**/js/threshold.js', route => route.abort());
             if (mode === 'blocked-jonah-image') await context.route('**/assets/jonah/*.jpg', route => route.abort());
+            if (mode === 'blocked-authored-image') await context.route('**/assets/authored/*.webp', route => route.abort());
             if (mode === 'missing-character')
                 await context.route(base + '/', async route => {
                     const response = await route.fetch();
@@ -436,6 +562,7 @@ fs.mkdirSync(out, { recursive: true });
             if (mode.startsWith('large-text')) await page.addStyleTag({ content: 'html { font-size: 200%; }' });
             assert.equal(await page.locator('h1').isVisible(), true);
             if (label === 'home') {
+                await checkAuthoredMaterial(page, mode, mode);
                 assert.equal(await page.locator('.threshold-instrument').isVisible(), true);
                 if (mode === 'no-js' || mode === 'blocked-threshold-script') {
                     assert.equal(await page.locator('.instrument-controls').isVisible(), false);
