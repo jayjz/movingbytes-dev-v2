@@ -900,24 +900,26 @@
     --font-editorial: Georgia, 'Times New Roman', serif;
 }
 .home-page .mastery-hero {
-    padding-block: 2rem 6rem;
+    padding-block: 2rem 4.5rem;
 }
 .home-page .mastery-identity p {
     max-width: 42ch;
     font-size: 0.9rem;
 }
 .home-page .mastery-hero h1 {
-    font-size: clamp(2rem, 3.8vw, 3.7rem);
-    line-height: 1.08;
-    max-width: 22ch;
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: center;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 1.15;
+    max-width: none;
 }
 .home-page .mastery-hero .hero-name {
     display: block;
     color: var(--text-primary);
-    font-size: clamp(7rem, 20vw, 18rem);
-    line-height: 0.85;
-    margin-bottom: 2.5rem;
-    letter-spacing: -0.075em;
+    font: italic 400 clamp(10rem, 27vw, 26rem) / 0.95 var(--font-editorial);
+    margin: -0.08em 0 0.13em 0.06em;
+    letter-spacing: -0.09em;
 }
 .home-page .mastery-hero .hero-statement,
 .home-page .mastery-hero .hero-question {
@@ -930,18 +932,32 @@
     font-weight: 400;
     letter-spacing: -0.055em;
     margin-top: 0.15em;
+    margin-left: 1.25em;
 }
 .mastery-hero__grid {
-    align-items: end;
-    margin-top: 3rem;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 0 5rem;
+    align-items: start;
+    margin-top: 1rem;
     container-type: inline-size;
+}
+.mastery-hero__grid .observer-mount {
+    grid-column: 2;
+    justify-self: end;
+    width: clamp(110px, 13vw, 176px);
+    height: auto;
+    aspect-ratio: 8 / 7;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--accent);
 }
 .mastery-intro p {
     font-size: 1.0625rem;
     line-height: 1.7;
 }
 .mastery-intro {
-    padding-bottom: 0.4rem;
+    grid-column: 2;
+    max-width: 28rem;
+    padding-bottom: 0;
 }
 .hero-archive {
     display: block;
@@ -950,12 +966,22 @@
     font-size: 0.95rem;
 }
 .home-page .about {
-    padding-block: 5rem 4rem;
+    padding-block: 2.5rem 4rem;
+    border-top: 0;
+}
+.home-page .about .container {
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 2rem 8rem;
     border-top: 1px solid var(--border-color);
+    padding-top: 2.5rem;
+}
+.home-page .about .section-intro {
+    margin-bottom: 0;
 }
 .home-page .about .section-intro__title {
     max-width: 15ch;
-    font: 400 clamp(2.5rem, 4.5vw, 4.5rem) / 1.05 var(--font-editorial);
+    font: 400 clamp(2rem, 3vw, 3rem) / 1.1 var(--font-editorial);
     letter-spacing: -0.045em;
 }
 .home-page .about__copy {
@@ -1057,6 +1083,25 @@
     margin-block: 1rem;
 }
 @media (max-width: 800px) {
+    .mastery-hero__grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 1.5rem 2rem;
+    }
+    .home-page .mastery-hero h1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .mastery-hero__grid .observer-mount {
+        align-self: center;
+    }
+    .mastery-intro {
+        grid-column: 1 / -1;
+        max-width: 38rem;
+    }
+    .home-page .about .container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+    }
     .principles .container {
         grid-template-columns: minmax(0, 1fr);
     }
@@ -1099,159 +1144,250 @@
     }
 }
 
-/* A reading-room spread: authentic project artwork, complete and without effects. */
+/* Jonah: a warm exhibition spread, with the complete museum image. */
 .editorial-label {
     font: 0.9rem/1.6 var(--font-mono);
     letter-spacing: 0;
     text-transform: none;
 }
-.explorations .container {
+.home-page .explorations {
+    padding-block: 2rem 0;
+    border-top: 0;
+}
+.explorations > .container {
     display: block;
+    width: 100%;
+    max-width: none;
 }
 .explorations .brand-section__intro {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    width: min(calc(100% - 3rem), var(--max-width));
+    margin: 0 auto 3rem;
+    display: flex;
     align-items: baseline;
-    gap: 1rem 4rem;
-    margin-bottom: 4rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem 3rem;
 }
 .explorations .brand-section__intro h2 {
-    max-width: 16ch;
     margin: 0;
-    font: 400 clamp(2.6rem, 5vw, 5rem) / 1.06 var(--font-editorial);
+    font: 400 clamp(2rem, 4vw, 3.5rem) / 1.1 var(--font-editorial);
     letter-spacing: -0.045em;
 }
 .jonah-feature {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.3fr);
-    background: #2e2e2e;
-    color: var(--text-primary);
+    --paper: #e4dac5;
+    --ink: #30271f;
+    --text-secondary: #62574a;
+    background: var(--paper);
+    color: var(--ink);
+    display: block;
+    padding-top: clamp(2rem, 5vw, 5rem);
+    border-top: 8px solid #a76645;
 }
 .jonah-feature p {
-    color: #c8c3b9;
+    color: #62574a;
 }
 .jonah-frontispiece {
-    min-width: 0;
-    align-self: center;
-    padding: clamp(1.5rem, 4vw, 4rem);
+    width: min(calc(100% - 3rem), var(--max-width));
+    margin: 0 auto 3rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.6fr);
+    align-items: end;
+    gap: 1rem 3rem;
+}
+.jonah-frontispiece .editorial-label {
+    grid-column: 1 / -1;
+    color: var(--ink);
 }
 .jonah-frontispiece h3 {
-    font-family: var(--font-editorial);
-    font-size: clamp(4rem, 8vw, 8rem);
-    line-height: 1;
-    letter-spacing: -0.06em;
-    margin-block: 2.5rem;
+    font: 400 clamp(5rem, 15vw, 14rem) / 0.95 var(--font-editorial);
+    letter-spacing: -0.065em;
+    margin: 0.12em 0 0;
 }
 .jonah-frontispiece h3 span {
     display: block;
-    margin-top: 0.8rem;
-    font-size: 0.28em;
+    margin: 0.6em 0 0 0.15em;
+    font-size: 0.18em;
     line-height: 1.3;
     font-style: italic;
     letter-spacing: -0.025em;
 }
-.jonah-edition {
-    font-size: 1rem;
+.jonah-frontispiece .jonah-edition {
+    max-width: 12ch;
+    padding-bottom: 0.2rem;
+    font: 400 clamp(1.5rem, 2.7vw, 2.5rem) / 1.2 var(--font-editorial);
+    color: var(--ink);
 }
 .jonah-artwork {
+    display: grid;
+    grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.5fr);
+    align-items: end;
     min-width: 0;
-    align-self: end;
+    margin-left: max(1.5rem, calc((100% - var(--max-width)) / 2));
+    gap: 2rem;
 }
 .jonah-artwork img {
+    grid-column: 2;
+    grid-row: 1;
     width: 100%;
     height: auto;
+    background: #2e2e2e;
 }
 .jonah-artwork figcaption {
-    padding: 0.75rem 2rem 2rem;
-    font-size: 0.8125rem;
-    line-height: 1.6;
-    color: #c8c3b9;
+    grid-column: 1;
+    grid-row: 1;
+    padding: 2rem 0;
+    max-width: 28ch;
+    border-top: 1px solid #aa9b84;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #62574a;
+}
+.jonah-artwork figcaption cite {
+    display: block;
+    margin-bottom: 0.7rem;
+    color: var(--ink);
+    font: 400 1.5rem/1.2 var(--font-editorial);
 }
 .jonah-artwork figcaption span {
     display: block;
-    margin-top: 0.4rem;
+    margin-top: 1rem;
 }
 .jonah-invitation {
-    grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.3fr);
-    gap: 0 3rem;
-    padding: clamp(1.5rem, 4vw, 4rem);
-    background: #e5dfd0;
-    color: #20211f;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    gap: 0 6rem;
+    width: min(calc(100% - 3rem), var(--max-width));
+    margin-inline: auto;
+    padding: clamp(2.5rem, 6vw, 6rem) 0;
+    color: var(--ink);
+    background: var(--paper);
 }
 .jonah-invitation > * {
     grid-column: 2;
 }
 .jonah-invitation p {
-    max-width: 55ch;
-    color: #484b47;
+    max-width: 52ch;
+    color: #62574a;
+    font-size: 1.1rem;
 }
 .jonah-invitation > p + p {
     margin-top: 0;
 }
 .jonah-invitation > p:first-child {
     grid-column: 1;
-    grid-row: 1 / 3;
-    color: #20211f;
-    max-width: 12ch;
-    font: 400 clamp(2rem, 3vw, 3rem) / 1.1 var(--font-editorial);
-    letter-spacing: -0.035em;
+    grid-row: 1 / 4;
+    color: var(--ink);
+    max-width: 11ch;
+    font: 400 clamp(2.5rem, 5vw, 4.5rem) / 1.05 var(--font-editorial);
+    letter-spacing: -0.04em;
 }
 .jonah-invitation .ledger-link {
     justify-self: start;
-    margin-top: 2rem;
-    color: #9e350e;
+    margin-top: 1.5rem;
+    color: #8a3516;
+    text-decoration-color: currentColor;
+}
+.jonah-invitation .ledger-link span {
+    color: inherit;
 }
 .jonah-feature a:hover {
     color: #702708;
 }
 .jonah-feature :focus-visible {
-    outline-color: #9e350e;
+    outline-color: #8a3516;
 }
 .jonah-invitation .exploration-context {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     font-size: 0.9rem;
 }
 .jonah-invitation .jonah-credit {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid #b3b0a5;
+    border-top: 1px solid #b3a68f;
     font-size: 0.8125rem;
 }
+.jonah-onward {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 44px;
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+}
+/* Curiosity: a question at publication scale, followed by a working instrument. */
+.curiosity {
+    background: #0e1416;
+    border-top: 8px solid #a76645;
+    padding-block: clamp(3rem, 7vw, 7rem) 2rem;
+}
+.curiosity-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+    flex-wrap: wrap;
+    margin-bottom: clamp(3rem, 7vw, 7rem);
+}
+.curiosity-heading h2 {
+    font: italic 400 clamp(3.5rem, 8vw, 7rem) / 1 var(--font-editorial);
+    letter-spacing: -0.06em;
+}
 .model-exploration {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: 2rem 5rem;
-    padding-top: 6rem;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 .model-exploration > *,
 .jonah-feature > * {
     min-width: 0;
 }
 .model-exploration h3 {
-    margin-top: 1rem;
-    max-width: 20ch;
-    font-size: clamp(2rem, 3.4vw, 3rem);
+    margin: 1.5rem 0 2.5rem;
+    max-width: 21ch;
+    font-size: clamp(2.3rem, 5.5vw, 5rem);
+    line-height: 1.07;
+    letter-spacing: -0.05em;
+}
+.model-exploration .now__copy {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.5rem 6rem;
+    margin-bottom: 3.5rem;
 }
 .model-exploration .now__copy > p {
-    font-size: 1.0625rem;
+    margin: 0;
+    font-size: 1rem;
     color: var(--text-secondary);
 }
+.model-exploration .now__copy > p:first-child {
+    font: 400 clamp(1.5rem, 2.3vw, 2rem) / 1.4 var(--font-editorial);
+    color: var(--text-primary);
+    max-width: 35ch;
+}
 .model-exploration .now-questions {
-    margin-block: 1.5rem;
+    margin: 0;
+    max-width: 48ch;
+    padding-left: 1rem;
+    font-size: 0.95rem;
+}
+.model-exploration .now-questions li:first-child {
+    margin-top: 0;
 }
 .model-exploration .now__copy .exploration-limit {
-    font-size: 0.95rem;
-    padding-top: 1.25rem;
+    font-size: 0.9rem;
+    padding-top: 1rem;
     border-top: 1px solid var(--border-color);
 }
 .exploration-links {
+    grid-column: 2;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem 1.5rem;
-    margin-top: 1.5rem;
-    font-size: 0.95rem;
+    gap: 0.75rem 1.5rem;
+    margin: 0;
+    font-size: 0.9rem;
 }
 .threshold-instrument {
     grid-column: 1 / -1;
@@ -1386,25 +1522,25 @@
     }
 }
 .field-note {
-    padding-block: 4rem 7rem;
-}
-.field-note .container {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
-    gap: 1.5rem 4rem;
-    border-top: 1px solid var(--accent);
-    padding-top: 2rem;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 1.5rem 5rem;
+    margin-top: clamp(3rem, 7vw, 7rem);
+    border-top: 1px solid #74624e;
+    padding-block: 2rem 4rem;
 }
-.field-note h2 {
-    grid-column: 2;
-    font: 400 clamp(2rem, 3.4vw, 3.3rem) / 1.15 var(--font-editorial);
+.field-note .editorial-label {
+    grid-column: 1 / -1;
+    color: #d5b895;
+}
+.field-note h3 {
+    font: 400 clamp(2rem, 3.8vw, 3.6rem) / 1.12 var(--font-editorial);
     letter-spacing: -0.035em;
-    max-width: 24ch;
+    max-width: 19ch;
 }
 .field-note p:last-child {
-    grid-column: 2;
-    max-width: 55ch;
-    font-size: 1.0625rem;
+    max-width: 52ch;
+    font-size: 1.05rem;
 }
 .home-page .principles .brand-section__intro h2 {
     font-size: clamp(1.8rem, 2.7vw, 2.5rem);
@@ -1430,21 +1566,41 @@
     font-size: 0.95rem;
 }
 @media (max-width: 800px) {
-    .explorations .brand-section__intro,
-    .field-note .container {
+    .field-note,
+    .model-exploration .now__copy {
         grid-template-columns: minmax(0, 1fr);
     }
-    .field-note h2,
-    .field-note p:last-child {
+    .exploration-links {
         grid-column: 1;
     }
-    .jonah-feature,
-    .jonah-invitation,
-    .model-exploration {
+    .jonah-invitation {
         grid-template-columns: minmax(0, 1fr);
     }
     .jonah-frontispiece {
-        padding-bottom: 0;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+    }
+    .jonah-frontispiece .jonah-edition {
+        max-width: none;
+        font-size: 1.5rem;
+    }
+    .jonah-artwork {
+        grid-template-columns: minmax(0, 1fr);
+        margin: 0;
+        gap: 0;
+    }
+    .jonah-artwork img {
+        grid-column: 1;
+    }
+    .jonah-artwork figcaption {
+        grid-row: 2;
+        max-width: 55ch;
+        margin-inline: 1.5rem;
+        padding-block: 1.5rem;
+        border-top: 0;
+    }
+    .jonah-artwork figcaption cite {
+        font-size: 1.25rem;
     }
     .jonah-invitation > * {
         grid-column: 1;
@@ -1453,9 +1609,6 @@
         grid-row: auto;
         max-width: none;
         margin-bottom: 1.5rem;
-    }
-    .model-exploration {
-        gap: 1.5rem;
     }
 }
 @media (max-width: 600px) {
@@ -1468,13 +1621,28 @@
     .mastery-identity span {
         display: block;
     }
+    .home-page .mastery-hero .hero-name {
+        font-size: clamp(6rem, 38vw, 14rem);
+        margin-bottom: 0.2em;
+    }
+    .home-page .mastery-hero h1 {
+        font-size: clamp(1.35rem, 5vw, 2rem);
+    }
+    .home-page .mastery-hero .hero-question {
+        margin-left: 0;
+    }
     .mastery-hero__grid {
-        gap: 2rem;
+        grid-template-columns: minmax(0, 1fr) 76px;
+        gap: 1.5rem 0.5rem;
         margin-top: 2rem;
     }
-    .home-page .mastery-hero .hero-name {
-        margin-bottom: 2rem;
-        font-size: clamp(7rem, 29vw, 11rem);
+    .mastery-hero__grid .observer-mount {
+        width: 76px;
+        align-self: start;
+        margin-top: 2.5rem;
+    }
+    .mastery-intro p {
+        font-size: 1rem;
     }
     .home-page .principles {
         padding-bottom: 3rem;
@@ -1487,8 +1655,19 @@
         margin-bottom: 2rem;
     }
     .jonah-frontispiece h3 {
-        font-size: clamp(3rem, 18vw, 5rem);
-        margin-block: 2rem;
+        font-size: clamp(4.5rem, 25vw, 9rem);
+        margin-block: 0.1em 0.15em;
+    }
+    .jonah-frontispiece h3 span {
+        font-size: 0.25em;
+    }
+    .jonah-frontispiece,
+    .jonah-invitation,
+    .explorations .brand-section__intro {
+        width: calc(100% - 2rem);
+    }
+    .jonah-artwork figcaption {
+        margin-inline: 1rem;
     }
     .field-note {
         padding-block: 2.5rem 3rem;

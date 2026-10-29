@@ -101,9 +101,9 @@ fs.mkdirSync(out, { recursive: true });
                     const ids = [
                         'top',
                         'about',
-                        'principles',
                         'now',
-                        'field-note',
+                        'curiosity',
+                        'principles',
                         'work',
                         'shadow',
                         'engineering-details',
@@ -121,9 +121,10 @@ fs.mkdirSync(out, { recursive: true });
                 });
                 assert.ok(
                     opening.order.every((n, i, list) => n >= 0 && (i === 0 || n > list[i - 1])),
-                    'Personal perspective, principles and explorations precede the engineering archive'
+                    'Personal opening, Jonah and curiosity lead into principles and the engineering archive'
                 );
                 assert.equal(opening.githubInOpening, 0);
+                assert.match(await page.locator('.mastery-intro').textContent(), /HVAC and construction/);
                 assert.equal(await page.locator('#work .project-summary').count(), 1);
                 assert.equal(await page.locator('#shadow .project-summary').count(), 1);
                 assert.equal(await page.locator('#work .evidence-flow').count(), 0);
@@ -131,8 +132,19 @@ fs.mkdirSync(out, { recursive: true });
                 assert.equal(await page.locator('h1 .hero-name').textContent(), 'Jay');
                 assert.equal(await page.locator('.hero-projects').count(), 0);
                 assert.equal(await page.locator('#principles li').count(), 4);
-                assert.equal(await page.locator('#now li').count(), 3);
-                assert.equal(await page.locator('#now > .container > article').count(), 2);
+                assert.equal(await page.locator('#now > .container > article').count(), 1);
+                assert.equal(await page.locator('#curiosity .now-questions li').count(), 3);
+                assert.equal(await page.locator('#curiosity > .container > article, #curiosity > .container > section').count(), 2);
+                assert.equal(await page.locator('#curiosity #model-question + #field-note').count(), 1);
+                assert.equal(await page.locator('#now #model-question').count(), 0);
+                const onward = page.locator('.jonah-onward');
+                await onward.focus();
+                assert.equal(await onward.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
+                await page.keyboard.press('Enter');
+                await page.waitForFunction(() => location.hash === '#curiosity');
+                assert.equal(await page.locator('#curiosity').isVisible(), true);
+                await page.goBack();
+                await page.waitForFunction(() => location.hash === '#main');
                 assert.equal(await page.locator('#jonah .ledger-link').getAttribute('href'), 'https://biblemap-pink.vercel.app/jonah/');
                 await page.locator('.jonah-artwork img').scrollIntoViewIfNeeded();
                 await page.locator('.jonah-artwork img').evaluate(img => img.decode());
@@ -264,7 +276,7 @@ fs.mkdirSync(out, { recursive: true });
                 await page.locator('.shadow-feature a[href="/case-studies/shadow.html"]').click();
                 assert.equal(new URL(page.url()).pathname, '/case-studies/shadow.html');
                 await page.goBack();
-                await page.locator('#now a[href="/research.html"]').click();
+                await page.locator('#curiosity a[href="/research.html"]').click();
                 assert.equal(new URL(page.url()).pathname, '/research.html');
                 await page.goBack();
                 assert.equal(await page.locator('.mastery-intro a[href^="mailto:"]').isVisible(), true);
@@ -347,6 +359,7 @@ fs.mkdirSync(out, { recursive: true });
                         'principles',
                         'now',
                         'jonah',
+                        'curiosity',
                         'model-question',
                         'field-note',
                         'systems-map',
@@ -441,7 +454,7 @@ fs.mkdirSync(out, { recursive: true });
                     assert.equal(await page.locator('.jonah-artwork figcaption').isVisible(), true);
                     assert.equal(await page.locator('#jonah .ledger-link').isVisible(), true);
                 }
-                for (const id of ['about', 'principles', 'now', 'jonah', 'model-question', 'field-note'])
+                for (const id of ['about', 'principles', 'now', 'jonah', 'curiosity', 'model-question', 'field-note'])
                     assert.equal(await page.locator(`#${id}`).isVisible(), true);
                 assert.equal(await page.locator('.evidence-flow').isVisible(), true);
                 assert.equal(await page.locator('#systems-map').isVisible(), true);
