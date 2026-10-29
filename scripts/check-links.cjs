@@ -6,6 +6,10 @@ const pages = [
     'index.html',
     'research.html',
     ...fs
+        .readdirSync('work')
+        .filter(f => f.endsWith('.html'))
+        .map(f => `work/${f}`),
+    ...fs
         .readdirSync('case-studies')
         .filter(f => f.endsWith('.html'))
         .map(f => `case-studies/${f}`)
@@ -19,7 +23,8 @@ for (const file of pages) {
     for (const [, value] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
         if (/^(https?:|mailto:|data:)/.test(value)) continue;
         const url = new URL(value, `http://local/${file}`);
-        const target = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
+        let target = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
+        if (target.endsWith('/')) target += 'index.html';
         assert.ok(fs.existsSync(path.join(root, target)), `${file}: missing ${value}`);
         if (url.hash) {
             const targetHtml = fs.readFileSync(target, 'utf8');
@@ -39,7 +44,7 @@ for (const repo of [
     'evidence-strategy-skills',
     'fracture'
 ]) {
-    assert.ok(homepage.includes(`href="https://github.com/jayjz/${repo}"`), `Missing source: ${repo}`);
+    assert.ok(fs.readFileSync('work/evidence.html', 'utf8').includes(`href="https://github.com/jayjz/${repo}"`), `Missing source: ${repo}`);
 }
 assert.ok(homepage.includes('mailto:wizardordinals@gmail.com'));
 const config = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));

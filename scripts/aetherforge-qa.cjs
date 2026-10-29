@@ -66,7 +66,7 @@ async function checkState(page, fixture) {
         const page = await context.newPage();
         const errors = [];
         page.on('pageerror', e => errors.push(e.message));
-        await page.goto(base, { waitUntil: 'networkidle' });
+        await page.goto(base + '/work/evidence.html', { waitUntil: 'networkidle' });
         await page.evaluate(() => document.fonts.ready);
         await page.locator('#af-baseline').focus();
         assert.equal(
@@ -127,7 +127,7 @@ async function checkState(page, fixture) {
         });
         if (mode === 'blocked-script') await context.route('**/js/aetherforge.js', route => route.abort());
         const page = await context.newPage();
-        await page.goto(base, { waitUntil: 'networkidle' });
+        await page.goto(base + '/work/evidence.html', { waitUntil: 'networkidle' });
         if (mode.startsWith('text-200')) await page.addStyleTag({ content: 'html { font-size: 200%; }' });
         for (const fixture of evidence.cases) {
             const label = page.locator(`label:has(#af-${fixture.id})`);

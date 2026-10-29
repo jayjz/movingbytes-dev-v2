@@ -81,9 +81,16 @@ if (process.argv.includes('--capture')) {
     const home = fs.readFileSync('index.html', 'utf8');
     const evidence = fs.readFileSync('work/evidence.html', 'utf8');
     const files = { 'index.html': home, 'work/evidence.html': evidence };
+    const library = fs.readFileSync('work/index.html', 'utf8');
+    for (const [file, html] of Object.entries({ ...files, 'work/index.html': library }))
+        assert.equal(new Set(ids(html)).size, ids(html).length, `Duplicate IDs: ${file}`);
     for (const { id, destination } of inventory.fragments) {
         const file = destination.split('#')[0];
         assert.ok(ids(files[file]).includes(id), `Lost fragment ${id}: ${destination}`);
+        if (file !== 'index.html') {
+            const compatibility = element(home, id);
+            assert.ok(links(compatibility).includes('/' + destination), `Missing exact native compatibility link: ${id}`);
+        }
     }
     for (const [id, hash] of Object.entries(inventory.protected))
         assert.equal(digest(element(home, id)), hash, `Protected authored material changed: ${id}`);
@@ -93,11 +100,16 @@ if (process.argv.includes('--capture')) {
         const migrated = /^(?:https?:|mailto:|#|\/)/.test(url) ? url : '/' + url;
         assert.ok(links(evidence).includes(migrated), `Lost archive URL: ${url}`);
     }
+    const normalize = url => (/^(?:https?:|mailto:|#|\/)/.test(url) ? url : '/' + url);
+    const currentLinks = links(home + evidence).map(normalize);
+    for (const url of inventory.links) assert.ok(currentLinks.includes(normalize(url)), `Lost original URL: ${url}`);
+    for (const revision of inventory.revisionPins)
+        assert.ok((home + evidence).includes(revision), `Lost original revision pin: ${revision}`);
     const archive = evidence.slice(evidence.indexOf('<section id="work"'), evidence.indexOf('</main>'));
     assert.equal(digest(archive.replace(/<[^>]*>/g, ' ')), inventory.archiveTextHash, 'Archive text changed during relocation');
     for (const name of inventory.generatedSlots) {
         assert.equal(
-            [...`${home}${evidence}`.matchAll(new RegExp(`<!-- portfolio:${name}:start -->`, 'g'))].length,
+            [...`${home}${evidence}${library}`.matchAll(new RegExp(`<!-- portfolio:${name}:start -->`, 'g'))].length,
             1,
             `Duplicate or missing generated slot: ${name}`
         );

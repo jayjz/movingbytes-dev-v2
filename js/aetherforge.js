@@ -30,4 +30,17 @@
             });
         }
     });
+    function selectLinkedCase() {
+        const id = location.hash.slice(1);
+        const control = [...instrument.querySelectorAll('input[type="radio"]')].find(
+            input => input.id === id || input.getAttribute('aria-controls') === id
+        );
+        if (!control) return;
+        control.checked = true;
+        control.dispatchEvent(new Event('change', { bubbles: true }));
+        document.getElementById(id).scrollIntoView();
+    }
+    selectLinkedCase();
+    instrument.dataset.permalinkReady = 'true';
+    window.addEventListener('hashchange', selectLinkedCase);
 })();

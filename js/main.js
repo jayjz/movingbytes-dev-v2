@@ -1,6 +1,29 @@
 (() => {
     'use strict';
 
+    function followFragment() {
+        let id;
+        try {
+            id = decodeURIComponent(location.hash.slice(1));
+        } catch {
+            return;
+        }
+        const target = id && document.getElementById(id);
+        if (!target) return;
+        // The visible native link is also the no-JS compatibility path.
+        const onward = target.matches('.legacy-entry') && target.querySelector('a');
+        if (onward) {
+            location.replace(onward.href);
+            return;
+        }
+        for (let ancestor = target; ancestor; ancestor = ancestor.parentElement) {
+            if (ancestor.tagName === 'DETAILS') ancestor.open = true;
+        }
+        target.scrollIntoView();
+    }
+    followFragment();
+    window.addEventListener('hashchange', followFragment);
+
     // Native anchors retain focus, fragments, and history. Content never waits for JS.
     if (!('IntersectionObserver' in window) || !window.matchMedia) return;
 

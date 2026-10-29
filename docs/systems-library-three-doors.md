@@ -1,5 +1,52 @@
 # Three doors into the work
 
+## Implementation checkpoint — current branch
+
+The implementation task supersedes the older branch instructions below. Work
+continues on `feat/systems-library-v2`, created from fetched main `30d9997`.
+PR #22 is merged at that revision; PR #23 also brought in M1. The three M1 files
+match exactly, so no duplicate cherry-pick was needed. The old branch remains
+unchanged at `127b1951`. Clean setup was pushed and remote-verified at `30d9997`.
+
+M2 replaces the homepage catalog with the shared three-door threshold. The
+complete archive moved atomically to `work/evidence.html`, with its author-time
+renderer and existing browser assertions following it. Static compatibility
+entries preserve the old fragment entrances; automatic forwarding follows in M4.
+Protected personal markup, archive text, all source URLs, studies and generated
+slots pass the frozen contract. Five-width home/archive accessibility and overflow
+checks pass; desktop/mobile screenshots were inspected. Baseline `npm run check`
+and the original 53-case browser suite passed. Featured-source revisions and
+limits are recorded in [three-doors.md](evidence/three-doors.md).
+
+M2 pushed and remote-verified at `eba4462815a40e0ca3926d2be27013e317192a59`.
+The relocated homepage and evidence browser suites also pass (18 and 12 cases).
+
+M3 adds `/work/`: six collections, ten selected entries, native collection
+anchors and direct study/source paths. It has no script, search, runtime data or
+duplicated archive sections. Homepage navigation and the threshold lead into the
+library; the evidence archive links back. `npm run check`, the frozen contract
+and eight library browser cases pass, including no-JS, 200% text, keyboard,
+accessibility and five viewport widths. Desktop/mobile screenshots inspected.
+
+M3 pushed and remote-verified at `81efadfab404c15ba4d8f1b69cb05f17e7efb3d4`.
+
+M4 adds progressive legacy forwarding, native fallback links and instrument
+permalinks. The frozen inventory itself is unchanged. The checker now also
+enforces exact compatibility links, all original URLs/pins and no duplicate IDs
+or slots across the three pages. Independent browser verification passes 156
+fragment paths (all 78 with JS on/off), all 89 retained URLs and 92 local HTTP
+destinations. External href preservation does not establish current remote
+availability. No maturity label, evidence text or source pin changed.
+
+M4 pushed and remote-verified at `378426e9badbdf04642dcb267c12ed87ac718e4d`.
+
+M5 completes responsive/keyboard journeys and makes library/preservation QA part
+of the default CI browser command. All requested commands pass: static checks,
+65 page cases, nine library cases, 156 fragment paths, 26 AetherForge cases and
+six generated-section cases. Final screenshots were inspected at all five widths,
+with no-JS, reduced-motion and 200% text coverage. Matched before/after captures,
+recorded outputs and limitations are in the [final review](qa/systems-library/report.md).
+
 ## Baseline and dependency
 
 Started from fetched `origin/main` at `41d7e49` on 29 October 2026. Clean working
