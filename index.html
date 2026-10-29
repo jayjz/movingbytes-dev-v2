@@ -308,6 +308,82 @@
                                 <a href="/research.html">Read the wider research ↗</a>
                             </div>
                         </div>
+                        <figure class="threshold-instrument" aria-labelledby="threshold-title" data-threshold-instrument>
+                            <div class="instrument-heading">
+                                <div>
+                                    <p class="editorial-label">An observatory instrument · Synthetic test inputs</p>
+                                    <h4 id="threshold-title">Confidence is a cutoff, not a guarantee.</h4>
+                                </div>
+                                <div class="instrument-controls" hidden>
+                                    <div class="threshold-label">
+                                        <label for="confidence-threshold">Confidence threshold</label>
+                                        <output id="threshold-value" for="confidence-threshold">0.80</output>
+                                    </div>
+                                    <input
+                                        id="confidence-threshold"
+                                        type="range"
+                                        min="0"
+                                        max="1"
+                                        step="0.05"
+                                        value="0.8"
+                                        aria-describedby="threshold-help"
+                                    />
+                                    <p id="threshold-help">Accept confidence ≥ threshold. Use arrow keys to adjust.</p>
+                                </div>
+                            </div>
+                            <div class="decision-samples">
+                                <div class="decision-sample" data-confidence="0.95" data-correct="true" data-accepted="true">
+                                    <p class="sample-confidence">A <span>0.95</span></p>
+                                    <div class="sample-meter" aria-hidden="true"><span style="height: 95%"></span></div>
+                                    <p class="sample-outcome">Correct</p>
+                                    <p class="sample-values">Prediction 1 · Reference 1</p>
+                                    <p class="sample-admission">Accepted</p>
+                                </div>
+                                <div class="decision-sample" data-confidence="0.90" data-correct="false" data-accepted="true">
+                                    <p class="sample-confidence">B <span>0.90</span></p>
+                                    <div class="sample-meter" aria-hidden="true"><span style="height: 90%"></span></div>
+                                    <p class="sample-outcome">Incorrect</p>
+                                    <p class="sample-values">Prediction 0 · Reference 1</p>
+                                    <p class="sample-admission">Accepted</p>
+                                </div>
+                                <div class="decision-sample" data-confidence="0.60" data-correct="true" data-accepted="false">
+                                    <p class="sample-confidence">C <span>0.60</span></p>
+                                    <div class="sample-meter" aria-hidden="true"><span style="height: 60%"></span></div>
+                                    <p class="sample-outcome">Correct</p>
+                                    <p class="sample-values">Prediction 1 · Reference 1</p>
+                                    <p class="sample-admission">Deferred</p>
+                                </div>
+                                <div class="decision-sample" data-confidence="0.40" data-correct="true" data-accepted="false">
+                                    <p class="sample-confidence">D <span>0.40</span></p>
+                                    <div class="sample-meter" aria-hidden="true"><span style="height: 40%"></span></div>
+                                    <p class="sample-outcome">Correct</p>
+                                    <p class="sample-values">Prediction 0 · Reference 0</p>
+                                    <p class="sample-admission">Deferred</p>
+                                </div>
+                            </div>
+                            <dl class="instrument-readings">
+                                <div>
+                                    <dt>Coverage <span>accepted / all decisions</span></dt>
+                                    <dd data-coverage>50%</dd>
+                                </div>
+                                <div>
+                                    <dt>Selective risk <span>errors / accepted decisions</span></dt>
+                                    <dd data-risk>50%</dd>
+                                </div>
+                            </dl>
+                            <p class="instrument-summary" role="status" aria-live="polite" aria-atomic="true">
+                                At threshold 0.80, 2 of 4 decisions are accepted; 1 accepted decision is incorrect.
+                            </p>
+                            <figcaption>
+                                Four synthetic inputs from TEMPER’s
+                                <a
+                                    href="https://github.com/jayjz/TEMPER/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/tests/unit/test_metrics.py"
+                                    >selective-risk and risk/coverage unit tests</a
+                                >. This illustrates the metric definitions, not model performance. At 0.80, the incorrect 0.90-confidence
+                                decision stays while two correct decisions are deferred. Raising the threshold does not guarantee lower
+                                risk. With none accepted, risk is undefined.
+                            </figcaption>
+                        </figure>
                     </article>
                 </div>
             </section>
@@ -1391,6 +1467,7 @@
         </footer>
 
         <script src="js/main.js?v=20260907-evidence" defer></script>
+        <script src="js/threshold.js" defer></script>
         <script src="js/observer.js" defer></script>
         <script src="js/aetherforge.js" defer></script>
     </body>

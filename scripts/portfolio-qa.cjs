@@ -133,10 +133,56 @@ fs.mkdirSync(out, { recursive: true });
                 assert.equal(await page.locator('#now li').count(), 3);
                 assert.equal(await page.locator('#now > .container > article').count(), 2);
                 assert.equal(await page.locator('#jonah .ledger-link').getAttribute('href'), 'https://biblemap-pink.vercel.app/jonah/');
+                await page.locator('.jonah-artwork img').scrollIntoViewIfNeeded();
+                await page.locator('.jonah-artwork img').evaluate(img => img.decode());
                 assert.equal(await page.locator('.jonah-artwork img').evaluate(img => img.complete && img.naturalWidth > 0), true);
                 assert.match(await page.locator('.jonah-artwork figcaption').textContent(), /later artistic interpretation/);
                 assert.match(await page.locator('#model-question').textContent(), /no cost or reliability\s+advantage/);
-                assert.equal(await page.locator('#model-question a[href*="/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/"]').count(), 1);
+                assert.equal(
+                    await page.locator('.exploration-links a[href*="/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/"]').count(),
+                    1
+                );
+                assert.equal(await page.locator('.threshold-instrument a[href$="/tests/unit/test_metrics.py"]').count(), 1);
+                const slider = page.locator('#confidence-threshold');
+                assert.deepEqual(
+                    await page
+                        .locator('[data-confidence]')
+                        .evaluateAll(nodes => nodes.map(n => [Number(n.dataset.confidence), n.dataset.correct])),
+                    [
+                        [0.95, 'true'],
+                        [0.9, 'false'],
+                        [0.6, 'true'],
+                        [0.4, 'true']
+                    ]
+                );
+                // Expected values derive from the pinned four-input fixture, including >= ties and the empty set.
+                for (const [threshold, count, coverage, risk] of [
+                    ['0', 4, '100%', '25%'],
+                    ['0.4', 4, '100%', '25%'],
+                    ['0.6', 3, '75%', '33.3%'],
+                    ['0.8', 2, '50%', '50%'],
+                    ['0.9', 2, '50%', '50%'],
+                    ['0.95', 1, '25%', '0%'],
+                    ['1', 0, '0%', 'Undefined']
+                ]) {
+                    await slider.fill(threshold);
+                    assert.equal(await page.locator('[data-accepted="true"]').count(), count);
+                    assert.equal(await page.locator('[data-coverage]').textContent(), coverage);
+                    assert.equal(await page.locator('[data-risk]').textContent(), risk);
+                }
+                await slider.focus();
+                assert.equal(await slider.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
+                await page.keyboard.press('Home');
+                assert.equal(await slider.inputValue(), '0');
+                await page.keyboard.press('End');
+                assert.equal(await slider.inputValue(), '1');
+                await page.keyboard.press('ArrowLeft');
+                assert.equal(await slider.inputValue(), '0.95');
+                assert.equal(await page.locator('[data-risk]').textContent(), '0%');
+                await slider.scrollIntoViewIfNeeded();
+                await slider.click();
+                assert.notEqual(await slider.inputValue(), '0.95', 'Pointer adjusts the same native slider');
+                await slider.fill('0.8');
                 assert.equal(await page.locator('#field-note').getAttribute('data-editorial-status'), 'owner-review');
                 assert.equal(await page.locator('.mastery-intro a[href="#now"]').count(), 1);
                 assert.equal(await page.locator('.mastery-intro a[href="#work"]').count(), 1);
