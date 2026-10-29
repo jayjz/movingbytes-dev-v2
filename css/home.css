@@ -918,7 +918,7 @@
     display: block;
     color: var(--text-primary);
     font: italic 400 clamp(10rem, 27vw, 26rem) / 0.95 var(--font-editorial);
-    margin: -0.08em 0 0.13em -0.045em;
+    margin: -0.08em 0 0.13em 0.06em;
     letter-spacing: -0.09em;
 }
 .home-page .mastery-hero .hero-statement,
@@ -1307,6 +1307,15 @@
     border-top: 1px solid #b3a68f;
     font-size: 0.8125rem;
 }
+.jonah-onward {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 44px;
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+}
 /* Curiosity: a question at publication scale, followed by a working instrument. */
 .curiosity {
     background: #0e1416;
@@ -1564,8 +1573,7 @@
     .exploration-links {
         grid-column: 1;
     }
-    .jonah-invitation,
-    .model-exploration {
+    .jonah-invitation {
         grid-template-columns: minmax(0, 1fr);
     }
     .jonah-frontispiece {
@@ -1602,9 +1610,6 @@
         max-width: none;
         margin-bottom: 1.5rem;
     }
-    .model-exploration {
-        gap: 1.5rem;
-    }
 }
 @media (max-width: 600px) {
     .home-page .mastery-hero {
@@ -1615,10 +1620,6 @@
     }
     .mastery-identity span {
         display: block;
-    }
-    .mastery-hero__grid {
-        gap: 2rem;
-        margin-top: 2rem;
     }
     .home-page .mastery-hero .hero-name {
         font-size: clamp(6rem, 38vw, 14rem);

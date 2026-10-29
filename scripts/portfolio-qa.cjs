@@ -137,6 +137,14 @@ fs.mkdirSync(out, { recursive: true });
                 assert.equal(await page.locator('#curiosity > .container > article, #curiosity > .container > section').count(), 2);
                 assert.equal(await page.locator('#curiosity #model-question + #field-note').count(), 1);
                 assert.equal(await page.locator('#now #model-question').count(), 0);
+                const onward = page.locator('.jonah-onward');
+                await onward.focus();
+                assert.equal(await onward.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
+                await page.keyboard.press('Enter');
+                await page.waitForFunction(() => location.hash === '#curiosity');
+                assert.equal(await page.locator('#curiosity').isVisible(), true);
+                await page.goBack();
+                await page.waitForFunction(() => location.hash === '#main');
                 assert.equal(await page.locator('#jonah .ledger-link').getAttribute('href'), 'https://biblemap-pink.vercel.app/jonah/');
                 await page.locator('.jonah-artwork img').scrollIntoViewIfNeeded();
                 await page.locator('.jonah-artwork img').evaluate(img => img.decode());
@@ -351,6 +359,7 @@ fs.mkdirSync(out, { recursive: true });
                         'principles',
                         'now',
                         'jonah',
+                        'curiosity',
                         'model-question',
                         'field-note',
                         'systems-map',
@@ -445,7 +454,7 @@ fs.mkdirSync(out, { recursive: true });
                     assert.equal(await page.locator('.jonah-artwork figcaption').isVisible(), true);
                     assert.equal(await page.locator('#jonah .ledger-link').isVisible(), true);
                 }
-                for (const id of ['about', 'principles', 'now', 'jonah', 'model-question', 'field-note'])
+                for (const id of ['about', 'principles', 'now', 'jonah', 'curiosity', 'model-question', 'field-note'])
                     assert.equal(await page.locator(`#${id}`).isVisible(), true);
                 assert.equal(await page.locator('.evidence-flow').isVisible(), true);
                 assert.equal(await page.locator('#systems-map').isVisible(), true);
