@@ -987,6 +987,33 @@
 .home-page .about__copy {
     max-width: 57ch;
 }
+.sinai-sketch {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.7fr);
+    align-items: center;
+    gap: 2rem 5rem;
+    margin-top: 2rem;
+}
+.sinai-sketch img {
+    width: 100%;
+    height: auto;
+}
+.sinai-sketch figcaption {
+    max-width: 36ch;
+    min-width: 0;
+}
+.sinai-sketch .sinai-sketch__title {
+    font: 400 clamp(2rem, 3.5vw, 3.5rem) / 1.1 var(--font-editorial);
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+}
+.sinai-sketch figcaption > a {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding-block: 0.5rem;
+    font-size: 0.9rem;
+}
 .brand-section {
     padding-block: 4rem 5rem;
     border-top: 1px solid var(--border-color);
@@ -1101,6 +1128,11 @@
     .home-page .about .container {
         grid-template-columns: minmax(0, 1fr);
         gap: 1rem;
+    }
+    .sinai-sketch {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+        margin-top: 1.5rem;
     }
     .principles .container {
         grid-template-columns: minmax(0, 1fr);

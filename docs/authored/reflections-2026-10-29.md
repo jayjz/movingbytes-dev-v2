@@ -16,7 +16,7 @@ Status: owner-supplied primary material, captured 29 October 2026. This is a **s
 
 Owner describes the supplied pencil/charcoal sketch as **the two tablets of Mount Sinai and the golden calf below, showcasing duality**. Visible drawing: two tablets on a stone platform, a calf figure below, flames or smoke at the sides, beams of light. Preserve the original visual and credit the drawing as the owner's own work.
 
-**Asset pending**: The uploaded sketch is in the conversation, but has not yet been added to this GitHub branch. Do not substitute a generated image, stock art, or the BibleMap Jonah sculpture. The asset must be explicitly transferred into `assets/authored/` before referencing it from the homepage.
+**Assets received**: `assets/authored/sinai-golden-calf.webp` is the optimized website image; `assets/authored/sinai-golden-calf-original.png` preserves the supplied original. Both are 1042 × 851 and were committed at `565a161`. Do not substitute a generated image, stock art, or the BibleMap Jonah sculpture.
 
 ## Editorial integration proposal (not yet published)
 
