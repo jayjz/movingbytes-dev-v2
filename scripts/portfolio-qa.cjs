@@ -102,7 +102,7 @@ fs.mkdirSync(out, { recursive: true });
                         'top',
                         'about',
                         'now',
-                        'field-note',
+                        'curiosity',
                         'principles',
                         'work',
                         'shadow',
@@ -132,8 +132,11 @@ fs.mkdirSync(out, { recursive: true });
                 assert.equal(await page.locator('h1 .hero-name').textContent(), 'Jay');
                 assert.equal(await page.locator('.hero-projects').count(), 0);
                 assert.equal(await page.locator('#principles li').count(), 4);
-                assert.equal(await page.locator('#now li').count(), 3);
-                assert.equal(await page.locator('#now > .container > article').count(), 2);
+                assert.equal(await page.locator('#now > .container > article').count(), 1);
+                assert.equal(await page.locator('#curiosity .now-questions li').count(), 3);
+                assert.equal(await page.locator('#curiosity > .container > article, #curiosity > .container > section').count(), 2);
+                assert.equal(await page.locator('#curiosity #model-question + #field-note').count(), 1);
+                assert.equal(await page.locator('#now #model-question').count(), 0);
                 assert.equal(await page.locator('#jonah .ledger-link').getAttribute('href'), 'https://biblemap-pink.vercel.app/jonah/');
                 await page.locator('.jonah-artwork img').scrollIntoViewIfNeeded();
                 await page.locator('.jonah-artwork img').evaluate(img => img.decode());
@@ -265,7 +268,7 @@ fs.mkdirSync(out, { recursive: true });
                 await page.locator('.shadow-feature a[href="/case-studies/shadow.html"]').click();
                 assert.equal(new URL(page.url()).pathname, '/case-studies/shadow.html');
                 await page.goBack();
-                await page.locator('#now a[href="/research.html"]').click();
+                await page.locator('#curiosity a[href="/research.html"]').click();
                 assert.equal(new URL(page.url()).pathname, '/research.html');
                 await page.goBack();
                 assert.equal(await page.locator('.mastery-intro a[href^="mailto:"]').isVisible(), true);
