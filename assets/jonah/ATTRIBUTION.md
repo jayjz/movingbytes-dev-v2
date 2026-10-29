@@ -20,3 +20,9 @@ No project source code was copied. The image's CC0 rights are distinct from
 BibleMap's MIT software license. The complete image is displayed without crop,
 distortion, animation or text overlay. The visible caption identifies later
 artistic reception of Jonah 4, not a portrait, historical scene or biblical text.
+
+The Human Observatory treatment enlarges the same complete image and places its
+caption beside it on desktop, below it on mobile. The surrounding paper color is
+page design; the photograph itself has no color filter, crop or overlaid text.
+No new artwork or generated historical scene is included. Object-level public
+domain status was rechecked directly on 29 October 2026 for this treatment.

@@ -1144,127 +1144,172 @@
     }
 }
 
-/* A reading-room spread: authentic project artwork, complete and without effects. */
+/* Jonah: a warm exhibition spread, with the complete museum image. */
 .editorial-label {
     font: 0.9rem/1.6 var(--font-mono);
     letter-spacing: 0;
     text-transform: none;
 }
-.explorations .container {
+.home-page .explorations {
+    padding-block: 2rem 0;
+    border-top: 0;
+}
+.explorations > .container {
     display: block;
+    width: 100%;
+    max-width: none;
 }
 .explorations .brand-section__intro {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    width: min(calc(100% - 3rem), var(--max-width));
+    margin: 0 auto 3rem;
+    display: flex;
     align-items: baseline;
-    gap: 1rem 4rem;
-    margin-bottom: 4rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem 3rem;
 }
 .explorations .brand-section__intro h2 {
-    max-width: 16ch;
     margin: 0;
-    font: 400 clamp(2.6rem, 5vw, 5rem) / 1.06 var(--font-editorial);
+    font: 400 clamp(2rem, 4vw, 3.5rem) / 1.1 var(--font-editorial);
     letter-spacing: -0.045em;
 }
 .jonah-feature {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.3fr);
-    background: #2e2e2e;
-    color: var(--text-primary);
+    --paper: #e4dac5;
+    --ink: #30271f;
+    --text-secondary: #62574a;
+    background: var(--paper);
+    color: var(--ink);
+    display: block;
+    padding-top: clamp(2rem, 5vw, 5rem);
+    border-top: 8px solid #a76645;
 }
 .jonah-feature p {
-    color: #c8c3b9;
+    color: #62574a;
 }
 .jonah-frontispiece {
-    min-width: 0;
-    align-self: center;
-    padding: clamp(1.5rem, 4vw, 4rem);
+    width: min(calc(100% - 3rem), var(--max-width));
+    margin: 0 auto 3rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.6fr);
+    align-items: end;
+    gap: 1rem 3rem;
+}
+.jonah-frontispiece .editorial-label {
+    grid-column: 1 / -1;
+    color: var(--ink);
 }
 .jonah-frontispiece h3 {
-    font-family: var(--font-editorial);
-    font-size: clamp(4rem, 8vw, 8rem);
-    line-height: 1;
-    letter-spacing: -0.06em;
-    margin-block: 2.5rem;
+    font: 400 clamp(5rem, 15vw, 14rem) / 0.95 var(--font-editorial);
+    letter-spacing: -0.065em;
+    margin: 0.12em 0 0;
 }
 .jonah-frontispiece h3 span {
     display: block;
-    margin-top: 0.8rem;
-    font-size: 0.28em;
+    margin: 0.6em 0 0 0.15em;
+    font-size: 0.18em;
     line-height: 1.3;
     font-style: italic;
     letter-spacing: -0.025em;
 }
-.jonah-edition {
-    font-size: 1rem;
+.jonah-frontispiece .jonah-edition {
+    max-width: 12ch;
+    padding-bottom: 0.2rem;
+    font: 400 clamp(1.5rem, 2.7vw, 2.5rem) / 1.2 var(--font-editorial);
+    color: var(--ink);
 }
 .jonah-artwork {
+    display: grid;
+    grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.5fr);
+    align-items: end;
     min-width: 0;
-    align-self: end;
+    margin-left: max(1.5rem, calc((100% - var(--max-width)) / 2));
+    gap: 2rem;
 }
 .jonah-artwork img {
+    grid-column: 2;
+    grid-row: 1;
     width: 100%;
     height: auto;
+    background: #2e2e2e;
 }
 .jonah-artwork figcaption {
-    padding: 0.75rem 2rem 2rem;
-    font-size: 0.8125rem;
-    line-height: 1.6;
-    color: #c8c3b9;
+    grid-column: 1;
+    grid-row: 1;
+    padding: 2rem 0;
+    max-width: 28ch;
+    border-top: 1px solid #aa9b84;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #62574a;
+}
+.jonah-artwork figcaption cite {
+    display: block;
+    margin-bottom: 0.7rem;
+    color: var(--ink);
+    font: 400 1.5rem/1.2 var(--font-editorial);
 }
 .jonah-artwork figcaption span {
     display: block;
-    margin-top: 0.4rem;
+    margin-top: 1rem;
 }
 .jonah-invitation {
-    grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.3fr);
-    gap: 0 3rem;
-    padding: clamp(1.5rem, 4vw, 4rem);
-    background: #e5dfd0;
-    color: #20211f;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    gap: 0 6rem;
+    width: min(calc(100% - 3rem), var(--max-width));
+    margin-inline: auto;
+    padding: clamp(2.5rem, 6vw, 6rem) 0;
+    color: var(--ink);
+    background: var(--paper);
 }
 .jonah-invitation > * {
     grid-column: 2;
 }
 .jonah-invitation p {
-    max-width: 55ch;
-    color: #484b47;
+    max-width: 52ch;
+    color: #62574a;
+    font-size: 1.1rem;
 }
 .jonah-invitation > p + p {
     margin-top: 0;
 }
 .jonah-invitation > p:first-child {
     grid-column: 1;
-    grid-row: 1 / 3;
-    color: #20211f;
-    max-width: 12ch;
-    font: 400 clamp(2rem, 3vw, 3rem) / 1.1 var(--font-editorial);
-    letter-spacing: -0.035em;
+    grid-row: 1 / 4;
+    color: var(--ink);
+    max-width: 11ch;
+    font: 400 clamp(2.5rem, 5vw, 4.5rem) / 1.05 var(--font-editorial);
+    letter-spacing: -0.04em;
 }
 .jonah-invitation .ledger-link {
     justify-self: start;
-    margin-top: 2rem;
-    color: #9e350e;
+    margin-top: 1.5rem;
+    color: #8a3516;
+    text-decoration-color: currentColor;
+}
+.jonah-invitation .ledger-link span {
+    color: inherit;
 }
 .jonah-feature a:hover {
     color: #702708;
 }
 .jonah-feature :focus-visible {
-    outline-color: #9e350e;
+    outline-color: #8a3516;
 }
 .jonah-invitation .exploration-context {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     font-size: 0.9rem;
 }
 .jonah-invitation .jonah-credit {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid #b3b0a5;
+    border-top: 1px solid #b3a68f;
     font-size: 0.8125rem;
 }
 .model-exploration {
+    width: min(calc(100% - 3rem), var(--max-width));
+    margin-inline: auto;
     display: grid;
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     gap: 2rem 5rem;
@@ -1483,13 +1528,35 @@
     .field-note p:last-child {
         grid-column: 1;
     }
-    .jonah-feature,
     .jonah-invitation,
     .model-exploration {
         grid-template-columns: minmax(0, 1fr);
     }
     .jonah-frontispiece {
-        padding-bottom: 0;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+    }
+    .jonah-frontispiece .jonah-edition {
+        max-width: none;
+        font-size: 1.5rem;
+    }
+    .jonah-artwork {
+        grid-template-columns: minmax(0, 1fr);
+        margin: 0;
+        gap: 0;
+    }
+    .jonah-artwork img {
+        grid-column: 1;
+    }
+    .jonah-artwork figcaption {
+        grid-row: 2;
+        max-width: 55ch;
+        margin-inline: 1.5rem;
+        padding-block: 1.5rem;
+        border-top: 0;
+    }
+    .jonah-artwork figcaption cite {
+        font-size: 1.25rem;
     }
     .jonah-invitation > * {
         grid-column: 1;
@@ -1551,8 +1618,20 @@
         margin-bottom: 2rem;
     }
     .jonah-frontispiece h3 {
-        font-size: clamp(3rem, 18vw, 5rem);
-        margin-block: 2rem;
+        font-size: clamp(4.5rem, 25vw, 9rem);
+        margin-block: 0.1em 0.15em;
+    }
+    .jonah-frontispiece h3 span {
+        font-size: 0.25em;
+    }
+    .jonah-frontispiece,
+    .jonah-invitation,
+    .explorations .brand-section__intro,
+    .model-exploration {
+        width: calc(100% - 2rem);
+    }
+    .jonah-artwork figcaption {
+        margin-inline: 1rem;
     }
     .field-note {
         padding-block: 2.5rem 3rem;
