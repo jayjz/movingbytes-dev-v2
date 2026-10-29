@@ -896,33 +896,52 @@
 }
 
 /* Personal frontispiece; existing project instruments form the archive. */
+.home-page {
+    --font-editorial: Georgia, 'Times New Roman', serif;
+}
 .home-page .mastery-hero {
-    padding-block: 2rem 5rem;
+    padding-block: 2rem 6rem;
 }
 .home-page .mastery-identity p {
-    max-width: 29ch;
+    max-width: 42ch;
+    font-size: 0.9rem;
 }
 .home-page .mastery-hero h1 {
-    font-size: clamp(2rem, 4.2vw, 4.1rem);
+    font-size: clamp(2rem, 3.8vw, 3.7rem);
     line-height: 1.08;
-    max-width: 19ch;
+    max-width: 22ch;
 }
 .home-page .mastery-hero .hero-name {
     display: block;
     color: var(--text-primary);
-    font-size: clamp(6rem, 16vw, 14rem);
-    line-height: 0.95;
-    margin-bottom: 1.8rem;
-    letter-spacing: -0.065em;
+    font-size: clamp(7rem, 20vw, 18rem);
+    line-height: 0.85;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.075em;
+}
+.home-page .mastery-hero .hero-statement,
+.home-page .mastery-hero .hero-question {
+    display: block;
+    color: var(--text-primary);
+}
+.home-page .mastery-hero .hero-question {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.055em;
+    margin-top: 0.15em;
 }
 .mastery-hero__grid {
     align-items: end;
-    margin-top: 2rem;
+    margin-top: 3rem;
     container-type: inline-size;
 }
 .mastery-intro p {
-    font-size: 1.15rem;
+    font-size: 1.0625rem;
     line-height: 1.7;
+}
+.mastery-intro {
+    padding-bottom: 0.4rem;
 }
 .hero-archive {
     display: block;
@@ -931,14 +950,19 @@
     font-size: 0.95rem;
 }
 .home-page .about {
-    padding-block: 3rem 4rem;
+    padding-block: 5rem 4rem;
     border-top: 1px solid var(--border-color);
 }
 .home-page .about .section-intro__title {
-    font-size: clamp(2rem, 3.5vw, 3.3rem);
+    max-width: 15ch;
+    font: 400 clamp(2.5rem, 4.5vw, 4.5rem) / 1.05 var(--font-editorial);
+    letter-spacing: -0.045em;
+}
+.home-page .about__copy {
+    max-width: 57ch;
 }
 .brand-section {
-    padding-block: 3rem 4rem;
+    padding-block: 4rem 5rem;
     border-top: 1px solid var(--border-color);
 }
 .brand-section__intro h2 {
@@ -967,13 +991,31 @@
     content: none;
 }
 .principle-list h3 {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     line-height: 1.25;
     max-width: 32ch;
 }
 .principle-list p {
     max-width: 40ch;
     margin-top: 0.6rem;
+}
+.home-page .principles {
+    border-top: 0;
+    padding-block: 1rem 6rem;
+}
+.principles .container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    gap: 2rem 4rem;
+}
+.principles .principle-list {
+    margin-top: 0;
+    gap: 0 2rem;
+}
+.home-page .eyebrow {
+    font-size: 0.85rem;
+    text-transform: none;
+    letter-spacing: 0;
 }
 .now .container {
     display: grid;
@@ -1015,6 +1057,9 @@
     margin-block: 1rem;
 }
 @media (max-width: 800px) {
+    .principles .container {
+        grid-template-columns: minmax(0, 1fr);
+    }
     .principle-list {
         grid-template-columns: minmax(0, 1fr);
     }
@@ -1064,7 +1109,17 @@
     display: block;
 }
 .explorations .brand-section__intro {
-    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    align-items: baseline;
+    gap: 1rem 4rem;
+    margin-bottom: 4rem;
+}
+.explorations .brand-section__intro h2 {
+    max-width: 16ch;
+    margin: 0;
+    font: 400 clamp(2.6rem, 5vw, 5rem) / 1.06 var(--font-editorial);
+    letter-spacing: -0.045em;
 }
 .jonah-feature {
     display: grid;
@@ -1125,7 +1180,7 @@
     display: grid;
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     gap: 2rem 5rem;
-    padding-top: 4rem;
+    padding-top: 6rem;
 }
 .model-exploration > *,
 .jonah-feature > * {
@@ -1156,20 +1211,25 @@
     font-size: 0.95rem;
 }
 .field-note {
-    padding-block: 4rem 5rem;
+    padding-block: 4rem 7rem;
 }
 .field-note .container {
-    border-left: 2px solid var(--accent);
-    padding-left: clamp(1.25rem, 4vw, 4rem);
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    gap: 1.5rem 4rem;
+    border-top: 1px solid var(--accent);
+    padding-top: 2rem;
 }
 .field-note h2 {
-    font-size: clamp(1.8rem, 3vw, 2.7rem);
-    margin-block: 1rem 1.5rem;
-    max-width: 25ch;
+    grid-column: 2;
+    font: 400 clamp(2rem, 3.4vw, 3.3rem) / 1.15 var(--font-editorial);
+    letter-spacing: -0.035em;
+    max-width: 24ch;
 }
 .field-note p:last-child {
-    max-width: 64ch;
-    font-size: 1.15rem;
+    grid-column: 2;
+    max-width: 55ch;
+    font-size: 1.0625rem;
 }
 .home-page .principles .brand-section__intro h2 {
     font-size: clamp(1.8rem, 2.7vw, 2.5rem);
@@ -1195,6 +1255,14 @@
     font-size: 0.95rem;
 }
 @media (max-width: 800px) {
+    .explorations .brand-section__intro,
+    .field-note .container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .field-note h2,
+    .field-note p:last-child {
+        grid-column: 1;
+    }
     .jonah-feature,
     .model-exploration {
         grid-template-columns: minmax(0, 1fr);
@@ -1209,7 +1277,7 @@
 }
 @media (max-width: 600px) {
     .home-page .mastery-hero {
-        padding-block: 1.5rem 3rem;
+        padding-block: 1.5rem 4rem;
     }
     .mastery-identity {
         align-items: flex-start;
@@ -1219,6 +1287,14 @@
     }
     .mastery-hero__grid {
         gap: 2rem;
+        margin-top: 2rem;
+    }
+    .home-page .mastery-hero .hero-name {
+        margin-bottom: 2rem;
+        font-size: clamp(7rem, 29vw, 11rem);
+    }
+    .home-page .principles {
+        padding-bottom: 3rem;
     }
     .mastery-intro .hero-email {
         display: block;
