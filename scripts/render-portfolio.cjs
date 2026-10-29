@@ -5,16 +5,16 @@ const { load } = require('./lib/portfolio-data.cjs');
 const { render } = require('./lib/render-portfolio.cjs');
 async function renderPage() {
     const sections = render(load());
-    const original = await fs.readFile('index.html', 'utf8');
+    const original = await fs.readFile('work/evidence.html', 'utf8');
     let output = original;
     for (const [name, html] of Object.entries(sections)) {
         const pattern = new RegExp(`<!-- portfolio:${name}:start -->[\\s\\S]*?<!-- portfolio:${name}:end -->`, 'g');
         assert.equal([...output.matchAll(pattern)].length, 1, `Expected one ${name} slot`);
         output = output.replace(pattern, () => `<!-- portfolio:${name}:start -->\n${html}\n<!-- portfolio:${name}:end -->`);
     }
-    output = await prettier.format(output, { ...(await prettier.resolveConfig('index.html')), parser: 'html' });
+    output = await prettier.format(output, { ...(await prettier.resolveConfig('work/evidence.html')), parser: 'html' });
     if (process.argv.includes('--check')) assert.equal(output, original, 'Generated HTML is stale: npm run data:render');
-    else await fs.writeFile('index.html', output);
+    else await fs.writeFile('work/evidence.html', output);
     console.log('Portfolio data and static sections: valid');
 }
 renderPage().catch(error => {

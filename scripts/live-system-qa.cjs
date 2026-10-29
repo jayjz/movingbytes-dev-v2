@@ -57,10 +57,10 @@ let preview;
         page.on('request', request => {
             if (/api\.github\.com|\/data\/.*\.json/.test(request.url())) dataRequests.push(request.url());
         });
-        await page.goto(base, { waitUntil: 'networkidle' });
+        await page.goto(base + '/work/evidence.html', { waitUntil: 'networkidle' });
         if (mode === 'large-text') await page.addStyleTag({ content: 'html { font-size: 200%; }' });
         for (const id of ['research', 'evidence-strategy', 'fracture', 'sightglass']) {
-            await page.goto(`${base}/#${id}`);
+            await page.goto(`${base}/work/evidence.html#${id}`);
             assert.equal(await page.locator(`#${id}`).isVisible(), true, `Legacy anchor ${id}`);
         }
         for (const details of await page.locator('.project-registry details, .metadata-snapshot').all()) {

@@ -139,6 +139,7 @@ fs.mkdirSync(out, { recursive: true });
     for (const [label, route] of [
         ['research', '/research.html'],
         ['home', '/'],
+        ['evidence', '/work/evidence.html'],
         ['case', '/case-studies/cipherloop.html'],
         ['shadow', '/case-studies/shadow.html']
     ]) {
@@ -206,21 +207,7 @@ fs.mkdirSync(out, { recursive: true });
             );
             if (label === 'home') {
                 const opening = await page.evaluate(() => {
-                    const ids = [
-                        'top',
-                        'about',
-                        'now',
-                        'curiosity',
-                        'principles',
-                        'work',
-                        'shadow',
-                        'engineering-details',
-                        'projects',
-                        'systems-map',
-                        'recent-work',
-                        'evidence-ledger',
-                        'project-registry'
-                    ];
+                    const ids = ['top', 'about', 'now', 'curiosity', 'principles', 'work'];
                     const sections = [...document.querySelectorAll('main > section')];
                     return {
                         order: ids.map(id => sections.indexOf(document.getElementById(id))),
@@ -229,14 +216,12 @@ fs.mkdirSync(out, { recursive: true });
                 });
                 assert.ok(
                     opening.order.every((n, i, list) => n >= 0 && (i === 0 || n > list[i - 1])),
-                    'Personal opening, Jonah and curiosity lead into principles and the engineering archive'
+                    'Personal opening, Jonah and curiosity lead into principles and three engineering doors'
                 );
                 assert.equal(opening.githubInOpening, 0);
+                assert.equal(await page.locator('.system-door').count(), 3);
+                assert.equal(await page.locator('.evidence-flow, .af-instrument, .project-registry').count(), 0);
                 assert.match(await page.locator('.mastery-intro').textContent(), /HVAC and construction/);
-                assert.equal(await page.locator('#work .project-summary').count(), 1);
-                assert.equal(await page.locator('#shadow .project-summary').count(), 1);
-                assert.equal(await page.locator('#work .evidence-flow').count(), 0);
-                assert.equal(await page.locator('#engineering-details .evidence-flow').count(), 1);
                 assert.equal(await page.locator('h1 .hero-name').textContent(), 'Jay');
                 assert.equal(await page.locator('.hero-projects').count(), 0);
                 assert.equal(await page.locator('#principles li').count(), 4);
@@ -317,19 +302,6 @@ fs.mkdirSync(out, { recursive: true });
                 assert.equal(await page.locator('#field-note').getAttribute('data-editorial-status'), 'owner-review');
                 assert.equal(await page.locator('.mastery-intro a[href="#now"]').count(), 1);
                 assert.equal(await page.locator('.mastery-intro a[href="#work"]').count(), 1);
-                for (const repo of [
-                    'CipherLoop',
-                    'TraceForge',
-                    'truck-ready-hvac',
-                    'aetherforge',
-                    'unhinged-agent',
-                    'sightglass',
-                    'SHAD0W',
-                    'evidence-strategy-skills',
-                    'fracture'
-                ]) {
-                    assert.ok((await page.locator(`a[href="https://github.com/jayjz/${repo}"]`).count()) >= 1);
-                }
                 const action = page.locator('.mastery-intro .ledger-link');
                 await action.focus();
                 assert.equal(await action.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
@@ -367,6 +339,34 @@ fs.mkdirSync(out, { recursive: true });
                     });
                 });
                 assert.equal(overlap, false, `Observer overlaps text at ${width}`);
+                await page.locator('.site-nav a[href="#work"]').click();
+                await page.waitForFunction(() => location.hash === '#work');
+                await page.goBack();
+                assert.equal(new URL(page.url()).hash, '#main');
+                await page.locator('#curiosity a[href="/research.html"]').click();
+                assert.equal(new URL(page.url()).pathname, '/research.html');
+                await page.goBack();
+                assert.equal(await page.locator('.mastery-intro a[href^="mailto:"]').isVisible(), true);
+                assert.equal(await page.locator('#contact h2').isVisible(), true);
+            } else if (label === 'evidence') {
+                for (const repo of [
+                    'CipherLoop',
+                    'TraceForge',
+                    'truck-ready-hvac',
+                    'aetherforge',
+                    'unhinged-agent',
+                    'sightglass',
+                    'SHAD0W',
+                    'evidence-strategy-skills',
+                    'fracture'
+                ]) {
+                    assert.ok((await page.locator(`a[href="https://github.com/jayjz/${repo}"]`).count()) >= 1);
+                }
+
+                assert.equal(await page.locator('#work .project-summary').count(), 1);
+                assert.equal(await page.locator('#shadow .project-summary').count(), 1);
+                assert.equal(await page.locator('#work .evidence-flow').count(), 0);
+                assert.equal(await page.locator('#engineering-details .evidence-flow').count(), 1);
                 for (const id of ['focus-title', 'systems-map', 'recent-work', 'evidence-ledger', 'project-registry']) {
                     assert.equal(await page.locator(`#${id}`).isVisible(), true);
                 }
@@ -383,10 +383,6 @@ fs.mkdirSync(out, { recursive: true });
                 await snapshot.locator('summary').focus();
                 await page.keyboard.press('Enter');
 
-                await page.locator('.site-nav a[href="#work"]').click();
-                await page.waitForFunction(() => location.hash === '#work');
-                await page.goBack();
-                assert.equal(new URL(page.url()).hash, '#main');
                 await page.locator('.featured a[href="/case-studies/cipherloop.html#current-contract"]').click();
                 assert.equal(new URL(page.url()).pathname, '/case-studies/cipherloop.html');
                 assert.equal(new URL(page.url()).hash, '#current-contract');
@@ -394,11 +390,6 @@ fs.mkdirSync(out, { recursive: true });
                 await page.locator('.shadow-feature a[href="/case-studies/shadow.html"]').click();
                 assert.equal(new URL(page.url()).pathname, '/case-studies/shadow.html');
                 await page.goBack();
-                await page.locator('#curiosity a[href="/research.html"]').click();
-                assert.equal(new URL(page.url()).pathname, '/research.html');
-                await page.goBack();
-                assert.equal(await page.locator('.mastery-intro a[href^="mailto:"]').isVisible(), true);
-                assert.equal(await page.locator('#contact h2').isVisible(), true);
             } else if (label === 'case') {
                 const summary = page.locator('.diagram-equivalent summary');
                 await summary.focus();
@@ -449,7 +440,7 @@ fs.mkdirSync(out, { recursive: true });
                 }
                 assert.deepEqual(localFailures, []);
             }
-            if (label === 'home' || label === 'shadow') {
+            if (label === 'evidence' || label === 'shadow') {
                 assert.equal(await page.locator('.decision-timeline li').count(), 4);
                 assert.equal(await page.locator('.timeline-rejected').isVisible(), true);
             }
@@ -472,30 +463,24 @@ fs.mkdirSync(out, { recursive: true });
                 await page.screenshot({ path: path.join(out, `after-${label}-${width}.png`), fullPage: true });
                 await page.screenshot({ path: path.join(out, `viewport-${label}-${width}.png`) });
                 if (label === 'home') {
-                    for (const section of [
-                        'about',
-                        'principles',
-                        'now',
-                        'jonah',
-                        'curiosity',
-                        'model-question',
-                        'field-note',
-                        'systems-map',
-                        'recent-work',
-                        'evidence-ledger',
-                        'project-registry'
-                    ]) {
+                    for (const section of ['about', 'principles', 'now', 'jonah', 'curiosity', 'model-question', 'field-note', 'work']) {
                         await page.locator(`#${section}`).screenshot({ path: path.join(out, `${section}-${width}.png`) });
                     }
                 }
+                if (label === 'evidence') {
+                    for (const section of ['systems-map', 'recent-work', 'evidence-ledger', 'project-registry'])
+                        await page.locator(`#${section}`).screenshot({ path: path.join(out, `${section}-${width}.png`) });
+                }
                 const featureVisual =
                     label === 'home'
-                        ? '.evidence-flow'
-                        : label === 'shadow'
-                          ? '.decision-timeline'
-                          : label === 'research'
-                            ? '.research-spine'
-                            : '.system-figure';
+                        ? '.doors-threshold'
+                        : label === 'evidence'
+                          ? '.evidence-flow'
+                          : label === 'shadow'
+                            ? '.decision-timeline'
+                            : label === 'research'
+                              ? '.research-spine'
+                              : '.system-figure';
                 await page.locator(featureVisual).screenshot({ path: path.join(out, `diagram-${label}-${width}.png`) });
                 if (label === 'research') {
                     for (const id of ['position', 'e4', 'e4-1', 'e7', 'e7-1', 'frontier', 'questions', 'limits', 'evidence']) {
@@ -583,10 +568,6 @@ fs.mkdirSync(out, { recursive: true });
                 }
                 for (const id of ['about', 'principles', 'now', 'jonah', 'curiosity', 'model-question', 'field-note'])
                     assert.equal(await page.locator(`#${id}`).isVisible(), true);
-                assert.equal(await page.locator('.evidence-flow').isVisible(), true);
-                assert.equal(await page.locator('#systems-map').isVisible(), true);
-                assert.equal(await page.locator('#evidence-ledger').isVisible(), true);
-                assert.equal(await page.locator('.fixture-table').isVisible(), true);
                 if (mode.startsWith('large-text')) {
                     assert.equal(
                         await page.evaluate(() => {
@@ -597,7 +578,6 @@ fs.mkdirSync(out, { recursive: true });
                         true,
                         'Enlarged brand overlaps navigation'
                     );
-                    assert.equal(await page.locator('.fixture-cell-label').first().isVisible(), true);
                     const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
                     assert.deepEqual(
                         axe.violations.map(violation => violation.id),
@@ -617,6 +597,20 @@ fs.mkdirSync(out, { recursive: true });
                             .first()
                             .evaluate(el => new DOMMatrix(getComputedStyle(el).transform).e),
                         0
+                    );
+                }
+            }
+            if (label === 'evidence') {
+                assert.equal(await page.locator('.evidence-flow').isVisible(), true);
+                assert.equal(await page.locator('#systems-map').isVisible(), true);
+                assert.equal(await page.locator('#evidence-ledger').isVisible(), true);
+                assert.equal(await page.locator('.fixture-table').isVisible(), true);
+                if (mode.startsWith('large-text')) {
+                    assert.equal(await page.locator('.fixture-cell-label').first().isVisible(), true);
+                    const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
+                    assert.deepEqual(
+                        axe.violations.map(v => ({ id: v.id, targets: v.nodes.map(n => n.target) })),
+                        []
                     );
                 }
             }
@@ -658,7 +652,7 @@ fs.mkdirSync(out, { recursive: true });
                 await page.goto(base + route, { waitUntil: 'networkidle' });
                 if (mode.startsWith('large-text')) await page.addStyleTag({ content: 'html { font-size: 200%; }' });
             }
-            if (label === 'home' || label === 'shadow') {
+            if (label === 'evidence' || label === 'shadow') {
                 assert.equal(await page.locator('.decision-timeline').isVisible(), true);
                 const bounds = await page.locator('.decision-timeline li').evaluateAll(items =>
                     items.map(el => {
@@ -688,7 +682,7 @@ fs.mkdirSync(out, { recursive: true });
             await page.keyboard.press('Enter');
             await page.waitForFunction(() => location.hash === '#main' && document.activeElement.id === 'main');
             assert.equal(await page.locator('#main').evaluate(el => el === document.activeElement), true);
-            if (label === 'home') {
+            if (label === 'evidence') {
                 const temperSummary = page.locator('#registry-temper summary');
                 await temperSummary.focus();
                 await page.keyboard.press('Enter');
@@ -696,7 +690,7 @@ fs.mkdirSync(out, { recursive: true });
                 await page.keyboard.press('Enter');
             }
             assert.equal(await page.locator('a[href="mailto:wizardordinals@gmail.com"]').first().isVisible(), true);
-            if (label === 'home')
+            if (label === 'evidence')
                 assert.equal(
                     await page.locator('.work-card').evaluateAll(cards => cards.every(el => getComputedStyle(el).opacity === '1')),
                     true

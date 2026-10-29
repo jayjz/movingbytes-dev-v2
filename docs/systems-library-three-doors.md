@@ -1,5 +1,23 @@
 # Three doors into the work
 
+## Implementation checkpoint — current branch
+
+The implementation task supersedes the older branch instructions below. Work
+continues on `feat/systems-library-v2`, created from fetched main `30d9997`.
+PR #22 is merged at that revision; PR #23 also brought in M1. The three M1 files
+match exactly, so no duplicate cherry-pick was needed. The old branch remains
+unchanged at `127b1951`. Clean setup was pushed and remote-verified at `30d9997`.
+
+M2 replaces the homepage catalog with the shared three-door threshold. The
+complete archive moved atomically to `work/evidence.html`, with its author-time
+renderer and existing browser assertions following it. Static compatibility
+entries preserve the old fragment entrances; automatic forwarding follows in M4.
+Protected personal markup, archive text, all source URLs, studies and generated
+slots pass the frozen contract. Five-width home/archive accessibility and overflow
+checks pass; desktop/mobile screenshots were inspected. Baseline `npm run check`
+and the original 53-case browser suite passed. Featured-source revisions and
+limits are recorded in [three-doors.md](evidence/three-doors.md).
+
 ## Baseline and dependency
 
 Started from fetched `origin/main` at `41d7e49` on 29 October 2026. Clean working
