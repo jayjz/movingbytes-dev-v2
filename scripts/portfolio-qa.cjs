@@ -87,6 +87,7 @@ fs.mkdirSync(out, { recursive: true });
             }));
             await page.keyboard.press('Tab');
             assert.equal(await page.locator(':focus').textContent(), 'Skip to content');
+            assert.equal(await page.locator('.skip-link').evaluate(el => getComputedStyle(el).clipPath), 'none');
             await page.keyboard.press('Enter');
             await page.waitForFunction(() => location.hash === '#main' && document.activeElement.id === 'main');
             const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
@@ -332,7 +333,12 @@ fs.mkdirSync(out, { recursive: true });
                 assert.equal(await page.locator('.system-figure').evaluate(el => getComputedStyle(el, '::after').animationName), 'none');
             await page.emulateMedia({ reducedMotion: 'no-preference' });
             await page.goto(base + route, { waitUntil: 'networkidle' });
-            if (width === 320 || width === 390 || width === 1440 || (label === 'research' && width === 768)) {
+            if (label === 'home' || width === 320 || width === 390 || width === 1440 || (label === 'research' && width === 768)) {
+                if (label === 'home') {
+                    await page.locator('.jonah-artwork img').scrollIntoViewIfNeeded();
+                    await page.locator('.jonah-artwork img').evaluate(img => img.decode());
+                    await page.evaluate(() => window.scrollTo(0, 0));
+                }
                 await page.screenshot({ path: path.join(out, `after-${label}-${width}.png`), fullPage: true });
                 await page.screenshot({ path: path.join(out, `viewport-${label}-${width}.png`) });
                 if (label === 'home') {
@@ -340,6 +346,9 @@ fs.mkdirSync(out, { recursive: true });
                         'about',
                         'principles',
                         'now',
+                        'jonah',
+                        'model-question',
+                        'field-note',
                         'systems-map',
                         'recent-work',
                         'evidence-ledger',
@@ -379,7 +388,9 @@ fs.mkdirSync(out, { recursive: true });
                       'blocked-image',
                       'large-text',
                       'large-text-320',
-                      ...(label === 'home' ? ['blocked-character-script', 'missing-character', 'touch'] : [])
+                      ...(label === 'home'
+                          ? ['blocked-character-script', 'blocked-threshold-script', 'blocked-jonah-image', 'missing-character', 'touch']
+                          : [])
                   ];
         for (const mode of modes) {
             const context = await browser.newContext({
@@ -397,6 +408,8 @@ fs.mkdirSync(out, { recursive: true });
             if (mode === 'offline') await context.route('https://**/*', route => route.abort());
             if (mode === 'blocked-image') await context.route('**/assets/diagrams/**', route => route.abort());
             if (mode === 'blocked-character-script') await context.route('**/js/observer.js', route => route.abort());
+            if (mode === 'blocked-threshold-script') await context.route('**/js/threshold.js', route => route.abort());
+            if (mode === 'blocked-jonah-image') await context.route('**/assets/jonah/*.jpg', route => route.abort());
             if (mode === 'missing-character')
                 await context.route(base + '/', async route => {
                     const response = await route.fetch();
@@ -410,6 +423,24 @@ fs.mkdirSync(out, { recursive: true });
             if (mode.startsWith('large-text')) await page.addStyleTag({ content: 'html { font-size: 200%; }' });
             assert.equal(await page.locator('h1').isVisible(), true);
             if (label === 'home') {
+                assert.equal(await page.locator('.threshold-instrument').isVisible(), true);
+                if (mode === 'no-js' || mode === 'blocked-threshold-script') {
+                    assert.equal(await page.locator('.instrument-controls').isVisible(), false);
+                    assert.equal(await page.locator('[data-confidence]').count(), 4);
+                    assert.equal(await page.locator('[data-coverage]').textContent(), '50%');
+                    assert.equal(await page.locator('[data-risk]').textContent(), '50%');
+                    assert.match(await page.locator('.instrument-summary').textContent(), /At threshold 0.80, 2 of 4/);
+                }
+                if (mode === 'reduced-at-load') {
+                    await page.locator('#confidence-threshold').fill('1');
+                    assert.equal(await page.locator('[data-risk]').textContent(), 'Undefined');
+                    assert.equal(await page.locator('.threshold-instrument').evaluate(el => el.getAnimations({ subtree: true }).length), 0);
+                    await page.locator('#confidence-threshold').fill('0.8');
+                }
+                if (mode === 'blocked-jonah-image') {
+                    assert.equal(await page.locator('.jonah-artwork figcaption').isVisible(), true);
+                    assert.equal(await page.locator('#jonah .ledger-link').isVisible(), true);
+                }
                 for (const id of ['about', 'principles', 'now', 'jonah', 'model-question', 'field-note'])
                     assert.equal(await page.locator(`#${id}`).isVisible(), true);
                 assert.equal(await page.locator('.evidence-flow').isVisible(), true);
@@ -436,6 +467,9 @@ fs.mkdirSync(out, { recursive: true });
                 }
                 if (mode !== 'missing-character') assert.equal(await page.locator('.observer-mount svg').isVisible(), true);
                 if (mode === 'touch') {
+                    await page.locator('#confidence-threshold').tap();
+                    assert.notEqual(await page.locator('#confidence-threshold').inputValue(), '0.8');
+                    await page.locator('#confidence-threshold').fill('0.8');
                     await page.locator('.mastery-hero').dispatchEvent('pointermove', { pointerType: 'touch', clientX: 0, clientY: 0 });
                     assert.equal(
                         await page
@@ -473,6 +507,7 @@ fs.mkdirSync(out, { recursive: true });
                 for (const anchor of await page.locator('.research-contents a').all()) {
                     await anchor.focus();
                     await page.keyboard.press('Enter');
+                    await page.waitForFunction(expected => location.hash === expected, await anchor.getAttribute('href'));
                     assert.equal(new URL(page.url()).hash, await anchor.getAttribute('href'));
                 }
                 await page.locator('.brand').focus();
@@ -502,8 +537,16 @@ fs.mkdirSync(out, { recursive: true });
                     mode !== 'blocked-image'
                 );
             assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+            // Instrument checks may leave focus on the range. Restart keyboard navigation at the document.
+            await page.evaluate(() => {
+                document.body.tabIndex = -1;
+                document.body.focus();
+                document.body.removeAttribute('tabindex');
+            });
             await page.keyboard.press('Tab');
+            assert.equal(await page.locator(':focus').textContent(), 'Skip to content');
             await page.keyboard.press('Enter');
+            await page.waitForFunction(() => location.hash === '#main' && document.activeElement.id === 'main');
             assert.equal(await page.locator('#main').evaluate(el => el === document.activeElement), true);
             if (label === 'home') {
                 const temperSummary = page.locator('#registry-temper summary');
