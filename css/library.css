@@ -234,6 +234,20 @@
     display: block;
     padding: 2rem 0;
 }
+/* A native permalink exposes its recorded case even when enhancement is absent. */
+.af-instrument:not([data-permalink-ready]) .af-case:target {
+    display: grid;
+    outline: 1px solid var(--accent);
+    outline-offset: 0.5rem;
+}
+.legacy-work {
+    display: none;
+    flex-basis: 100%;
+    font-size: 0.875rem;
+}
+#work:target .legacy-work {
+    display: block;
+}
 .archive-heading {
     padding-block: 4rem;
 }

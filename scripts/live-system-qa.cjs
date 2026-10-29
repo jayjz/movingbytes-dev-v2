@@ -65,6 +65,12 @@ let preview;
         }
         for (const details of await page.locator('.project-registry details, .metadata-snapshot').all()) {
             await details.locator('summary').focus();
+            // A deep link may have opened its native disclosure. Verify closing it
+            // before exercising the same keyboard-open contract for every record.
+            if ((await details.getAttribute('open')) !== null) {
+                await page.keyboard.press('Enter');
+                assert.equal(await details.getAttribute('open'), null);
+            }
             await page.keyboard.press('Enter');
             assert.notEqual(await details.getAttribute('open'), null);
         }

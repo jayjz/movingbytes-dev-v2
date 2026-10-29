@@ -1,10 +1,20 @@
-# jaysystems.dev — Systems Observatory
+# jaysystems.dev
 
-Jay's engineering portfolio: backend and AI infrastructure around explicit contracts, execution state, and failure boundaries. Handwritten HTML, shared CSS, small progressive-enhancement JavaScript, and original SVG diagrams. **No framework, runtime npm dependencies, or application build step.**
+Jay's personal intellectual and engineering home, with a separately navigable
+systems library. Handwritten HTML, shared CSS, small progressive-enhancement
+JavaScript, and original SVG diagrams. **No framework, runtime npm dependencies,
+or application build step.**
 
 ## Pages and files
 
-- `index.html`: hand-designed flagship stories, generated focus/map/ledger/registry sections, capability summaries, perspective, and employment contact.
+- `index.html`: Jay, original Sinai artwork, Jonah reflection, Curiosity/TEMPER,
+  working principles, three engineering entrances and contact. Personal writing
+  and artwork are protected by the frozen M1 inventory.
+- `work/index.html`: `/work/`, a curated six-collection systems library. Native
+  navigation, ten selected entries, no JavaScript or duplicated archive content.
+- `work/evidence.html`: the preserved engineering archive, including CipherLoop
+  → TraceForge, SHAD0W, AetherForge, applied systems and the generated
+  focus/map/notes/snapshot/ledger/registry slots. Author-time rendering writes here.
 - `research.html`: authored Machine-Native Systems program, canonical `/research`; working position, experiment progression, frontier, durable questions, limits and pinned evidence. Enter from the homepage's Now section. No page JavaScript or runtime data fetching.
 - `case-studies/cipherloop.html`: current production-v2 introduction and preserved historical `f03a1e1` study; public clean URL `/case-studies/cipherloop`.
 - `case-studies/shadow.html`: causality, lifecycle, paper-risk admission, and data replay; public clean URL `/case-studies/shadow`.
@@ -43,7 +53,8 @@ npm run data:render
 npm run check
 ```
 
-Refresh needs network access but no token. Rendering and the served site work
+Refresh needs network access but no token. `data:render` writes only the two
+marked slots in `work/evidence.html`. Rendering and the served site work
 offline. A failed refresh preserves the previous snapshot. Commit the reviewed
 JSON and HTML together on a feature branch; no scheduled writes or deployments
 are configured. New GitHub metadata never changes claims, maturity or evidence
@@ -100,12 +111,28 @@ PORTFOLIO_QA_PAGE=research npm run qa
 `CHROME_PATH` uses an existing browser and is less reproducible than pinned Chromium. `PORTFOLIO_BASE_URL` skips server startup and expects the local physical `.html` routes. `PLAYWRIGHT_BROWSERS_PATH` may point at a writable custom browser directory; use the same value during install and QA. Use the separate hosted check documented in [DEPLOY.md](DEPLOY.md) for real Vercel behavior.
 
 `PORTFOLIO_QA_PAGE` optionally limits an iteration to one page label (`research`,
-`home`, `case`, `shadow`). Default QA still covers every page. Research coverage
+`home`, `evidence`, `case`, `shadow`). Default QA still covers these five pages.
+The separate library suite covers `/work/`. Research coverage
 adds the complete argument in no-JS/offline modes, contents navigation, both home
 return paths, 200% text and evidence/frontier structure. Final verification uses
 the default full suite.
 
 CI uses `npm ci`, the same validation/browser commands, and uploads review artifacts. No build output is generated. Google Fonts remains external with optional display and system fallbacks; no analytics or trackers are added.
+
+## Systems-library preservation
+
+`npm run validate:library` checks the frozen 78-fragment, 89-URL, 14-revision
+inventory, authored/study hashes, archive text and unique generated slots.
+`npm run qa:library` covers the index at five widths, no-JS and 200% text.
+`npm run qa:preservation` independently follows every original fragment in a
+browser, with and without JavaScript, and requests every local destination.
+
+Old homepage engineering hashes have exact onward links. JavaScript follows
+them with `location.replace`; no-JS visitors see the targeted native link.
+`#work` remains the three-door threshold and offers its precise original archive
+destination. AetherForge case permalinks expose the requested record even without
+JavaScript; the optional enhancement selects the matching radio. Existing
+case-study routes and deployment redirect definitions remain unchanged.
 
 ## Evidence and release review
 

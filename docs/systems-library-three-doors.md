@@ -28,6 +28,16 @@ library; the evidence archive links back. `npm run check`, the frozen contract
 and eight library browser cases pass, including no-JS, 200% text, keyboard,
 accessibility and five viewport widths. Desktop/mobile screenshots inspected.
 
+M3 pushed and remote-verified at `81efadfab404c15ba4d8f1b69cb05f17e7efb3d4`.
+
+M4 adds progressive legacy forwarding, native fallback links and instrument
+permalinks. The frozen inventory itself is unchanged. The checker now also
+enforces exact compatibility links, all original URLs/pins and no duplicate IDs
+or slots across the three pages. Independent browser verification passes 156
+fragment paths (all 78 with JS on/off), all 89 retained URLs and 92 local HTTP
+destinations. External href preservation does not establish current remote
+availability. No maturity label, evidence text or source pin changed.
+
 ## Baseline and dependency
 
 Started from fetched `origin/main` at `41d7e49` on 29 October 2026. Clean working
