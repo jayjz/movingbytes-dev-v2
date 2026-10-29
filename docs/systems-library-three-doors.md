@@ -119,3 +119,24 @@ Baseline browser captures are in `test-results/three-doors-baseline/`; inspected
 the 390px opening, 390px systems map and 768px artifact handoff. The repeated
 technical sequence is visibly a different reading task from the personal opening.
 The existing full homepage browser suite is still running at this checkpoint.
+
+M1 pushed and remote HEAD verified: `127b1951e956e3abb5f1a7d6550d524b299a2198`.
+Baseline browser suite subsequently completed: five widths and 13 fallback/input
+modes passed, zero axe violations, measured local CLS 0 at each normal width.
+
+M2: replaced 11 consecutive technical sections with one shared threshold and a
+complete-library invitation; homepage top-level section count is now 6. The full
+technical block moved atomically to `work/evidence.html`. A navigable initial
+`work/index.html` keeps every new entrance functional before collection refinement.
+All archive text, source/evidence URLs, 14 source revision pins, 78 destination
+fragments, authored markup and existing study hashes pass preservation checks.
+Existing engineering browser assertions now target the archive; they were moved,
+not dropped. Author-time generation targets the relocated slots. Native legacy
+fragment fallback links exist; automatic forwarding is M4.
+
+M2 checks: `npm run check`, `git diff --check`, and 30 new route/resilience browser
+cases pass (three pages; all five widths; no-JS at 320/390; reduced motion; 200%
+text at 320/390). Zero axe violations in all script-enabled cases, no failed local
+resources or runtime metadata requests. Reviewed `doors-1440-normal.png` and
+`doors-390-normal.png` in `test-results/library-m2/`. Further density refinement
+and full instrument/regression suites are scheduled for M5.

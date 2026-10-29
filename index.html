@@ -33,7 +33,7 @@
         />
         <link rel="stylesheet" href="css/style.css?v=20260907-evidence" />
         <link rel="stylesheet" href="css/home.css" />
-        <link rel="stylesheet" href="css/live-system.css" />
+        <link rel="stylesheet" href="css/library.css" />
     </head>
     <body class="home-page">
         <a href="#main" class="skip-link">Skip to content</a>
@@ -469,1054 +469,293 @@
                     </ol>
                 </div>
             </section>
-            <section id="work" class="featured evidence-feature" aria-label="Engineering archive">
+            <section id="work" class="work-doors" aria-labelledby="doors-title">
                 <div class="container">
-                    <div class="evidence-divider">
-                        <p class="eyebrow">Engineering archive</p>
-                        <p>Selected past work · source and evidence</p>
-                    </div>
-                    <nav class="archive-entrances" aria-label="Engineering archive">
-                        <a href="#cipherloop">CipherLoop study ↓</a>
-                        <a href="#shadow">SHAD0W study ↓</a>
-                        <a href="#projects">More engineering work ↓</a>
-                        <a href="#project-registry">Full project registry ↓</a>
-                    </nav>
-                    <article id="cipherloop">
-                        <h2 class="evidence-heading">Can an investigation be checked independently?</h2>
-                        <p class="evidence-question project-identity">CipherLoop → TraceForge</p>
-                        <p class="evidence-scope">Experimental agent workflow + independent evidence reader · Python</p>
-                        <div class="project-summary">
-                            <p>
-                                <strong>My implementation.</strong> I built an investigation workflow that records tool observations and
-                                failed execution, plus a separate reader that checks the saved record without importing the producer’s
-                                runtime.
-                            </p>
-                            <p>
-                                <strong>Recorded result.</strong> The pinned Linux offline replay passes integrity checks for valid
-                                captures, reports unavailable scanner output as an error, and rejects altered ledger bytes.
-                            </p>
-                            <p>
-                                <strong>Limits.</strong> Scripted tool responses; no live audit or detection-accuracy result. Integrity
-                                checks do not prove task success or target safety.
-                            </p>
+                    <header class="doors-heading">
+                        <div>
+                            <p class="editorial-label">Selected systems</p>
+                            <h2 id="doors-title">Three doors into the work.</h2>
                         </div>
-                        <div class="evidence-actions">
-                            <a class="ledger-link" href="/case-studies/cipherloop.html#current-contract"
-                                >Read the implementation and evidence ↗</a
-                            >
-                            <a href="#cipherloop-details">Inspect the artifact walkthrough ↓</a>
-                        </div>
-                    </article>
-                </div>
-            </section>
-            <section id="shadow" class="shadow-feature section">
-                <div class="container">
-                    <div class="evidence-divider">
-                        <p class="eyebrow">From the archive</p>
-                        <p>Causality before execution.</p>
-                    </div>
-                    <h2 class="evidence-heading">When is a decision allowed to act?</h2>
-                    <p class="evidence-question project-identity">SHAD0W</p>
-                    <p class="section-intro__copy">
-                        A trading simulation can look convincing if it lets a decision act on data before that data was available. SHAD0W
-                        makes the timing and permission to act explicit.
-                    </p>
-                    <div class="project-summary">
-                        <p>
-                            <strong>My implementation.</strong> I separate when a signal becomes available, when it may execute, how
-                            simulated actions progress, and whether an independent paper-risk gate permits them.
-                        </p>
-                        <p>
-                            <strong>Evidence.</strong> Pinned Python source and regression tests cover same-timestamp rejection, lifecycle
-                            transitions, and paper-risk admission. This is source/test inspection; these tests were not rerun for this
-                            portfolio update.
-                        </p>
-                        <p>
-                            <strong>Limits.</strong> Market-data ingestion and replay are implemented. An observed live session,
-                            profitability, and live-capital execution are not established here.
-                        </p>
-                    </div>
-                    <div class="evidence-actions">
-                        <a class="ledger-link" href="/case-studies/shadow.html">Read the implementation and evidence ↗</a
-                        ><a href="https://github.com/jayjz/SHAD0W">SHAD0W source ↗</a>
-                    </div>
-                    <p class="evidence-provenance">
-                        Pinned main <code>ed773c5</code> ·
-                        <a href="/docs/evidence/project-evidence-2026-09-14.md">Evidence record and revision links ↗</a>
-                    </p>
-                </div>
-            </section>
-            <section class="section capabilities" aria-labelledby="capabilities-title">
-                <div class="container">
-                    <p class="eyebrow">Engineering capabilities</p>
-                    <h2 id="capabilities-title" class="section-intro__title">What I build. Where to inspect it.</h2>
-                    <div class="capability-grid">
-                        <section>
-                            <h3>Backend contracts and state</h3>
-                            <p>
-                                Record how work starts, changes state, and ends. Keep a proposed action separate from permission to execute
-                                it.
-                            </p>
-                            <a href="#cipherloop">CipherLoop → TraceForge</a> · <a href="#shadow">SHAD0W</a>
-                        </section>
-                        <section>
-                            <h3>Failure handling and verification</h3>
-                            <p>
-                                Build readers and regression checks that reject incomplete or altered evidence, with limits on what a
-                                passing check means.
-                            </p>
-                            <a href="#cipherloop">Independent reader</a> · <a href="#evidence-strategy">Evaluation methodology</a>
-                        </section>
-                        <section>
-                            <h3>AI service coordination</h3>
-                            <p>
-                                Coordinate access to shared inference services and preserve cancellation boundaries. Mock-path checks and
-                                hardware limits are documented.
-                            </p>
-                            <a href="#aetherforge">AetherForge</a> · <a href="#unhinged">Unhinged</a>
-                        </section>
-                    </div>
-                </div>
-            </section>
-            <section id="engineering-details" class="section" aria-labelledby="details-title">
-                <div class="container">
-                    <p class="eyebrow">Deeper reading / engineering evidence</p>
-                    <h2 id="details-title" class="section-intro__title">Inspect the mechanisms.</h2>
-                    <p>
-                        The selected studies above provide the overview. These walkthroughs retain the artifact contract, historical
-                        controls, and execution timeline.
-                    </p>
-                    <article id="cipherloop-details">
-                        <h3>CipherLoop → TraceForge / artifact walkthrough</h3>
-                        <figure class="evidence-flow" aria-labelledby="handoff-caption">
-                            <ol>
-                                <li>
-                                    <p class="eyebrow">01 / Producer lifecycle</p>
-                                    <h3>Investigate.<br />Keep the record.</h3>
-                                    <p>
-                                        The producer records tool observations, validation decisions, and how execution ended. Explicit
-                                        lifecycle events keep failed execution visible.
-                                    </p>
-                                    <a
-                                        class="ledger-link"
-                                        href="https://github.com/jayjz/CipherLoop"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        >CipherLoop source <span aria-hidden="true">↗</span></a
-                                    >
-                                </li>
-                                <li class="evidence-capture">
-                                    <p class="eyebrow">02 / Two-file handoff</p>
-                                    <h3>The artifact boundary</h3>
-                                    <dl>
-                                        <dt>JSONL trajectory</dt>
-                                        <dd>Ordered lifecycle and source observations</dd>
-                                        <dt>Run metadata</dt>
-                                        <dd>Ledger hash, event count, and final references</dd>
-                                    </dl>
-                                    <p>The metadata commits to the exact ledger bytes. Both files are required.</p>
-                                    <a
-                                        class="ledger-link"
-                                        href="https://github.com/jayjz/CipherLoop/blob/c98c5d80e507ad3010d8004c86d7d6b8a4ac0c87/docs/production-evidence-contract.md"
-                                        >Inspect the contract <span aria-hidden="true">↗</span></a
-                                    >
-                                </li>
-                                <li>
-                                    <p class="eyebrow">03 / TraceForge</p>
-                                    <h3>Verify integrity.<br />Locate the evidence.</h3>
-                                    <p>
-                                        The reader checks integrity and source locations without importing CipherLoop runtime modules.
-                                        Evaluation stays separate from the producer’s observations.
-                                    </p>
-                                    <a
-                                        class="ledger-link"
-                                        href="https://github.com/jayjz/TraceForge"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        >TraceForge source <span aria-hidden="true">↗</span></a
-                                    >
-                                </li>
-                            </ol>
-                            <figcaption id="handoff-caption">
-                                Source-derived contract: CipherLoop feature revision <code>c98c5d8</code> → TraceForge main
-                                <code>51af0f4</code>. Recorded offline replay uses scripted tool responses, not a live audit.
-                            </figcaption>
-                        </figure>
-                        <div class="contract-outcomes">
-                            <section>
-                                <h3>Valid capture</h3>
-                                <p>
-                                    Integrity and source-location checks can return <code>PASS</code>. This does not mean task success or
-                                    target safety.
-                                </p>
-                            </section>
-                            <section>
-                                <h3>Failed execution</h3>
-                                <p>
-                                    Unavailable scanner output must not become a successful zero-finding result. The reader reports an
-                                    error.
-                                </p>
-                            </section>
-                            <section>
-                                <h3>Altered artifact</h3>
-                                <p>
-                                    Changed ledger bytes invalidate the commitment. The reader rejects the input instead of silently
-                                    dropping evidence.
-                                </p>
-                            </section>
-                        </div>
-                        <p class="evidence-provenance">
-                            <a
-                                href="https://github.com/jayjz/TraceForge/blob/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd/tests/test_cipherloop_production.py"
-                                >Adversarial contract tests</a
-                            >
-                            ·
-                            <a href="https://github.com/jayjz/TraceForge/actions/runs/34901295949"
-                                >Linux baseline + pinned production replay passed</a
-                            >. Frozen fixtures remain byte-stable. No hosted Windows or detection-accuracy claim.
-                        </p>
-                        <div class="evidence-results">
-                            <section aria-labelledby="fixture-title">
-                                <h3 id="fixture-title">Historical fixture oracle</h3>
-                                <table class="fixture-table">
-                                    <caption>
-                                        Separate offline baseline · synthetic responses · one candidate per fixture
-                                    </caption>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Fixture</th>
-                                            <th scope="col">CipherLoop decision</th>
-                                            <th scope="col">TraceForge result</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">toy</th>
-                                            <td><span class="fixture-cell-label" aria-hidden="true">CipherLoop</span>Accepted</td>
-                                            <td><span class="fixture-cell-label" aria-hidden="true">TraceForge</span>Matches oracle</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">safe</th>
-                                            <td><span class="fixture-cell-label" aria-hidden="true">CipherLoop</span>Rejected</td>
-                                            <td><span class="fixture-cell-label" aria-hidden="true">TraceForge</span>Matches oracle</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <p class="evidence-provenance">
-                                    <a
-                                        href="https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/tests/fixtures/cipherloop/artifacts/evaluation.json"
-                                        >Recorded results</a
-                                    >
-                                    ·
-                                    <a
-                                        href="https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/tests/fixtures/cipherloop/manifest.json"
-                                        >Independent expectations</a
-                                    >
-                                </p>
-                            </section>
-                            <section aria-labelledby="boundary-title">
-                                <h3 id="boundary-title">An independent oracle, with a narrow scope.</h3>
-                                <p>
-                                    These fixtures exercise evidence capture and evaluation. They do not establish live audit accuracy or
-                                    exploitability. “Safe” is a fixture name, not a security certification.
-                                </p>
-                                <p class="evidence-provenance">
-                                    <a href="https://github.com/jayjz/TraceForge/actions/runs/34390717464"
-                                        >Hosted baseline CI passed · 9 Sep 2026</a
-                                    ><br />Source and recorded results inspected 11 Sep; project tests were not rerun for this portfolio
-                                    pass.
-                                </p>
-                            </section>
-                        </div>
-                        <div class="evidence-actions">
-                            <a class="ledger-link" href="/case-studies/cipherloop.html"
-                                >Read the CipherLoop engineering study <span aria-hidden="true">↗</span></a
-                            >
-                            <p>
-                                Historical study scoped to <code>f03a1e1</code> ·
-                                <a
-                                    href="https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/docs/cipherloop-baseline.md"
-                                    >TraceForge baseline and limits</a
-                                >
-                            </p>
-                        </div>
-                    </article>
-                    <article id="shadow-details">
-                        <h3>SHAD0W / chronological eligibility</h3>
-                        <figure class="decision-timeline" aria-labelledby="timeline-caption">
-                            <ol>
-                                <li>
-                                    <span class="eyebrow">01 / Observation available</span>
-                                    <h3>The bar completes.</h3>
-                                    <p>Its closing data can now inform a decision.</p>
-                                </li>
-                                <li>
-                                    <span class="eyebrow">02 / Signal created</span>
-                                    <h3>Record availability.</h3>
-                                    <p>The signal carries the time its inputs became available.</p>
-                                </li>
-                                <li class="timeline-rejected">
-                                    <span class="eyebrow">03 / Same timestamp</span>
-                                    <h3>Execution ineligible.</h3>
-                                    <p>That same close cannot execute the decision it just informed.</p>
-                                </li>
-                                <li>
-                                    <span class="eyebrow">04 / Strictly later</span>
-                                    <h3>Eligibility opens.</h3>
-                                    <p>A later opportunity may qualify. A fill and risk admission are separate decisions.</p>
-                                </li>
-                            </ol>
-                            <figcaption id="timeline-caption">
-                                Source-derived chronology, not a market replay or trading result. Eligibility requires an opportunity
-                                strictly later than signal availability.
-                            </figcaption>
-                        </figure>
-                    </article>
-                </div>
-            </section>
-            <section id="projects" class="work section">
-                <div class="container">
-                    <header class="section-intro">
-                        <p class="eyebrow">Supporting work / AetherForge</p>
-                        <h2 class="section-intro__title evidence-heading">When should a system admit more work?</h2>
-                        <p class="section-intro__copy">
-                            Bounded admission and shared capacity give agents explicit failure responses. Thermal rejection and exhausted
-                            slots stop a request before the economic gate.
-                        </p>
+                        <p>Follow a question into the mechanisms, studies and evidence behind it.</p>
                     </header>
-                    <article class="af-instrument" id="aetherforge" aria-labelledby="af-title">
-                        <header class="af-heading">
-                            <div>
-                                <p class="eyebrow">AetherForge / Admission control</p>
-                                <h3 id="af-title">An agent requests compute.<br />The control plane decides.</h3>
-                            </div>
-                            <p class="af-scope">Source-derived scenarios<br />Mock engine · no live telemetry</p>
-                        </header>
-                        <div class="af-request-line">
-                            <span>Strategy request</span>
-                            <p><code>balanced</code> <span role="img" aria-label="to">→</span> <code>high_fidelity</code></p>
-                            <code>POST /system/strategy</code>
-                        </div>
-                        <fieldset class="af-selector">
-                            <legend>Change one constraint</legend>
-                            <label
-                                ><input
-                                    type="radio"
-                                    name="af-scenario"
-                                    value="baseline"
-                                    id="af-baseline"
-                                    aria-controls="af-case-baseline"
-                                    checked
-                                /><span><span class="af-index" aria-hidden="true">01</span>Baseline</span></label
-                            >
-                            <label
-                                ><input type="radio" name="af-scenario" value="short" id="af-short" aria-controls="af-case-short" /><span
-                                    ><span class="af-index" aria-hidden="true">02</span>Short output</span
-                                ></label
-                            >
-                            <label
-                                ><input
-                                    type="radio"
-                                    name="af-scenario"
-                                    value="thermal"
-                                    id="af-thermal"
-                                    aria-controls="af-case-thermal"
-                                /><span><span class="af-index" aria-hidden="true">03</span>Thermal lock</span></label
-                            >
-                            <label
-                                ><input type="radio" name="af-scenario" value="queue" id="af-queue" aria-controls="af-case-queue" /><span
-                                    ><span class="af-index" aria-hidden="true">04</span>Queue full</span
-                                ></label
-                            >
-                        </fieldset>
-                        <div class="af-cases">
-                            <section class="af-case" id="af-case-baseline" aria-label="Baseline decision" data-decision="admit">
-                                <div class="af-result">
-                                    <h4>Decision</h4>
-                                    <p class="af-verdict">Admit</p>
-                                    <p class="af-code"><code>strategy_applied</code><span>HTTP 200</span></p>
-                                    <p class="af-reason">Switching costs less than staying. The mock engine applies the strategy.</p>
-                                    <p class="af-active">Active mode <code>high_fidelity</code></p>
-                                </div>
-                                <div class="af-inputs">
-                                    <h4>Request constraints</h4>
-                                    <dl>
-                                        <div>
-                                            <dt>Context / ceiling</dt>
-                                            <dd>100 <span>/ 4,096 tokens</span></dd>
-                                        </div>
-                                        <div>
-                                            <dt>Expected output</dt>
-                                            <dd>2,000 <span>tokens</span></dd>
-                                        </div>
-                                        <div>
-                                            <dt>Thermal lock</dt>
-                                            <dd>Off</dd>
-                                        </div>
-                                        <div>
-                                            <dt>Available slots</dt>
-                                            <dd>5 <span>/ 5</span></dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                                <div class="af-gate">
-                                    <h4>Economic gate</h4>
-                                    <div class="af-comparison">
-                                        <p>
-                                            Stay <strong>166.67<span> s</span></strong>
-                                        </p>
-                                        <span class="af-operator" role="img" aria-label="greater than">&gt;</span>
-                                        <p>
-                                            Switch <strong>117.62<span> s</span></strong>
-                                        </p>
-                                    </div>
-                                    <p class="af-gate-rule">Admit only if switching costs less.</p>
-                                    <p class="af-estimate">Configured estimates<br />Switch = reload + state I/O + generation</p>
-                                    <div class="af-propagation" aria-hidden="true"><span></span><b>→</b></div>
-                                </div>
-                                <p class="af-case-proof">
-                                    Baseline ·
-                                    <a
-                                        href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L40"
-                                        >Swap matrix test</a
-                                    >
-                                    + <a href="docs/evidence/aetherforge/scenarios.json">recorded route probe</a>
-                                </p>
-                            </section>
-                            <section class="af-case" id="af-case-short" aria-label="Short output decision" data-decision="reject">
-                                <div class="af-result">
-                                    <h4>Decision</h4>
-                                    <p class="af-verdict">Reject</p>
-                                    <p class="af-code"><code>roi_negative</code><span>HTTP 200</span></p>
-                                    <p class="af-reason">Switching costs more than staying. Keep the active strategy.</p>
-                                    <p class="af-active">Active mode <code>balanced</code></p>
-                                </div>
-                                <div class="af-inputs">
-                                    <h4>Request constraints</h4>
-                                    <dl>
-                                        <div>
-                                            <dt>Context / ceiling</dt>
-                                            <dd>100 <span>/ 4,096 tokens</span></dd>
-                                        </div>
-                                        <div class="af-changed">
-                                            <dt>Expected output · changed</dt>
-                                            <dd>5 <span>tokens</span></dd>
-                                        </div>
-                                        <div>
-                                            <dt>Thermal lock</dt>
-                                            <dd>Off</dd>
-                                        </div>
-                                        <div>
-                                            <dt>Available slots</dt>
-                                            <dd>5 <span>/ 5</span></dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                                <div class="af-gate">
-                                    <h4>Economic gate</h4>
-                                    <div class="af-comparison">
-                                        <p>
-                                            Stay <strong>0.42<span> s</span></strong>
-                                        </p>
-                                        <span class="af-operator" role="img" aria-label="less than">&lt;</span>
-                                        <p>
-                                            Switch <strong>6.79<span> s</span></strong>
-                                        </p>
-                                    </div>
-                                    <p class="af-gate-rule">Admit only if switching costs less.</p>
-                                    <p class="af-estimate">Configured estimates<br />Switch = reload + state I/O + generation</p>
-                                    <div class="af-propagation" aria-hidden="true"><span></span><b>⊣</b></div>
-                                </div>
-                                <p class="af-case-proof">
-                                    One change from baseline ·
-                                    <a
-                                        href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L40"
-                                        >Swap matrix test</a
-                                    >
-                                    + <a href="docs/evidence/aetherforge/scenarios.json">recorded route probe</a>
-                                </p>
-                            </section>
-                            <section class="af-case" id="af-case-thermal" aria-label="Thermal lock decision" data-decision="reject">
-                                <div class="af-result">
-                                    <h4>Decision</h4>
-                                    <p class="af-verdict">Reject</p>
-                                    <p class="af-code"><code>thermal_lock_active</code><span>HTTP 503</span></p>
-                                    <p class="af-reason">An active thermal lock stops the request before the economic gate.</p>
-                                    <p class="af-active">Active mode <code>balanced</code></p>
-                                </div>
-                                <div class="af-inputs">
-                                    <h4>Request constraints</h4>
-                                    <dl>
-                                        <div>
-                                            <dt>Context / ceiling</dt>
-                                            <dd>100 <span>/ 4,096 tokens</span></dd>
-                                        </div>
-                                        <div>
-                                            <dt>Expected output</dt>
-                                            <dd>2,000 <span>tokens</span></dd>
-                                        </div>
-                                        <div class="af-changed">
-                                            <dt>Thermal lock · changed</dt>
-                                            <dd>Active</dd>
-                                        </div>
-                                        <div>
-                                            <dt>Available slots</dt>
-                                            <dd>5 <span>/ 5</span></dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                                <div class="af-gate">
-                                    <h4>Resource gate</h4>
-                                    <p class="af-stop">Thermal<br />lock</p>
-                                    <p class="af-gate-rule">Economic gate not evaluated.</p>
-                                    <p class="af-estimate">Retry-After: 10 seconds<br />From the structured HTTP response</p>
-                                    <div class="af-propagation" aria-hidden="true"><span></span><b>⊣</b></div>
-                                </div>
-                                <p class="af-case-proof">
-                                    One change from baseline ·
-                                    <a
-                                        href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L75"
-                                        >Thermal breaker test</a
-                                    >
-                                    + <a href="docs/evidence/aetherforge/scenarios.json">recorded route probe</a>
-                                </p>
-                            </section>
-                            <section class="af-case" id="af-case-queue" aria-label="Queue full decision" data-decision="reject">
-                                <div class="af-result">
-                                    <h4>Decision</h4>
-                                    <p class="af-verdict">Reject</p>
-                                    <p class="af-code"><code>queue_saturated</code><span>HTTP 503</span></p>
-                                    <p class="af-reason">No admission slots remain. The request stops before the economic gate.</p>
-                                    <p class="af-active">Active mode <code>balanced</code></p>
-                                </div>
-                                <div class="af-inputs">
-                                    <h4>Request constraints</h4>
-                                    <dl>
-                                        <div>
-                                            <dt>Context / ceiling</dt>
-                                            <dd>100 <span>/ 4,096 tokens</span></dd>
-                                        </div>
-                                        <div>
-                                            <dt>Expected output</dt>
-                                            <dd>2,000 <span>tokens</span></dd>
-                                        </div>
-                                        <div>
-                                            <dt>Thermal lock</dt>
-                                            <dd>Off</dd>
-                                        </div>
-                                        <div class="af-changed">
-                                            <dt>Available slots · changed</dt>
-                                            <dd>0 <span>/ 5</span></dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                                <div class="af-gate">
-                                    <h4>Resource gate</h4>
-                                    <p class="af-stop">Queue<br />saturated</p>
-                                    <p class="af-gate-rule">Economic gate not evaluated.</p>
-                                    <p class="af-estimate">Retry-After: 2 seconds<br />From the structured HTTP response</p>
-                                    <div class="af-propagation" aria-hidden="true"><span></span><b>⊣</b></div>
-                                </div>
-                                <p class="af-case-proof">
-                                    One change from baseline ·
-                                    <a
-                                        href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L89"
-                                        >Queue ceiling test</a
-                                    >
-                                    + <a href="docs/evidence/aetherforge/scenarios.json">recorded route probe</a>
-                                </p>
-                            </section>
-                        </div>
-                        <p class="af-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
-                        <footer class="af-proof">
-                            <p>
-                                Proof scope: strategy admission with controlled mock responses. Physical GPU swapping remains experimental.
+                    <div class="doors-grid">
+                        <article class="work-door">
+                            <p class="door-number">01</p>
+                            <h3>Investigate</h3>
+                            <p class="door-question">Can an agent’s investigation remain independently inspectable?</p>
+                            <figure class="door-mechanism">
+                                <svg viewBox="0 0 300 76" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="25" cy="38" r="15" />
+                                    <path d="M40 38h65m-7-5 7 5-7 5" />
+                                    <path class="paper" d="M126 15h31l14 14v32h-45z" />
+                                    <path d="M136 35h25m-25 8h25m-25 8h15" stroke="#0a0a0c" />
+                                    <path d="M191 38h65m-7-5 7 5-7 5" />
+                                    <path class="signal" d="M269 20c-19 11-19 25 0 36 19-11 19-25 0-36z" />
+                                    <circle class="signal" cx="269" cy="38" r="5" />
+                                </svg>
+                                <figcaption>Producer → saved evidence → independent reader</figcaption>
+                            </figure>
+                            <p class="door-description">
+                                CipherLoop records an investigation; TraceForge checks the handoff. Recorded offline ingestion, with live
+                                detection accuracy unverified.
                             </p>
-                            <div>
-                                <a
-                                    href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/src/server.py#L178-L239"
-                                    >Gate source ↗</a
-                                ><a href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/config.yaml"
-                                    >Estimate inputs ↗</a
-                                ><a href="https://github.com/jayjz/aetherforge">Repository ↗</a>
-                            </div>
-                        </footer>
-                    </article>
-                </div>
-            </section>
-            <section id="applied" class="section">
-                <div class="container">
-                    <header class="section-intro">
-                        <p class="eyebrow">04 / Applied systems</p>
-                        <h2 class="section-intro__title">Own the state. Respect the constraint.</h2>
-                    </header>
-                    <div class="work-grid applied-grid">
-                        <article class="work-card" id="unhinged">
-                            <header class="work-card__header">
-                                <h3 class="work-card__title">Unhinged Agent</h3>
-                                <p class="work-card__status">Hardware-prep prototype · ea86997</p>
-                            </header>
-                            <p class="work-card__body">
-                                A new wake event cancels the active turn and returns the host to listening. Shared inference services own
-                                model instances; bounded audio buffers constrain memory as the thin client streams audio.
-                            </p>
-                            <p>
-                                Interruption tests use mocked services. The physical wake → transcription → response loop remains
-                                unverified.
-                            </p>
-                            <a class="work-card__source" href="https://github.com/jayjz/unhinged-agent">Unhinged source ↗</a>
-                            <p class="evidence-provenance">
-                                <a
-                                    href="https://github.com/jayjz/unhinged-agent/blob/ea86997c18cc375ae3355c3321b792c21f8d3284/tests/test_esphome_bridge_stress.py"
-                                    >Mocked interruption tests at the feature revision</a
-                                >
-                            </p>
+                            <a class="door-link" href="/work/#investigate"
+                                >Investigation &amp; evidence <span aria-hidden="true">↗</span></a
+                            >
                         </article>
-                        <article class="work-card" id="truck-ready">
-                            <header class="work-card__header">
-                                <h3 class="work-card__title">Truck-Ready HVAC</h3>
-                                <p class="work-card__status">Field workflow prototype</p>
-                            </header>
-                            <p class="work-card__body">
-                                Need three, have one → stage one and pick up two. Pure domain logic aggregates demand and computes staging
-                                and shortfalls separately from file adapters and the UI.
+                        <article class="work-door">
+                            <p class="door-number">02</p>
+                            <h3>Decide</h3>
+                            <p class="door-question">When is a decision authorized to become an action?</p>
+                            <figure class="door-mechanism">
+                                <svg viewBox="0 0 300 76" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 38h276" />
+                                    <circle cx="25" cy="38" r="4" fill="currentColor" />
+                                    <path d="M93 24v28m-5-28h10m-10 28h10M163 16v44m-5-44h10m-10 44h10" />
+                                    <path class="signal" d="M237 8v60m-6-60h12m-12 60h12" />
+                                    <path d="m281 33 7 5-7 5" />
+                                </svg>
+                                <figcaption>Observe → signal → eligible → risk admission</figcaption>
+                            </figure>
+                            <p class="door-description">
+                                SHAD0W separates information, timing and permission to act. A technical research simulator; profitability
+                                and live trading are unverified.
                             </p>
-                            <p>
-                                Validation and JSON/PDF workflow evidence is historical at <code>517fc82</code>. Published main
-                                <code>d1f4d53</code> has a known current CSV integration regression; current end-to-end behavior and field
-                                outcomes are not claimed.
-                            </p>
-                            <a class="work-card__source" href="https://github.com/jayjz/truck-ready-hvac">Truck-Ready source ↗</a>
-                            <p class="evidence-provenance">
-                                <a
-                                    href="https://github.com/jayjz/truck-ready-hvac/blob/517fc82fc3a739a7d5d79769436eed179c43cc5b/tests/test_core.py"
-                                    >Historical domain tests</a
-                                >
-                            </p>
+                            <a class="door-link" href="/work/#decide">Decisions &amp; authority <span aria-hidden="true">↗</span></a>
                         </article>
+                        <article class="work-door">
+                            <p class="door-number">03</p>
+                            <h3>Coordinate</h3>
+                            <p class="door-question">How should agent workloads meet limited compute?</p>
+                            <figure class="door-mechanism">
+                                <svg viewBox="0 0 300 76" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 38h95m-7-5 7 5-7 5M137 38h35V13h85M172 38h85m-85 0v25h85" />
+                                    <path class="signal" d="m107 38 15-15 15 15-15 15z" />
+                                    <path d="m263 9 4 4 9-9m-13 29v10m8-10v10m-8 16 10 10m0-10-10 10" />
+                                </svg>
+                                <figcaption>Request → admission → admit / defer / reject</figcaption>
+                            </figure>
+                            <p class="door-description">
+                                AetherForge weighs lease, thermal and capacity constraints. Recorded mock-mode decisions; physical GPU
+                                swapping remains unverified.
+                            </p>
+                            <a class="door-link" href="/work/#coordinate"
+                                >Coordination &amp; infrastructure <span aria-hidden="true">↗</span></a
+                            >
+                        </article>
+                    </div>
+                    <div class="library-invitation">
+                        <a href="/work/">Explore the complete systems library <span aria-hidden="true">↗</span></a>
+                        <p>Full studies, field systems, research and earlier work.</p>
                     </div>
                 </div>
             </section>
-            <!-- portfolio:focus:start -->
-            <section class="live-focus" aria-labelledby="focus-title">
-                <div class="container">
-                    <div>
-                        <p class="eyebrow">Current focus / Machine-Native Systems</p>
-                        <h2 id="focus-title">
-                            Reliable intelligent systems with explicit semantic boundaries, authority, execution state, and independently
-                            verifiable evidence.
-                        </h2>
-                        <p class="live-muted">
-                            An engineering direction, not a scientific result. This public summary does not expose the private research
-                            repository.
-                        </p>
-                    </div>
-                    <div class="focus-notes">
-                        <article>
-                            <h3>Separate decisions from authority</h3>
-                            <p>Make the boundary between a proposed action, an admitted action and an observed result inspectable.</p>
-                            <p class="live-meta"><a href="#registry-shadow">SHAD0W</a> · <a href="#registry-aetherforge">AetherForge</a></p>
-                        </article>
-                        <article>
-                            <h3>Keep evidence independently readable</h3>
-                            <p>Connect execution records to independent checks; study when learned decisions should abstain or escalate.</p>
-                            <p class="live-meta">
-                                <a href="#registry-cipherloop">CipherLoop</a> · <a href="#registry-traceforge">TraceForge</a> ·
-                                <a href="#registry-temper">TEMPER</a>
-                            </p>
-                        </article>
-                    </div>
-                    <nav class="live-nav" aria-label="Portfolio system">
-                        <a href="#systems-map">Systems map ↘</a><a href="#recent-work">Recent work ↘</a
-                        ><a href="#evidence-ledger">Evidence ledger ↘</a><a href="#project-registry">Project registry ↘</a>
-                    </nav>
-                </div>
-            </section>
-            <!-- portfolio:focus:end -->
-            <!-- portfolio:system:start -->
-            <section id="systems-map" class="section live-system" aria-labelledby="systems-title">
-                <div class="container">
-                    <p class="eyebrow">Systems map / authored relationships</p>
-                    <h2 id="systems-title">Different systems. Shared questions.</h2>
-                    <p class="live-lead">
-                        Machine-Native Systems is the research direction. The systems below explore evidence, authority and bounded
-                        execution at different layers.
-                    </p>
-                    <ol class="system-lanes">
-                        <li class="system-lane lane-artifact">
-                            <span class="live-meta">01 / Artifact handoff</span>
-                            <h3><a href="#registry-cipherloop">CipherLoop</a> · <a href="#registry-traceforge">TraceForge</a></h3>
-                            <p>Production-v2 ledger + metadata → independent reader</p>
-                            <a href="/docs/evidence/project-evidence-2026-09-14.md">Relationship evidence ↗</a>
-                        </li>
-                        <li class="system-lane lane-theme">
-                            <span class="live-meta">02 / Shared design concern</span>
-                            <h3><a href="#registry-shadow">SHAD0W</a> · <a href="#registry-aetherforge">AetherForge</a></h3>
-                            <p>Shared design concern: admission authority is separate from proposed execution.</p>
-                            <a href="/docs/evidence/project-evidence-2026-09-14.md">Relationship evidence ↗</a>
-                        </li>
-                        <li class="system-lane lane-question">
-                            <span class="live-meta">03 / Research question</span>
-                            <h3><a href="#registry-temper">TEMPER</a> · <a href="#registry-traceforge">TraceForge</a></h3>
-                            <p>Research connection: what evidence is sufficient to accept a decision? No integration claimed.</p>
-                            <a href="/docs/evidence/portfolio-live-system.md">Relationship evidence ↗</a>
-                        </li>
-                    </ol>
-                    <p class="live-muted">
-                        Only the artifact handoff describes an implemented connection. Shared concerns and research questions do not imply
-                        runtime dependencies.
-                    </p>
-                </div>
-            </section>
-            <section id="recent-work" class="section live-system" aria-labelledby="recent-title">
-                <div class="container">
-                    <p class="eyebrow">Recent work / selected movement</p>
-                    <h2 id="recent-title">What changed, and what it means.</h2>
-                    <p class="live-lead">
-                        Curated engineering notes explain meaningful changes. The separate GitHub snapshot reports repository metadata only.
-                    </p>
-                    <ol class="work-notes">
-                        <li>
-                            <p class="live-meta"><time datetime="2026-10-03">2026-10-03</time> · Curated note</p>
-                            <h3><a href="/docs/evidence/portfolio-live-system.md">TEMPER enters the public research map</a></h3>
-                            <p>
-                                Pinned metrics source and unit tests inspected. Research scope added; no experiment rerun or performance
-                                claim.
-                            </p>
-                            <p class="live-meta"><a href="#registry-temper">TEMPER</a></p>
-                        </li>
-                        <li>
-                            <p class="live-meta"><time datetime="2026-09-14">2026-09-14</time> · Curated note</p>
-                            <h3>
-                                <a href="/docs/evidence/project-evidence-2026-09-14.md">The evidence handoff becomes a two-file contract</a>
-                            </h3>
-                            <p>
-                                Recorded source review separates production-v2 capture from the independent reader and the older fixture
-                                oracle.
-                            </p>
-                            <p class="live-meta">
-                                <a href="#registry-cipherloop">CipherLoop</a> · <a href="#registry-traceforge">TraceForge</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p class="live-meta"><time datetime="2026-09-13">2026-09-13</time> · Curated note</p>
-                            <h3><a href="/docs/evidence/aetherforge/verification.md">Admission decisions become inspectable</a></h3>
-                            <p>Recorded mock probes isolate switching economics, forced thermal lock and exhausted capacity.</p>
-                            <p class="live-meta"><a href="#registry-aetherforge">AetherForge</a></p>
-                        </li>
-                    </ol>
-                    <details class="metadata-snapshot">
-                        <summary>Generated GitHub snapshot · 2026-10-04</summary>
-                        <p class="live-muted">
-                            Collected 2026-10-04T02:55:02.670Z. Stored snapshot; not live status. Push times may include other branches. No
-                            claims or verification status are derived from this metadata.
-                        </p>
-                        <ul>
-                            <li>
-                                <a href="https://github.com/jayjz/CipherLoop/commit/f03a1e186e491cf24aa0f0e0671cac766c1fa8ab"
-                                    >CipherLoop · f03a1e1</a
-                                ><span>Repository pushed <time datetime="2026-09-15T10:35:07Z">2026-09-15</time></span>
-                            </li>
-                            <li>
-                                <a href="https://github.com/jayjz/TraceForge/commit/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd"
-                                    >TraceForge · 51af0f4</a
-                                ><span>Repository pushed <time datetime="2026-09-14T21:53:49Z">2026-09-14</time></span>
-                            </li>
-                            <li>
-                                <a href="https://github.com/jayjz/SHAD0W/commit/8e5e6f9e94dd47a7ca2a209e73d6019d51ac201f"
-                                    >SHAD0W · 8e5e6f9</a
-                                ><span>Repository pushed <time datetime="2026-09-27T02:12:24Z">2026-09-27</time></span>
-                            </li>
-                            <li>
-                                <a href="https://github.com/jayjz/TEMPER/commit/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f"
-                                    >TEMPER · 0747730</a
-                                ><span>Repository pushed <time datetime="2026-09-17T16:59:14Z">2026-09-17</time></span>
-                            </li>
-                            <li>
-                                <a href="https://github.com/jayjz/aetherforge/commit/265c26769eba257ac40540a7e1da5378d7515532"
-                                    >aetherforge · 265c267</a
-                                ><span>Repository pushed <time datetime="2026-08-23T20:40:20Z">2026-08-23</time></span>
-                            </li>
-                        </ul>
-                    </details>
-                </div>
-            </section>
-            <section id="evidence-ledger" class="section live-system" aria-labelledby="ledger-title">
-                <div class="container">
-                    <p class="eyebrow">Evidence ledger / bounded observations</p>
-                    <h2 id="ledger-title">Status belongs to a claim.</h2>
-                    <p class="live-lead">
-                        Experimental marks an investigation. Implemented means source exists. Verified is scoped to a recorded check.
-                        Historical is a frozen result. Unverified remains an open question.
-                    </p>
-                    <ul class="evidence-ledger">
-                        <li>
-                            <span class="evidence-state state-experimental">experimental</span>
-                            <div>
-                                <h3><a href="#registry-cipherloop">CipherLoop</a></h3>
-                                <p>Can execution evidence remain inspectable across an independent handoff?</p>
-                                <a href="/docs/evidence/project-evidence-2026-09-14.md">Inspect evidence and limits ↗</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="evidence-state state-implemented">implemented</span>
-                            <div>
-                                <h3><a href="#registry-shadow">SHAD0W</a></h3>
-                                <p>
-                                    Pinned source separates paper-risk admission from simulated eligibility and fills; tests not rerun here.
-                                </p>
-                                <a href="/docs/evidence/project-evidence-2026-09-14.md">Inspect evidence and limits ↗</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="evidence-state state-verified">verified</span>
-                            <div>
-                                <h3><a href="#registry-aetherforge">AetherForge</a></h3>
-                                <p>Four controlled mock probes and five route tests recorded on 13 September 2026; hardware excluded.</p>
-                                <a href="/docs/evidence/aetherforge/verification.md">Inspect evidence and limits ↗</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="evidence-state state-historical">historical</span>
-                            <div>
-                                <h3><a href="#registry-traceforge">TraceForge</a></h3>
-                                <p>Two synthetic fixture outputs matched independent expectations at the frozen 25668c4 revision.</p>
-                                <a href="/docs/evidence/project-evidence-2026-09-14.md">Inspect evidence and limits ↗</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="evidence-state state-unverified">unverified</span>
-                            <div>
-                                <h3><a href="#registry-temper">TEMPER</a></h3>
-                                <p>
-                                    A cost or reliability advantage from selective specialist cascades is a hypothesis, not a portfolio
-                                    result.
-                                </p>
-                                <a href="/docs/evidence/portfolio-live-system.md">Inspect evidence and limits ↗</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section id="project-registry" class="section live-system" aria-labelledby="registry-title">
-                <div class="container">
-                    <p id="research" class="eyebrow">Project registry / experimental → applied → earlier research</p>
-                    <h2 id="registry-title">The wider body of work.</h2>
-                    <p class="live-lead">
-                        Pinned descriptions and maturity are curated independently of GitHub activity. Open a record for its role, source
-                        and limitations.
-                    </p>
-                    <div class="project-registry">
-                        <details id="registry-cipherloop">
-                            <summary>
-                                <span>CipherLoop</span><span class="live-meta">experimental / featured</span
-                                ><span class="evidence-state state-experimental">experimental</span>
-                            </summary>
-                            <div class="registry-body">
-                                <p>Repository investigation with production-v2 evidence capture.</p>
-                                <p><strong>System role:</strong> Produces an inspectable execution record.</p>
-                                <p class="live-muted">Feature revision inspected; offline scripted replay is not a live audit.</p>
-                                <p class="live-meta">Public source · Pinned revision <code>c98c5d8</code></p>
-                                <p>
-                                    <a href="https://github.com/jayjz/CipherLoop">CipherLoop repository ↗</a> ·
-                                    <a
-                                        href="https://github.com/jayjz/CipherLoop/blob/c98c5d80e507ad3010d8004c86d7d6b8a4ac0c87/docs/production-evidence-contract.md"
-                                        >Pinned source</a
-                                    >
-                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
-                                </p>
-                            </div>
-                        </details>
-                        <details id="registry-traceforge">
-                            <summary>
-                                <span>TraceForge</span><span class="live-meta">experimental / featured</span
-                                ><span class="evidence-state state-implemented">implemented</span>
-                            </summary>
-                            <div class="registry-body">
-                                <p>Independent reader for the CipherLoop ledger and metadata pair.</p>
-                                <p><strong>System role:</strong> Checks artifact integrity independently of the producer runtime.</p>
-                                <p class="live-muted">Pinned reader and recorded Linux replay; no detection-accuracy claim.</p>
-                                <p class="live-meta">Public source · Pinned revision <code>51af0f4</code></p>
-                                <p>
-                                    <a href="https://github.com/jayjz/TraceForge">TraceForge repository ↗</a> ·
-                                    <a
-                                        href="https://github.com/jayjz/TraceForge/blob/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd/src/traceforge/adapters/cipherloop_production.py"
-                                        >Pinned source</a
-                                    >
-                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
-                                </p>
-                            </div>
-                        </details>
-                        <details id="registry-shadow">
-                            <summary>
-                                <span>SHAD0W</span><span class="live-meta">experimental / featured</span
-                                ><span class="evidence-state state-implemented">implemented</span>
-                            </summary>
-                            <div class="registry-body">
-                                <p>Chronological eligibility, lifecycle simulation and independent paper-risk admission.</p>
-                                <p><strong>System role:</strong> Separates simulation state from execution authority.</p>
-                                <p class="live-muted">Source and tests inspected; no live-capital or profitability claim.</p>
-                                <p class="live-meta">Public source · Pinned revision <code>ed773c5</code></p>
-                                <p>
-                                    <a href="https://github.com/jayjz/SHAD0W">SHAD0W repository ↗</a> ·
-                                    <a
-                                        href="https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/src/shadow/risk/gate.py"
-                                        >Pinned source</a
-                                    >
-                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
-                                </p>
-                            </div>
-                        </details>
-                        <details id="registry-temper">
-                            <summary>
-                                <span>TEMPER</span><span class="live-meta">experimental / supporting</span
-                                ><span class="evidence-state state-experimental">experimental</span>
-                            </summary>
-                            <div class="registry-body">
-                                <p>Research into calibrated specialists, abstention, verification and selective escalation.</p>
-                                <p><strong>System role:</strong> Asks when a bounded learned decision should be accepted or escalated.</p>
-                                <p class="live-muted">
-                                    Metrics implementation and tests inspected, not executed; no cost or reliability advantage established
-                                    here.
-                                </p>
-                                <p class="live-meta">Public source · Pinned revision <code>0747730</code></p>
-                                <p>
-                                    <a href="https://github.com/jayjz/TEMPER">TEMPER repository ↗</a> ·
-                                    <a
-                                        href="https://github.com/jayjz/TEMPER/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/src/temper/evaluation/metrics.py"
-                                        >Pinned source</a
-                                    >
-                                    · <a href="/docs/evidence/portfolio-live-system.md">Scope and limitations</a>
-                                </p>
-                            </div>
-                        </details>
-                        <details id="registry-aetherforge">
-                            <summary>
-                                <span>AetherForge</span><span class="live-meta">applied / featured</span
-                                ><span class="evidence-state state-experimental">experimental</span>
-                            </summary>
-                            <div class="registry-body">
-                                <p>Strategy admission under lease, thermal, capacity and switching constraints.</p>
-                                <p><strong>System role:</strong> Makes compute admission an explicit decision.</p>
-                                <p class="live-muted">Recorded mock probes only; physical GPU swapping remains unverified.</p>
-                                <p class="live-meta">Public source · Pinned revision <code>265c267</code></p>
-                                <p>
-                                    <a href="https://github.com/jayjz/aetherforge">AetherForge repository ↗</a> ·
-                                    <a
-                                        href="https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/src/server.py"
-                                        >Pinned source</a
-                                    >
-                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
-                                </p>
-                            </div>
-                        </details>
-                        <details id="registry-unhinged">
-                            <summary>
-                                <span>Unhinged Agent</span><span class="live-meta">applied / supporting</span
-                                ><span class="evidence-state state-experimental">experimental</span>
-                            </summary>
-                            <div class="registry-body">
-                                <p>Voice-agent hardware-preparation prototype with cancellable turns.</p>
-                                <p><strong>System role:</strong> Explores bounded state and interruption at the device boundary.</p>
-                                <p class="live-muted">Feature revision; physical hardware loop unverified.</p>
-                                <p class="live-meta">Public source · Pinned revision <code>ea86997</code></p>
-                                <p>
-                                    <a href="https://github.com/jayjz/unhinged-agent">Unhinged Agent repository ↗</a> ·
-                                    <a
-                                        href="https://github.com/jayjz/unhinged-agent/blob/ea86997c18cc375ae3355c3321b792c21f8d3284/services/esphome_bridge.py"
-                                        >Pinned source</a
-                                    >
-                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
-                                </p>
-                            </div>
-                        </details>
-                        <details id="registry-truck-ready">
-                            <summary>
-                                <span>Truck-Ready HVAC</span><span class="live-meta">applied / supporting</span
-                                ><span class="evidence-state state-implemented">implemented</span>
-                            </summary>
-                            <div class="registry-body">
-                                <p>Parts staging and shortfall domain logic.</p>
-                                <p><strong>System role:</strong> Carries explicit state into field-work preparation.</p>
-                                <p class="live-muted">
-                                    Pinned CSV integration regression; historical export evidence does not establish current end-to-end
-                                    behavior.
-                                </p>
-                                <p class="live-meta">Public source · Pinned revision <code>d1f4d53</code></p>
-                                <p>
-                                    <a href="https://github.com/jayjz/truck-ready-hvac">Truck-Ready HVAC repository ↗</a> ·
-                                    <a
-                                        href="https://github.com/jayjz/truck-ready-hvac/blob/d1f4d53313c6a8a1a5c92cb12670e8f551bb8edb/src/truck_ready/core.py"
-                                        >Pinned source</a
-                                    >
-                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
-                                </p>
-                            </div>
-                        </details>
-                        <details id="registry-evidence-strategy">
-                            <summary>
-                                <span id="evidence-strategy">Evidence Strategy Skills</span><span class="live-meta">research / archive</span
-                                ><span class="evidence-state state-experimental">experimental</span>
-                            </summary>
-                            <div class="registry-body">
-                                <p>Structural evidence validation and an evaluation methodology.</p>
-                                <p><strong>System role:</strong> Defines how evidence should be compared and accounted for.</p>
-                                <p class="live-muted">Prescribed methodology, not demonstrated effectiveness.</p>
-                                <p class="live-meta">Public source · Pinned revision <code>bccaac8</code></p>
-                                <p>
-                                    <a href="https://github.com/jayjz/evidence-strategy-skills">Evidence Strategy Skills repository ↗</a> ·
-                                    <a
-                                        href="https://github.com/jayjz/evidence-strategy-skills/blob/bccaac84eed9994846d435f39e01c9e62a9dd737/docs/evaluation-standard.md"
-                                        >Pinned source</a
-                                    >
-                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
-                                </p>
-                            </div>
-                        </details>
-                        <details id="registry-fracture">
-                            <summary>
-                                <span id="fracture">Fracture</span><span class="live-meta">research / archive</span
-                                ><span class="evidence-state state-experimental">experimental</span>
-                            </summary>
-                            <div class="registry-body">
-                                <p>Failure injectors, dispatcher and graph topologies.</p>
-                                <p><strong>System role:</strong> Explores failure and recovery questions.</p>
-                                <p class="live-muted">Generic runtime and comparative harness remain stubs; no comparative result.</p>
-                                <p class="live-meta">Public source · Pinned revision <code>300ef83</code></p>
-                                <p>
-                                    <a href="https://github.com/jayjz/fracture">Fracture repository ↗</a> ·
-                                    <a
-                                        href="https://github.com/jayjz/fracture/blob/300ef83a0ee999857189542bd836f215490da116/src/fracture/injectors/dispatcher.py"
-                                        >Pinned source</a
-                                    >
-                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
-                                </p>
-                            </div>
-                        </details>
-                        <details id="registry-sightglass">
-                            <summary>
-                                <span id="sightglass">Sightglass</span><span class="live-meta">research / archive</span
-                                ><span class="evidence-state state-experimental">experimental</span>
-                            </summary>
-                            <div class="registry-body">
-                                <p>Inspection-interface prototype with graph pause/resume and mock inventory.</p>
-                                <p><strong>System role:</strong> Explores visibility into agent state.</p>
-                                <p class="live-muted">Approval enforcement and durable synchronization remain incomplete.</p>
-                                <p class="live-meta">Public source · Pinned revision <code>6343bab</code></p>
-                                <p>
-                                    <a href="https://github.com/jayjz/sightglass">Sightglass repository ↗</a> ·
-                                    <a
-                                        href="https://github.com/jayjz/sightglass/blob/6343bab6230e106f3704eaeec099e8e7296acdd9/backend/app/graph/builder.py"
-                                        >Pinned source</a
-                                    >
-                                    · <a href="/docs/evidence/project-evidence-2026-09-14.md">Scope and limitations</a>
-                                </p>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-            </section>
-            <!-- portfolio:system:end -->
+            <aside class="legacy-fragments" aria-label="Moved engineering evidence">
+                <p id="cipherloop" data-moved-fragment>
+                    <a href="/work/evidence.html#cipherloop">This evidence has moved to the systems library. Continue to cipherloop →</a>
+                </p>
+                <p id="shadow" data-moved-fragment>
+                    <a href="/work/evidence.html#shadow">This evidence has moved to the systems library. Continue to shadow →</a>
+                </p>
+                <p id="capabilities-title" data-moved-fragment>
+                    <a href="/work/evidence.html#capabilities-title"
+                        >This evidence has moved to the systems library. Continue to capabilities title →</a
+                    >
+                </p>
+                <p id="engineering-details" data-moved-fragment>
+                    <a href="/work/evidence.html#engineering-details"
+                        >This evidence has moved to the systems library. Continue to engineering details →</a
+                    >
+                </p>
+                <p id="details-title" data-moved-fragment>
+                    <a href="/work/evidence.html#details-title"
+                        >This evidence has moved to the systems library. Continue to details title →</a
+                    >
+                </p>
+                <p id="cipherloop-details" data-moved-fragment>
+                    <a href="/work/evidence.html#cipherloop-details"
+                        >This evidence has moved to the systems library. Continue to cipherloop details →</a
+                    >
+                </p>
+                <p id="handoff-caption" data-moved-fragment>
+                    <a href="/work/evidence.html#handoff-caption"
+                        >This evidence has moved to the systems library. Continue to handoff caption →</a
+                    >
+                </p>
+                <p id="fixture-title" data-moved-fragment>
+                    <a href="/work/evidence.html#fixture-title"
+                        >This evidence has moved to the systems library. Continue to fixture title →</a
+                    >
+                </p>
+                <p id="boundary-title" data-moved-fragment>
+                    <a href="/work/evidence.html#boundary-title"
+                        >This evidence has moved to the systems library. Continue to boundary title →</a
+                    >
+                </p>
+                <p id="shadow-details" data-moved-fragment>
+                    <a href="/work/evidence.html#shadow-details"
+                        >This evidence has moved to the systems library. Continue to shadow details →</a
+                    >
+                </p>
+                <p id="timeline-caption" data-moved-fragment>
+                    <a href="/work/evidence.html#timeline-caption"
+                        >This evidence has moved to the systems library. Continue to timeline caption →</a
+                    >
+                </p>
+                <p id="projects" data-moved-fragment>
+                    <a href="/work/evidence.html#projects">This evidence has moved to the systems library. Continue to projects →</a>
+                </p>
+                <p id="aetherforge" data-moved-fragment>
+                    <a href="/work/evidence.html#aetherforge">This evidence has moved to the systems library. Continue to aetherforge →</a>
+                </p>
+                <p id="af-title" data-moved-fragment>
+                    <a href="/work/evidence.html#af-title">This evidence has moved to the systems library. Continue to af title →</a>
+                </p>
+                <p id="af-baseline" data-moved-fragment>
+                    <a href="/work/evidence.html#af-baseline">This evidence has moved to the systems library. Continue to af baseline →</a>
+                </p>
+                <p id="af-short" data-moved-fragment>
+                    <a href="/work/evidence.html#af-short">This evidence has moved to the systems library. Continue to af short →</a>
+                </p>
+                <p id="af-thermal" data-moved-fragment>
+                    <a href="/work/evidence.html#af-thermal">This evidence has moved to the systems library. Continue to af thermal →</a>
+                </p>
+                <p id="af-queue" data-moved-fragment>
+                    <a href="/work/evidence.html#af-queue">This evidence has moved to the systems library. Continue to af queue →</a>
+                </p>
+                <p id="af-case-baseline" data-moved-fragment>
+                    <a href="/work/evidence.html#af-case-baseline"
+                        >This evidence has moved to the systems library. Continue to af case baseline →</a
+                    >
+                </p>
+                <p id="af-case-short" data-moved-fragment>
+                    <a href="/work/evidence.html#af-case-short"
+                        >This evidence has moved to the systems library. Continue to af case short →</a
+                    >
+                </p>
+                <p id="af-case-thermal" data-moved-fragment>
+                    <a href="/work/evidence.html#af-case-thermal"
+                        >This evidence has moved to the systems library. Continue to af case thermal →</a
+                    >
+                </p>
+                <p id="af-case-queue" data-moved-fragment>
+                    <a href="/work/evidence.html#af-case-queue"
+                        >This evidence has moved to the systems library. Continue to af case queue →</a
+                    >
+                </p>
+                <p id="applied" data-moved-fragment>
+                    <a href="/work/evidence.html#applied">This evidence has moved to the systems library. Continue to applied →</a>
+                </p>
+                <p id="unhinged" data-moved-fragment>
+                    <a href="/work/evidence.html#unhinged">This evidence has moved to the systems library. Continue to unhinged →</a>
+                </p>
+                <p id="truck-ready" data-moved-fragment>
+                    <a href="/work/evidence.html#truck-ready">This evidence has moved to the systems library. Continue to truck ready →</a>
+                </p>
+                <p id="focus-title" data-moved-fragment>
+                    <a href="/work/evidence.html#focus-title">This evidence has moved to the systems library. Continue to focus title →</a>
+                </p>
+                <p id="systems-map" data-moved-fragment>
+                    <a href="/work/evidence.html#systems-map">This evidence has moved to the systems library. Continue to systems map →</a>
+                </p>
+                <p id="systems-title" data-moved-fragment>
+                    <a href="/work/evidence.html#systems-title"
+                        >This evidence has moved to the systems library. Continue to systems title →</a
+                    >
+                </p>
+                <p id="recent-work" data-moved-fragment>
+                    <a href="/work/evidence.html#recent-work">This evidence has moved to the systems library. Continue to recent work →</a>
+                </p>
+                <p id="recent-title" data-moved-fragment>
+                    <a href="/work/evidence.html#recent-title"
+                        >This evidence has moved to the systems library. Continue to recent title →</a
+                    >
+                </p>
+                <p id="evidence-ledger" data-moved-fragment>
+                    <a href="/work/evidence.html#evidence-ledger"
+                        >This evidence has moved to the systems library. Continue to evidence ledger →</a
+                    >
+                </p>
+                <p id="ledger-title" data-moved-fragment>
+                    <a href="/work/evidence.html#ledger-title"
+                        >This evidence has moved to the systems library. Continue to ledger title →</a
+                    >
+                </p>
+                <p id="project-registry" data-moved-fragment>
+                    <a href="/work/evidence.html#project-registry"
+                        >This evidence has moved to the systems library. Continue to project registry →</a
+                    >
+                </p>
+                <p id="research" data-moved-fragment>
+                    <a href="/work/evidence.html#research">This evidence has moved to the systems library. Continue to research →</a>
+                </p>
+                <p id="registry-title" data-moved-fragment>
+                    <a href="/work/evidence.html#registry-title"
+                        >This evidence has moved to the systems library. Continue to registry title →</a
+                    >
+                </p>
+                <p id="registry-cipherloop" data-moved-fragment>
+                    <a href="/work/evidence.html#registry-cipherloop"
+                        >This evidence has moved to the systems library. Continue to registry cipherloop →</a
+                    >
+                </p>
+                <p id="registry-traceforge" data-moved-fragment>
+                    <a href="/work/evidence.html#registry-traceforge"
+                        >This evidence has moved to the systems library. Continue to registry traceforge →</a
+                    >
+                </p>
+                <p id="registry-shadow" data-moved-fragment>
+                    <a href="/work/evidence.html#registry-shadow"
+                        >This evidence has moved to the systems library. Continue to registry shadow →</a
+                    >
+                </p>
+                <p id="registry-temper" data-moved-fragment>
+                    <a href="/work/evidence.html#registry-temper"
+                        >This evidence has moved to the systems library. Continue to registry temper →</a
+                    >
+                </p>
+                <p id="registry-aetherforge" data-moved-fragment>
+                    <a href="/work/evidence.html#registry-aetherforge"
+                        >This evidence has moved to the systems library. Continue to registry aetherforge →</a
+                    >
+                </p>
+                <p id="registry-unhinged" data-moved-fragment>
+                    <a href="/work/evidence.html#registry-unhinged"
+                        >This evidence has moved to the systems library. Continue to registry unhinged →</a
+                    >
+                </p>
+                <p id="registry-truck-ready" data-moved-fragment>
+                    <a href="/work/evidence.html#registry-truck-ready"
+                        >This evidence has moved to the systems library. Continue to registry truck ready →</a
+                    >
+                </p>
+                <p id="registry-evidence-strategy" data-moved-fragment>
+                    <a href="/work/evidence.html#registry-evidence-strategy"
+                        >This evidence has moved to the systems library. Continue to registry evidence strategy →</a
+                    >
+                </p>
+                <p id="evidence-strategy" data-moved-fragment>
+                    <a href="/work/evidence.html#evidence-strategy"
+                        >This evidence has moved to the systems library. Continue to evidence strategy →</a
+                    >
+                </p>
+                <p id="registry-fracture" data-moved-fragment>
+                    <a href="/work/evidence.html#registry-fracture"
+                        >This evidence has moved to the systems library. Continue to registry fracture →</a
+                    >
+                </p>
+                <p id="fracture" data-moved-fragment>
+                    <a href="/work/evidence.html#fracture">This evidence has moved to the systems library. Continue to fracture →</a>
+                </p>
+                <p id="registry-sightglass" data-moved-fragment>
+                    <a href="/work/evidence.html#registry-sightglass"
+                        >This evidence has moved to the systems library. Continue to registry sightglass →</a
+                    >
+                </p>
+                <p id="sightglass" data-moved-fragment>
+                    <a href="/work/evidence.html#sightglass">This evidence has moved to the systems library. Continue to sightglass →</a>
+                </p>
+            </aside>
         </main>
 
         <footer id="contact" class="site-footer">
@@ -1540,6 +779,5 @@
         <script src="js/main.js?v=20260907-evidence" defer></script>
         <script src="js/threshold.js" defer></script>
         <script src="js/observer.js" defer></script>
-        <script src="js/aetherforge.js" defer></script>
     </body>
 </html>

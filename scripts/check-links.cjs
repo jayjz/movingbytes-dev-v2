@@ -5,6 +5,8 @@ const root = process.cwd();
 const pages = [
     'index.html',
     'research.html',
+    'work/index.html',
+    'work/evidence.html',
     ...fs
         .readdirSync('case-studies')
         .filter(f => f.endsWith('.html'))
@@ -19,7 +21,8 @@ for (const file of pages) {
     for (const [, value] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
         if (/^(https?:|mailto:|data:)/.test(value)) continue;
         const url = new URL(value, `http://local/${file}`);
-        const target = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
+        let target = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
+        if (fs.existsSync(target) && fs.statSync(target).isDirectory()) target = path.join(target, 'index.html');
         assert.ok(fs.existsSync(path.join(root, target)), `${file}: missing ${value}`);
         if (url.hash) {
             const targetHtml = fs.readFileSync(target, 'utf8');
@@ -28,6 +31,7 @@ for (const file of pages) {
     }
 }
 const homepage = fs.readFileSync('index.html', 'utf8');
+const evidence = fs.readFileSync('work/evidence.html', 'utf8');
 for (const repo of [
     'CipherLoop',
     'TraceForge',
@@ -39,7 +43,7 @@ for (const repo of [
     'evidence-strategy-skills',
     'fracture'
 ]) {
-    assert.ok(homepage.includes(`href="https://github.com/jayjz/${repo}"`), `Missing source: ${repo}`);
+    assert.ok(evidence.includes(`href="https://github.com/jayjz/${repo}"`), `Missing source: ${repo}`);
 }
 assert.ok(homepage.includes('mailto:wizardordinals@gmail.com'));
 const config = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
