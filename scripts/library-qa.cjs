@@ -26,7 +26,8 @@ let browser, preview;
         ...[320, 390, 768, 1280, 1440].map(w => [w, 'normal']),
         [390, 'no-js'],
         [320, 'text-200'],
-        [390, 'text-200']
+        [390, 'text-200'],
+        [1440, 'text-200']
     ]) {
         const context = await browser.newContext({
             viewport: { width, height: 1000 },
@@ -40,6 +41,33 @@ let browser, preview;
         page.on('request', r => {
             if (/api\.github\.com|\/data\/.*\.json/.test(r.url())) dataRequests.push(r.url());
         });
+        await page.goto(base + '/', { waitUntil: 'networkidle' });
+        if (mode === 'text-200') await page.addStyleTag({ content: 'html {font-size:200%}' });
+        assert.equal(await page.locator('.system-door').count(), 3);
+        assert.equal(
+            await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+            true,
+            `Doors overflow ${width}/${mode}`
+        );
+        assert.equal(await page.locator('#work').evaluate(el => el.getAnimations({ subtree: true }).length), 0);
+        for (const [i, route, fragment] of [
+            [0, '/work/', '#black-lantern'],
+            [1, '/case-studies/shadow.html', ''],
+            [2, '/work/', '#automated-social']
+        ]) {
+            const link = page.locator('.door-link').nth(i);
+            await link.focus();
+            assert.equal(await link.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
+            await page.keyboard.press('Enter');
+            await page.waitForURL(base + route + fragment);
+            assert.equal(await page.locator(fragment || 'h1').isVisible(), true);
+            await page.goBack({ waitUntil: 'networkidle' });
+        }
+        if (mode === 'text-200') await page.addStyleTag({ content: 'html {font-size:200%}' });
+        await page.locator('#work').screenshot({ path: `${out}/doors-${width}-${mode}.png` });
+        await page.locator('.site-nav a[href="/work/"]').focus();
+        await page.keyboard.press('Enter');
+        await page.waitForURL(base + '/work/');
         assert.equal((await page.goto(base + '/work/', { waitUntil: 'networkidle' })).status(), 200);
         if (mode === 'text-200') await page.addStyleTag({ content: 'html {font-size:200%}' });
         assert.equal(await page.locator('.library-collection').count(), 6);

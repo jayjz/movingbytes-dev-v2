@@ -1,5 +1,14 @@
 # Portfolio live system
 
+## Systems library relocation, 29 October 2026
+
+The two generated slots now live only in `work/evidence.html`. The deterministic
+renderer and freshness check target that file; data schemas, source snapshots,
+curated claims, maturity and refresh-failure behavior remain unchanged. The
+homepage and `/work/` index contain no generated slots or runtime data requests.
+See the [preservation contract](systems-library-inventory.json) and
+[implementation checkpoints](systems-library-three-doors.md).
+
 ## Plan and design brief
 
 Baseline: `072dd5db2a08f46effbe9226916d6aa7e0384daa`, clean `main`.

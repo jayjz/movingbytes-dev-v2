@@ -97,7 +97,13 @@ npm run qa
 
 `check` runs Prettier, HTML Validate, internal file/fragment checks, preserved-link/redirect checks, JS syntax checks, data validation, generated-HTML freshness, and updater failure tests. `qa:install` downloads the Chromium revision used by pinned Playwright. On a clean Linux machine, browser system libraries may also be required: `npx playwright install --with-deps chromium` (may require administrator privileges).
 
-`qa` starts its own local-only server on port **4173**, runs checks, saves screenshots/results to ignored `test-results/portfolio/`, and closes its browser/server. It covers desktop/mobile layout, axe scans, keyboard skip-link focus, fragment/history navigation, case-study links, reduced motion, no-JS, missing observer, blocked fonts/images, and enlarged text. These checks do not replace a screen-reader, cross-browser, or hosted assessment.
+`qa` runs the five-page regression suite on port **4173**, then the library and
+preservation suites on ports **4203** and **4204**. Each closes its browser/server.
+Screenshots/results live in ignored `test-results/portfolio/`,
+`test-results/systems-library/` and `test-results/library-preservation/`. Coverage
+includes layout, axe scans, keyboard focus, fragment/history navigation,
+case-study links, reduced motion, no-JS, blocked fonts/images and enlarged text.
+These checks do not replace a screen-reader, cross-browser or hosted assessment.
 
 Optional overrides:
 
@@ -112,7 +118,7 @@ PORTFOLIO_QA_PAGE=research npm run qa
 
 `PORTFOLIO_QA_PAGE` optionally limits an iteration to one page label (`research`,
 `home`, `evidence`, `case`, `shadow`). Default QA still covers these five pages.
-The separate library suite covers `/work/`. Research coverage
+The library suite included in `qa` covers `/work/` and all three door journeys. Research coverage
 adds the complete argument in no-JS/offline modes, contents navigation, both home
 return paths, 200% text and evidence/frontier structure. Final verification uses
 the default full suite.

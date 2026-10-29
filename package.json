@@ -14,7 +14,7 @@
         "validate:syntax": "node --check js/main.js && node --check js/observer.js && node --check js/threshold.js && node --check scripts/portfolio-qa.cjs && node --check scripts/serve.cjs && node --check scripts/check-links.cjs && node --check scripts/check-hosted.cjs && node --check js/aetherforge.js && node --check scripts/aetherforge-qa.cjs",
         "check": "npm run format:check && npm run validate:html && npm run validate:links && npm run validate:syntax && npm run data:check && npm run test:data && npm run validate:library",
         "qa:install": "playwright install chromium",
-        "qa": "node scripts/portfolio-qa.cjs",
+        "qa": "node scripts/portfolio-qa.cjs && npm run qa:library && npm run qa:preservation",
         "qa:aetherforge": "node scripts/aetherforge-qa.cjs",
         "data:refresh": "node scripts/update-activity.cjs",
         "data:render": "node scripts/render-portfolio.cjs",

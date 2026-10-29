@@ -38,6 +38,15 @@ fragment paths (all 78 with JS on/off), all 89 retained URLs and 92 local HTTP
 destinations. External href preservation does not establish current remote
 availability. No maturity label, evidence text or source pin changed.
 
+M4 pushed and remote-verified at `378426e9badbdf04642dcb267c12ed87ac718e4d`.
+
+M5 completes responsive/keyboard journeys and makes library/preservation QA part
+of the default CI browser command. All requested commands pass: static checks,
+65 page cases, nine library cases, 156 fragment paths, 26 AetherForge cases and
+six generated-section cases. Final screenshots were inspected at all five widths,
+with no-JS, reduced-motion and 200% text coverage. Matched before/after captures,
+recorded outputs and limitations are in the [final review](qa/systems-library/report.md).
+
 ## Baseline and dependency
 
 Started from fetched `origin/main` at `41d7e49` on 29 October 2026. Clean working
