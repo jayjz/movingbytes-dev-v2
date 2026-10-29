@@ -987,6 +987,33 @@
 .home-page .about__copy {
     max-width: 57ch;
 }
+.sinai-sketch {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.7fr);
+    align-items: center;
+    gap: 2rem 5rem;
+    margin-top: 2rem;
+}
+.sinai-sketch img {
+    width: 100%;
+    height: auto;
+}
+.sinai-sketch figcaption {
+    max-width: 36ch;
+    min-width: 0;
+}
+.sinai-sketch .sinai-sketch__title {
+    font: 400 clamp(2rem, 3.5vw, 3.5rem) / 1.1 var(--font-editorial);
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+}
+.sinai-sketch figcaption > a {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding-block: 0.5rem;
+    font-size: 0.9rem;
+}
 .brand-section {
     padding-block: 4rem 5rem;
     border-top: 1px solid var(--border-color);
@@ -1101,6 +1128,11 @@
     .home-page .about .container {
         grid-template-columns: minmax(0, 1fr);
         gap: 1rem;
+    }
+    .sinai-sketch {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+        margin-top: 1.5rem;
     }
     .principles .container {
         grid-template-columns: minmax(0, 1fr);
@@ -1274,13 +1306,47 @@
 .jonah-invitation > p + p {
     margin-top: 0;
 }
-.jonah-invitation > p:first-child {
+.jonah-invitation .jonah-reflection-preview {
     grid-column: 1;
-    grid-row: 1 / 4;
+    grid-row: 1 / 8;
+}
+.jonah-reflection-preview blockquote {
+    margin: 0;
+}
+.jonah-invitation .jonah-reflection-preview p {
     color: var(--ink);
-    max-width: 11ch;
-    font: 400 clamp(2.5rem, 5vw, 4.5rem) / 1.05 var(--font-editorial);
-    letter-spacing: -0.04em;
+    max-width: 23ch;
+    font: 400 clamp(2rem, 3.5vw, 3.25rem) / 1.15 var(--font-editorial);
+    letter-spacing: -0.035em;
+}
+.jonah-reflection-preview figcaption {
+    margin-top: 1.5rem;
+    max-width: 32ch;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+.authored-reflection {
+    margin-top: 1.5rem;
+    border-block: 1px solid #b3a68f;
+}
+.authored-reflection summary {
+    padding-block: 0.8rem;
+    cursor: pointer;
+    color: #8a3516;
+    font-size: 1rem;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+.authored-reflection .authored-reflection__context {
+    margin-block: 1rem 1.5rem;
+    font-size: 0.9rem;
+}
+.authored-reflection blockquote {
+    margin: 0 0 1.5rem;
+}
+.authored-reflection blockquote p {
+    color: var(--ink);
 }
 .jonah-invitation .ledger-link {
     justify-self: start;
@@ -1333,6 +1399,30 @@
 .curiosity-heading h2 {
     font: italic 400 clamp(3.5rem, 8vw, 7rem) / 1 var(--font-editorial);
     letter-spacing: -0.06em;
+}
+.intelligence-reflection {
+    max-width: 62rem;
+    margin-bottom: clamp(3rem, 7vw, 6rem);
+    padding-bottom: clamp(2rem, 4vw, 3.5rem);
+    border-bottom: 1px solid var(--border-color);
+}
+.intelligence-reflection blockquote {
+    margin: 0;
+}
+.intelligence-reflection blockquote p {
+    color: var(--text-primary);
+    font: 400 clamp(1.6rem, 3.2vw, 2.8rem) / 1.3 var(--font-editorial);
+    letter-spacing: -0.025em;
+}
+.intelligence-reflection figcaption {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+.intelligence-reflection__context {
+    max-width: 60ch;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
 }
 .model-exploration {
     display: block;
@@ -1605,10 +1695,10 @@
     .jonah-invitation > * {
         grid-column: 1;
     }
-    .jonah-invitation > p:first-child {
+    .jonah-invitation .jonah-reflection-preview {
         grid-row: auto;
         max-width: none;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
     }
 }
 @media (max-width: 600px) {

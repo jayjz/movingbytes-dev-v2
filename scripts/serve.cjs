@@ -10,6 +10,7 @@ const types = {
     '.js': 'text/javascript',
     '.svg': 'image/svg+xml',
     '.png': 'image/png',
+    '.webp': 'image/webp',
     '.json': 'application/json',
     '.txt': 'text/plain'
 };

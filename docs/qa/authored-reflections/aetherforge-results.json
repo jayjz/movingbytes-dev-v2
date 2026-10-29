@@ -1,0 +1,198 @@
+[
+  {
+    "width": 1440,
+    "scenario": "baseline",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "scenario": "short",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "scenario": "thermal",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "scenario": "queue",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "scenario": "baseline",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "scenario": "short",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "scenario": "thermal",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "scenario": "queue",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "scenario": "baseline",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "scenario": "short",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "scenario": "thermal",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "scenario": "queue",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "scenario": "baseline",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "scenario": "short",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "scenario": "thermal",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "scenario": "queue",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "scenario": "baseline",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "scenario": "short",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "scenario": "thermal",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "scenario": "queue",
+    "keyboard": "pass",
+    "sourceResponse": "match",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "mode": "no-js",
+    "allFourScenarios": "pass",
+    "axeViolations": "not run: JS disabled",
+    "overflow": false
+  },
+  {
+    "mode": "blocked-script",
+    "allFourScenarios": "pass",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "mode": "touch",
+    "allFourScenarios": "pass",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "mode": "reduced-at-load",
+    "allFourScenarios": "pass",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "mode": "text-200-390",
+    "allFourScenarios": "pass",
+    "axeViolations": 0,
+    "overflow": false
+  },
+  {
+    "mode": "text-200-320",
+    "allFourScenarios": "pass",
+    "axeViolations": 0,
+    "overflow": false
+  }
+]

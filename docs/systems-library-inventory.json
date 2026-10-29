@@ -1,0 +1,537 @@
+{
+    "baseline": "9fdd021a499d7a8e76d3522d66d9b6579116b50e",
+    "mainBaseline": "41d7e49",
+    "authoredDependency": "https://github.com/jayjz/movingbytes-dev-v2/pull/22",
+    "authoredOriginalHead": "310bb69acba54bf69e236dad8c15610729f1b565",
+    "topSections": [
+        "top",
+        "about",
+        "now",
+        "curiosity",
+        "principles",
+        "work",
+        "shadow",
+        "capabilities-title",
+        "engineering-details",
+        "projects",
+        "applied",
+        "focus-title",
+        "systems-map",
+        "recent-work",
+        "evidence-ledger",
+        "project-registry"
+    ],
+    "fragments": [
+        {
+            "id": "main",
+            "destination": "index.html#main"
+        },
+        {
+            "id": "top",
+            "destination": "index.html#top"
+        },
+        {
+            "id": "observer-title",
+            "destination": "index.html#observer-title"
+        },
+        {
+            "id": "observer-desc",
+            "destination": "index.html#observer-desc"
+        },
+        {
+            "id": "shell",
+            "destination": "index.html#shell"
+        },
+        {
+            "id": "metal",
+            "destination": "index.html#metal"
+        },
+        {
+            "id": "left-window",
+            "destination": "index.html#left-window"
+        },
+        {
+            "id": "right-window",
+            "destination": "index.html#right-window"
+        },
+        {
+            "id": "about",
+            "destination": "index.html#about"
+        },
+        {
+            "id": "sinai-sketch",
+            "destination": "index.html#sinai-sketch"
+        },
+        {
+            "id": "now",
+            "destination": "index.html#now"
+        },
+        {
+            "id": "now-title",
+            "destination": "index.html#now-title"
+        },
+        {
+            "id": "jonah",
+            "destination": "index.html#jonah"
+        },
+        {
+            "id": "jonah-title",
+            "destination": "index.html#jonah-title"
+        },
+        {
+            "id": "jonah-reflection",
+            "destination": "index.html#jonah-reflection"
+        },
+        {
+            "id": "curiosity",
+            "destination": "index.html#curiosity"
+        },
+        {
+            "id": "curiosity-title",
+            "destination": "index.html#curiosity-title"
+        },
+        {
+            "id": "intelligence-reflection",
+            "destination": "index.html#intelligence-reflection"
+        },
+        {
+            "id": "model-question",
+            "destination": "index.html#model-question"
+        },
+        {
+            "id": "model-question-title",
+            "destination": "index.html#model-question-title"
+        },
+        {
+            "id": "threshold-title",
+            "destination": "index.html#threshold-title"
+        },
+        {
+            "id": "threshold-value",
+            "destination": "index.html#threshold-value"
+        },
+        {
+            "id": "confidence-threshold",
+            "destination": "index.html#confidence-threshold"
+        },
+        {
+            "id": "threshold-help",
+            "destination": "index.html#threshold-help"
+        },
+        {
+            "id": "field-note",
+            "destination": "index.html#field-note"
+        },
+        {
+            "id": "field-note-title",
+            "destination": "index.html#field-note-title"
+        },
+        {
+            "id": "principles",
+            "destination": "index.html#principles"
+        },
+        {
+            "id": "principles-title",
+            "destination": "index.html#principles-title"
+        },
+        {
+            "id": "work",
+            "destination": "work/evidence.html#work"
+        },
+        {
+            "id": "cipherloop",
+            "destination": "work/evidence.html#cipherloop"
+        },
+        {
+            "id": "shadow",
+            "destination": "work/evidence.html#shadow"
+        },
+        {
+            "id": "capabilities-title",
+            "destination": "work/evidence.html#capabilities-title"
+        },
+        {
+            "id": "engineering-details",
+            "destination": "work/evidence.html#engineering-details"
+        },
+        {
+            "id": "details-title",
+            "destination": "work/evidence.html#details-title"
+        },
+        {
+            "id": "cipherloop-details",
+            "destination": "work/evidence.html#cipherloop-details"
+        },
+        {
+            "id": "handoff-caption",
+            "destination": "work/evidence.html#handoff-caption"
+        },
+        {
+            "id": "fixture-title",
+            "destination": "work/evidence.html#fixture-title"
+        },
+        {
+            "id": "boundary-title",
+            "destination": "work/evidence.html#boundary-title"
+        },
+        {
+            "id": "shadow-details",
+            "destination": "work/evidence.html#shadow-details"
+        },
+        {
+            "id": "timeline-caption",
+            "destination": "work/evidence.html#timeline-caption"
+        },
+        {
+            "id": "projects",
+            "destination": "work/evidence.html#projects"
+        },
+        {
+            "id": "aetherforge",
+            "destination": "work/evidence.html#aetherforge"
+        },
+        {
+            "id": "af-title",
+            "destination": "work/evidence.html#af-title"
+        },
+        {
+            "id": "af-baseline",
+            "destination": "work/evidence.html#af-baseline"
+        },
+        {
+            "id": "af-short",
+            "destination": "work/evidence.html#af-short"
+        },
+        {
+            "id": "af-thermal",
+            "destination": "work/evidence.html#af-thermal"
+        },
+        {
+            "id": "af-queue",
+            "destination": "work/evidence.html#af-queue"
+        },
+        {
+            "id": "af-case-baseline",
+            "destination": "work/evidence.html#af-case-baseline"
+        },
+        {
+            "id": "af-case-short",
+            "destination": "work/evidence.html#af-case-short"
+        },
+        {
+            "id": "af-case-thermal",
+            "destination": "work/evidence.html#af-case-thermal"
+        },
+        {
+            "id": "af-case-queue",
+            "destination": "work/evidence.html#af-case-queue"
+        },
+        {
+            "id": "applied",
+            "destination": "work/evidence.html#applied"
+        },
+        {
+            "id": "unhinged",
+            "destination": "work/evidence.html#unhinged"
+        },
+        {
+            "id": "truck-ready",
+            "destination": "work/evidence.html#truck-ready"
+        },
+        {
+            "id": "focus-title",
+            "destination": "work/evidence.html#focus-title"
+        },
+        {
+            "id": "systems-map",
+            "destination": "work/evidence.html#systems-map"
+        },
+        {
+            "id": "systems-title",
+            "destination": "work/evidence.html#systems-title"
+        },
+        {
+            "id": "recent-work",
+            "destination": "work/evidence.html#recent-work"
+        },
+        {
+            "id": "recent-title",
+            "destination": "work/evidence.html#recent-title"
+        },
+        {
+            "id": "evidence-ledger",
+            "destination": "work/evidence.html#evidence-ledger"
+        },
+        {
+            "id": "ledger-title",
+            "destination": "work/evidence.html#ledger-title"
+        },
+        {
+            "id": "project-registry",
+            "destination": "work/evidence.html#project-registry"
+        },
+        {
+            "id": "research",
+            "destination": "work/evidence.html#research"
+        },
+        {
+            "id": "registry-title",
+            "destination": "work/evidence.html#registry-title"
+        },
+        {
+            "id": "registry-cipherloop",
+            "destination": "work/evidence.html#registry-cipherloop"
+        },
+        {
+            "id": "registry-traceforge",
+            "destination": "work/evidence.html#registry-traceforge"
+        },
+        {
+            "id": "registry-shadow",
+            "destination": "work/evidence.html#registry-shadow"
+        },
+        {
+            "id": "registry-temper",
+            "destination": "work/evidence.html#registry-temper"
+        },
+        {
+            "id": "registry-aetherforge",
+            "destination": "work/evidence.html#registry-aetherforge"
+        },
+        {
+            "id": "registry-unhinged",
+            "destination": "work/evidence.html#registry-unhinged"
+        },
+        {
+            "id": "registry-truck-ready",
+            "destination": "work/evidence.html#registry-truck-ready"
+        },
+        {
+            "id": "registry-evidence-strategy",
+            "destination": "work/evidence.html#registry-evidence-strategy"
+        },
+        {
+            "id": "evidence-strategy",
+            "destination": "work/evidence.html#evidence-strategy"
+        },
+        {
+            "id": "registry-fracture",
+            "destination": "work/evidence.html#registry-fracture"
+        },
+        {
+            "id": "fracture",
+            "destination": "work/evidence.html#fracture"
+        },
+        {
+            "id": "registry-sightglass",
+            "destination": "work/evidence.html#registry-sightglass"
+        },
+        {
+            "id": "sightglass",
+            "destination": "work/evidence.html#sightglass"
+        },
+        {
+            "id": "contact",
+            "destination": "index.html#contact"
+        }
+    ],
+    "links": [
+        "https://www.jaysystems.dev/",
+        "/favicon.svg",
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=optional",
+        "css/style.css?v=20260907-evidence",
+        "css/home.css",
+        "css/live-system.css",
+        "#main",
+        "#top",
+        "#now",
+        "#about",
+        "#work",
+        "#contact",
+        "mailto:wizardordinals@gmail.com",
+        "assets/authored/sinai-golden-calf.webp",
+        "assets/authored/sinai-golden-calf-original.png",
+        "assets/jonah/jonah-under-the-vine.jpg",
+        "https://biblemap-pink.vercel.app/jonah/",
+        "https://www.clevelandart.org/art/1965.239",
+        "#curiosity",
+        "https://github.com/jayjz/TEMPER/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/src/temper/evaluation/metrics.py",
+        "/docs/evidence/portfolio-live-system.md",
+        "/research.html",
+        "https://github.com/jayjz/TEMPER/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/tests/unit/test_metrics.py",
+        "#cipherloop",
+        "#shadow",
+        "#projects",
+        "#project-registry",
+        "/case-studies/cipherloop.html#current-contract",
+        "#cipherloop-details",
+        "/case-studies/shadow.html",
+        "https://github.com/jayjz/SHAD0W",
+        "/docs/evidence/project-evidence-2026-09-14.md",
+        "#evidence-strategy",
+        "#aetherforge",
+        "#unhinged",
+        "https://github.com/jayjz/CipherLoop",
+        "https://github.com/jayjz/CipherLoop/blob/c98c5d80e507ad3010d8004c86d7d6b8a4ac0c87/docs/production-evidence-contract.md",
+        "https://github.com/jayjz/TraceForge",
+        "https://github.com/jayjz/TraceForge/blob/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd/tests/test_cipherloop_production.py",
+        "https://github.com/jayjz/TraceForge/actions/runs/34901295949",
+        "https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/tests/fixtures/cipherloop/artifacts/evaluation.json",
+        "https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/tests/fixtures/cipherloop/manifest.json",
+        "https://github.com/jayjz/TraceForge/actions/runs/34390717464",
+        "/case-studies/cipherloop.html",
+        "https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/docs/cipherloop-baseline.md",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L40",
+        "docs/evidence/aetherforge/scenarios.json",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L75",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L89",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/src/server.py#L178-L239",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/config.yaml",
+        "https://github.com/jayjz/aetherforge",
+        "https://github.com/jayjz/unhinged-agent",
+        "https://github.com/jayjz/unhinged-agent/blob/ea86997c18cc375ae3355c3321b792c21f8d3284/tests/test_esphome_bridge_stress.py",
+        "https://github.com/jayjz/truck-ready-hvac",
+        "https://github.com/jayjz/truck-ready-hvac/blob/517fc82fc3a739a7d5d79769436eed179c43cc5b/tests/test_core.py",
+        "#registry-shadow",
+        "#registry-aetherforge",
+        "#registry-cipherloop",
+        "#registry-traceforge",
+        "#registry-temper",
+        "#systems-map",
+        "#recent-work",
+        "#evidence-ledger",
+        "/docs/evidence/aetherforge/verification.md",
+        "https://github.com/jayjz/CipherLoop/commit/f03a1e186e491cf24aa0f0e0671cac766c1fa8ab",
+        "https://github.com/jayjz/TraceForge/commit/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd",
+        "https://github.com/jayjz/SHAD0W/commit/8e5e6f9e94dd47a7ca2a209e73d6019d51ac201f",
+        "https://github.com/jayjz/TEMPER/commit/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f",
+        "https://github.com/jayjz/aetherforge/commit/265c26769eba257ac40540a7e1da5378d7515532",
+        "https://github.com/jayjz/TraceForge/blob/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd/src/traceforge/adapters/cipherloop_production.py",
+        "https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/src/shadow/risk/gate.py",
+        "https://github.com/jayjz/TEMPER",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/src/server.py",
+        "https://github.com/jayjz/unhinged-agent/blob/ea86997c18cc375ae3355c3321b792c21f8d3284/services/esphome_bridge.py",
+        "https://github.com/jayjz/truck-ready-hvac/blob/d1f4d53313c6a8a1a5c92cb12670e8f551bb8edb/src/truck_ready/core.py",
+        "https://github.com/jayjz/evidence-strategy-skills",
+        "https://github.com/jayjz/evidence-strategy-skills/blob/bccaac84eed9994846d435f39e01c9e62a9dd737/docs/evaluation-standard.md",
+        "https://github.com/jayjz/fracture",
+        "https://github.com/jayjz/fracture/blob/300ef83a0ee999857189542bd836f215490da116/src/fracture/injectors/dispatcher.py",
+        "https://github.com/jayjz/sightglass",
+        "https://github.com/jayjz/sightglass/blob/6343bab6230e106f3704eaeec099e8e7296acdd9/backend/app/graph/builder.py",
+        "https://github.com/jayjz",
+        "js/main.js?v=20260907-evidence",
+        "js/threshold.js",
+        "js/observer.js",
+        "js/aetherforge.js"
+    ],
+    "archiveLinks": [
+        "#cipherloop",
+        "#shadow",
+        "#projects",
+        "#project-registry",
+        "/case-studies/cipherloop.html#current-contract",
+        "#cipherloop-details",
+        "/case-studies/shadow.html",
+        "https://github.com/jayjz/SHAD0W",
+        "/docs/evidence/project-evidence-2026-09-14.md",
+        "#evidence-strategy",
+        "#aetherforge",
+        "#unhinged",
+        "https://github.com/jayjz/CipherLoop",
+        "https://github.com/jayjz/CipherLoop/blob/c98c5d80e507ad3010d8004c86d7d6b8a4ac0c87/docs/production-evidence-contract.md",
+        "https://github.com/jayjz/TraceForge",
+        "https://github.com/jayjz/TraceForge/blob/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd/tests/test_cipherloop_production.py",
+        "https://github.com/jayjz/TraceForge/actions/runs/34901295949",
+        "https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/tests/fixtures/cipherloop/artifacts/evaluation.json",
+        "https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/tests/fixtures/cipherloop/manifest.json",
+        "https://github.com/jayjz/TraceForge/actions/runs/34390717464",
+        "/case-studies/cipherloop.html",
+        "https://github.com/jayjz/TraceForge/blob/25668c4db622a322b87271825ce68fd37390f3ec/docs/cipherloop-baseline.md",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L40",
+        "docs/evidence/aetherforge/scenarios.json",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L75",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/tests/test_hypervisor.py#L89",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/src/server.py#L178-L239",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/config.yaml",
+        "https://github.com/jayjz/aetherforge",
+        "https://github.com/jayjz/unhinged-agent",
+        "https://github.com/jayjz/unhinged-agent/blob/ea86997c18cc375ae3355c3321b792c21f8d3284/tests/test_esphome_bridge_stress.py",
+        "https://github.com/jayjz/truck-ready-hvac",
+        "https://github.com/jayjz/truck-ready-hvac/blob/517fc82fc3a739a7d5d79769436eed179c43cc5b/tests/test_core.py",
+        "#registry-shadow",
+        "#registry-aetherforge",
+        "#registry-cipherloop",
+        "#registry-traceforge",
+        "#registry-temper",
+        "#systems-map",
+        "#recent-work",
+        "#evidence-ledger",
+        "/docs/evidence/portfolio-live-system.md",
+        "/docs/evidence/aetherforge/verification.md",
+        "https://github.com/jayjz/CipherLoop/commit/f03a1e186e491cf24aa0f0e0671cac766c1fa8ab",
+        "https://github.com/jayjz/TraceForge/commit/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd",
+        "https://github.com/jayjz/SHAD0W/commit/8e5e6f9e94dd47a7ca2a209e73d6019d51ac201f",
+        "https://github.com/jayjz/TEMPER/commit/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f",
+        "https://github.com/jayjz/aetherforge/commit/265c26769eba257ac40540a7e1da5378d7515532",
+        "https://github.com/jayjz/TraceForge/blob/51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd/src/traceforge/adapters/cipherloop_production.py",
+        "https://github.com/jayjz/SHAD0W/blob/ed773c51c9a75bb2ae2a00a4222c5992329d441f/src/shadow/risk/gate.py",
+        "https://github.com/jayjz/TEMPER",
+        "https://github.com/jayjz/TEMPER/blob/0747730d18cdb692142d9c2b50f9e8bc1ff0c45f/src/temper/evaluation/metrics.py",
+        "https://github.com/jayjz/aetherforge/blob/265c26769eba257ac40540a7e1da5378d7515532/src/server.py",
+        "https://github.com/jayjz/unhinged-agent/blob/ea86997c18cc375ae3355c3321b792c21f8d3284/services/esphome_bridge.py",
+        "https://github.com/jayjz/truck-ready-hvac/blob/d1f4d53313c6a8a1a5c92cb12670e8f551bb8edb/src/truck_ready/core.py",
+        "https://github.com/jayjz/evidence-strategy-skills",
+        "https://github.com/jayjz/evidence-strategy-skills/blob/bccaac84eed9994846d435f39e01c9e62a9dd737/docs/evaluation-standard.md",
+        "https://github.com/jayjz/fracture",
+        "https://github.com/jayjz/fracture/blob/300ef83a0ee999857189542bd836f215490da116/src/fracture/injectors/dispatcher.py",
+        "https://github.com/jayjz/sightglass",
+        "https://github.com/jayjz/sightglass/blob/6343bab6230e106f3704eaeec099e8e7296acdd9/backend/app/graph/builder.py"
+    ],
+    "archiveTextHash": "0373a5e5dd992edd304c605b7f50b507b2df3aab872c68007721862cee252511",
+    "revisionPins": [
+        "0747730d18cdb692142d9c2b50f9e8bc1ff0c45f",
+        "c98c5d80e507ad3010d8004c86d7d6b8a4ac0c87",
+        "51af0f4ed2e9fb0416bffcb3f0bc8140bc1c38bd",
+        "25668c4db622a322b87271825ce68fd37390f3ec",
+        "265c26769eba257ac40540a7e1da5378d7515532",
+        "ea86997c18cc375ae3355c3321b792c21f8d3284",
+        "517fc82fc3a739a7d5d79769436eed179c43cc5b",
+        "f03a1e186e491cf24aa0f0e0671cac766c1fa8ab",
+        "8e5e6f9e94dd47a7ca2a209e73d6019d51ac201f",
+        "ed773c51c9a75bb2ae2a00a4222c5992329d441f",
+        "d1f4d53313c6a8a1a5c92cb12670e8f551bb8edb",
+        "bccaac84eed9994846d435f39e01c9e62a9dd737",
+        "300ef83a0ee999857189542bd836f215490da116",
+        "6343bab6230e106f3704eaeec099e8e7296acdd9"
+    ],
+    "generatedSlots": [
+        "focus",
+        "system"
+    ],
+    "instruments": [
+        "#curiosity .threshold-instrument",
+        "#aetherforge .af-selector"
+    ],
+    "protected": {
+        "top": "5d9f38c8f45e2ef4f5c45dd0a4e09c7c19d1baca45a84ee2bb66605f341a67df",
+        "about": "a63963480eacf81c54a82e48dd5fc0a2489c7b2132562bfb4e147284067a84c4",
+        "now": "a99c9b5e519b4878cf5f13d3d79bb0f32dd56c20d1d6d96e6f637440d5a81b18",
+        "curiosity": "d850417c1f52762e7769d2a25b61154c26939af6c46f4e859bcae62c75793d89",
+        "principles": "44a82be1cb566cd71583e65cdccd4d9f47e9a55ac0c0d3721b40b540dac4b7cc",
+        "contact": "12817d3b986f9871bd0a8061e56d21f2ca69021b6f8b2dd4df7e13a2c879f19f"
+    },
+    "caseStudies": {
+        "case-studies/cipherloop.html": "c081665982c7998ae73997c69ee1518ca454236487a5e195a534c8228bc89c58",
+        "case-studies/shadow.html": "d81b61db495390b587dbc156e18a993a1c9cfd3c791c728a73bda3cd29719881",
+        "research.html": "01d9178b2c362444510a7a9a47b13bb395b76cfb0d228138777663bc49b70419"
+    },
+    "accessibilityContracts": [
+        "scripts/portfolio-qa.cjs",
+        "scripts/aetherforge-qa.cjs",
+        "scripts/live-system-qa.cjs",
+        "scripts/check-links.cjs",
+        "scripts/portfolio-data.test.cjs"
+    ]
+}
