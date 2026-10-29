@@ -1,4 +1,19 @@
 /* A shared editorial threshold; diagrams describe boundaries, never live state. */
+.home-page,
+.library-page {
+    --type-display: clamp(3rem, 8vw, 8rem);
+    --type-section: clamp(2.25rem, 4.5vw, 4rem);
+    --type-question: clamp(1.75rem, 2.5vw, 2.25rem);
+    --type-body: 1.125rem;
+    --type-note: 1rem;
+    --type-caption: 0.9375rem;
+    font-size: var(--type-body);
+    line-height: 1.7;
+}
+.home-page .site-nav a,
+.library-page .site-nav a {
+    font-size: var(--type-note);
+}
 .library-page .site-header,
 .evidence-page .site-header {
     border-bottom-color: var(--accent);
@@ -13,7 +28,7 @@
 .library-opening h1 {
     margin-block: 1.5rem 2.5rem;
     font:
-        400 clamp(3rem, 8vw, 8rem) / 0.98 Georgia,
+        400 var(--type-display) / 1.02 Georgia,
         serif;
     letter-spacing: -0.06em;
 }
@@ -52,12 +67,12 @@
     border-top: 1px solid var(--border-color);
 }
 .library-contents p {
-    font: 0.8rem / 1.6 var(--font-mono);
+    font: var(--type-caption) / 1.6 var(--font-mono);
     margin-bottom: 1rem;
 }
 .library-contents a {
     padding-block: 0.5rem;
-    font-size: 0.95rem;
+    font-size: var(--type-note);
     text-decoration: none;
 }
 .library-contents .library-full-record {
@@ -71,7 +86,7 @@
 }
 .library-collection h2 {
     font:
-        400 clamp(1.8rem, 3vw, 2.7rem) / 1.1 Georgia,
+        400 clamp(2rem, 3vw, 2.75rem) / 1.15 Georgia,
         serif;
     letter-spacing: -0.035em;
     margin-bottom: 1rem;
@@ -92,7 +107,7 @@
     border-top: 1px solid var(--border-color);
 }
 .library-entry h3 {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     line-height: 1.4;
     margin-bottom: 0.75rem;
 }
@@ -104,16 +119,16 @@
 }
 .library-entry > div:last-child > p:first-child {
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: var(--type-body);
 }
 .library-entry .entry-scope {
     margin-block: 0.8rem 1rem;
-    font-size: 0.875rem;
+    font-size: var(--type-note);
 }
 .library-entry a {
     display: inline-block;
     padding-block: 0.4rem;
-    font-size: 0.95rem;
+    font-size: var(--type-note);
 }
 .library-colophon {
     display: flex;
@@ -133,12 +148,12 @@
 }
 .doors-heading {
     max-width: 52rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
 }
 .doors-heading h2 {
     margin-block: 1rem 1.5rem;
     font:
-        400 clamp(2.5rem, 5vw, 5rem)/1.05 Georgia,
+        400 var(--type-section)/1.1 Georgia,
         serif;
     letter-spacing: -0.055em;
 }
@@ -152,7 +167,7 @@
 .system-door {
     display: flex;
     flex-direction: column;
-    padding: 1.5rem 2rem 0;
+    padding: 1.25rem 2rem 0;
     border-left: 1px solid var(--border-color);
     min-width: 0;
 }
@@ -164,27 +179,27 @@
     padding-right: 0;
 }
 .door-index {
-    color: var(--accent);
-    font: 0.875rem/1.6 var(--font-mono);
+    color: var(--text-secondary);
+    font: var(--type-note)/1.6 var(--font-sans);
 }
 .system-door h3 {
-    margin-block: 1.5rem 1rem;
-    min-height: 4.8em;
+    margin-block: 1rem 1.25rem;
+    min-height: 3.6em;
     font:
-        400 clamp(1.6rem, 2.6vw, 2.4rem)/1.18 Georgia,
+        400 var(--type-question)/1.18 Georgia,
         serif;
     letter-spacing: -0.035em;
 }
 .door-project {
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: var(--type-body);
 }
 .door-mechanism {
     display: block;
     flex-shrink: 0;
     width: 100%;
     height: auto;
-    margin-block: 1rem 2rem;
+    margin-block: 1.5rem 2rem;
     fill: var(--bg-primary);
     stroke: var(--text-secondary);
     stroke-width: 1.5;
@@ -193,12 +208,36 @@
     stroke: var(--accent);
     stroke-width: 2;
 }
+.door-mechanism .mechanism-faint {
+    stroke: var(--border-color);
+}
+.door-mechanism .mechanism-observation {
+    fill: none;
+    stroke-dasharray: 3 5;
+}
+.door-mechanism .mechanism-history {
+    stroke-dasharray: 2 6;
+}
+.system-door--investigate .door-mechanism {
+    background: linear-gradient(90deg, transparent 51.5%, #ff5f1f0d 51.5%);
+}
+.system-door--decide .door-mechanism {
+    background: linear-gradient(0deg, #f2eee605 37%, transparent 37%);
+}
+.system-door--orchestrate .door-mechanism rect {
+    fill: #ff5f1f0d;
+}
+.system-door:focus-within .door-link,
+.system-door:has(.door-link:hover) .door-link {
+    border-top-color: var(--accent);
+    color: var(--accent-hover);
+}
 .door-implementation {
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: var(--type-body);
 }
 .door-limit {
-    font-size: 0.875rem;
+    font-size: var(--type-note);
     margin-block: 1rem 2rem;
 }
 .door-link {
@@ -209,7 +248,7 @@
     margin-top: auto;
     padding-block: 1rem;
     border-top: 1px solid var(--border-color);
-    font-size: 1rem;
+    font-size: var(--type-note);
 }
 .door-link span {
     color: var(--accent);
@@ -324,6 +363,11 @@
         margin-bottom: 0;
     }
 }
+@media (min-width: 801px) and (max-width: 1100px) {
+    .system-door {
+        padding-inline: 1.25rem;
+    }
+}
 @media (max-width: 540px) {
     .library-entry,
     .library-contents {
@@ -346,7 +390,7 @@
         max-width: 20ch;
     }
     .door-mechanism {
-        max-width: 18rem;
+        max-width: 22rem;
         margin-block: 0.5rem 1.5rem;
     }
     .door-limit {

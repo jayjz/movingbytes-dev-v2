@@ -1,0 +1,452 @@
+[
+  {
+    "page": "research",
+    "width": 320,
+    "axeViolations": 0,
+    "lcpMs": 312,
+    "cls": 0,
+    "resourceBytes": 29524,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "research",
+    "width": 390,
+    "axeViolations": 0,
+    "lcpMs": 276,
+    "cls": 0,
+    "resourceBytes": 29524,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "research",
+    "width": 768,
+    "axeViolations": 0,
+    "lcpMs": 240,
+    "cls": 0,
+    "resourceBytes": 29524,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "research",
+    "width": 1280,
+    "axeViolations": 0,
+    "lcpMs": 236,
+    "cls": 0,
+    "resourceBytes": 29524,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "research",
+    "width": 1440,
+    "axeViolations": 0,
+    "lcpMs": 244,
+    "cls": 0,
+    "resourceBytes": 29524,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "research",
+    "mode": "no-js",
+    "result": "pass"
+  },
+  {
+    "page": "research",
+    "mode": "blocked-fonts",
+    "result": "pass"
+  },
+  {
+    "page": "research",
+    "mode": "reduced-at-load",
+    "result": "pass"
+  },
+  {
+    "page": "research",
+    "mode": "large-text",
+    "result": "pass"
+  },
+  {
+    "page": "research",
+    "mode": "large-text-320",
+    "result": "pass"
+  },
+  {
+    "page": "research",
+    "mode": "offline",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "width": 320,
+    "axeViolations": 0,
+    "lcpMs": 316,
+    "cls": 0,
+    "resourceBytes": 288875,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "home",
+    "width": 390,
+    "axeViolations": 0,
+    "lcpMs": 268,
+    "cls": 0,
+    "resourceBytes": 288875,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "home",
+    "width": 768,
+    "axeViolations": 0,
+    "lcpMs": 272,
+    "cls": 0,
+    "resourceBytes": 288875,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "home",
+    "width": 1280,
+    "axeViolations": 0,
+    "lcpMs": 252,
+    "cls": 0,
+    "resourceBytes": 288875,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "home",
+    "width": 1440,
+    "axeViolations": 0,
+    "lcpMs": 256,
+    "cls": 0,
+    "resourceBytes": 288875,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "home",
+    "mode": "no-js",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "no-observer",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "blocked-fonts",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "reduced-at-load",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "blocked-image",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "large-text",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "large-text-320",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "blocked-character-script",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "blocked-threshold-script",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "blocked-jonah-image",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "blocked-authored-image",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "missing-character",
+    "result": "pass"
+  },
+  {
+    "page": "home",
+    "mode": "touch",
+    "result": "pass"
+  },
+  {
+    "page": "evidence",
+    "width": 320,
+    "axeViolations": 0,
+    "lcpMs": 284,
+    "cls": 0,
+    "resourceBytes": 79807,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "evidence",
+    "width": 390,
+    "axeViolations": 0,
+    "lcpMs": 276,
+    "cls": 0,
+    "resourceBytes": 79807,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "evidence",
+    "width": 768,
+    "axeViolations": 0,
+    "lcpMs": 292,
+    "cls": 0,
+    "resourceBytes": 79807,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "evidence",
+    "width": 1280,
+    "axeViolations": 0,
+    "lcpMs": 312,
+    "cls": 0,
+    "resourceBytes": 79807,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "evidence",
+    "width": 1440,
+    "axeViolations": 0,
+    "lcpMs": 284,
+    "cls": 0,
+    "resourceBytes": 79807,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "evidence",
+    "mode": "no-js",
+    "result": "pass"
+  },
+  {
+    "page": "evidence",
+    "mode": "no-observer",
+    "result": "pass"
+  },
+  {
+    "page": "evidence",
+    "mode": "blocked-fonts",
+    "result": "pass"
+  },
+  {
+    "page": "evidence",
+    "mode": "reduced-at-load",
+    "result": "pass"
+  },
+  {
+    "page": "evidence",
+    "mode": "blocked-image",
+    "result": "pass"
+  },
+  {
+    "page": "evidence",
+    "mode": "large-text",
+    "result": "pass"
+  },
+  {
+    "page": "evidence",
+    "mode": "large-text-320",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "width": 320,
+    "axeViolations": 0,
+    "lcpMs": 260,
+    "cls": 0,
+    "resourceBytes": 28650,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "case",
+    "width": 390,
+    "axeViolations": 0,
+    "lcpMs": 256,
+    "cls": 0,
+    "resourceBytes": 28650,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "case",
+    "width": 768,
+    "axeViolations": 0,
+    "lcpMs": 248,
+    "cls": 0,
+    "resourceBytes": 28650,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "case",
+    "width": 1280,
+    "axeViolations": 0,
+    "lcpMs": 232,
+    "cls": 0,
+    "resourceBytes": 28650,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "case",
+    "width": 1440,
+    "axeViolations": 0,
+    "lcpMs": 244,
+    "cls": 0,
+    "resourceBytes": 28650,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "case",
+    "mode": "no-js",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "no-observer",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "blocked-fonts",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "reduced-at-load",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "blocked-image",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "large-text",
+    "result": "pass"
+  },
+  {
+    "page": "case",
+    "mode": "large-text-320",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "width": 320,
+    "axeViolations": 0,
+    "lcpMs": 212,
+    "cls": 0,
+    "resourceBytes": 24020,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "shadow",
+    "width": 390,
+    "axeViolations": 0,
+    "lcpMs": 220,
+    "cls": 0,
+    "resourceBytes": 24020,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "shadow",
+    "width": 768,
+    "axeViolations": 0,
+    "lcpMs": 232,
+    "cls": 0,
+    "resourceBytes": 24020,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "shadow",
+    "width": 1280,
+    "axeViolations": 0,
+    "lcpMs": 224,
+    "cls": 0,
+    "resourceBytes": 24020,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "shadow",
+    "width": 1440,
+    "axeViolations": 0,
+    "lcpMs": 232,
+    "cls": 0,
+    "resourceBytes": 24020,
+    "fonts": true,
+    "fontFaces": 24
+  },
+  {
+    "page": "shadow",
+    "mode": "no-js",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "no-observer",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "blocked-fonts",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "reduced-at-load",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "blocked-image",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "large-text",
+    "result": "pass"
+  },
+  {
+    "page": "shadow",
+    "mode": "large-text-320",
+    "result": "pass"
+  }
+]

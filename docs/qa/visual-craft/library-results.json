@@ -1,0 +1,83 @@
+[
+  {
+    "width": 320,
+    "mode": "normal",
+    "collections": 6,
+    "entries": 10,
+    "keyboard": "pass",
+    "overflow": false,
+    "axeViolations": []
+  },
+  {
+    "width": 390,
+    "mode": "normal",
+    "collections": 6,
+    "entries": 10,
+    "keyboard": "pass",
+    "overflow": false,
+    "axeViolations": []
+  },
+  {
+    "width": 768,
+    "mode": "normal",
+    "collections": 6,
+    "entries": 10,
+    "keyboard": "pass",
+    "overflow": false,
+    "axeViolations": []
+  },
+  {
+    "width": 1280,
+    "mode": "normal",
+    "collections": 6,
+    "entries": 10,
+    "keyboard": "pass",
+    "overflow": false,
+    "axeViolations": []
+  },
+  {
+    "width": 1440,
+    "mode": "normal",
+    "collections": 6,
+    "entries": 10,
+    "keyboard": "pass",
+    "overflow": false,
+    "axeViolations": []
+  },
+  {
+    "width": 390,
+    "mode": "no-js",
+    "collections": 6,
+    "entries": 10,
+    "keyboard": "pass",
+    "overflow": false,
+    "axeViolations": null
+  },
+  {
+    "width": 320,
+    "mode": "text-200",
+    "collections": 6,
+    "entries": 10,
+    "keyboard": "pass",
+    "overflow": false,
+    "axeViolations": []
+  },
+  {
+    "width": 390,
+    "mode": "text-200",
+    "collections": 6,
+    "entries": 10,
+    "keyboard": "pass",
+    "overflow": false,
+    "axeViolations": []
+  },
+  {
+    "width": 1440,
+    "mode": "text-200",
+    "collections": 6,
+    "entries": 10,
+    "keyboard": "pass",
+    "overflow": false,
+    "axeViolations": []
+  }
+]
