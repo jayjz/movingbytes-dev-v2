@@ -6,24 +6,24 @@
         <title>Systems library — Jay</title>
         <meta
             name="description"
-            content="Jay’s personal home for software, model behavior, Scripture, and open questions. Explore BibleMap’s Jonah experience and selected engineering work."
+            content="Explore Jay’s systems by question: investigation and evidence, decisions and authority, coordination and infrastructure. Full studies and bounded evidence."
         />
         <link rel="canonical" href="https://www.jaysystems.dev/work/" />
         <meta name="theme-color" content="#0a0a0c" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="jaysystems.dev" />
-        <meta property="og:title" content="Jay — Software, Scripture &amp; Open Questions" />
+        <meta property="og:title" content="Systems library — Jay" />
         <meta
             property="og:description"
-            content="Software, model behavior, Scripture, and open questions. A personal home for Jay’s explorations and engineering work."
+            content="Choose a question and follow it into full systems studies, source pins and recorded evidence."
         />
         <meta property="og:url" content="https://www.jaysystems.dev/work/" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Jay — Software, Scripture &amp; Open Questions" />
+        <meta name="twitter:title" content="Systems library — Jay" />
         <meta
             name="twitter:description"
-            content="Software, model behavior, Scripture, and open questions. A personal home for Jay’s explorations and engineering work."
+            content="Choose a question and follow it into full systems studies, source pins and recorded evidence."
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +33,6 @@
         />
         <link rel="stylesheet" href="/css/style.css?v=20260907-evidence" />
         <link rel="stylesheet" href="/css/home.css" />
-        <link rel="stylesheet" href="/css/live-system.css" />
         <link rel="stylesheet" href="/css/library.css" />
     </head>
     <body class="home-page library-page">
@@ -49,18 +48,251 @@
             </div>
         </header>
         <main id="main" tabindex="-1">
-            <div class="library-heading container">
-                <p class="editorial-label">Jay / Selected systems</p>
-                <h1>Systems library.</h1>
+            <header class="library-heading container">
+                <p class="editorial-label">Jay / Systems library</p>
+                <h1>Choose a question.<br />Follow it further.</h1>
                 <p class="library-intro">
-                    Choose the question you want to follow. Full studies and recorded evidence remain one step deeper.
+                    Investigations, decisions and coordination: three ways into the work. Each collection leads to full studies, source pins
+                    and a record of what is still unverified.
                 </p>
-                <nav class="library-contents" aria-label="Collections">
-                    <a id="investigate" href="evidence.html#cipherloop">Investigation and evidence →</a
-                    ><a id="decide" href="evidence.html#shadow">Decisions and authority →</a
-                    ><a id="coordinate" href="evidence.html#aetherforge">Coordination and infrastructure →</a
-                    ><a href="evidence.html#project-registry">Full evidence archive →</a>
+                <nav class="library-contents" aria-label="Library collections">
+                    <a href="#investigate">01 Investigate ↓</a><a href="#decide">02 Decide ↓</a><a href="#coordinate">03 Coordinate ↓</a
+                    ><a href="#applied-field">Field systems</a><a href="#open-questions">Research</a
+                    ><a href="#historical-work">Earlier work</a>
                 </nav>
+            </header>
+            <div class="container">
+                <!-- portfolio:library:start -->
+                <section id="investigate" class="library-collection" aria-labelledby="investigate-title">
+                    <header class="collection-heading">
+                        <p class="door-number">01 / investigate</p>
+                        <h2 id="investigate-title">Investigation and evidence</h2>
+                        <p class="collection-question">Can an agent’s investigation remain independently inspectable?</p>
+                    </header>
+                    <div class="collection-body">
+                        <ol class="collection-path" aria-label="Mechanism">
+                            <li>Producer</li>
+                            <li>Saved evidence</li>
+                            <li>Independent reader</li>
+                        </ol>
+                        <p class="collection-overview">
+                            CipherLoop produces an execution record. TraceForge reads the ledger and metadata without importing the
+                            producer’s runtime.
+                        </p>
+                        <ul class="library-projects">
+                            <li data-library-project="cipherloop">
+                                <div class="library-project__heading">
+                                    <h3><a href="/work/evidence.html#registry-cipherloop">CipherLoop</a></h3>
+                                    <span class="live-meta">experimental</span>
+                                </div>
+                                <p>Produces an inspectable execution record.</p>
+                                <p class="library-project__limit">
+                                    Feature revision inspected; offline scripted replay is not a live audit.
+                                </p>
+                            </li>
+                            <li data-library-project="traceforge">
+                                <div class="library-project__heading">
+                                    <h3><a href="/work/evidence.html#registry-traceforge">TraceForge</a></h3>
+                                    <span class="live-meta">implemented</span>
+                                </div>
+                                <p>Checks artifact integrity independently of the producer runtime.</p>
+                                <p class="library-project__limit">Pinned reader and recorded Linux replay; no detection-accuracy claim.</p>
+                            </li>
+                        </ul>
+                        <p class="collection-scope">
+                            Recorded offline ingestion uses scripted tool responses. Integrity checks establish neither live
+                            security-detection accuracy nor target safety.
+                        </p>
+                        <div class="collection-links">
+                            <a class="ledger-link" href="/case-studies/cipherloop.html#current-contract"
+                                >Read the investigation study <span aria-hidden="true">↗</span></a
+                            ><a href="/work/evidence.html#cipherloop-details">Artifact walkthrough and historical controls →</a>
+                        </div>
+                    </div>
+                </section>
+                <section id="decide" class="library-collection" aria-labelledby="decide-title">
+                    <header class="collection-heading">
+                        <p class="door-number">02 / decide</p>
+                        <h2 id="decide-title">Decisions and authority</h2>
+                        <p class="collection-question">When is a decision authorized to become an action?</p>
+                    </header>
+                    <div class="collection-body">
+                        <ol class="collection-path" aria-label="Mechanism">
+                            <li>Observation available</li>
+                            <li>Signal created</li>
+                            <li>Execution eligible</li>
+                            <li>Risk admitted</li>
+                        </ol>
+                        <p class="collection-overview">
+                            SHAD0W separates chronological availability, simulation lifecycle and an independent paper-risk gate.
+                            Eligibility alone does not grant execution authority.
+                        </p>
+                        <ul class="library-projects">
+                            <li data-library-project="shadow">
+                                <div class="library-project__heading">
+                                    <h3><a href="/work/evidence.html#registry-shadow">SHAD0W</a></h3>
+                                    <span class="live-meta">implemented</span>
+                                </div>
+                                <p>Separates simulation state from execution authority.</p>
+                                <p class="library-project__limit">Source and tests inspected; no live-capital or profitability claim.</p>
+                            </li>
+                        </ul>
+                        <p class="collection-scope">
+                            Pinned source and regression tests were inspected, not rerun for the site. This is a technical research
+                            simulator; profitability and live-capital trading are unverified.
+                        </p>
+                        <div class="collection-links">
+                            <a class="ledger-link" href="/case-studies/shadow.html"
+                                >Read the decision study <span aria-hidden="true">↗</span></a
+                            ><a href="/work/evidence.html#shadow-details">Inspect the execution timeline →</a>
+                        </div>
+                    </div>
+                </section>
+                <section id="coordinate" class="library-collection" aria-labelledby="coordinate-title">
+                    <header class="collection-heading">
+                        <p class="door-number">03 / coordinate</p>
+                        <h2 id="coordinate-title">Coordination and infrastructure</h2>
+                        <p class="collection-question">How can agent workloads meet constrained compute?</p>
+                    </header>
+                    <div class="collection-body">
+                        <ol class="collection-path" aria-label="Mechanism">
+                            <li>Request</li>
+                            <li>Lease / thermal / capacity gates</li>
+                            <li>Admit or reject</li>
+                        </ol>
+                        <p class="collection-overview">
+                            AetherForge checks bounded admission and switching economics before a strategy is applied. A capacity rejection
+                            supplies a retry interval; permission to retry is not a successful admission.
+                        </p>
+                        <ul class="library-projects">
+                            <li data-library-project="aetherforge">
+                                <div class="library-project__heading">
+                                    <h3><a href="/work/evidence.html#registry-aetherforge">AetherForge</a></h3>
+                                    <span class="live-meta">experimental</span>
+                                </div>
+                                <p>Makes compute admission an explicit decision.</p>
+                                <p class="library-project__limit">Recorded mock probes only; physical GPU swapping remains unverified.</p>
+                            </li>
+                            <li data-library-project="unhinged">
+                                <div class="library-project__heading">
+                                    <h3><a href="/work/evidence.html#registry-unhinged">Unhinged Agent</a></h3>
+                                    <span class="live-meta">experimental</span>
+                                </div>
+                                <p>Explores bounded state and interruption at the device boundary.</p>
+                                <p class="library-project__limit">Feature revision; physical hardware loop unverified.</p>
+                            </li>
+                        </ul>
+                        <p class="collection-scope">
+                            Four controlled mock probes and five route tests were recorded. Physical GPU fast-swap behavior, hardware
+                            recovery and performance benefits remain unverified.
+                        </p>
+                        <div class="collection-links">
+                            <a class="ledger-link" href="/work/evidence.html#aetherforge"
+                                >Explore the admission instrument <span aria-hidden="true">↗</span></a
+                            ><a href="/work/evidence.html#unhinged">A related device-boundary prototype →</a>
+                        </div>
+                    </div>
+                </section>
+                <div class="library-secondary">
+                    <section id="applied-field" aria-labelledby="applied-field-title">
+                        <p class="editorial-label">Beyond the three doors</p>
+                        <h2 id="applied-field-title">Applied field systems</h2>
+                        <p>Explicit state, carried into preparation for physical work.</p>
+                        <ul class="library-projects">
+                            <li data-library-project="truck-ready">
+                                <div class="library-project__heading">
+                                    <h3><a href="/work/evidence.html#registry-truck-ready">Truck-Ready HVAC</a></h3>
+                                    <span class="live-meta">implemented</span>
+                                </div>
+                                <p>Carries explicit state into field-work preparation.</p>
+                                <p class="library-project__limit">
+                                    Pinned CSV integration regression; historical export evidence does not establish current end-to-end
+                                    behavior.
+                                </p>
+                            </li>
+                        </ul>
+                        <a href="/work/evidence.html#truck-ready">Read the field-system record →</a>
+                    </section>
+                    <section id="open-questions" aria-labelledby="open-questions-title">
+                        <p class="editorial-label">Research</p>
+                        <h2 id="open-questions-title">Research and open questions</h2>
+                        <ul class="library-projects">
+                            <li data-library-project="temper">
+                                <div class="library-project__heading">
+                                    <h3><a href="/work/evidence.html#registry-temper">TEMPER</a></h3>
+                                    <span class="live-meta">experimental</span>
+                                </div>
+                                <p>Asks when a bounded learned decision should be accepted or escalated.</p>
+                                <p class="library-project__limit">
+                                    Metrics implementation and tests inspected, not executed; no cost or reliability advantage established
+                                    here.
+                                </p>
+                            </li>
+                            <li>
+                                <div class="library-project__heading">
+                                    <h3><a href="/research.html">Machine-Native Systems</a></h3>
+                                    <span class="live-meta">research</span>
+                                </div>
+                                <p>
+                                    Reliable intelligent systems with explicit semantic boundaries, authority, execution state, and
+                                    independently verifiable evidence.
+                                </p>
+                                <p class="library-project__limit">
+                                    An engineering direction, not a scientific result. The full study distinguishes recorded experiments,
+                                    inconclusive results and work not run.
+                                </p>
+                            </li>
+                        </ul>
+                        <a href="/index.html#model-question">Return to the TEMPER exploration →</a>
+                    </section>
+                    <section id="historical-work" aria-labelledby="historical-title">
+                        <p class="editorial-label">Earlier investigations</p>
+                        <h2 id="historical-title">Historical work</h2>
+                        <p>Prototypes and methods retained with their original limits.</p>
+                        <ul class="library-projects">
+                            <li data-library-project="evidence-strategy">
+                                <div class="library-project__heading">
+                                    <h3><a href="/work/evidence.html#registry-evidence-strategy">Evidence Strategy Skills</a></h3>
+                                    <span class="live-meta">experimental</span>
+                                </div>
+                                <p>Defines how evidence should be compared and accounted for.</p>
+                                <p class="library-project__limit">Prescribed methodology, not demonstrated effectiveness.</p>
+                            </li>
+                            <li data-library-project="fracture">
+                                <div class="library-project__heading">
+                                    <h3><a href="/work/evidence.html#registry-fracture">Fracture</a></h3>
+                                    <span class="live-meta">experimental</span>
+                                </div>
+                                <p>Explores failure and recovery questions.</p>
+                                <p class="library-project__limit">
+                                    Generic runtime and comparative harness remain stubs; no comparative result.
+                                </p>
+                            </li>
+                            <li data-library-project="sightglass">
+                                <div class="library-project__heading">
+                                    <h3><a href="/work/evidence.html#registry-sightglass">Sightglass</a></h3>
+                                    <span class="live-meta">experimental</span>
+                                </div>
+                                <p>Explores visibility into agent state.</p>
+                                <p class="library-project__limit">Approval enforcement and durable synchronization remain incomplete.</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <!-- portfolio:library:end -->
+                <aside class="library-records" aria-label="Complete evidence archive">
+                    <a class="ledger-link" href="/work/evidence.html">Open the complete evidence archive ↗</a>
+                    <nav class="library-contents" aria-label="Archive records">
+                        <a href="/work/evidence.html#systems-map">Project relationships</a
+                        ><a href="/work/evidence.html#recent-work">Engineering notes</a
+                        ><a href="/work/evidence.html#evidence-ledger">Evidence ledger</a
+                        ><a href="/work/evidence.html#project-registry">Full project registry</a>
+                    </nav>
+                    <p>
+                        Stored metadata supports these records. It does not determine maturity, progress or the personal questions on the
+                        homepage.
+                    </p>
+                </aside>
             </div>
         </main>
         <footer id="contact" class="site-footer">

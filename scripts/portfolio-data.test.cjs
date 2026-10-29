@@ -5,6 +5,7 @@ const os = require('node:os');
 const path = require('node:path');
 const { load, validateProjects, validateResearch, validateActivity, validateConfig } = require('./lib/portfolio-data.cjs');
 const { render } = require('./lib/render-portfolio.cjs');
+const { renderLibrary } = require('./lib/render-library.cjs');
 const { refresh, request } = require('./update-activity.cjs');
 const baseline = load();
 const clone = value => structuredClone(value);
@@ -48,6 +49,24 @@ test('curated registry and relationships are valid; rendering is deterministic a
     assert.ok(!render(data).focus.includes('<script>'));
     for (const state of ['experimental', 'implemented', 'verified', 'historical', 'unverified'])
         assert.ok(render(data).system.includes(`state-${state}`));
+});
+
+test('library summaries include every public project once, preserve limits and ignore activity', () => {
+    const html = renderLibrary(baseline);
+    const data = clone(baseline);
+    data.activity.repositories = [];
+    assert.equal(renderLibrary(data), html);
+    for (const p of baseline.projects.projects.filter(p => p.visibility === 'public')) {
+        assert.equal(html.split(`data-library-project="${p.id}"`).length - 1, 1);
+        assert.ok(html.includes(p.limits.replaceAll('&', '&amp;')));
+    }
+    data.projects.projects[0].visibility = 'private';
+    data.projects.projects[0].name = 'PRIVATE_PROJECT_SENTINEL';
+    assert.ok(!renderLibrary(data).includes('PRIVATE_PROJECT_SENTINEL'));
+    assert.ok(!renderLibrary(data).includes('data-library-project="cipherloop"'));
+    data.research.thesis.statement = '<script>bad()</script>';
+    assert.ok(renderLibrary(data).includes('&lt;script&gt;'));
+    assert.ok(!renderLibrary(data).includes('<script>'));
 });
 test('reject unknown fields, dangling references, unsafe links and invalid maturity', () => {
     const p = clone(baseline.projects);

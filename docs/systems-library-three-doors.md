@@ -140,3 +140,30 @@ text at 320/390). Zero axe violations in all script-enabled cases, no failed loc
 resources or runtime metadata requests. Reviewed `doors-1440-normal.png` and
 `doors-390-normal.png` in `test-results/library-m2/`. Further density refinement
 and full instrument/regression suites are scheduled for M5.
+
+M2 pushed and remote HEAD verified: `c1ca8df42b4ed13ab78e9695151d368cbe4b660c`.
+
+M3: the index now offers three primary collections and three secondary groups.
+CipherLoop/TraceForge are featured for the implemented producer/artifact/reader
+handoff and recorded offline replay; SHAD0W for availability, eligibility and
+separate paper-risk admission; AetherForge for bounded mock-mode admission and
+its recorded probes. These choices represent distinct mechanisms, not claims
+about current attention, project scale or maturity. Unhinged is related
+device-boundary work, with no implied integration. Truck-Ready stays in applied
+field systems with its CSV regression explicit. TEMPER and Machine-Native Systems
+remain research; earlier prototypes retain experimental status.
+
+The generated index contains one summary per public curated project. Full
+registry records are generated only once in the evidence archive. Collection
+ordering is editorial and never comes from activity. Added one data test for
+complete public coverage, no duplicate summaries, unchanged limits, independence
+from activity, privacy filtering and escaped text. Both output pages are validated
+before rendering writes either one; homepage authored content has no generated slot.
+
+M3 checks: `npm run check` passes with 18 data tests and the preservation contract.
+Ten focused library browser cases pass, covering five widths, no-JS at 320/390,
+reduced motion, 200% text, all six collection anchors and all six primary study/
+detail links by keyboard. Zero axe violations, local resource failures or runtime
+metadata requests. Reviewed the 1440px and 390px full-library captures in
+`test-results/library-m3/`. Browser automation initially needed an explicit wait
+for keyboard navigation; fixed the wait and reran successfully.

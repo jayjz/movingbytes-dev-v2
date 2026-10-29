@@ -33,6 +33,7 @@ const results = [];
         ['library', '/work/'],
         ['archive', '/work/evidence.html']
     ]) {
+        if (process.env.LIBRARY_QA_PAGE && process.env.LIBRARY_QA_PAGE !== label) continue;
         for (const [width, mode] of [
             ...[320, 390, 768, 1280, 1440].map(w => [w, 'normal']),
             [390, 'no-js'],
@@ -96,6 +97,33 @@ const results = [];
                 assert.equal(await page.locator('.af-instrument').count(), 1);
                 assert.equal(await page.locator('.project-registry details').count(), 10);
                 assert.equal(await page.locator('.fixture-table').isVisible(), true);
+            }
+            if (label === 'library') {
+                assert.equal(await page.locator('script').count(), 0, 'The collection index is static');
+                assert.equal(await page.locator('.library-collection').count(), 3);
+                assert.equal(await page.locator('[data-library-project]').count(), 10);
+                for (const id of ['investigate', 'decide', 'coordinate', 'applied-field', 'open-questions', 'historical-work']) {
+                    const link = page.locator(`.library-heading a[href="#${id}"]`);
+                    await link.focus();
+                    assert.equal(await link.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
+                    await page.keyboard.press('Enter');
+                    assert.equal(new URL(page.url()).hash, `#${id}`);
+                    assert.equal(await page.locator(`#${id}`).isVisible(), true);
+                }
+                for (const collection of ['investigate', 'decide', 'coordinate']) {
+                    for (const link of await page.locator(`#${collection} .collection-links a`).all()) {
+                        const href = await link.getAttribute('href');
+                        await link.focus();
+                        await page.keyboard.press('Enter');
+                        await page.waitForURL(base + href);
+                        assert.equal(new URL(page.url()).pathname + new URL(page.url()).hash, href);
+                        assert.equal(await page.locator(new URL(page.url()).hash || 'main').isVisible(), true);
+                        await page.goBack();
+                    }
+                }
+                assert.equal(await page.locator('#open-questions a[href="/research.html"]').count(), 1);
+                assert.equal(await page.locator('#applied-field [data-library-project="truck-ready"]').count(), 1);
+                assert.equal(await page.locator('#open-questions [data-library-project="temper"]').count(), 1);
             }
             if (mode !== 'no-js') {
                 const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
