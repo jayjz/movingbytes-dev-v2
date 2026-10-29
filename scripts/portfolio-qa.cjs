@@ -101,9 +101,9 @@ fs.mkdirSync(out, { recursive: true });
                     const ids = [
                         'top',
                         'about',
-                        'principles',
                         'now',
                         'field-note',
+                        'principles',
                         'work',
                         'shadow',
                         'engineering-details',
@@ -121,9 +121,10 @@ fs.mkdirSync(out, { recursive: true });
                 });
                 assert.ok(
                     opening.order.every((n, i, list) => n >= 0 && (i === 0 || n > list[i - 1])),
-                    'Personal perspective, principles and explorations precede the engineering archive'
+                    'Personal opening, Jonah and curiosity lead into principles and the engineering archive'
                 );
                 assert.equal(opening.githubInOpening, 0);
+                assert.match(await page.locator('.mastery-intro').textContent(), /HVAC and construction/);
                 assert.equal(await page.locator('#work .project-summary').count(), 1);
                 assert.equal(await page.locator('#shadow .project-summary').count(), 1);
                 assert.equal(await page.locator('#work .evidence-flow').count(), 0);
