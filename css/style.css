@@ -93,9 +93,11 @@ img {
     background: var(--accent);
     color: var(--bg-primary);
     transform: translateY(calc(-100% - 2rem));
+    clip-path: inset(50%);
 }
 .skip-link:focus {
     transform: none;
+    clip-path: none;
     color: var(--bg-primary);
 }
 .site-header {

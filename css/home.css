@@ -896,33 +896,52 @@
 }
 
 /* Personal frontispiece; existing project instruments form the archive. */
+.home-page {
+    --font-editorial: Georgia, 'Times New Roman', serif;
+}
 .home-page .mastery-hero {
-    padding-block: 2rem 5rem;
+    padding-block: 2rem 6rem;
 }
 .home-page .mastery-identity p {
-    max-width: 29ch;
+    max-width: 42ch;
+    font-size: 0.9rem;
 }
 .home-page .mastery-hero h1 {
-    font-size: clamp(2rem, 4.2vw, 4.1rem);
+    font-size: clamp(2rem, 3.8vw, 3.7rem);
     line-height: 1.08;
-    max-width: 19ch;
+    max-width: 22ch;
 }
 .home-page .mastery-hero .hero-name {
     display: block;
     color: var(--text-primary);
-    font-size: clamp(6rem, 16vw, 14rem);
-    line-height: 0.95;
-    margin-bottom: 1.8rem;
-    letter-spacing: -0.065em;
+    font-size: clamp(7rem, 20vw, 18rem);
+    line-height: 0.85;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.075em;
+}
+.home-page .mastery-hero .hero-statement,
+.home-page .mastery-hero .hero-question {
+    display: block;
+    color: var(--text-primary);
+}
+.home-page .mastery-hero .hero-question {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.055em;
+    margin-top: 0.15em;
 }
 .mastery-hero__grid {
     align-items: end;
-    margin-top: 2rem;
+    margin-top: 3rem;
     container-type: inline-size;
 }
 .mastery-intro p {
-    font-size: 1.15rem;
+    font-size: 1.0625rem;
     line-height: 1.7;
+}
+.mastery-intro {
+    padding-bottom: 0.4rem;
 }
 .hero-archive {
     display: block;
@@ -931,14 +950,19 @@
     font-size: 0.95rem;
 }
 .home-page .about {
-    padding-block: 3rem 4rem;
+    padding-block: 5rem 4rem;
     border-top: 1px solid var(--border-color);
 }
 .home-page .about .section-intro__title {
-    font-size: clamp(2rem, 3.5vw, 3.3rem);
+    max-width: 15ch;
+    font: 400 clamp(2.5rem, 4.5vw, 4.5rem) / 1.05 var(--font-editorial);
+    letter-spacing: -0.045em;
+}
+.home-page .about__copy {
+    max-width: 57ch;
 }
 .brand-section {
-    padding-block: 3rem 4rem;
+    padding-block: 4rem 5rem;
     border-top: 1px solid var(--border-color);
 }
 .brand-section__intro h2 {
@@ -967,13 +991,31 @@
     content: none;
 }
 .principle-list h3 {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     line-height: 1.25;
     max-width: 32ch;
 }
 .principle-list p {
     max-width: 40ch;
     margin-top: 0.6rem;
+}
+.home-page .principles {
+    border-top: 0;
+    padding-block: 1rem 6rem;
+}
+.principles .container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    gap: 2rem 4rem;
+}
+.principles .principle-list {
+    margin-top: 0;
+    gap: 0 2rem;
+}
+.home-page .eyebrow {
+    font-size: 0.85rem;
+    text-transform: none;
+    letter-spacing: 0;
 }
 .now .container {
     display: grid;
@@ -1015,6 +1057,9 @@
     margin-block: 1rem;
 }
 @media (max-width: 800px) {
+    .principles .container {
+        grid-template-columns: minmax(0, 1fr);
+    }
     .principle-list {
         grid-template-columns: minmax(0, 1fr);
     }
@@ -1054,7 +1099,7 @@
     }
 }
 
-/* The reading invitation is the one large visual departure from the Observatory. */
+/* A reading-room spread: authentic project artwork, complete and without effects. */
 .editorial-label {
     font: 0.9rem/1.6 var(--font-mono);
     letter-spacing: 0;
@@ -1064,24 +1109,34 @@
     display: block;
 }
 .explorations .brand-section__intro {
-    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    align-items: baseline;
+    gap: 1rem 4rem;
+    margin-bottom: 4rem;
+}
+.explorations .brand-section__intro h2 {
+    max-width: 16ch;
+    margin: 0;
+    font: 400 clamp(2.6rem, 5vw, 5rem) / 1.06 var(--font-editorial);
+    letter-spacing: -0.045em;
 }
 .jonah-feature {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    background: #e5dfd0;
-    color: #20211f;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.3fr);
+    background: #2e2e2e;
+    color: var(--text-primary);
 }
 .jonah-feature p {
-    color: #484b47;
+    color: #c8c3b9;
 }
 .jonah-frontispiece {
     min-width: 0;
+    align-self: center;
     padding: clamp(1.5rem, 4vw, 4rem);
-    border-right: 1px solid #b3b0a5;
 }
 .jonah-frontispiece h3 {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: var(--font-editorial);
     font-size: clamp(4rem, 8vw, 8rem);
     line-height: 1;
     letter-spacing: -0.06em;
@@ -1098,16 +1153,53 @@
 .jonah-edition {
     font-size: 1rem;
 }
+.jonah-artwork {
+    min-width: 0;
+    align-self: end;
+}
+.jonah-artwork img {
+    width: 100%;
+    height: auto;
+}
+.jonah-artwork figcaption {
+    padding: 0.75rem 2rem 2rem;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: #c8c3b9;
+}
+.jonah-artwork figcaption span {
+    display: block;
+    margin-top: 0.4rem;
+}
 .jonah-invitation {
-    align-self: center;
-    padding: clamp(1.5rem, 3vw, 3rem);
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.3fr);
+    gap: 0 3rem;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    background: #e5dfd0;
+    color: #20211f;
+}
+.jonah-invitation > * {
+    grid-column: 2;
+}
+.jonah-invitation p {
+    max-width: 55ch;
+    color: #484b47;
+}
+.jonah-invitation > p + p {
+    margin-top: 0;
 }
 .jonah-invitation > p:first-child {
+    grid-column: 1;
+    grid-row: 1 / 3;
     color: #20211f;
-    font-size: 1.5rem;
-    line-height: 1.3;
+    max-width: 12ch;
+    font: 400 clamp(2rem, 3vw, 3rem) / 1.1 var(--font-editorial);
+    letter-spacing: -0.035em;
 }
 .jonah-invitation .ledger-link {
+    justify-self: start;
     margin-top: 2rem;
     color: #9e350e;
 }
@@ -1121,11 +1213,17 @@
     margin-top: 1.5rem;
     font-size: 0.9rem;
 }
+.jonah-invitation .jonah-credit {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #b3b0a5;
+    font-size: 0.8125rem;
+}
 .model-exploration {
     display: grid;
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     gap: 2rem 5rem;
-    padding-top: 4rem;
+    padding-top: 6rem;
 }
 .model-exploration > *,
 .jonah-feature > * {
@@ -1155,21 +1253,158 @@
     margin-top: 1.5rem;
     font-size: 0.95rem;
 }
+.threshold-instrument {
+    grid-column: 1 / -1;
+    border-block: 1px solid var(--border-color);
+    padding-block: 2rem;
+}
+.instrument-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 2rem 3rem;
+}
+.instrument-heading h4 {
+    margin: 0.75rem 0 0;
+    max-width: 30ch;
+    font: 400 clamp(1.6rem, 2.6vw, 2.5rem) / 1.15 var(--font-editorial);
+    letter-spacing: -0.025em;
+}
+.instrument-controls {
+    flex: 0 1 22rem;
+    min-width: 0;
+}
+.instrument-controls[hidden] {
+    display: none;
+}
+.threshold-label {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+.instrument-controls output {
+    color: var(--accent);
+    font-family: var(--font-mono);
+}
+.instrument-controls input {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+.instrument-controls p {
+    font-size: 0.8125rem;
+}
+.decision-samples {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-block: 2.5rem;
+}
+.decision-sample {
+    min-width: 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--text-secondary);
+}
+.decision-sample[data-accepted='true'] {
+    border-bottom: 2px solid var(--accent);
+}
+.sample-confidence {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    font: 0.9rem/1.5 var(--font-mono);
+}
+.sample-meter {
+    display: flex;
+    align-items: end;
+    height: 6rem;
+    margin-block: 0.7rem 1rem;
+    background: repeating-linear-gradient(to top, var(--border-color) 0 1px, transparent 1px 25%);
+}
+.sample-meter span {
+    width: 100%;
+    background: #55565d;
+}
+[data-accepted='true'] .sample-meter span {
+    background: #b4b0a8;
+}
+.decision-sample .sample-outcome {
+    color: var(--text-primary);
+    margin-top: 0;
+    font-size: 1rem;
+}
+.decision-sample .sample-values {
+    margin-top: 0.4rem;
+    font-size: 0.8125rem;
+}
+.decision-sample .sample-admission {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+}
+[data-accepted='true'] .sample-admission {
+    color: var(--accent);
+}
+.instrument-readings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 4rem;
+    margin: 0 0 1.5rem;
+}
+.instrument-readings dt {
+    font-size: 1rem;
+}
+.instrument-readings dt span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+}
+.instrument-readings dd {
+    margin: 0.5rem 0 0;
+    font: 400 clamp(2rem, 4vw, 3rem) / 1 var(--font-editorial);
+}
+.instrument-summary {
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+.threshold-instrument figcaption {
+    max-width: 80ch;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+@media (max-width: 600px) {
+    .decision-samples {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 .field-note {
-    padding-block: 4rem 5rem;
+    padding-block: 4rem 7rem;
 }
 .field-note .container {
-    border-left: 2px solid var(--accent);
-    padding-left: clamp(1.25rem, 4vw, 4rem);
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    gap: 1.5rem 4rem;
+    border-top: 1px solid var(--accent);
+    padding-top: 2rem;
 }
 .field-note h2 {
-    font-size: clamp(1.8rem, 3vw, 2.7rem);
-    margin-block: 1rem 1.5rem;
-    max-width: 25ch;
+    grid-column: 2;
+    font: 400 clamp(2rem, 3.4vw, 3.3rem) / 1.15 var(--font-editorial);
+    letter-spacing: -0.035em;
+    max-width: 24ch;
 }
 .field-note p:last-child {
-    max-width: 64ch;
-    font-size: 1.15rem;
+    grid-column: 2;
+    max-width: 55ch;
+    font-size: 1.0625rem;
 }
 .home-page .principles .brand-section__intro h2 {
     font-size: clamp(1.8rem, 2.7vw, 2.5rem);
@@ -1195,13 +1430,29 @@
     font-size: 0.95rem;
 }
 @media (max-width: 800px) {
+    .explorations .brand-section__intro,
+    .field-note .container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .field-note h2,
+    .field-note p:last-child {
+        grid-column: 1;
+    }
     .jonah-feature,
+    .jonah-invitation,
     .model-exploration {
         grid-template-columns: minmax(0, 1fr);
     }
     .jonah-frontispiece {
-        border-right: 0;
-        border-bottom: 1px solid #b3b0a5;
+        padding-bottom: 0;
+    }
+    .jonah-invitation > * {
+        grid-column: 1;
+    }
+    .jonah-invitation > p:first-child {
+        grid-row: auto;
+        max-width: none;
+        margin-bottom: 1.5rem;
     }
     .model-exploration {
         gap: 1.5rem;
@@ -1209,7 +1460,7 @@
 }
 @media (max-width: 600px) {
     .home-page .mastery-hero {
-        padding-block: 1.5rem 3rem;
+        padding-block: 1.5rem 4rem;
     }
     .mastery-identity {
         align-items: flex-start;
@@ -1219,6 +1470,14 @@
     }
     .mastery-hero__grid {
         gap: 2rem;
+        margin-top: 2rem;
+    }
+    .home-page .mastery-hero .hero-name {
+        margin-bottom: 2rem;
+        font-size: clamp(7rem, 29vw, 11rem);
+    }
+    .home-page .principles {
+        padding-bottom: 3rem;
     }
     .mastery-intro .hero-email {
         display: block;
