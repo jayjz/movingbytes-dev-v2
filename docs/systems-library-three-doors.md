@@ -18,6 +18,16 @@ checks pass; desktop/mobile screenshots were inspected. Baseline `npm run check`
 and the original 53-case browser suite passed. Featured-source revisions and
 limits are recorded in [three-doors.md](evidence/three-doors.md).
 
+M2 pushed and remote-verified at `eba4462815a40e0ca3926d2be27013e317192a59`.
+The relocated homepage and evidence browser suites also pass (18 and 12 cases).
+
+M3 adds `/work/`: six collections, ten selected entries, native collection
+anchors and direct study/source paths. It has no script, search, runtime data or
+duplicated archive sections. Homepage navigation and the threshold lead into the
+library; the evidence archive links back. `npm run check`, the frozen contract
+and eight library browser cases pass, including no-JS, 200% text, keyboard,
+accessibility and five viewport widths. Desktop/mobile screenshots inspected.
+
 ## Baseline and dependency
 
 Started from fetched `origin/main` at `41d7e49` on 29 October 2026. Clean working

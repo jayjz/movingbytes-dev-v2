@@ -20,7 +20,8 @@
         "data:render": "node scripts/render-portfolio.cjs",
         "data:check": "node scripts/render-portfolio.cjs --check",
         "test:data": "node --test scripts/portfolio-data.test.cjs",
-        "qa:live-system": "node scripts/live-system-qa.cjs"
+        "qa:live-system": "node scripts/live-system-qa.cjs",
+        "qa:library": "node scripts/library-qa.cjs"
     },
     "devDependencies": {
         "@axe-core/playwright": "4.13.0",
