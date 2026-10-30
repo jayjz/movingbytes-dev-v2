@@ -87,7 +87,7 @@ let browser, preview;
             await link.focus();
             assert.equal(await link.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
             const href = await link.getAttribute('href');
-            await page.keyboard.press('Enter');
+            await Promise.all([page.waitForURL(base + '/work/' + href), page.keyboard.press('Enter')]);
             assert.equal(new URL(page.url()).hash, href);
             assert.equal(await page.locator(href).isVisible(), true);
         }

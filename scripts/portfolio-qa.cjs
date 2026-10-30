@@ -433,10 +433,19 @@ fs.mkdirSync(out, { recursive: true });
                     researchRequests.filter(url => /api\.github\.com|\/data\/.*\.json|\.js(?:\?|$)/.test(url)),
                     []
                 );
+                const researchURL = page.url();
                 for (const href of ['/index.html#work', '/index.html#top']) {
-                    await page.locator(`.site-header a[href="${href}"]`).click();
+                    // Finish the destination document before traversing its history.
+                    await Promise.all([
+                        page.waitForURL(base + href, { waitUntil: 'load' }),
+                        page.locator(`.site-header a[href="${href}"]`).click()
+                    ]);
+                    assert.equal(new URL(page.url()).pathname, '/index.html');
                     assert.equal(new URL(page.url()).hash, href.split('.html')[1]);
-                    await page.goBack();
+                    await page.locator(new URL(href, base).hash).waitFor({ state: 'visible' });
+                    await Promise.all([page.waitForURL(researchURL, { waitUntil: 'load' }), page.goBack()]);
+                    assert.equal(page.url(), researchURL);
+                    assert.equal(await page.locator('main').innerText(), researchArgument);
                 }
                 assert.deepEqual(localFailures, []);
             }
